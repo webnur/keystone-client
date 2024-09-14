@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 interface BannerWithDropdownProps {
-  backgroundImage: string;
+  backgroundImage: any;
   title: string;
   studyFields: string[];
 }
