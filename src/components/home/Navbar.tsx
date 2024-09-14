@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from "../../images/logo/keystone-logo.png"
+import logo from "/public/images/logo/keystone-logo.png"
 import Image from 'next/image'
 import Button from '../common/Button'
 
