@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/home/Navbar";
+import Footer from "@/components/home/Footer";
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -13,6 +15,14 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+  const lawStudyFields = [
+    "Administrative Law Studies",
+    "Business Law Studies",
+    "Civil Law Studies",
+    "International Law",
+    "Human Rights Law",
+    "Corporate Law"
+  ];
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -29,8 +39,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />
+        <Navbar />        
         {children}
+        <Footer />
       </body>
     </html>
   );

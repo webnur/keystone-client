@@ -21,11 +21,11 @@ const DiscoverProgram: React.FC<DiscoverProgramProps> = ({ programs }) => {
         </div>
 
         {/* Grid of Law Programs */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5">
           {programs.map((program, index) => (
             <div
               key={index}
-              className="flex flex-col justify-center items-center p-8 border-2 border-gray-200 bg-white hover:shadow-lg transition-shadow duration-300"
+              className="flex flex-col justify-center items-center p-8 border-[1px] border-foreground bg-white hover:shadow-lg transition-shadow duration-300"
             >
               {/* Icon */}
               <div className="text-5xl text-blue-500 mb-4">
