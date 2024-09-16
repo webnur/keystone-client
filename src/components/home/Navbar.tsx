@@ -6,6 +6,7 @@ import { CiHeart } from "react-icons/ci";
 import { IoSearchSharp } from "react-icons/io5";
 import SavedProgramsIcon from '../icons/SavedProgramsIcon';
 
+
 const Navbar = () => {
   return (
     <div className='w-full md:w-[90%] mx-auto flex justify-between py-4'>
