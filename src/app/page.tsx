@@ -6,6 +6,7 @@ import DiscoverProgram from "@/components/home/DiscoverProgram";
 import ArticlesAndGuides from "@/components/home/ArticlesAndGuides";
 import WhereToStudy from "@/components/home/WhereToStudy";
 import NewlyAddedPrograms from "@/components/home/NewlyAddedPrograms";
+import BannerWithDropdown from "@/components/common/Banner";
 
 export default function Home() {
   const lawStudyFields = [
@@ -91,41 +92,58 @@ export default function Home() {
     },
   ];
 
+  // Mock programs for the NewlyAddedPrograms component
   const mockPrograms = [
     {
-      title: 'Diploma in Maritime Law',
+      title: "Diploma in Maritime Law",
       institution: "Lloyd's Maritime Academy",
-      location: 'Online',
-      country: 'United Kingdom',
-      image: 'https://via.placeholder.com/150x50', // Placeholder image URL
+      location: "Online",
+      country: "United Kingdom",
+      image: "https://via.placeholder.com/150x50",
     },
     {
-      title: 'LLM Technology and Artificial Intelligence',
-      institution: 'University of Bradford',
-      location: 'Bradford',
-      country: 'United Kingdom',
-      image: 'https://via.placeholder.com/150x50',
+      title: "LLM Technology and Artificial Intelligence",
+      institution: "University of Bradford",
+      location: "Bradford",
+      country: "United Kingdom",
+      image: "https://via.placeholder.com/150x50",
     },
     {
-      title: 'LLM International Commercial Law',
-      institution: 'University College Dublin',
-      location: 'Dublin',
-      country: 'Ireland',
-      image: 'https://via.placeholder.com/150x50',
+      title: "LLM International Commercial Law",
+      institution: "University College Dublin",
+      location: "Dublin",
+      country: "Ireland",
+      image: "https://via.placeholder.com/150x50",
     },
     {
-      title: 'LLM in Sustainability Law and Natural Resources',
-      institution: 'University of Lapland',
-      location: 'Rovaniemi',
-      country: 'Finland',
-      image: 'https://via.placeholder.com/150x50',
+      title: "LLM in Sustainability Law and Natural Resources",
+      institution: "University of Lapland",
+      location: "Rovaniemi",
+      country: "Finland",
+      image: "https://via.placeholder.com/150x50",
+    },
+    {
+      title: "LLM in Human Rights Law",
+      institution: "London School of Economics",
+      location: "London",
+      country: "United Kingdom",
+      image: "https://via.placeholder.com/150x50",
+    },
+    {
+      title: "LLM in Commercial Arbitration",
+      institution: "Stockholm University",
+      location: "Stockholm",
+      country: "Sweden",
+      image: "https://via.placeholder.com/150x50",
     },
   ];
+
+  
   
   return (
 
     <div>
-      <Banner backgroundImage={"https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?auto=compress&cs=tinysrgb&w=800"} title="Browse thousands of graduate degrees from around the world." studyFields={lawStudyFields}  />
+      <BannerWithDropdown backgroundImage={"https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?auto=compress&cs=tinysrgb&w=800"} title="Browse thousands of graduate degrees from around the world." studyFields={lawStudyFields}  />
       <EducationJourney />
       <DiscoverProgram programs={programsData} />
       <ArticlesAndGuides articles={mockArticles} />

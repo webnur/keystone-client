@@ -5,7 +5,6 @@ import Button from "../common/Button";
 import GlobIcon from "../icons/glob";
 import SearchIcon from "../icons/searchIcon";
 import LoveIcon from "../icons/LoveIcon";
-import CustomIcon from "../icons/CustomIcon";
 
 const Navbar = () => {
   return (
@@ -20,11 +19,11 @@ const Navbar = () => {
         />
       </div>
       <div>
-        <div className="flex items-center justify-around gap-2">
+        <div className="flex items-center  gap-2">
           <GlobIcon />
           <SearchIcon />
           <LoveIcon />
-          <CustomIcon />
+
           <div>
             <Button text="Sign in" />
             <Button text="Register" />
