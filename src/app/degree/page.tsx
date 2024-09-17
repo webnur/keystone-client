@@ -1,8 +1,8 @@
-"use client"
-import Banner from '@/components/common/Banner';
-import BannerWithDropdown from '@/components/common/Banner';
-import BaseText from '@/components/degree/BaseText';
-import React from 'react'
+"use client";
+import Banner from "@/components/common/Banner";
+import ProgramPageLayout from "@/components/common/MainLayout";
+import BaseText from "@/components/degree/BaseText";
+import React from "react";
 
 const page = () => {
   const lawStudyFields = [
@@ -11,7 +11,7 @@ const page = () => {
     "Civil Law Studies",
     "International Law",
     "Human Rights Law",
-    "Corporate Law"
+    "Corporate Law",
   ];
   const masterDegreeContent = `
   A Master is an advanced degree conferred by universities around the world for completion of graduate study in a specific discipline. 
@@ -24,11 +24,19 @@ const page = () => {
 `;
   return (
     <div>
-      <Banner backgroundImage={"https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?auto=compress&cs=tinysrgb&w=800"} title="Browse thousands of graduate degrees from around the world." studyFields={lawStudyFields}  />
+      <Banner
+        backgroundImage={
+          "https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?auto=compress&cs=tinysrgb&w=800"
+        }
+        title="Browse thousands of graduate degrees from around the world."
+        studyFields={lawStudyFields}
+      />
 
       <BaseText content={masterDegreeContent} />
+      {/* this will remove from here */}
+      <ProgramPageLayout />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;

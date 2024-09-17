@@ -115,16 +115,22 @@
     glob "10.3.10"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 "@next/swc-win32-x64-msvc@14.2.11":
   version "14.2.11"
   resolved "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-14.2.11.tgz"
   integrity sha512-gQpS7mcgovWoaTG1FbS5/ojF7CGfql1Q0ZLsMrhcsi2Sr9HEqsUZ70MPJyaYBXbk6iEAP7UXMD9HC8KY1qNwvA==
 =======
+=======
+>>>>>>> 988a1438d36d37afe8d37d2ec556653903fc006a
 "@next/swc-darwin-x64@14.2.11":
   version "14.2.11"
   resolved "https://registry.npmjs.org/@next/swc-darwin-x64/-/swc-darwin-x64-14.2.11.tgz"
   integrity sha512-lnB0zYCld4yE0IX3ANrVMmtAbziBb7MYekcmR6iE9bujmgERl6+FK+b0MBq0pl304lYe7zO4yxJus9H/Af8jbg==
+<<<<<<< HEAD
 >>>>>>> cff12d9a9ba57977de5a6cac850a5824ee23d3d0
+=======
+>>>>>>> 988a1438d36d37afe8d37d2ec556653903fc006a
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
