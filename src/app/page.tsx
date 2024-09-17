@@ -7,6 +7,7 @@ import ArticlesAndGuides from "@/components/home/ArticlesAndGuides";
 import WhereToStudy from "@/components/home/WhereToStudy";
 import NewlyAddedPrograms from "@/components/home/NewlyAddedPrograms";
 import BannerWithDropdown from "@/components/common/Banner";
+import SubHeaderNav from "@/components/home/SubHeaderNav";
 
 export default function Home() {
   const lawStudyFields = [
@@ -143,6 +144,7 @@ export default function Home() {
   return (
 
     <div>
+      <SubHeaderNav />
       <BannerWithDropdown backgroundImage={"https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?auto=compress&cs=tinysrgb&w=800"} title="Browse thousands of graduate degrees from around the world." studyFields={lawStudyFields}  />
       <EducationJourney />
       <DiscoverProgram programs={programsData} />
