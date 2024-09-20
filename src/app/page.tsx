@@ -161,8 +161,9 @@ export default function Home() {
       />
       <EducationJourney />
       <DiscoverProgram programs={programsData} />
-      <ArticlesAndGuides articles={mockArticles} />
       <WhereToStudy locations={mockLocations} />
+      <ArticlesAndGuides articles={mockArticles} />
+
       <NewlyAddedPrograms programs={mockPrograms} />
     </div>
   );
