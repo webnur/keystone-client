@@ -5,6 +5,7 @@ import Button from "../common/Button";
 import GlobIcon from "../icons/glob";
 import SearchIcon from "../icons/searchIcon";
 import LoveIcon from "../icons/LoveIcon";
+import CustomIcon from "../icons/CustomIcon";
 
 const Navbar = () => {
   return (
@@ -23,6 +24,7 @@ const Navbar = () => {
           <GlobIcon />
           <SearchIcon />
           <LoveIcon />
+          <CustomIcon />
 
           <div>
             <Button text="Sign in" />
