@@ -9,7 +9,7 @@ import YoutubeIcon from "../icons/YoutubeIcon";
 
 const Footer = () => {
   return (
-    <footer className="flex justify-center bg-gray-800">
+    <footer className="flex justify-center items-end bg-gray-800">
       <div className="flex w-full max-w-7xl flex-col text-white px-6 py-10 md:flex-row md:justify-between lg:px-0">
         <div className="grid grid-cols-1 grid-rows-1 justify-center gap-2">
           <div className="logo">
