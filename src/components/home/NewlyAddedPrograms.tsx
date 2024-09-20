@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import LocationIcon from '../icons/Location';
+import Link from 'next/link';
 
 interface Program {
   title: string;
@@ -31,9 +33,9 @@ const NewlyAddedPrograms: React.FC<NewlyAddedProgramsProps> = ({ programs }) => 
   };
 
   return (
-    <section className="py-16 bg-white text-center w-4/5 mx-auto">
+    <section className="py-16 bg-white text-center w-11/12 mx-auto">
       <div className="flex justify-between items-center mb-8">
-        <h2 className="text-3xl font-bold">Newly added law programs</h2>
+        <h2 className="text-3xl font-bold">Newly added Programs</h2>
       </div>
 
       <div className="relative">
@@ -44,25 +46,30 @@ const NewlyAddedPrograms: React.FC<NewlyAddedProgramsProps> = ({ programs }) => 
             .map((program, index) => (
               <div
                 key={index}
-                className="border rounded-lg shadow-lg p-4 overflow-hidden flex flex-col justify-between hover:shadow-xl transition-shadow duration-300"
+                className="border rounded-lg shadow-md p-4 flex flex-col justify-between hover:shadow-lg transition-shadow duration-300"
               >
                 {/* Program Institution Logo */}
                 <img
                   src={program.image}
                   alt={program.institution}
-                  className="w-full h-24 object-contain mb-4"
+                  className="flex justify-start w-3/5 object-contain mb-4"
                 />
                 {/* Program Details */}
-                <h3 className="text-lg font-semibold text-gray-800">{program.title}</h3>
-                <p className="text-sm text-gray-600 mt-2">{program.institution}</p>
-                <p className="text-sm text-gray-500 flex items-center mt-2">
-                  <span className="material-icons-outlined mr-1">location_on</span>
+                <h3 className="text-lg font-semibold text-black text-left ">{program.title}</h3>
+                <p className="text-sm text-black text-left underline font-semibold ">{program.institution}</p>
+                <p className="text-sm text-black flex items-center mt-3">
+                  <span className="material-icons-outlined mr-1"><LocationIcon width='16' height='16' /></span>
                   {program.location}, {program.country}
                 </p>
                 {/* More Information Button */}
-                <p className="mt-4 text-red-500 font-semibold text-right">
-                  More information <span className="inline-block transform rotate-45">→</span>
-                </p>
+                <div className="flex justify-end">
+                  <Link
+                    href="#"
+                    className="text-red-500 font-semibold hover:text-red-600 flex items-center"
+                  >
+                    More information <span className="ml-1">→</span>
+                  </Link>
+                </div>
               </div>
             ))}
         </div>
@@ -71,13 +78,13 @@ const NewlyAddedPrograms: React.FC<NewlyAddedProgramsProps> = ({ programs }) => 
         <div className="flex justify-center mt-4">
           <button
             onClick={prev}
-            className="bg-white border border-gray-300 p-2 rounded-full shadow hover:bg-gray-100 mx-2"
+            className="bg-white border border-gray-300 px-3 py-2 rounded-xl shadow hover:bg-gray-100 mx-2 text-black font-semibold"
           >
             &lt;
           </button>
           <button
             onClick={next}
-            className="bg-white border border-gray-300 p-2 rounded-full shadow hover:bg-gray-100 mx-2"
+            className="bg-white border border-gray-300 px-3 py-2 rounded-xl shadow hover:bg-gray-100 mx-2 text-black font-semibold"
           >
             &gt;
           </button>
