@@ -1,11 +1,20 @@
-import React from "react";
+interface SvgIconProps {
+  width?: string;
+  height?: string;
+  className?: string;
+}
 
-const LoveIcon = () => {
+const HeartIcon: React.FC<SvgIconProps> = ({
+  width = '24', 
+  height = '24', 
+  className = 'text-gray-600',
+}) => {
   return (
     <svg
       fill="#000000"
-      width="18"
-      height="18"
+      width={width}
+      height={height}
+      className={className}
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -14,4 +23,5 @@ const LoveIcon = () => {
   );
 };
 
-export default LoveIcon;
+export default HeartIcon;
+
