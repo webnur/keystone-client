@@ -71,11 +71,11 @@ const Navbar = () => {
         <div className="flex gap-2 ml-6">
           <Button
             text="Sign in"
-            className="bg-red-300 text-white hover:bg-red-700 border-none px-4 py-2 rounded-md"
+            className="bg-red-300 text-red-500 hover:text-red-100 font-semibold hover:bg-red-700 border-none px-4 py-2 rounded-md"
           />
           <Button
             text="Register"
-            className="bg-red-300 text-white hover:bg-red-700 px-4 py-2 rounded-md"
+            className="bg-red-300 text-red-500 hover:text-red-100 font-semibold hover:bg-red-700 px-4 py-2 rounded-md"
           />
         </div>
       </div>
