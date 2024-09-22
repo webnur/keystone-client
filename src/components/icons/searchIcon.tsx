@@ -1,9 +1,20 @@
-const SearchIcon = () => {
+interface SvgIconProps {
+  width?: string;
+  height?: string;
+  className?: string;
+}
+
+const SearchIcon: React.FC<SvgIconProps> = ({
+  width = '24', 
+  height = '24', 
+  className = 'text-gray-600',
+}) => {
   return (
     <svg
+      width={width}
+      height={height}
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
       viewBox="0 0 24 24"
       fill="none"
     >
@@ -22,3 +33,5 @@ const SearchIcon = () => {
 };
 
 export default SearchIcon;
+
+

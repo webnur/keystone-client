@@ -7,20 +7,20 @@ interface SvgIconProps {
 }
 
 const Discover: React.FC<SvgIconProps> = ({
-  width = '24', // Default width
-  height = '24', // Default height
-  className = 'text-gray-600', // Default class for styling
+  width = '24', 
+  height = '24', 
+  className = 'text-gray-600',
 }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
       strokeWidth="2"
       width={width}
       height={height}
+      className={className}
     >
       <path
         strokeLinecap="round"
