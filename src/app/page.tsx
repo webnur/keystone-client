@@ -32,63 +32,70 @@ export default function Home() {
 
   const mockArticles = [
     {
-      title: "The Ultimate Law Degree Guide for International Students",
+      title: "The Ultimate Master's Degree Guide for International Students",
       date: "Dec 8, 2023",
-      image: "https://via.placeholder.com/400x300", // Placeholder image, replace with real image link
+      image: "https://i.ibb.co.com/MVNcjND/Master-s-Degree-Guide-rqljxp.jpg", // Placeholder image, replace with real image link
       description: "A guide for international students pursuing law degrees.",
     },
     {
-      title: "Law Dictionary: Law School Terms 101",
+      title: "Master's Scholarships Directory for International Students",
       date: "Dec 8, 2023",
-      image: "https://via.placeholder.com/400x300",
+      image:
+        "https://i.ibb.co.com/XZT42GW/Master-s-in-the-UK-Hero-image-1-naabh7.jpg",
       description: "Essential legal terms every law student should know.",
     },
     {
-      title: "What is the Value of an LLM Degree?",
+      title:
+        "The Ultimate Guide to Getting a Master's Degree in the UK (2024))",
       date: "Oct 20, 2023",
-      image: "https://via.placeholder.com/400x300",
+      image:
+        "https://i.ibb.co.com/F3N6yv4/The-Cheapest-Countries-to-Study-a-Master-s-In-Europe-vimenh.jpg",
       description: "Understanding the value of a Master of Laws degree.",
     },
     {
       title: "What is the Bar Exam?",
       date: "Oct 13, 2023",
-      image: "https://via.placeholder.com/400x300",
+      image: "https://i.ibb.co.com/Z6mdF2K/Hero-images-4-gpy7jt.jpg",
       description: "An overview of the Bar Exam and its significance.",
     },
   ];
 
   const mockLocations = [
     {
-      name: "China",
-      image: "https://via.placeholder.com/400x300", // Replace with real image URLs
+      name: "United Kingdom",
+      image: "https://i.ibb.co.com/txH8qMm/ezgif-3-c99bcf9998.jpg", // Replace with real image URLs
     },
     {
-      name: "Mexico",
-      image: "https://via.placeholder.com/400x300",
+      name: "USA",
+      image: "https://i.ibb.co.com/3FGPY8X/124334-shutterstock-244469683.jpg",
     },
     {
-      name: "Spain",
-      image: "https://via.placeholder.com/400x300",
+      name: "Canada",
+      image: "https://i.ibb.co.com/n34cmjB/110845-shutterstock-255015211.jpg",
     },
     {
-      name: "France",
-      image: "https://via.placeholder.com/400x300",
-    },
-    {
-      name: "New Zealand",
-      image: "https://via.placeholder.com/400x300",
-    },
-    {
-      name: "Malaysia",
-      image: "https://via.placeholder.com/400x300",
-    },
-    {
-      name: "Singapore",
-      image: "https://via.placeholder.com/400x300",
+      name: "Germany",
+      image: "https://i.ibb.co.com/bRC2BGf/62089-germany.jpg",
     },
     {
       name: "Italy",
-      image: "https://via.placeholder.com/400x300",
+      image: "https://i.ibb.co.com/MkrJN0s/ezgif-1-8476095b38.jpg",
+    },
+    {
+      name: "France",
+      image: "https://i.ibb.co.com/T4J8cfx/61809-france.jpg",
+    },
+    {
+      name: "Spain",
+      image: "https://i.ibb.co.com/X8nsYJc/110855-shutterstock-377505535.jpg",
+    },
+    {
+      name: "Belgium",
+      image: "https://i.ibb.co.com/2tdMcTC/61795-belgium.jpg",
+    },
+    {
+      name: "Japan",
+      image: "https://i.ibb.co.com/G243xM9/62094-japan.jpg",
     },
   ];
 
@@ -99,42 +106,46 @@ export default function Home() {
       institution: "Lloyd's Maritime Academy",
       location: "Online",
       country: "United Kingdom",
-      image: "https://via.placeholder.com/150x50",
+      image: "https://i.ibb.co.com/MVNcjND/Master-s-Degree-Guide-rqljxp.jpg",
     },
     {
       title: "LLM Technology and Artificial Intelligence",
       institution: "University of Bradford",
       location: "Bradford",
       country: "United Kingdom",
-      image: "https://via.placeholder.com/150x50",
+      image: "https://i.ibb.co.com/Z6mdF2K/Hero-images-4-gpy7jt.jpg",
     },
     {
       title: "LLM International Commercial Law",
       institution: "University College Dublin",
       location: "Dublin",
       country: "Ireland",
-      image: "https://via.placeholder.com/150x50",
+      image:
+        "https://i.ibb.co.com/F3N6yv4/The-Cheapest-Countries-to-Study-a-Master-s-In-Europe-vimenh.jpg",
     },
     {
       title: "LLM in Sustainability Law and Natural Resources",
       institution: "University of Lapland",
       location: "Rovaniemi",
       country: "Finland",
-      image: "https://via.placeholder.com/150x50",
+      image:
+        "https://i.ibb.co.com/XZT42GW/Master-s-in-the-UK-Hero-image-1-naabh7.jpg",
     },
     {
       title: "LLM in Human Rights Law",
       institution: "London School of Economics",
       location: "London",
       country: "United Kingdom",
-      image: "https://via.placeholder.com/150x50",
+      image:
+        "https://i.ibb.co.com/XZT42GW/Master-s-in-the-UK-Hero-image-1-naabh7.jpg",
     },
     {
       title: "LLM in Commercial Arbitration",
       institution: "Stockholm University",
       location: "Stockholm",
       country: "Sweden",
-      image: "https://via.placeholder.com/150x50",
+      image:
+        "https://i.ibb.co.com/XZT42GW/Master-s-in-the-UK-Hero-image-1-naabh7.jpg",
     },
   ];
 

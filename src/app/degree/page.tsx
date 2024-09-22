@@ -1,8 +1,11 @@
 "use client";
 import Banner from "@/components/common/Banner";
 import ProgramPageLayout from "@/components/common/MainLayout";
+import NewsAndArticles from "@/components/common/NewsAndArticle";
+import PopularFields from "@/components/common/PopularFields";
 import BaseText from "@/components/degree/BaseText";
 import React from "react";
+import { articlesData } from "../articles/article";
 
 const page = () => {
   const lawStudyFields = [
@@ -35,6 +38,8 @@ const page = () => {
       <BaseText content={masterDegreeContent} />
       {/* this will remove from here */}
       <ProgramPageLayout />
+      <PopularFields />
+      <NewsAndArticles articles={articlesData.slice(0, 4)} />
     </div>
   );
 };

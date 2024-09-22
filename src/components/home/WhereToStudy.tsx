@@ -1,4 +1,5 @@
-import React from 'react';
+import Image from "next/image";
+import React from "react";
 
 interface StudyLocation {
   name: string;
@@ -11,35 +12,50 @@ interface WhereToStudyProps {
 
 const WhereToStudy: React.FC<WhereToStudyProps> = ({ locations }) => {
   return (
-    <section className="py-16 bg-white text-center w-4/5 mx-auto">
+    <section className="py-16 bg-white text-center container mx-auto">
       <div className="flex justify-between items-center mb-8">
-        <h2 className="text-3xl font-bold">Where to study law</h2>
+        <h2 className="text-3xl font-bold">Where to study</h2>
         <button className="bg-red-100 text-red-500 px-4 py-2 rounded-lg hover:bg-red-200 transition duration-200">
           See all locations
         </button>
       </div>
 
       {/* Grid of Study Locations */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {locations.map((location, index) => (
-          <div key={index} className="relative overflow-hidden group">
+          <div
+            key={index}
+            className="relative overflow-hidden group border-b-4 border-red-500 transition-all duration-500"
+          >
             {/* Location Image */}
-            <img
-              src={location.image}
-              alt={location.name}
-              className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-            />
-
-            {/* Hover Overlay */}
-            <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <button className="bg-transparent border-2 border-white text-white px-6 py-2 rounded-lg">
-                Read more
-              </button>
+            <div className="w-[415px] h-[195px]">
+              <Image
+                src={location.image}
+                alt={location.name}
+                width={415}
+                height={100}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
             </div>
 
-            {/* Location Name */}
-            <div className="absolute bottom-0 left-0 w-full bg-white bg-opacity-90 py-2 text-lg font-semibold text-gray-800 border-t-2 border-red-500 text-center">
+            {/* Normal Condition Location Name */}
+            <div className="absolute bottom-0 left-0 w-full bg-white bg-opacity-90 py-2 text-lg font-semibold text-gray-800 text-center transition-opacity duration-500 group-hover:opacity-0">
               {location.name}
+            </div>
+
+            {/* Hover Overlay */}
+            <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              {/* Location Name on Hover (Left Center) */}
+              <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-xl font-semibold">
+                {location.name}
+              </div>
+
+              {/* Read More Button (Centered Bottom) */}
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                <button className="bg-white bg-opacity-10 border-2 border-white text-white px-6 py-2 rounded-lg">
+                  Read more
+                </button>
+              </div>
             </div>
           </div>
         ))}
