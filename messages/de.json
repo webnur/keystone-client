@@ -1,0 +1,10 @@
+{
+  "hopePageContent": {
+    "title": "frist  Page",
+    "description": "ata ammar protom pata"
+  },
+  "LocaleSwitcher": {
+    "label": "Sprache ändern",
+    "locale": "{locale, select, de {🇩🇪 Deutsch} en {🇺🇸 English} other {Unbekannt}}"
+  }
+}
