@@ -39,14 +39,7 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
-const lawStudyFields = [
-  "Administrative Law Studies",
-  "Business Law Studies",
-  "Civil Law Studies",
-  "International Law",
-  "Human Rights Law",
-  "Corporate Law",
-];
+
 export default async function RootLayout({
   children,
   params: { locale },
