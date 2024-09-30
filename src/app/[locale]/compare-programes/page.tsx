@@ -1,5 +1,5 @@
 import SubBanner from "@/components/common/SubBanner";
-import CustomIcon from "@/components/icons/CustomIcon";
+import CustomIcon from "@/components/icons/Compare";
 import React from "react";
 import { useTranslations } from "next-intl";
 import { unstable_setRequestLocale } from "next-intl/server";

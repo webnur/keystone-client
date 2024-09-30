@@ -1,6 +1,6 @@
 import Image from "next/image";
 import programImage from "../../../public/images/compare-program/compare-program.jpg";
-import CustomIcon from "../icons/CustomIcon";
+import CustomIcon from "../icons/Compare";
 
 export default function ComparePrograms() {
   return (

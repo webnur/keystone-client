@@ -17,24 +17,65 @@ export default function Home() {
     "Human Rights Law",
     "Corporate Law",
   ];
+
   const programsData = [
-    { name: "Legal Studies", icon: "⚖️" },
-    { name: "Business Law Studies", icon: "⚖️" },
-    { name: "International Law Studies", icon: "⚖️" },
-    { name: "Administrative Law Studies", icon: "⚖️" },
-    { name: "Jurisprudence", icon: "⚖️" },
-    { name: "National Law Studies", icon: "⚖️" },
-    { name: "Economic Law Studies", icon: "⚖️" },
-    { name: "Human Rights Law Studies", icon: "⚖️" },
-    { name: "Dispute Resolution Studies", icon: "⚖️" },
-    { name: "Civil Law Studies", icon: "⚖️" },
+    {
+      name: "Legal Studies",
+      icon: "⚖️",
+      fields: ["International Law", "Corporate Law"],
+    },
+    {
+      name: "Business Law Studies",
+      icon: "⚖️",
+      fields: ["Corporate Law", "Contract Law"],
+    },
+    {
+      name: "International Law Studies",
+      icon: "⚖️",
+      fields: ["Human Rights Law", "Civil Law"],
+    },
+    {
+      name: "Administrative Law Studies",
+      icon: "⚖️",
+      fields: ["Administrative Law", "Civil Law"],
+    },
+    {
+      name: "Jurisprudence",
+      icon: "⚖️",
+      fields: ["Criminal Law", "Civil Law"],
+    },
+    {
+      name: "National Law Studies",
+      icon: "⚖️",
+      fields: ["Constitutional Law", "National Security Law"],
+    },
+    {
+      name: "Economic Law Studies",
+      icon: "⚖️",
+      fields: ["Tax Law", "Trade Law"],
+    },
+    {
+      name: "Human Rights Law Studies",
+      icon: "⚖️",
+      fields: ["Human Rights Law", "International Law"],
+    },
+    {
+      name: "Dispute Resolution Studies",
+      icon: "⚖️",
+      fields: ["Arbitration", "Mediation"],
+    },
+    {
+      name: "Civil Law Studies",
+      icon: "⚖️",
+      fields: ["Civil Procedure", "Family Law"],
+    },
   ];
 
   const mockArticles = [
     {
       title: "The Ultimate Master's Degree Guide for International Students",
       date: "Dec 8, 2023",
-      image: "https://i.ibb.co.com/MVNcjND/Master-s-Degree-Guide-rqljxp.jpg", // Placeholder image, replace with real image link
+      image: "https://i.ibb.co.com/MVNcjND/Master-s-Degree-Guide-rqljxp.jpg",
       description: "A guide for international students pursuing law degrees.",
     },
     {
@@ -63,7 +104,7 @@ export default function Home() {
   const mockLocations = [
     {
       name: "United Kingdom",
-      image: "https://i.ibb.co.com/txH8qMm/ezgif-3-c99bcf9998.jpg", // Replace with real image URLs
+      image: "https://i.ibb.co.com/txH8qMm/ezgif-3-c99bcf9998.jpg",
     },
     {
       name: "USA",
@@ -99,7 +140,6 @@ export default function Home() {
     },
   ];
 
-  // Mock programs for the NewlyAddedPrograms component
   const mockPrograms = [
     {
       title: "Diploma in Maritime Law",
@@ -165,7 +205,6 @@ export default function Home() {
       <DiscoverProgram programs={programsData} />
       <WhereToStudy locations={mockLocations} />
       <ArticlesAndGuides articles={mockArticles} />
-
       <NewlyAddedPrograms programs={mockPrograms} />
     </div>
   );

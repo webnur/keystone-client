@@ -4,18 +4,12 @@ import { IoCloseSharp } from "react-icons/io5";
 import LocaleSwitcherSelect from "../LocaleSwitcherSelect";
 import { routing } from "@/i18n/routing";
 import { useLocale, useTranslations } from "next-intl";
-// import { XIcon } from "@heroicons/react/outline"; // Assuming you're using heroicons for the close icon
+
 
 interface LanguageModalProps {
   onClose: () => void;
 }
 
-// const languages = [
-//   "English (US)", "Deutsch", "English (South Africa)", "Español (Colombia)",
-//   "Français", "Melayu", "Polski", "Português (Portugal)", "Svenska", "Ελληνικά",
-//   "Bahasa Indonesia", "Dansk", "English (Canada)", "Español (España)", "Magyar",
-//   "Nederlands", "Suomi", "Русский", "Українська", "Português (Brasil)",
-// ];
 
 const LanguageModal: React.FC<LanguageModalProps> = ({ onClose }) => {
   const t = useTranslations("LocaleSwitcher");
@@ -44,20 +38,8 @@ const LanguageModal: React.FC<LanguageModalProps> = ({ onClose }) => {
         <div className="mb-4 h-64 overflow-y-auto">
           <p className="font-bold mb-2">All languages</p>
           <div className="grid grid-cols-3 gap-2">
-            {/* {languages.map((language, index) => (
-              <div
-                key={index}
-                className="hover:bg-gray-100 p-2 rounded cursor-pointer"
-              >
-                {language}
-              </div>
-            ))} */}
-            <LocaleSwitcherSelect defaultValue={locale} label={t("label")}>
-              {routing.locales.map((cur) => (
-                <option key={cur} value={cur}>
-                  {t("locale", { locale: cur })}
-                </option>
-              ))}
+            <LocaleSwitcherSelect>
+        
             </LocaleSwitcherSelect>
           </div>
         </div>

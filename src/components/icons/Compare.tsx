@@ -7,7 +7,7 @@ interface SvgIconProps {
   fill?: string;
 }
 
-const CustomIcon: React.FC<SvgIconProps> = ({
+const CompareIcon: React.FC<SvgIconProps> = ({
   width = "24", // Default width
   height = "24", // Default height
   className = "text-gray-600",
@@ -38,4 +38,4 @@ const CustomIcon: React.FC<SvgIconProps> = ({
   );
 };
 
-export default CustomIcon;
+export default CompareIcon;
