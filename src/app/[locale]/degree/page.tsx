@@ -1,4 +1,5 @@
 "use client";
+
 import Banner from "@/components/common/Banner";
 import ProgramPageLayout from "@/components/common/MainLayout";
 import NewsAndArticles from "@/components/common/NewsAndArticle";
@@ -16,6 +17,7 @@ const page = () => {
     "Human Rights Law",
     "Corporate Law",
   ];
+
   const masterDegreeContent = `
   A Master is an advanced degree conferred by universities around the world for completion of graduate study in a specific discipline. 
   Masters degree programs typically take one to two years to complete and further prepare graduates for a career in their chosen field. 
@@ -25,6 +27,7 @@ const page = () => {
   are available within particular disciplines. The variety of different Master programs can be overwhelming – don't let it stop you! 
   Start your search by looking at the most popular Master degrees listed below.
 `;
+
   return (
     <div>
       <Banner
@@ -36,8 +39,8 @@ const page = () => {
       />
 
       <BaseText content={masterDegreeContent} />
-      {/* this will remove from here */}
       <ProgramPageLayout />
+
       <PopularFields />
       <NewsAndArticles articles={articlesData.slice(0, 4)} />
     </div>

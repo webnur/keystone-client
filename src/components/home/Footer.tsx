@@ -44,21 +44,21 @@ const Footer = () => {
             <div className="flex flex-col items-center md:flex-row md:gap-4">
               <ul className="flex flex-col items-start md:flex-row md:gap-4">
                 <li className="!text-sm underline decoration-gray-500 my-2 hover:text-secondary-light md:text-lg">
-                  <Link href="#">About us</Link>
+                  <Link href="/privacy-policy">Privacy Policy</Link>
                 </li>
                 <li className="!text-sm underline decoration-gray-500 my-2 hover:text-secondary-light md:text-lg">
-                  <Link href="#">Promote your program</Link>
+                  <Link href="/terms-and-conditions">Terms and Conditions</Link>
                 </li>
                 <li className="!text-sm underline decoration-gray-500 my-2 hover:text-secondary-light md:text-lg">
-                  <Link href="#">Contact us</Link>
+                  <Link href="/about-us">About us</Link>
                 </li>
                 <li className="!text-sm underline decoration-gray-500 my-2 hover:text-secondary-light md:text-lg">
-                  <Link href="#">Privacy Policy</Link>
+                  <Link href="/promote-your-program">Promote your program</Link>
                 </li>
               </ul>
               <ul className="flex flex-col items-start md:flex-row md:gap-4">
                 <li className="text-sm text-white underline decoration-gray-500 my-4 first-of-type:ml-0 hover:text-secondary-light md:m-4">
-                  <Link href="#">Terms and Conditions</Link>
+                  <Link href="/contact-us">Contact us</Link>
                 </li>
               </ul>
             </div>

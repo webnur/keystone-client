@@ -1,0 +1,10 @@
+{
+  "hopePageContent": {
+    "title": "Home Page",
+    "description": "This is the hope page content"
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, de {🇩🇪 Deutsch} en {🇺🇸 English} other {Unknown}}"
+  }
+}

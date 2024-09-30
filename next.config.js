@@ -1,4 +1,9 @@
-module.exports = {
+/* eslint-disable @typescript-eslint/no-var-requires */
+
+const withNextIntl = require("next-intl/plugin")();
+
+/** @type {import('next').NextConfig} */
+const config = {
   images: {
     remotePatterns: [
       {
@@ -10,3 +15,5 @@ module.exports = {
     ],
   },
 };
+
+module.exports = withNextIntl(config);

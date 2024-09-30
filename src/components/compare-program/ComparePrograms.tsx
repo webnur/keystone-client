@@ -1,6 +1,6 @@
 import Image from "next/image";
 import programImage from "../../../public/images/compare-program/compare-program.jpg";
-import CustomIcon from "../icons/CustomIcon";
+import CustomIcon from "../icons/Compare";
 
 export default function ComparePrograms() {
   return (
@@ -15,13 +15,13 @@ export default function ComparePrograms() {
       />
 
       {/* Shadow Overlay */}
-      <div className="absolute inset-0 bg-black opacity-40 z-10"></div>
+      <div className="absolute inset-0 bg-black opacity-55 z-10"></div>
 
       {/* Content */}
       <div className="relative z-20 flex flex-col items-center justify-center h-full text-center text-white">
         {/* Icon */}
         <div className="mb-4">
-          <CustomIcon />
+          <CustomIcon width="50" height="50" fill="#fff" />
         </div>
 
         {/* Title */}
