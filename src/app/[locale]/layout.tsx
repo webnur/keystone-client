@@ -1,6 +1,4 @@
 import localFont from "next/font/local";
-import Navbar from "@/components/home/Navbar";
-import Footer from "@/components/home/Footer";
 import {
   getMessages,
   getTranslations,
@@ -53,10 +51,10 @@ export default async function RootLayout({
       >
         <NextIntlClientProvider messages={messages}>
           <div className="sticky top-0 z-50 w-full bg-white">
-            <Navbar />
+            {/* <Navbar /> */}
           </div>
           <main className="flex-grow">{children}</main>
-          <Footer />
+          {/* <Footer /> */}
         </NextIntlClientProvider>
       </body>
     </html>

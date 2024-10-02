@@ -7,6 +7,8 @@ import WhereToStudy from "@/components/home/WhereToStudy";
 import NewlyAddedPrograms from "@/components/home/NewlyAddedPrograms";
 import BannerWithDropdown from "@/components/common/Banner";
 import SubHeaderNav from "@/components/home/SubHeaderNav";
+import Navbar from "@/components/home/Navbar";
+import Footer from "@/components/home/Footer";
 
 export default function Home() {
   const lawStudyFields = [
@@ -193,6 +195,7 @@ export default function Home() {
 
   return (
     <div>
+      <Navbar />
       <SubHeaderNav />
       <BannerWithDropdown
         backgroundImage={
@@ -206,6 +209,7 @@ export default function Home() {
       <WhereToStudy locations={mockLocations} />
       <ArticlesAndGuides articles={mockArticles} />
       <NewlyAddedPrograms programs={mockPrograms} />
+      <Footer />
     </div>
   );
 }
