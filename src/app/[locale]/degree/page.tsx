@@ -1,7 +1,7 @@
 "use client";
 
 import Banner from "@/components/common/Banner";
-import ProgramPageLayout from "@/components/common/MainLayout";
+import ProgramPageLayout from "@/components/common/ProgramPageLayout";
 import NewsAndArticles from "@/components/common/NewsAndArticle";
 import PopularFields from "@/components/common/PopularFields";
 import BaseText from "@/components/degree/BaseText";
