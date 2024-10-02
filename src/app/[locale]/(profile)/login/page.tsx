@@ -1,5 +1,5 @@
 import Image from "next/image";
-import signInLogo from "../../../public/images/logo/sign-in-logo.jpg";
+import signInLogo from "../../../../../public/images/logo/sign-in-logo.jpg";
 
 export default function SignInPage() {
   return (
@@ -8,7 +8,7 @@ export default function SignInPage() {
         <div className="flex justify-center mb-8">
           {/* Add your logo here */}
           <Image
-            className="max-w-[120px] max-h-[60px]"
+            className="max-w-[60%] max-h-[30%]"
             src={signInLogo}
             alt="Keystone StudentHub"
             width={100}

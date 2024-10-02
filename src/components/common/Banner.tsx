@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+"use client";
+import React, { useState } from "react";
 
 interface BannerWithDropdownProps {
   backgroundImage: any;
@@ -11,7 +12,6 @@ const BannerWithDropdown: React.FC<BannerWithDropdownProps> = ({
   title,
   studyFields,
 }) => {
-
   const [selectedField, setSelectedField] = useState("");
   const [location, setLocation] = useState("");
   const clearSelection = () => {
@@ -20,23 +20,24 @@ const BannerWithDropdown: React.FC<BannerWithDropdownProps> = ({
 
   return (
     <div
-      className="relative bg-cover bg-center h-[400px] flex items-center justify-center"
+      className="relative bg-cover bg-center flex items-center justify-center py-[4rem]"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
-      <div className="bg-foreground bg-opacity-30 w-full h-full absolute top-0 left-0"></div>
+      <div className="bg-foreground bg-opacity-70 w-full h-full absolute top-0 left-0"></div>
 
       <div className="relative z-10 w-full max-w-4xl mx-auto text-center">
-        <h1 className="text-white text-4xl font-bold mb-4">{title}</h1>
+        <h1 className="text-white text-[2.5rem] font-bold mb-4">{title}</h1>
 
         <div className="flex justify-center items-center space-x-2">
-      
-          <div className="relative w-4/6">
+          <div className="relative w-4/6 my-6">
             <select
               value={selectedField}
               onChange={(e) => setSelectedField(e.target.value)}
               className="appearance-none px-4 py-3 rounded-lg w-full outline-none bg-background border border-gray-300 pr-10"
             >
-              <option value="" disabled>Select a field of study</option>
+              <option value="" disabled>
+                Select a field of study
+              </option>
               {studyFields.map((field, index) => (
                 <option key={index} value={field}>
                   {field}
@@ -61,7 +62,7 @@ const BannerWithDropdown: React.FC<BannerWithDropdownProps> = ({
             {/* Cross button to clear selection, visible only when a field is selected */}
             {selectedField && (
               <button
-                className="absolute inset-y-0 right-8 flex items-center px-2 text-gray-500"
+                className="absolute inset-y-0 right-8 flex items-center px-5 py-3 text-gray-500"
                 onClick={clearSelection}
               >
                 <svg
@@ -94,6 +95,9 @@ const BannerWithDropdown: React.FC<BannerWithDropdownProps> = ({
           </button>
         </div>
 
+        <div className="py-5">
+          <p className="text-white">Or</p>
+        </div>
         <div className="mt-4">
           <button className="bg-transparent border-2 border-white text-white px-6 py-2 rounded-lg">
             Browse Fields of Study

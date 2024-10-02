@@ -1,16 +1,13 @@
-"use client";
-
-import EducationJourney from "@/components/home/EducationJourney";
-import DiscoverProgram from "@/components/home/DiscoverProgram";
-import ArticlesAndGuides from "@/components/home/ArticlesAndGuides";
-import WhereToStudy from "@/components/home/WhereToStudy";
-import NewlyAddedPrograms from "@/components/home/NewlyAddedPrograms";
 import BannerWithDropdown from "@/components/common/Banner";
+import ArticlesAndGuides from "@/components/home/ArticlesAndGuides";
+import DiscoverProgram from "@/components/home/DiscoverProgram";
+import EducationJourney from "@/components/home/EducationJourney";
+import NewlyAddedPrograms from "@/components/home/NewlyAddedPrograms";
 import SubHeaderNav from "@/components/home/SubHeaderNav";
-import Navbar from "@/components/home/Navbar";
-import Footer from "@/components/home/Footer";
+import WhereToStudy from "@/components/home/WhereToStudy";
+import React from "react";
 
-export default function Home() {
+const BachelorPage = () => {
   const lawStudyFields = [
     "Administrative Law Studies",
     "Business Law Studies",
@@ -19,7 +16,6 @@ export default function Home() {
     "Human Rights Law",
     "Corporate Law",
   ];
-
   const programsData = [
     {
       name: "Legal Studies",
@@ -73,36 +69,6 @@ export default function Home() {
     },
   ];
 
-  const mockArticles = [
-    {
-      title: "The Ultimate Master's Degree Guide for International Students",
-      date: "Dec 8, 2023",
-      image: "https://i.ibb.co.com/MVNcjND/Master-s-Degree-Guide-rqljxp.jpg",
-      description: "A guide for international students pursuing law degrees.",
-    },
-    {
-      title: "Master's Scholarships Directory for International Students",
-      date: "Dec 8, 2023",
-      image:
-        "https://i.ibb.co.com/XZT42GW/Master-s-in-the-UK-Hero-image-1-naabh7.jpg",
-      description: "Essential legal terms every law student should know.",
-    },
-    {
-      title:
-        "The Ultimate Guide to Getting a Master's Degree in the UK (2024))",
-      date: "Oct 20, 2023",
-      image:
-        "https://i.ibb.co.com/F3N6yv4/The-Cheapest-Countries-to-Study-a-Master-s-In-Europe-vimenh.jpg",
-      description: "Understanding the value of a Master of Laws degree.",
-    },
-    {
-      title: "What is the Bar Exam?",
-      date: "Oct 13, 2023",
-      image: "https://i.ibb.co.com/Z6mdF2K/Hero-images-4-gpy7jt.jpg",
-      description: "An overview of the Bar Exam and its significance.",
-    },
-  ];
-
   const mockLocations = [
     {
       name: "United Kingdom",
@@ -142,6 +108,35 @@ export default function Home() {
     },
   ];
 
+  const mockArticles = [
+    {
+      title: "The Ultimate Master's Degree Guide for International Students",
+      date: "Dec 8, 2023",
+      image: "https://i.ibb.co.com/MVNcjND/Master-s-Degree-Guide-rqljxp.jpg",
+      description: "A guide for international students pursuing law degrees.",
+    },
+    {
+      title: "Master's Scholarships Directory for International Students",
+      date: "Dec 8, 2023",
+      image:
+        "https://i.ibb.co.com/XZT42GW/Master-s-in-the-UK-Hero-image-1-naabh7.jpg",
+      description: "Essential legal terms every law student should know.",
+    },
+    {
+      title:
+        "The Ultimate Guide to Getting a Master's Degree in the UK (2024))",
+      date: "Oct 20, 2023",
+      image:
+        "https://i.ibb.co.com/F3N6yv4/The-Cheapest-Countries-to-Study-a-Master-s-In-Europe-vimenh.jpg",
+      description: "Understanding the value of a Master of Laws degree.",
+    },
+    {
+      title: "What is the Bar Exam?",
+      date: "Oct 13, 2023",
+      image: "https://i.ibb.co.com/Z6mdF2K/Hero-images-4-gpy7jt.jpg",
+      description: "An overview of the Bar Exam and its significance.",
+    },
+  ];
   const mockPrograms = [
     {
       title: "Diploma in Maritime Law",
@@ -195,21 +190,24 @@ export default function Home() {
 
   return (
     <div>
-      <Navbar />
       <SubHeaderNav />
       <BannerWithDropdown
         backgroundImage={
-          "https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?auto=compress&cs=tinysrgb&w=800"
+          "https://i.ibb.co.com/z5JrWcX/126282-photo-1533854775446-95c4609da544.jpg"
         }
-        title="Browse thousands of graduate degrees from around the world."
+        title="Browse thousands of bachelor degrees (undergraduate) from around the world."
         studyFields={lawStudyFields}
       />
+
       <EducationJourney />
+
       <DiscoverProgram programs={programsData} />
       <WhereToStudy locations={mockLocations} />
+
       <ArticlesAndGuides articles={mockArticles} />
       <NewlyAddedPrograms programs={mockPrograms} />
-      <Footer />
     </div>
   );
-}
+};
+
+export default BachelorPage;

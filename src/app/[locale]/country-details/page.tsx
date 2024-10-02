@@ -11,10 +11,13 @@ import ChangeCurrency from "./ChangeCurrency";
 import AboutCountry from "./AboutCountry";
 import VisaRequirements from "./VisaRequirements";
 import NewsAndArticles from "@/components/common/NewsAndArticle";
-import { articlesData } from "../articles/article";
+import { articlesData } from "../(main)/articles/article";
+// import { articlesData } from "../articles/article";
 
 export default function StudyPage() {
-  const [activeSection, setActiveSection] = useState<string>("Study in United Kingdom");
+  const [activeSection, setActiveSection] = useState<string>(
+    "Study in United Kingdom"
+  );
 
   useEffect(() => {
     const sections = document.querySelectorAll("section[id]");
@@ -43,9 +46,8 @@ export default function StudyPage() {
       <div className="flex-1">
         <SubBanner
           title="Study Master in United Kingdom 2024"
-          backgroundImage="url('/path-to-background-image')"
+          backgroundImage="https://i.ibb.co.com/MkrJN0s/ezgif-1-8476095b38.jpg"
         />
-      
 
         <div className="w-[90%] mx-auto flex mt-8">
           <div className="w-1/4">
@@ -74,11 +76,9 @@ export default function StudyPage() {
               <Programs />
             </section>
           </div>
-
         </div>
       </div>
       <NewsAndArticles articles={articlesData.slice(0, 4)} />
-
     </div>
   );
 }

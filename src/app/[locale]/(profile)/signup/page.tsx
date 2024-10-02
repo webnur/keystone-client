@@ -1,11 +1,11 @@
 import Image from "next/image";
 
-import singUpLogo from "../../../public/images/logo/sign-in-logo.jpg";
+import singUpLogo from "../../../../../public/images/logo/sign-in-logo.jpg";
 import Link from "next/link";
 
 export default function SignUpPage() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 py-6">
       <div className="bg-[#293a48] p-8 rounded-lg shadow-lg w-96">
         <div className="flex justify-center mb-8">
           {/* Add your logo here */}
