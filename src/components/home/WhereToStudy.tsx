@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 interface StudyLocation {
@@ -52,9 +53,11 @@ const WhereToStudy: React.FC<WhereToStudyProps> = ({ locations }) => {
 
               {/* Read More Button (Centered Bottom) */}
               <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-                <button className="bg-white bg-opacity-10 border-2 border-white text-white px-6 py-2 rounded-lg">
+<Link href="/country-details">
+<button className="bg-white bg-opacity-10 border-2 border-white text-white px-6 py-2 rounded-lg">
                   Read more
                 </button>
+</Link>
               </div>
             </div>
           </div>
