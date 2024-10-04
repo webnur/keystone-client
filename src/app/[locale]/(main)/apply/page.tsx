@@ -35,9 +35,7 @@ export default function Home() {
           </div>
         </div>
         {/* section 2 */}
-        <Head>
-          <title>USA Graduate School Scholarships</title>
-        </Head>
+
         <div className=" bg-white py-10">
           <div className="container mx-auto  p-8  rounded-lg">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
@@ -76,9 +74,7 @@ export default function Home() {
         </div>
 
         {/* section 3 */}
-        <Head>
-          <title>USA Graduate School Scholarships - Eligibility</title>
-        </Head>
+
         <div className=" bg-white py-5">
           <div className="container mx-auto p-8  rounded-lg">
             <h2 className="text-2xl font-bold text-gray-800 mb-4">
@@ -110,9 +106,7 @@ export default function Home() {
         </div>
 
         {/* section 4 */}
-        <Head>
-          <title>USA Graduate School Scholarships - Ideal Candidate</title>
-        </Head>
+
         <div className=" bg-white ">
           <div className="container mx-auto  p-8  rounded-lg">
             <h2 className="text-2xl font-bold text-gray-800 mb-4">
@@ -190,9 +184,7 @@ export default function Home() {
           </div>
         </div>
         {/* section 6 */}
-        <Head>
-          <title>USA Graduate School Scholarships - Application Process</title>
-        </Head>
+
         <div className=" bg-white py-4">
           <div className="container mx-auto p-8  rounded-lg">
             {/* Application Consists Of Section */}
@@ -283,9 +275,7 @@ export default function Home() {
         </div>
 
         {/* section 8 */}
-        <Head>
-          <title>USA Graduate School Scholarships - Winner Information</title>
-        </Head>
+
         <div className=" bg-white">
           <div className="container mx-auto  p-8  rounded-lg">
             {/* If Selected as Winner Section */}
@@ -606,9 +596,11 @@ export default function Home() {
                     </span>
                   </label>
                 </div>
-                <button className="w-full bg-pink-600 text-white font-bold py-3 rounded-lg">
-                  Scholarship application - Step 1
-                </button>
+                <Link href="/scholarshipForm">
+                  <button className="w-full bg-pink-600 text-white font-bold py-3 rounded-lg">
+                    Scholarship application - Step 1
+                  </button>
+                </Link>
               </form>
             </div>
 

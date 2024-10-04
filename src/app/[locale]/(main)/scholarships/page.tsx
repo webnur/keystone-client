@@ -11,7 +11,7 @@ const scholarshipsData = [
     deadline: "22 September 2024",
     imageUrl: "https://i.ibb.co.com/jJRpsgM/4-ahhsql.png", // Replace with an actual image URL
     buttonText: "Apply here",
-    buttonLink: "https://example.com/apply",
+    buttonLink: "/apply",
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const scholarshipsData = [
     deadline: "15 October 2024",
     imageUrl: "https://i.ibb.co.com/jJRpsgM/4-ahhsql.png", // Replace with an actual image URL
     buttonText: "Learn More",
-    buttonLink: "https://example.com/uk-scholarship",
+    buttonLink: "/apply",
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const scholarshipsData = [
     deadline: "1 November 2024",
     imageUrl: "https://i.ibb.co.com/jJRpsgM/4-ahhsql.png", // Replace with an actual image URL
     buttonText: "Apply now",
-    buttonLink: "https://example.com/canada-scholarship",
+    buttonLink: "/apply",
   },
 ];
 const ScholarShipPage = () => {
