@@ -2,54 +2,12 @@
 import MessagesAndSavedPrograms from "@/components/user/MessagesAndSavedPrograms";
 import UserFooter from "@/components/user/UserFooter";
 import UserSearchBar from "@/components/user/UserSearchBar";
-import Link from "next/link";
+
 import React from "react";
 
 const StudentHub: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Top Navigation */}
-      <div className="bg-gray-800">
-        <nav className=" container mx-auto text-white p-4 flex justify-between items-center">
-          <div className="flex space-x-4">
-            <Link href="#" className="text-pink-500">
-              Dashboard
-            </Link>
-            <Link href="#" className="hover:text-gray-300">
-              Browse Programs
-            </Link>
-            <div className="relative">
-              <Link href="#" className="hover:text-gray-300">
-                Messages
-              </Link>
-              <span className="absolute -top-2 -right-2 bg-red-500 rounded-full px-2 text-xs">
-                1
-              </span>
-            </div>
-            <div className="relative">
-              <Link href="#" className="hover:text-gray-300">
-                Saved Programs
-              </Link>
-              <span className="absolute -top-2 -right-2 bg-red-500 rounded-full px-2 text-xs">
-                1
-              </span>
-            </div>
-            <Link href="#" className="hover:text-gray-300">
-              Compare Programs
-            </Link>
-            <Link href="#" className="hover:text-gray-300">
-              Program Recommendations
-            </Link>
-            <Link href="#" className="hover:text-gray-300">
-              Student Resources
-            </Link>
-          </div>
-          <button className="bg-pink-500 text-white px-4 py-2 rounded">
-            My Account
-          </button>
-        </nav>
-      </div>
-
       {/* Welcome Section */}
       <div className="flex flex-col items-center justify-center mt-12 mb-6">
         <div className="w-24 h-24 bg-red-200 rounded-full border-4 border-red-500"></div>
