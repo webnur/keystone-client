@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 import {
   FaHome,
@@ -14,55 +15,55 @@ const Header: React.FC = () => {
     <header className="bg-gray-900 py-4 shadow-md">
       <div className="container mx-auto flex justify-between items-center">
         <nav className="flex items-center space-x-8 text-white text-sm">
-          <a
+          <Link
             href="/dashboard"
             className="flex items-center hover:text-red-500 transition"
           >
             <FaHome className="mr-2" /> Dashboard
-          </a>
-          <a
+          </Link>
+          <Link
             href="/browse-programs"
             className="flex items-center hover:text-red-500 transition"
           >
             <FaBook className="mr-2" /> Browse Programs
-          </a>
-          <a
+          </Link>
+          <Link
             href="/messages"
             className="flex items-center hover:text-red-500 transition"
           >
             <FaEnvelope className="mr-2" /> Messages
-          </a>
-          <a
+          </Link>
+          <Link
             href="/bookmarks"
             className="flex items-center hover:text-red-500 transition"
           >
             <FaHeart className="mr-2" /> Saved Programs
-          </a>
-          <a
+          </Link>
+          <Link
             href="/compare"
             className="flex items-center hover:text-red-500 transition"
           >
             <FaChartBar className="mr-2" /> Compare Programs
-          </a>
-          <a
+          </Link>
+          <Link
             href="/resources"
             className="flex items-center hover:text-red-500 transition"
           >
             <FaLightbulb className="mr-2" /> Program Recommendations
-          </a>
-          <a
-            href="/student-resources"
+          </Link>
+          <Link
+            href="/resources"
             className="flex items-center hover:text-red-500 transition"
           >
             <FaBook className="mr-2" /> Student Resources
-          </a>
+          </Link>
         </nav>
-        <a
+        <Link
           href="/my-account"
           className="bg-red-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-red-600 transition"
         >
           My Account
-        </a>
+        </Link>
       </div>
     </header>
   );
