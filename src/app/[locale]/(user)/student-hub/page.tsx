@@ -37,7 +37,7 @@ const StudentHub: React.FC = () => {
             <Link href="#" className="hover:text-gray-300">
               Compare Programs
             </Link>
-            <Link href="#" className="hover:text-gray-300">
+            <Link href="/program-recommendations" className="hover:text-gray-300">
               Program Recommendations
             </Link>
             <Link href="#" className="hover:text-gray-300">
