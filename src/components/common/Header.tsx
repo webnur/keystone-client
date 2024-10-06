@@ -16,7 +16,7 @@ const Header: React.FC = () => {
       <div className="container mx-auto flex justify-between items-center">
         <nav className="flex items-center space-x-8 text-white text-sm">
           <Link
-            href="/dashboard"
+            href="/student-hub"
             className="flex items-center hover:text-red-500 transition"
           >
             <FaHome className="mr-2" /> Dashboard
@@ -46,7 +46,7 @@ const Header: React.FC = () => {
             <FaChartBar className="mr-2" /> Compare Programs
           </Link>
           <Link
-            href="/resources"
+            href="/program-recommendations"
             className="flex items-center hover:text-red-500 transition"
           >
             <FaLightbulb className="mr-2" /> Program Recommendations

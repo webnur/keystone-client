@@ -1,6 +1,5 @@
 // components/StudentHub.tsx
 import MessagesAndSavedPrograms from "@/components/user/MessagesAndSavedPrograms";
-import UserFooter from "@/components/user/UserFooter";
 import UserSearchBar from "@/components/user/UserSearchBar";
 
 import React from "react";
@@ -27,7 +26,6 @@ const StudentHub: React.FC = () => {
       </div>
       {/* MessagesAndSavedPrograms */}
       <MessagesAndSavedPrograms />
-      <UserFooter />
     </div>
   );
 };
