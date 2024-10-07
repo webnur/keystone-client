@@ -5,9 +5,9 @@ interface SvgIconProps {
 }
 
 const SearchIcon: React.FC<SvgIconProps> = ({
-  width = '24', 
-  height = '24', 
-  className = 'text-gray-600',
+  width = "24",
+  height = "24",
+  className = "text-gray-600",
 }) => {
   return (
     <svg
@@ -25,7 +25,7 @@ const SearchIcon: React.FC<SvgIconProps> = ({
           stroke="#000000"
           stroke-width="2"
           stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinejoin="round"
         />
       </g>
     </svg>
@@ -33,5 +33,3 @@ const SearchIcon: React.FC<SvgIconProps> = ({
 };
 
 export default SearchIcon;
-
-
