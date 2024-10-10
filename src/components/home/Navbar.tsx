@@ -36,11 +36,17 @@ const Navbar = () => {
       </div>
 
       <div className="flex items-center gap-3">
-        <div className="relative cursor-pointer" onClick={() => setShowLanguageModal(true)}>
+        <div
+          className="relative cursor-pointer"
+          onClick={() => setShowLanguageModal(true)}
+        >
           <GlobalIcon className="w-4 h-4" />
         </div>
 
-        <div className="relative cursor-pointer" onClick={() => setShowSearchModal(true)}>
+        <div
+          className="relative cursor-pointer"
+          onClick={() => setShowSearchModal(true)}
+        >
           <SearchIcon className="w-4 h-4" />
         </div>
 
@@ -56,30 +62,38 @@ const Navbar = () => {
         </div>
 
         <div className="relative cursor-pointer">
-  <Link href="/compare-programes">
-  <div className="relative cursor-pointer">
-            <CustomIcon className="w-4 h-4" />
-            <span className="absolute bottom-2 left-3 text-[12px] text-red-600 font-semibold">
-              {customCount}
-            </span>
-          </div>
-  </Link>
+          <Link href="/compare-programes">
+            <div className="relative cursor-pointer">
+              <CustomIcon className="w-4 h-4" />
+              <span className="absolute bottom-2 left-3 text-[12px] text-red-600 font-semibold">
+                {customCount}
+              </span>
+            </div>
+          </Link>
         </div>
 
         <div className="flex gap-2 ml-4">
-          <Button
-            text="Sign in"
-            className="bg-red-100 text-red-500 hover:text-red-100 font-semibold hover:bg-red-700 border-none px-3 py-1.5 rounded-md"
-          />
-          <Button
-            text="Register"
-            className="bg-red-100 text-red-500 hover:text-red-100 font-semibold hover:bg-red-700 px-3 py-1.5 rounded-md"
-          />
+          <Link href="/login">
+            <Button
+              text="Sign in"
+              className="bg-red-100 text-red-500 hover:text-red-100 font-semibold hover:bg-red-700 border-none px-3 py-1.5 rounded-md"
+            />
+          </Link>
+          <Link href="/signup">
+            <Button
+              text="Register"
+              className="bg-red-100 text-red-500 hover:text-red-100 font-semibold hover:bg-red-700 px-3 py-1.5 rounded-md"
+            />
+          </Link>
         </div>
       </div>
 
-      {showLanguageModal && <LanguageModal onClose={() => setShowLanguageModal(false)} />}
-      {showSearchModal && <SearchModal onClose={() => setShowSearchModal(false)} />}
+      {showLanguageModal && (
+        <LanguageModal onClose={() => setShowLanguageModal(false)} />
+      )}
+      {showSearchModal && (
+        <SearchModal onClose={() => setShowSearchModal(false)} />
+      )}
     </div>
   );
 };

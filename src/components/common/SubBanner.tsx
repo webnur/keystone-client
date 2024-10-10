@@ -16,7 +16,7 @@ const SubBanner: React.FC<BannerProps> = ({
   backgroundImage,
   icon,
   title = "Default Title", // Default title if none is provided
-  slogan = "Default Slogan", // Default slogan if none is provided
+  slogan = "", // Default slogan if none is provided
   className = "",
   titleClass = "",
   slogalClass = "",
