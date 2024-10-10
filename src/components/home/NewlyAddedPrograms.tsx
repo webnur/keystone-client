@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import LocationIcon from "../icons/Location";
 import Link from "next/link";
+import Image from "next/image";
 
 interface Program {
   title: string;
@@ -56,10 +57,12 @@ const NewlyAddedPrograms: React.FC<NewlyAddedProgramsProps> = ({
                 className="border rounded-lg shadow-md p-4 flex flex-col justify-between hover:shadow-lg transition-shadow duration-300"
               >
                 {/* Program Institution Logo */}
-                <img
+                <Image
                   src={program.image}
                   alt={program.institution}
-                  className="flex justify-start w-3/5 object-contain mb-4"
+                  className="flex justify-start w-[180px] h-32 object-contain mb-4"
+                  width={180}
+                  height={128}
                 />
                 {/* Program Details */}
                 <h3 className="text-lg font-semibold text-black text-left ">
