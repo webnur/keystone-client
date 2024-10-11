@@ -14,15 +14,17 @@ interface WhereToStudyProps {
 const WhereToStudy: React.FC<WhereToStudyProps> = ({ locations }) => {
   return (
     <section className="py-16 bg-white text-center container mx-auto">
-      <div className="flex justify-between items-center mb-8">
-        <h2 className="text-3xl font-bold">Where to study</h2>
-        <button className="bg-red-100 text-red-500 px-4 py-2 rounded-lg hover:bg-red-200 transition duration-200">
+      <div className="flex flex-col md:flex-row justify-between items-center mb-8 space-y-4 md:space-y-0 md:space-x-4">
+        <h2 className="text-2xl md:text-3xl font-bold text-center md:text-left">
+          Where to study
+        </h2>
+        <button className="bg-red-100 text-red-500 px-4 py-2 rounded-lg hover:bg-red-200 transition duration-200 whitespace-nowrap">
           See all locations
         </button>
       </div>
 
       {/* Grid of Study Locations */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-2">
         {locations.map((location, index) => (
           <div
             key={index}
@@ -53,11 +55,11 @@ const WhereToStudy: React.FC<WhereToStudyProps> = ({ locations }) => {
 
               {/* Read More Button (Centered Bottom) */}
               <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-<Link href="/country-details">
-<button className="bg-white bg-opacity-10 border-2 border-white text-white px-6 py-2 rounded-lg">
-                  Read more
-                </button>
-</Link>
+                <Link href="/country-details">
+                  <button className="bg-white bg-opacity-10 border-2 border-white text-white px-6 py-2 rounded-lg">
+                    Read more
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

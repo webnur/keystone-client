@@ -30,9 +30,9 @@ const MessagesPage: FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
 
   return (
-    <div className="min-h-screen bg-gray-100 flex">
+    <div className="min-h-screen bg-gray-100 flex flex-col md:flex-row">
       {/* Left Sidebar: Messages Section */}
-      <div className="w-1/4 bg-white p-6 shadow-lg">
+      <div className="w-full md:w-1/4 bg-white p-6 shadow-lg">
         <h2 className="text-xl font-semibold mb-4">Messages</h2>
 
         {/* Search Component */}
@@ -40,7 +40,7 @@ const MessagesPage: FC = () => {
 
         {/* No messages content */}
         <p className="text-gray-600 mb-4">
-          You dont have any messages yet. Click on the Browse Programs button
+          You don't have any messages yet. Click on the Browse Programs button
           below to contact your first school and get the conversation started!
         </p>
 

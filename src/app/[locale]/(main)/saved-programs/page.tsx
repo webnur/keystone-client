@@ -1,7 +1,7 @@
-"use client"
-import React, { useState } from 'react';
-import { AiOutlineHeart } from 'react-icons/ai';
-import SubBanner from '@/components/common/SubBanner';
+"use client";
+import React, { useState } from "react";
+import { AiOutlineHeart } from "react-icons/ai";
+import SubBanner from "@/components/common/SubBanner";
 
 const SavedPrograms = () => {
   // Mock saved programs data (you can replace this with actual data)
@@ -12,20 +12,23 @@ const SavedPrograms = () => {
       {/* Reusable Banner */}
       <SubBanner
         // backgroundImage="https://example.com/banner-image.jpg" // replace with actual image
-        
+
         icon={<AiOutlineHeart />} // Use the heart icon
         title="Saved programs"
         slogan="Create a StudentHub account or sign in to save this program list."
-        className='bg-gray-500'
+        className="bg-gray-500"
       />
 
       {/* Display saved programs or message if none */}
-      <section className="py-16 text-center">
+      <section className="py-16 text-center p-2">
         {savedPrograms.length === 0 ? (
           <div className="text-gray-700">
-            <p className="text-lg">You have not yet added any programs to your saved programs.</p>
+            <p className="text-lg">
+              You have not yet added any programs to your saved programs.
+            </p>
             <p className="mt-2 mb-8">
-              Please have a look at our program listings and click the heart icon to save them to this list.
+              Please have a look at our program listings and click the heart
+              icon to save them to this list.
             </p>
             <button className="bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600 transition-colors duration-300">
               Find programs

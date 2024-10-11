@@ -42,15 +42,15 @@ const BookMarksPage = () => {
     <div className="min-h-screen bg-gray-100">
       {/* Page Content */}
       <div className="flex flex-col items-center py-10">
-        <h2 className="text-2xl font-semibold mb-6">
+        <h2 className="text-2xl font-semibold mb-6 text-center px-4">
           Fields of study that may interest you:
         </h2>
-        <div className="max-w-6xl mx-auto flex flex-wrap gap-4 justify-center">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center px-4">
           {fieldsOfStudy.map((field, index) => (
             <Link
               key={index}
               href={field.link}
-              className="bg-gray-200 text-gray-800 py-2 px-4 rounded-lg shadow-md hover:bg-gray-300 transition duration-300"
+              className="bg-gray-200 text-gray-800 py-2 px-4 rounded-lg shadow-md hover:bg-gray-300 transition duration-300 text-center w-full"
             >
               {field.name}
             </Link>

@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import Image from "next/image";
+import React, { useState } from "react";
 
 const Gallery = () => {
   const images = [
-    "https://via.placeholder.com/800x400?text=Image+1",
-    "https://via.placeholder.com/800x400?text=Image+2",
-    "https://via.placeholder.com/800x400?text=Image+3",
-    "https://via.placeholder.com/800x400?text=Image+4",
+    "https://i.ibb.co.com/qrdZqM0/240869-St-Louis-Campus-MSMSremote-inperson.jpg",
+    "https://i.ibb.co.com/6wMKLJD/240870-Ponce-90-v1a-00-01-26-20-Still0181.jpg",
+    "https://i.ibb.co.com/hmXHfTf/240873-Ponce-90-v1a-00-00-56-12-Still0251.jpg",
+    "https://i.ibb.co.com/K2DDCkz/240874-Ponce-30-v2a-00-00-20-14-Still009.jpg",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -22,7 +23,7 @@ const Gallery = () => {
     );
   };
 
-  const goToSlide = (index:number) => {
+  const goToSlide = (index: number) => {
     setCurrentIndex(index);
   };
 
@@ -32,10 +33,12 @@ const Gallery = () => {
       <div className="relative">
         {/* Main Image Display */}
         <div className="relative w-full h-96 overflow-hidden">
-          <img
+          <Image
             src={images[currentIndex]}
             alt={`Gallery Image ${currentIndex + 1}`}
             className="object-cover w-full h-full"
+            width={800}
+            height={350}
           />
         </div>
 
@@ -60,9 +63,15 @@ const Gallery = () => {
           <button
             key={idx}
             onClick={() => goToSlide(idx)}
-            className={`border ${currentIndex === idx ? 'border-red-500' : 'border-gray-300'}`}
+            className={`border ${
+              currentIndex === idx ? "border-red-500" : "border-gray-300"
+            }`}
           >
-            <img src={img} alt={`Thumbnail ${idx + 1}`} className="w-16 h-16 object-cover" />
+            <img
+              src={img}
+              alt={`Thumbnail ${idx + 1}`}
+              className="w-16 h-16 object-cover"
+            />
           </button>
         ))}
       </div>

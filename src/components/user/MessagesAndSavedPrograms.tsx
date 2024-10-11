@@ -2,7 +2,7 @@ import React from "react";
 
 const MessagesAndSavedPrograms = () => {
   return (
-    <div className="container mx-auto min-h-screen bg-gray-100 flex items-start justify-center py-10">
+    <div className="container mx-auto  bg-gray-100 flex items-start justify-center py-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
         {/* Messages Section */}
         <div className="bg-white shadow-md rounded-lg p-6">

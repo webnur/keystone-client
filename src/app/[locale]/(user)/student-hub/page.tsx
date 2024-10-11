@@ -6,7 +6,7 @@ import React from "react";
 
 const StudentHub: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className=" bg-gray-100 px-2">
       {/* Welcome Section */}
       <div className="flex flex-col items-center justify-center mt-12 mb-6">
         <div className="w-24 h-24 bg-red-200 rounded-full border-4 border-red-500"></div>

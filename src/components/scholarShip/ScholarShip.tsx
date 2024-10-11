@@ -18,7 +18,7 @@ interface ScholarshipCardProps {
 
 const ScholarShipsCard = ({ scholarships }: ScholarshipCardProps) => {
   return (
-    <>
+    <div className="px-3">
       {scholarships.map((scholarship) => (
         <div
           key={scholarship.id}
@@ -64,7 +64,7 @@ const ScholarShipsCard = ({ scholarships }: ScholarshipCardProps) => {
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 

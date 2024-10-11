@@ -8,7 +8,7 @@ const EducationJourney = () => {
         Start your education journey here
       </h2>
 
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8">
         {/* Discover */}
         <div className="flex flex-col items-center z-10 w-full">
           <div className="rounded-full p-6 border-2 border-gray-300 bg-white">

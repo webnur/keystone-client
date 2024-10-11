@@ -21,24 +21,29 @@ const ScholarshipCard = ({ scholarships }: ScholarshipProps) => {
       {scholarships.map((scholarship) => (
         <div
           key={scholarship.id}
-          className="container mx-auto p-4 bg-white shadow-md rounded-lg flex items-center space-x-4 my-10 py-5 "
+          className="container mx-auto p-4 bg-white shadow-md rounded-lg flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4 my-10 py-5"
         >
-          <div className="flex-shrink-0">
+          {/* Image Section */}
+          <div className="flex-shrink-0 w-full md:w-auto">
             <Image
-              className="w-[350px] h-[200px] object-cover rounded-md"
+              className="w-full md:w-[350px] h-[200px] object-cover rounded-md"
               src={scholarship.imageUrl}
               alt={scholarship.title}
               width={350}
               height={220}
             />
           </div>
-          <div className="flex-1">
+
+          {/* Text Section */}
+          <div className="flex-1 text-center md:text-left">
             <h2 className="text-xl font-semibold text-gray-800">
               {scholarship.title}
             </h2>
             <p className="text-gray-600 py-4">{scholarship.description}</p>
           </div>
-          <div>
+
+          {/* Link/Button Section */}
+          <div className="w-full md:w-auto text-center">
             <Link
               href={scholarship.link}
               className="inline-block px-4 py-2 text-white bg-red-500 rounded-md hover:bg-red-600"
