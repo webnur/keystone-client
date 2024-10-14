@@ -16,7 +16,7 @@ const SubBanner: React.FC<BannerProps> = ({
   backgroundImage,
   icon,
   title = "Default Title", // Default title if none is provided
-  slogan = "Default Slogan", // Default slogan if none is provided
+  slogan = "", // Default slogan if none is provided
   className = "",
   titleClass = "",
   slogalClass = "",
@@ -24,7 +24,7 @@ const SubBanner: React.FC<BannerProps> = ({
 }) => {
   return (
     <div
-      className={`relative h-80 flex flex-col justify-center items-center text-center text-white ${className}`}
+      className={`relative h-80 flex flex-col justify-center items-center text-center text-white ${className} p-2`}
       style={{
         backgroundColor: backgroundImage ? "transparent" : "#333", // Set background color if no image
         ...style, // Merge additional styles

@@ -188,9 +188,17 @@ const page = () => {
     },
   ];
 
+  const navData = [
+    { name: "PhD Programs", link: "/" },
+    { name: "Research Opportunities", link: "/" },
+    { name: "Doctoral Studies", link: "/" },
+    { name: "Postdoctoral Positions", link: "/" },
+  ];
+
   return (
     <div>
-      <SubHeaderNav />
+      <SubHeaderNav navData={navData} activeCategory="phd" />
+      {/* <SubNav phd={navData} /> */}
       <BannerWithDropdown
         backgroundImage={
           "https://i.ibb.co.com/CbgWHWY/126297-photo-1477238134895-98438ad85c30.jpg"
@@ -206,7 +214,6 @@ const page = () => {
 
       <ArticlesAndGuides articles={mockArticles} />
       <NewlyAddedPrograms programs={mockPrograms} />
-   
     </div>
   );
 };

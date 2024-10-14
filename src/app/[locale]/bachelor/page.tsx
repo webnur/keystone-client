@@ -188,9 +188,19 @@ const page = () => {
     },
   ];
 
+  const bachelorNavData = [
+    { name: "Bachelor Degrees", link: "/bachelor" },
+    {
+      name: "Undergraduate Programs",
+      link: "/bachelor/undergraduate-programs",
+    },
+    { name: "Scholarships", link: "/bachelor/scholarships" },
+    { name: "Student Resources", link: "/bachelor/student-resources" },
+  ];
+
   return (
     <div>
-      <SubHeaderNav />
+      <SubHeaderNav navData={bachelorNavData} activeCategory="bachelor" />
       <BannerWithDropdown
         backgroundImage={
           "https://i.ibb.co.com/z5JrWcX/126282-photo-1533854775446-95c4609da544.jpg"

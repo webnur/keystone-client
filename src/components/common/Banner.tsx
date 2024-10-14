@@ -20,7 +20,7 @@ const BannerWithDropdown: React.FC<BannerWithDropdownProps> = ({
 
   return (
     <div
-      className="relative bg-cover bg-center flex items-center justify-center py-[4rem]"
+      className="relative bg-cover bg-center flex items-center justify-center py-[4rem] p-2"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div className="bg-foreground bg-opacity-70 w-full h-full absolute top-0 left-0"></div>
@@ -28,8 +28,8 @@ const BannerWithDropdown: React.FC<BannerWithDropdownProps> = ({
       <div className="relative z-10 w-full max-w-4xl mx-auto text-center">
         <h1 className="text-white text-[2.5rem] font-bold mb-4">{title}</h1>
 
-        <div className="flex justify-center items-center space-x-2">
-          <div className="relative w-4/6 my-6">
+        <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-2">
+          <div className="relative w-full md:w-4/6 my-6">
             <select
               value={selectedField}
               onChange={(e) => setSelectedField(e.target.value)}
@@ -59,7 +59,7 @@ const BannerWithDropdown: React.FC<BannerWithDropdownProps> = ({
               </svg>
             </div>
 
-            {/* Cross button to clear selection, visible only when a field is selected */}
+            {/* Clear button for selected field */}
             {selectedField && (
               <button
                 className="absolute inset-y-0 right-8 flex items-center px-5 py-3 text-gray-500"
@@ -81,16 +81,17 @@ const BannerWithDropdown: React.FC<BannerWithDropdownProps> = ({
             )}
           </div>
 
+          {/* Location Input */}
           <input
             type="text"
             placeholder="Where do you want to study?"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
-            className="px-4 py-3 rounded-lg w-1/2 outline-none bg-white"
+            className="px-4 py-3 rounded-lg w-full md:w-1/2 outline-none bg-white border border-gray-300"
           />
 
           {/* Search Button */}
-          <button className="bg-red-600 text-white px-6 py-3 rounded-lg">
+          <button className="bg-red-600 text-white px-6 py-3 rounded-lg w-full md:w-auto">
             Search
           </button>
         </div>

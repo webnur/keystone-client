@@ -8,17 +8,17 @@ const UserFooter = () => {
     <footer className="bg-gray-800 text-white py-8">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Left Section: Logo and Social Icons */}
-        <div className="flex flex-col items-start">
-          <div className="flex items-center">
+        <div className="flex flex-col items-center md:items-start text-center md:text-left">
+          <div className="flex items-center justify-center md:justify-start">
             <Image
               src={FooterLogo}
               width={100}
               height={100}
               alt="Keystone Logo"
-              className="w-[200px]"
+              className="w-[150px] md:w-[200px]"
             />
           </div>
-          <div className="flex space-x-4 mt-4">
+          <div className="flex space-x-4 mt-4 justify-center md:justify-start">
             <a
               href="https://www.facebook.com"
               className="text-white hover:text-gray-400"
@@ -63,7 +63,7 @@ const UserFooter = () => {
         </div>
 
         {/* Right Section: Language Selector */}
-        <div className="flex flex-col items-center md:items-end">
+        <div className="flex flex-col items-center md:items-end text-center md:text-right">
           <label htmlFor="language" className="mb-2 text-sm">
             Select Language
           </label>

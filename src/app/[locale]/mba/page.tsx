@@ -188,9 +188,16 @@ const page = () => {
     },
   ];
 
+  const mbaNavData = [
+    { name: "MBA Programs", link: "/mba" },
+    { name: "Executive MBA", link: "/mba/executive" },
+    { name: "Part-time MBA", link: "/mba/part-time" },
+    { name: "Online MBA", link: "/mba/online" },
+  ];
+
   return (
     <div>
-      <SubHeaderNav />
+      <SubHeaderNav navData={mbaNavData} activeCategory="mba" />
       <BannerWithDropdown
         backgroundImage={
           "https://i.ibb.co.com/5c1DLJV/126279-photo-1454165804606-c3d57bc86b40.jpg"

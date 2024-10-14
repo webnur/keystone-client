@@ -190,7 +190,7 @@ const PsdPage = () => {
 
   return (
     <div>
-      <SubHeaderNav />
+      {/* <SubHeaderNav /> */}
       <BannerWithDropdown
         backgroundImage={
           "https://i.ibb.co.com/CbgWHWY/126297-photo-1477238134895-98438ad85c30.jpg"
