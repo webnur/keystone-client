@@ -1,98 +1,204 @@
 "use client";
-import { useEffect } from "react";
-import { useRouter, usePathname } from "next/navigation";
-import React from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+// import React, { useEffect } from "react";
 
-// Sub-navigation data for each main category
-const navData: Record<string, string[]> = {
-  master: [
-    "Master Degrees",
-    "Masters of Science",
-    "Masters of Arts",
-    "Universities",
-    "Scholarships",
-    "Student Resources",
-  ],
-  phd: [
-    "PhD Programs",
-    "Research Opportunities",
-    "Doctoral Studies",
-    "Postdoctoral Positions",
-  ],
-  law: [
-    "Law Degrees",
-    "LLM Programs",
-    "JD Programs",
-    "Legal Studies",
-    "Bar Exam Prep",
-  ],
-  bachelor: [
-    "Bachelor Degrees",
-    "Undergraduate Programs",
-    "Scholarships",
-    "Student Resources",
-  ],
-  mba: ["MBA Programs", "Executive MBA", "Part-time MBA", "Online MBA"],
-  healthcare: [
-    "Healthcare Degrees",
-    "Nursing Programs",
-    "Medical Studies",
-    "Healthcare Management",
-  ],
-  courses: ["Short Courses", "Certificates", "Diplomas", "Workshops"],
-  online: ["Online Degrees", "Distance Learning", "Virtual Classrooms"],
+type NavData = {
+  name: string;
+  link: string;
 };
 
-const SubHeaderNav: React.FC = () => {
-  const [activeCategory, setActiveCategory] = React.useState<string>("master");
+type SubHeaderNavProps = {
+  navData?: NavData[]; // Mark as optional to prevent runtime errors
+  activeCategory: string; // The active category, e.g., 'phd' or 'bachelor'
+};
+
+const SubHeaderNav: React.FC<SubHeaderNavProps> = ({
+  navData = [],
+  activeCategory,
+}) => {
   const router = useRouter();
-  const pathname = usePathname();
+  // const pathname = usePathname();
 
-  // Sync the activeCategory with the current path
-  useEffect(() => {
-    const path = pathname?.split("/")[1]; // Extract category from the URL path
-    if (path && Object.keys(navData).includes(path)) {
-      setActiveCategory(path);
-    } else {
-      setActiveCategory("master"); // Default to master if no matching path is found
-    }
-  }, [pathname]);
+  // useEffect(() => {
+  //   const path = pathname?.split("/")[1];
+  //   if (path && activeCategory !== path) {
 
-  const handleCategoryClick = (category: string) => {
-    // Navigate to the respective page for the selected category
-    router.push(`/${category}`);
-  };
+  //   }
+  // }, [pathname, activeCategory]);
+
+  // const handleCategoryClick = (category: string) => {
+  //   router.push(`/${category}`); // Navigate to the selected category's path
+  // };
 
   return (
     <div className="subheader-container">
       {/* Main navigation for categories */}
+      {/* <nav className="flex justify-left py-3 border-b border-gray-200 w-11/12 mx-auto">
+        <button
+          className={`px-4 py-2 ${
+            activeCategory === "master" ? "text-red-600 font-bold" : ""
+          }`}
+          onClick={() => handleCategoryClick("master")}
+        >
+          Master
+        </button>
+
+        <button
+          className={`px-4 py-2 ${
+            activeCategory === "phd" ? "text-red-600 font-bold" : ""
+          }`}
+          onClick={() => handleCategoryClick("phd")}
+        >
+          PhD
+        </button>
+
+        <button
+          className={`px-4 py-2 ${
+            activeCategory === "law" ? "text-red-600 font-bold" : ""
+          }`}
+          onClick={() => handleCategoryClick("law")}
+        >
+          Law
+        </button>
+
+        <button
+          className={`px-4 py-2 ${
+            activeCategory === "bachelor" ? "text-red-600 font-bold" : ""
+          }`}
+          onClick={() => handleCategoryClick("bachelor")}
+        >
+          Bachelor
+        </button>
+        <button
+          className={`px-4 py-2 ${
+            activeCategory === "mba" ? "text-red-600 font-bold" : ""
+          }`}
+          onClick={() => handleCategoryClick("mba")}
+        >
+          Mba
+        </button>
+        <button
+          className={`px-4 py-2 ${
+            activeCategory === "healthcare" ? "text-red-600 font-bold" : ""
+          }`}
+          onClick={() => handleCategoryClick("healthcare")}
+        >
+          Healthcare
+        </button>
+        <button
+          className={`px-4 py-2 ${
+            activeCategory === "courses" ? "text-red-600 font-bold" : ""
+          }`}
+          onClick={() => handleCategoryClick("courses")}
+        >
+          Courses
+        </button>
+        <button
+          className={`px-4 py-2 ${
+            activeCategory === "online" ? "text-red-600 font-bold" : ""
+          }`}
+          onClick={() => handleCategoryClick("online")}
+        >
+          Online
+        </button>
+      </nav> */}
+
       <nav className="flex justify-left py-3 border-b border-gray-200 w-11/12 mx-auto">
-        {Object.keys(navData).map((category) => (
-          <button
-            key={category}
-            className={`px-4 py-2 ${
-              activeCategory === category ? "text-red-600 font-bold" : ""
-            }`}
-            onClick={() => handleCategoryClick(category)}
-          >
-            {category.charAt(0).toUpperCase() + category.slice(1)}
-          </button>
-        ))}
+        <Link
+          href="/master"
+          className={`px-4 py-2 ${
+            activeCategory === "master" ? "text-red-600 font-bold" : ""
+          }`}
+        >
+          Master
+        </Link>
+
+        <Link
+          href="/phd"
+          className={`px-4 py-2 ${
+            activeCategory === "phd" ? "text-red-600 font-bold" : ""
+          }`}
+        >
+          PhD
+        </Link>
+
+        <Link
+          href="/law"
+          className={`px-4 py-2 ${
+            activeCategory === "law" ? "text-red-600 font-bold" : ""
+          }`}
+        >
+          Law
+        </Link>
+
+        <Link
+          href="/bachelor"
+          className={`px-4 py-2 ${
+            activeCategory === "bachelor" ? "text-red-600 font-bold" : ""
+          }`}
+        >
+          Bachelor
+        </Link>
+
+        <Link
+          href="/mba"
+          className={`px-4 py-2 ${
+            activeCategory === "mba" ? "text-red-600 font-bold" : ""
+          }`}
+        >
+          MBA
+        </Link>
+
+        <Link
+          href="/healthcare"
+          className={`px-4 py-2 ${
+            activeCategory === "healthcare" ? "text-red-600 font-bold" : ""
+          }`}
+        >
+          Healthcare
+        </Link>
+
+        <Link
+          href="/courses"
+          className={`px-4 py-2 ${
+            activeCategory === "courses" ? "text-red-600 font-bold" : ""
+          }`}
+        >
+          Courses
+        </Link>
+
+        <Link
+          href="/online"
+          className={`px-4 py-2 ${
+            activeCategory === "online" ? "text-red-600 font-bold" : ""
+          }`}
+        >
+          Online
+        </Link>
       </nav>
 
       {/* Sub-navigation for the active category */}
       <div className="bg-foreground">
         <div className="subnav w-11/12 mx-auto py-3 px-4">
           <div className="flex justify-left space-x-4">
-            {navData[activeCategory]?.map((subNavItem, index) => (
-              <a
-                key={index}
-                href="#"
-                className="text-white hover:underline"
-              >
-                {subNavItem}
-              </a>
-            ))}
+            {navData.length > 0 ? (
+              navData.map((subNavItem, index) => (
+                <Link
+                  key={index}
+                  href={subNavItem.link} // Use the correct link for each sub-item
+                  className="text-white hover:underline"
+                  onClick={(e) => {
+                    e.preventDefault(); // Prevent default behavior
+                    router.push(subNavItem.link); // Navigate to the sub-item link
+                  }}
+                >
+                  {subNavItem.name}
+                </Link>
+              ))
+            ) : (
+              <p>No sub-navigation available.</p>
+            )}
           </div>
         </div>
       </div>

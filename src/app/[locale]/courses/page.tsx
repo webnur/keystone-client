@@ -188,9 +188,16 @@ const page = () => {
     },
   ];
 
+  const coursesNavData = [
+    { name: "Short Courses", link: "/courses/short-courses" },
+    { name: "Certificates", link: "/courses/certificates" },
+    { name: "Diplomas", link: "/courses/diplomas" },
+    { name: "Workshops", link: "/courses/workshops" },
+  ];
+
   return (
     <div>
-      <SubHeaderNav />
+      <SubHeaderNav navData={coursesNavData} activeCategory="courses" />
       <BannerWithDropdown
         backgroundImage={
           "https://i.ibb.co.com/8s8Zj17/126310-shutterstock-206744158.jpg"

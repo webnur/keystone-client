@@ -188,9 +188,16 @@ const page = () => {
     },
   ];
 
+  const healthcareNavData = [
+    { name: "Healthcare Degrees", link: "/healthcare" },
+    { name: "Nursing Programs", link: "/healthcare/nursing" },
+    { name: "Medical Studies", link: "/healthcare/medical-studies" },
+    { name: "Healthcare Management", link: "/healthcare/management" },
+  ];
+
   return (
     <div>
-      <SubHeaderNav />
+      <SubHeaderNav navData={healthcareNavData} activeCategory="healthcare" />
       <BannerWithDropdown
         backgroundImage={
           "https://i.ibb.co.com/MGQ1gMb/126295-photo-1509470475192-4516c145f8a1.jpg"

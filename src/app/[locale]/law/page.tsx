@@ -188,9 +188,17 @@ const page = () => {
     },
   ];
 
+  const lawNavData = [
+    { name: "Law Degrees", link: "/law" },
+    { name: "LLM Programs", link: "/law/llm" },
+    { name: "JD Programs", link: "/law/jd" },
+    { name: "Legal Studies", link: "/law/studies" },
+    { name: "Bar Exam Prep", link: "/law/bar-exam-prep" },
+  ];
+
   return (
     <div>
-      <SubHeaderNav />
+      <SubHeaderNav navData={lawNavData} activeCategory="law" />
       <BannerWithDropdown
         backgroundImage={
           "https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?auto=compress&cs=tinysrgb&w=800"
