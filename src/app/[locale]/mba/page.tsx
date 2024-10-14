@@ -193,9 +193,9 @@ const page = () => {
       <SubHeaderNav />
       <BannerWithDropdown
         backgroundImage={
-          "https://i.ibb.co.com/MGQ1gMb/126295-photo-1509470475192-4516c145f8a1.jpg"
+          "https://i.ibb.co.com/5c1DLJV/126279-photo-1454165804606-c3d57bc86b40.jpg"
         }
-        title="Browse thousands of healthcare degrees from around the world."
+        title="Browse thousands of graduate degrees from around the world."
         studyFields={lawStudyFields}
       />
 
