@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import React from "react";
 
@@ -44,22 +44,21 @@ const navData: Record<string, string[]> = {
 };
 
 const SubHeaderNav: React.FC = () => {
-  const [activeCategory, setActiveCategory] = React.useState<string>("master");
+  const [activeCategory, setActiveCategory] = useState<string>("master");
   const router = useRouter();
   const pathname = usePathname();
 
   // Sync the activeCategory with the current path
   useEffect(() => {
-    const path = pathname?.split("/")[1]; // Extract category from the URL path
+    const path = pathname?.split("/")[1]; // Extract the category from the URL
     if (path && Object.keys(navData).includes(path)) {
-      setActiveCategory(path);
-    } else {
-      setActiveCategory("master"); // Default to master if no matching path is found
+      setActiveCategory(path); // Update activeCategory based on the path
     }
   }, [pathname]);
 
   const handleCategoryClick = (category: string) => {
-    // Navigate to the respective page for the selected category
+    // Update the route to reflect the selected category and update the activeCategory
+    setActiveCategory(category);
     router.push(`/${category}`);
   };
 

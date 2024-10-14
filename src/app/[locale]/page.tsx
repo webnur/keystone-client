@@ -196,7 +196,7 @@ export default function Home() {
   return (
     <div>
   
-      <SubHeaderNav />
+      {/* <SubHeaderNav /> */}
       <BannerWithDropdown
         backgroundImage={
           "https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?auto=compress&cs=tinysrgb&w=800"

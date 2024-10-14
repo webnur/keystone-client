@@ -9,6 +9,7 @@ import { routing } from "@/i18n/routing";
 import { NextIntlClientProvider } from "next-intl";
 import Navbar from "@/components/home/Navbar";
 import Footer from "@/components/home/Footer";
+import SubHeaderNav from "@/components/home/SubHeaderNav";
 
 type Props = {
   children: ReactNode;
@@ -54,6 +55,7 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           <div className="sticky top-0 z-50 w-full bg-white">
             <Navbar />
+            <SubHeaderNav />
           </div>
           <main className="flex-grow">{children}</main>
           <Footer />
