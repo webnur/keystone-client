@@ -195,7 +195,7 @@ export default function Home() {
 
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <SubHeaderNav />
       <BannerWithDropdown
         backgroundImage={
@@ -209,7 +209,7 @@ export default function Home() {
       <WhereToStudy locations={mockLocations} />
       <ArticlesAndGuides articles={mockArticles} />
       <NewlyAddedPrograms programs={mockPrograms} />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
