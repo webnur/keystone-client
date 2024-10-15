@@ -6,7 +6,6 @@ import ArticlesAndGuides from "@/components/home/ArticlesAndGuides";
 import WhereToStudy from "@/components/home/WhereToStudy";
 import NewlyAddedPrograms from "@/components/home/NewlyAddedPrograms";
 import BannerWithDropdown from "@/components/common/Banner";
-import SubHeaderNav from "@/components/home/SubHeaderNav";
 
 export default function Home() {
   const lawStudyFields = [
@@ -191,19 +190,8 @@ export default function Home() {
     },
   ];
 
-  // Master category navigation data
-  const masterNavData = [
-    { name: "Master Degrees", link: "/master/masters-degrees" },
-    { name: "Masters of Science", link: "/master/masters-of-science" },
-    { name: "Masters of Arts", link: "/master/masters-of-arts" },
-    { name: "Universities", link: "/master/universities" },
-    { name: "Scholarships", link: "/master/scholarships" },
-    { name: "Student Resources", link: "/master/student-resources" },
-  ];
-
   return (
     <div>
-      <SubHeaderNav navData={masterNavData} activeCategory="master" />
       <BannerWithDropdown
         backgroundImage={
           "https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?auto=compress&cs=tinysrgb&w=800"
