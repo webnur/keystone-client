@@ -10,6 +10,7 @@ interface Program {
   location: string;
   country: string;
   image: string;
+  link?: string; // Make link optional
 }
 
 interface NewlyAddedProgramsProps {
@@ -20,24 +21,27 @@ const NewlyAddedPrograms: React.FC<NewlyAddedProgramsProps> = ({
   programs,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const programsToShow = 4; // Number of programs to show at a time
+  const programsToShow = 4;
 
-  // Navigate to the next set of programs
+  // Only slide if there are more than 4 programs
   const next = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex + programsToShow >= programs.length
-        ? 0
-        : prevIndex + programsToShow
-    );
+    if (programs.length > programsToShow) {
+      setCurrentIndex((prevIndex) =>
+        prevIndex + programsToShow >= programs.length
+          ? 0
+          : prevIndex + programsToShow
+      );
+    }
   };
 
-  // Navigate to the previous set of programs
   const prev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0
-        ? programs.length - programsToShow
-        : prevIndex - programsToShow
-    );
+    if (programs.length > programsToShow) {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === 0
+          ? programs.length - programsToShow
+          : prevIndex - programsToShow
+      );
+    }
   };
 
   return (
@@ -47,8 +51,7 @@ const NewlyAddedPrograms: React.FC<NewlyAddedProgramsProps> = ({
       </div>
 
       <div className="relative">
-        {/* Carousel Container */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${Math.min(programsToShow, programs.length)} gap-4`}>
           {programs
             .slice(currentIndex, currentIndex + programsToShow)
             .map((program, index) => (
@@ -56,19 +59,21 @@ const NewlyAddedPrograms: React.FC<NewlyAddedProgramsProps> = ({
                 key={index}
                 className="border rounded-lg shadow-md p-4 flex flex-col justify-between hover:shadow-lg transition-shadow duration-300"
               >
-                {/* Program Institution Logo */}
-                <Image
-                  src={program.image}
-                  alt={program.institution}
-                  className="flex justify-start w-[180px] h-32 object-contain mb-4"
-                  width={180}
-                  height={128}
-                />
-                {/* Program Details */}
-                <h3 className="text-lg font-semibold text-black text-left ">
+                {/* Image positioned top-left */}
+                <div className="flex justify-start w-full mb-4">
+                  <Image
+                    src={program.image}
+                    alt={program.institution}
+                    className="object-contain w-32 h-32"
+                    width={160}
+                    height={100}
+                  />
+                </div>
+
+                <h3 className="text-lg font-semibold text-black text-left">
                   {program.title}
                 </h3>
-                <p className="text-sm text-black text-left underline font-semibold ">
+                <p className="text-sm text-black text-left underline font-semibold">
                   {program.institution}
                 </p>
                 <p className="text-sm text-black flex items-center mt-3">
@@ -77,10 +82,9 @@ const NewlyAddedPrograms: React.FC<NewlyAddedProgramsProps> = ({
                   </span>
                   {program.location}, {program.country}
                 </p>
-                {/* More Information Button */}
                 <div className="flex justify-end">
                   <Link
-                    href="#"
+                    href={program.link ? program.link : "#"} // Use "#" as a fallback link
                     className="text-red-500 font-semibold hover:text-red-600 flex items-center"
                   >
                     More information <span className="ml-1">→</span>
@@ -90,21 +94,23 @@ const NewlyAddedPrograms: React.FC<NewlyAddedProgramsProps> = ({
             ))}
         </div>
 
-        {/* Carousel Buttons (Below the cards) */}
-        <div className="flex justify-center mt-4">
-          <button
-            onClick={prev}
-            className="bg-white border border-gray-300 px-3 py-2 rounded-xl shadow hover:bg-gray-100 mx-2 text-black font-semibold"
-          >
-            &lt;
-          </button>
-          <button
-            onClick={next}
-            className="bg-white border border-gray-300 px-3 py-2 rounded-xl shadow hover:bg-gray-100 mx-2 text-black font-semibold"
-          >
-            &gt;
-          </button>
-        </div>
+        {/* Only show the carousel buttons if there are more than 4 items */}
+        {programs.length > programsToShow && (
+          <div className="flex justify-center mt-6">
+            <button
+              onClick={prev}
+              className="bg-white border border-black px-4 py-2 rounded-lg shadow hover:bg-gray-100 mx-2 text-black font-semibold"
+            >
+              &lt;
+            </button>
+            <button
+              onClick={next}
+              className="bg-white border border-black px-4 py-2 rounded-lg shadow hover:bg-gray-100 mx-2 text-black font-semibold"
+            >
+              &gt;
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
