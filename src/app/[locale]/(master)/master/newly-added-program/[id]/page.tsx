@@ -1,7 +1,7 @@
 import React from 'react';
 import NSidebar from './NSidebar';
 import MiddleContent from './MiddleContent';
-import RightSidebar from './RSidebar';
+import RightSidebar from './RightSidebar';
 
 const Page = () => {
   const sections = [
@@ -26,13 +26,18 @@ const Page = () => {
       </div>
 
       {/* Right Sidebar */}
-      <div className="w-1/4">
+      {/* <div className="w-1/4">
         <RightSidebar
           logo="/path/to/logo.png"
           institution="Mahidol University"
           programId="cyber-security"
         />
-      </div>
+      </div> */}
+      <RightSidebar 
+      logo="https://i.ibb.co.com/jJRpsgM/4-ahhsql.png"
+      institution="Keystone University"
+      programId="graduate-school-application-trends"
+      />
     </div>
   );
 };

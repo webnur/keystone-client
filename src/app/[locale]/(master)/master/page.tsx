@@ -1,5 +1,4 @@
 "use client";
-
 import EducationJourney from "@/components/home/EducationJourney";
 import DiscoverProgram from "@/components/home/DiscoverProgram";
 import ArticlesAndGuides from "@/components/home/ArticlesAndGuides";
@@ -7,6 +6,7 @@ import WhereToStudy from "@/components/home/WhereToStudy";
 import NewlyAddedPrograms from "@/components/home/NewlyAddedPrograms";
 import BannerWithDropdown from "@/components/common/Banner";
 import MasterAddedProgram from "./components/MasterAddedProgram";
+import MasterWhereToStudy from "./components/MasterWhereToStudy";
 
 export default function Home() {
   const lawStudyFields = [
@@ -209,7 +209,8 @@ export default function Home() {
       />
       <EducationJourney />
       <DiscoverProgram programs={programsData} />
-      <WhereToStudy locations={mockLocations} />
+      {/* <WhereToStudy locations={mockLocations} /> */}
+      <MasterWhereToStudy locations={mockLocations} />
       <ArticlesAndGuides articles={mockArticles} />
       <MasterAddedProgram programs={mockPrograms} />
     </div>

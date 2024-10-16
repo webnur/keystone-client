@@ -2,11 +2,19 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
+interface ProgramData {
+  title: string;
+  description: string;
+  location: string;
+  country: string;
+  image: string;
+}
+
 interface RightSidebarProps {
   logo: string;
   institution: string;
   programId: string;
-  programData: any; // Program details (name, description, etc.)
+  programData: ProgramData; // Program details type
 }
 
 const RightSidebar: React.FC<RightSidebarProps> = ({
@@ -20,11 +28,10 @@ const RightSidebar: React.FC<RightSidebarProps> = ({
   // Save program to localStorage or API
   const handleSave = async () => {
     try {
-      // Check if API is available
       const apiAvailable = await checkApiAvailability();
 
       if (apiAvailable) {
-        // If API is available, save to API
+        // Save to API
         const response = await fetch("/api/saveProgram", {
           method: "POST",
           headers: {
@@ -38,12 +45,11 @@ const RightSidebar: React.FC<RightSidebarProps> = ({
           console.log("Program saved to API.");
         }
       } else {
-        // If no API, save to localStorage
+        // Save to localStorage
         const savedPrograms =
           JSON.parse(localStorage.getItem("savedPrograms") || "[]");
 
-        // Check if program is already saved
-        if (!savedPrograms.some((program: any) => program.programId === programId)) {
+        if (!savedPrograms.some((program: ProgramData) => program.title === programData.title)) {
           savedPrograms.push(programData);
           localStorage.setItem("savedPrograms", JSON.stringify(savedPrograms));
           setIsSaved(true);
@@ -55,7 +61,6 @@ const RightSidebar: React.FC<RightSidebarProps> = ({
     }
   };
 
-  // Mock function to simulate API availability check
   const checkApiAvailability = async () => {
     try {
       const response = await fetch("/api/check");
