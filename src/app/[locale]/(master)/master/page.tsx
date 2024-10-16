@@ -6,6 +6,7 @@ import ArticlesAndGuides from "@/components/home/ArticlesAndGuides";
 import WhereToStudy from "@/components/home/WhereToStudy";
 import NewlyAddedPrograms from "@/components/home/NewlyAddedPrograms";
 import BannerWithDropdown from "@/components/common/Banner";
+import MasterAddedProgram from "./components/MasterAddedProgram";
 
 export default function Home() {
   const lawStudyFields = [
@@ -141,6 +142,7 @@ export default function Home() {
 
   const mockPrograms = [
     {
+      id: "diploma-maritime-law", // Unique ID for routing
       title: "Diploma in Maritime Law",
       institution: "Lloyd's Maritime Academy",
       location: "Online",
@@ -149,6 +151,7 @@ export default function Home() {
         "https://i.ibb.co.com/Jk6mfCY/237569-SA-Ordbild-vid-samarbeten-RGB-eng.png",
     },
     {
+      id: "llm-technology-ai", // Unique ID for routing
       title: "LLM Technology and Artificial Intelligence",
       institution: "University of Bradford",
       location: "Bradford",
@@ -157,6 +160,7 @@ export default function Home() {
         "https://i.ibb.co.com/2Sc2VMH/197877-UHI-Formal-Marque-Keystone.png",
     },
     {
+      id: "llm-international-commercial-law", // Unique ID for routing
       title: "LLM International Commercial Law",
       institution: "University College Dublin",
       location: "Dublin",
@@ -165,6 +169,7 @@ export default function Home() {
         "https://i.ibb.co.com/285BZwF/240330-Screenshot2024-09-17170404.png",
     },
     {
+      id: "llm-sustainability-law-natural-resources", // Unique ID for routing
       title: "LLM in Sustainability Law and Natural Resources",
       institution: "University of Lapland",
       location: "Rovaniemi",
@@ -173,6 +178,7 @@ export default function Home() {
         "https://i.ibb.co.com/285BZwF/240330-Screenshot2024-09-17170404.png",
     },
     {
+      id: "llm-human-rights-law", // Unique ID for routing
       title: "LLM in Human Rights Law",
       institution: "London School of Economics",
       location: "London",
@@ -181,6 +187,7 @@ export default function Home() {
         "https://i.ibb.co.com/2Sc2VMH/197877-UHI-Formal-Marque-Keystone.png",
     },
     {
+      id: "llm-commercial-arbitration", // Unique ID for routing
       title: "LLM in Commercial Arbitration",
       institution: "Stockholm University",
       location: "Stockholm",
@@ -189,6 +196,7 @@ export default function Home() {
         "https://i.ibb.co.com/Jk6mfCY/237569-SA-Ordbild-vid-samarbeten-RGB-eng.png",
     },
   ];
+  
 
   return (
     <div>
@@ -203,7 +211,7 @@ export default function Home() {
       <DiscoverProgram programs={programsData} />
       <WhereToStudy locations={mockLocations} />
       <ArticlesAndGuides articles={mockArticles} />
-      <NewlyAddedPrograms programs={mockPrograms} />
+      <MasterAddedProgram programs={mockPrograms} />
     </div>
   );
 }
