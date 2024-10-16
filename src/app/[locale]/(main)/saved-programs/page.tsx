@@ -1,18 +1,51 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import SubBanner from "@/components/common/SubBanner";
 
 const SavedPrograms = () => {
-  // Mock saved programs data (you can replace this with actual data)
-  const [savedPrograms, setSavedPrograms] = useState<any[]>([]); // Empty array for now
+  const [savedPrograms, setSavedPrograms] = useState<any[]>([]); // For storing programs from API or localStorage
+
+  // Function to fetch saved programs from API or localStorage
+  const fetchSavedPrograms = async () => {
+    try {
+      const apiAvailable = await checkApiAvailability();
+
+      if (apiAvailable) {
+        // Fetch saved programs from API
+        const response = await fetch("/api/savedPrograms");
+        const data = await response.json();
+        setSavedPrograms(data);
+      } else {
+        // Fetch saved programs from localStorage
+        const localSavedPrograms = JSON.parse(
+          localStorage.getItem("savedPrograms") || "[]"
+        );
+        setSavedPrograms(localSavedPrograms);
+      }
+    } catch (error) {
+      console.error("Error fetching saved programs:", error);
+    }
+  };
+
+  // Mock function to simulate API availability check
+  const checkApiAvailability = async () => {
+    try {
+      const response = await fetch("/api/check");
+      return response.ok;
+    } catch {
+      return false;
+    }
+  };
+
+  useEffect(() => {
+    fetchSavedPrograms(); // Fetch programs on component mount
+  }, []);
 
   return (
     <div>
       {/* Reusable Banner */}
       <SubBanner
-        // backgroundImage="https://example.com/banner-image.jpg" // replace with actual image
-
         icon={<AiOutlineHeart />} // Use the heart icon
         title="Saved programs"
         slogan="Create a StudentHub account or sign in to save this program list."
@@ -38,8 +71,10 @@ const SavedPrograms = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {savedPrograms.map((program, index) => (
               <div key={index} className="border rounded-lg shadow-lg p-4">
-                <h3 className="text-xl font-bold">{program.name}</h3>
-                <p className="text-gray-600">{program.description}</p>
+                <h3 className="text-xl font-bold">{program.title}</h3>
+                <p className="text-gray-600">{program.institution}</p>
+                <p className="text-gray-600">{program.location}, {program.country}</p>
+                <img src={program.image} alt={program.title} />
               </div>
             ))}
           </div>

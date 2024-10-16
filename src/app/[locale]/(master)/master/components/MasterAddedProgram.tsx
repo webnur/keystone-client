@@ -1,8 +1,8 @@
 "use client"
 import React, { useState } from "react";
-import LocationIcon from "../icons/Location";
 import Link from "next/link";
 import Image from "next/image";
+import LocationIcon from "@/components/icons/Location";
 
 interface Program {
   title: string;
@@ -17,7 +17,7 @@ interface NewlyAddedProgramsProps {
   programs?: Program[]; // Make programs optional
 }
 
-const NewlyAddedPrograms: React.FC<NewlyAddedProgramsProps> = ({ programs }) => {
+const MasterAddedProgram: React.FC<NewlyAddedProgramsProps> = ({ programs }) => {
   const defaultPrograms: Program[] = [
     {
       title: "Default Program 1",
@@ -111,7 +111,7 @@ const NewlyAddedPrograms: React.FC<NewlyAddedProgramsProps> = ({ programs }) => 
                 {program.location}, {program.country}
               </p>
               <div className="flex justify-end">
-                <Link href={`/${program.id}`}>
+                <Link href={`/master/${program.id}`}>
                   <span className="text-red-500 font-semibold hover:text-red-600 flex items-center">
                     More information <span className="ml-1">→</span>
                   </span>
@@ -142,4 +142,4 @@ const NewlyAddedPrograms: React.FC<NewlyAddedProgramsProps> = ({ programs }) => 
   );
 };
 
-export default NewlyAddedPrograms;
+export default MasterAddedProgram;
