@@ -1,23 +1,52 @@
 "use client";
 import EducationJourney from "@/components/home/EducationJourney";
 import DiscoverProgram from "@/components/home/DiscoverProgram";
-import ArticlesAndGuides from "@/components/home/ArticlesAndGuides";
-import WhereToStudy from "@/components/home/WhereToStudy";
-import NewlyAddedPrograms from "@/components/home/NewlyAddedPrograms";
 import BannerWithDropdown from "@/components/common/Banner";
 import MasterAddedProgram from "./components/MasterAddedProgram";
 import MasterWhereToStudy from "./components/MasterWhereToStudy";
+import MasterArticlesAndGuides from "./components/MasterArticleGuide";
 
 export default function Home() {
-  const lawStudyFields = [
+  // Study fields for dropdown
+  const studyFields = [
+    "Accessories Design",
+    "Accountancy",
+    "Accounting",
+    "Administration",
+    "Administration Studies",
+    "Administration, Business, and Economics",
     "Administrative Law Studies",
-    "Business Law Studies",
-    "Civil Law Studies",
-    "International Law",
-    "Human Rights Law",
-    "Corporate Law",
+    "Adult Education",
+    "Advertising",
+    "Aeronautical Engineering",
+    "Agribusiness",
+    "Agricultural Science",
+    "Air Traffic Control",
+    "Aircraft Maintenance",
+    "Allied Healthcare",
+    "Alternative Medicine",
+    "Ancient Languages",
+    "Animal Science",
+    "Animation",
+    "Anthropology",
+    "Applied Arts",
+    "Arabic",
+    "Archaeology",
+    "Architecture",
+    "Architecture Studies",
+    "Archival Science",
+    "Area Studies",
+    "Art Studies",
+    "Artificial Intelligence",
+    "Arts",
+    "Arts and Design",
+    "Atmospheric Sciences",
+    "Audio Engineering",
+    "Auditing",
+    "Automation",
   ];
 
+  // Programs data for DiscoverProgram
   const programsData = [
     {
       name: "Legal Studies",
@@ -71,14 +100,17 @@ export default function Home() {
     },
   ];
 
+  // Mock data for articles to be passed to MasterArticlesAndGuides (now with id)
   const mockArticles = [
     {
+      id: "guide-master-degree",
       title: "The Ultimate Master's Degree Guide for International Students",
       date: "Dec 8, 2023",
       image: "https://i.ibb.co.com/MVNcjND/Master-s-Degree-Guide-rqljxp.jpg",
       description: "A guide for international students pursuing law degrees.",
     },
     {
+      id: "scholarships-directory",
       title: "Master's Scholarships Directory for International Students",
       date: "Dec 8, 2023",
       image:
@@ -86,14 +118,15 @@ export default function Home() {
       description: "Essential legal terms every law student should know.",
     },
     {
-      title:
-        "The Ultimate Guide to Getting a Master's Degree in the UK (2024))",
+      id: "guide-master-uk",
+      title: "The Ultimate Guide to Getting a Master's Degree in the UK (2024)",
       date: "Oct 20, 2023",
       image:
         "https://i.ibb.co.com/F3N6yv4/The-Cheapest-Countries-to-Study-a-Master-s-In-Europe-vimenh.jpg",
       description: "Understanding the value of a Master of Laws degree.",
     },
     {
+      id: "bar-exam-overview",
       title: "What is the Bar Exam?",
       date: "Oct 13, 2023",
       image: "https://i.ibb.co.com/Z6mdF2K/Hero-images-4-gpy7jt.jpg",
@@ -101,45 +134,56 @@ export default function Home() {
     },
   ];
 
+  // Mock data for WhereToStudy locations (now with id)
   const mockLocations = [
     {
+      id: "uk",
       name: "United Kingdom",
       image: "https://i.ibb.co.com/txH8qMm/ezgif-3-c99bcf9998.jpg",
     },
     {
+      id: "usa",
       name: "USA",
       image: "https://i.ibb.co.com/3FGPY8X/124334-shutterstock-244469683.jpg",
     },
     {
+      id: "canada",
       name: "Canada",
       image: "https://i.ibb.co.com/n34cmjB/110845-shutterstock-255015211.jpg",
     },
     {
+      id: "germany",
       name: "Germany",
       image: "https://i.ibb.co.com/bRC2BGf/62089-germany.jpg",
     },
     {
+      id: "italy",
       name: "Italy",
       image: "https://i.ibb.co.com/MkrJN0s/ezgif-1-8476095b38.jpg",
     },
     {
+      id: "france",
       name: "France",
       image: "https://i.ibb.co.com/T4J8cfx/61809-france.jpg",
     },
     {
+      id: "spain",
       name: "Spain",
       image: "https://i.ibb.co.com/X8nsYJc/110855-shutterstock-377505535.jpg",
     },
     {
+      id: "belgium",
       name: "Belgium",
       image: "https://i.ibb.co.com/2tdMcTC/61795-belgium.jpg",
     },
     {
+      id: "japan",
       name: "Japan",
       image: "https://i.ibb.co.com/G243xM9/62094-japan.jpg",
     },
   ];
 
+  // Mock data for MasterAddedProgram
   const mockPrograms = [
     {
       id: "diploma-maritime-law", // Unique ID for routing
@@ -196,7 +240,6 @@ export default function Home() {
         "https://i.ibb.co.com/Jk6mfCY/237569-SA-Ordbild-vid-samarbeten-RGB-eng.png",
     },
   ];
-  
 
   return (
     <div>
@@ -205,13 +248,12 @@ export default function Home() {
           "https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?auto=compress&cs=tinysrgb&w=800"
         }
         title="Browse thousands of graduate degrees from around the world."
-        studyFields={lawStudyFields}
+        studyFields={studyFields}
       />
       <EducationJourney />
       <DiscoverProgram programs={programsData} />
-      {/* <WhereToStudy locations={mockLocations} /> */}
       <MasterWhereToStudy locations={mockLocations} />
-      <ArticlesAndGuides articles={mockArticles} />
+      <MasterArticlesAndGuides articles={mockArticles} />
       <MasterAddedProgram programs={mockPrograms} />
     </div>
   );

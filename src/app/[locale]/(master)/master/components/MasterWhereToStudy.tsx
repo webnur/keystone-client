@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 
 interface StudyLocation {
-  id: string;  // Added ID to reference in Link for dynamic routing
+  id: string;  
   name: string;
   image: string;
 }
