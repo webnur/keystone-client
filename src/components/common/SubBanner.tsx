@@ -1,43 +1,47 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
+import Image from "next/image";
 
 interface BannerProps {
   backgroundImage?: string;
   icon?: React.ReactNode;
   title?: string;
   slogan?: string;
-  className?: string; // Allows for additional class names
+  className?: string;
   titleClass?: string;
   slogalClass?: string;
-  style?: React.CSSProperties; // Allows for inline styles from the parent
+  style?: React.CSSProperties;
 }
 
 const SubBanner: React.FC<BannerProps> = ({
   backgroundImage,
   icon,
-  title = "Default Title", // Default title if none is provided
-  slogan = "", // Default slogan if none is provided
+  title = "Default Title",
+  slogan = "",
   className = "",
   titleClass = "",
   slogalClass = "",
-  style = {}, // Additional styles from parent
+  style = {},
 }) => {
   return (
     <div
       className={`relative h-80 flex flex-col justify-center items-center text-center text-white ${className} p-2`}
       style={{
-        backgroundColor: backgroundImage ? "transparent" : "#333", // Set background color if no image
-        ...style, // Merge additional styles
+        backgroundColor: backgroundImage ? "transparent" : "#333",
+        ...style,
       }}
     >
       {backgroundImage && (
-        <img
-          src={backgroundImage}
-          alt="Background"
-          className="absolute inset-0 w-full h-full object-cover z-0"
-        />
+        <div className="absolute inset-0 w-full h-full">
+          <Image
+            src={backgroundImage}
+            alt="Background"
+            layout="fill"
+            objectFit="cover"
+            className="z-0"
+          />
+        </div>
       )}
-      {/* Overlay for darkening the image */}
       {backgroundImage && (
         <div className="absolute inset-0 bg-black opacity-50 z-1"></div>
       )}

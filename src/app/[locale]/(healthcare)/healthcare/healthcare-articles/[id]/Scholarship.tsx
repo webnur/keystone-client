@@ -1,4 +1,5 @@
-"use client"
+"use client";
+import Image from "next/image";
 
 export default function Scholarship() {
   return (
@@ -20,10 +21,12 @@ export default function Scholarship() {
           <a href="#" className="text-red-600 hover:underline">Student Tips</a>
         </p>
         <div className="mt-8">
-          <img 
+          <Image 
             src="/path-to-your-image.jpg" 
             alt="Scholarship" 
             className="rounded-lg shadow-lg w-full h-64 object-cover"
+            width={800}
+            height={256}
           />
         </div>
       </div>

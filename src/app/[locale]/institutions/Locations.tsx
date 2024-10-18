@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const locations = [
   {
@@ -32,10 +33,12 @@ const Locations: React.FC = () => {
         <h2 className="text-2xl font-bold mb-6">Locations</h2>
         
         {/* Map Placeholder */}
-        <div className="mb-8">
-          <img 
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/BlankMap-World6.svg/1200px-BlankMap-World6.svg.png" 
+        <div className="mb-8 relative">
+          <Image
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/BlankMap-World6.svg/1200px-BlankMap-World6.svg.png"
             alt="World Map"
+            width={1200}
+            height={600}
             className="w-full h-96 object-cover"
           />
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">

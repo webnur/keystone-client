@@ -1,6 +1,7 @@
-"use client"
+"use client";
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image'; // Import Image from Next.js
 
 interface Article {
   title: string;
@@ -36,10 +37,12 @@ const Articles: React.FC<ArticlesProps> = ({ articles = [] }) => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {currentArticles.map((article, index) => (
             <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-              <img
+              <Image
                 src={article.image}
                 alt={article.title}
                 className="w-full h-48 object-cover"
+                width={800} // You can adjust the width and height according to your layout
+                height={400}
               />
               <div className="p-4">
                 <h3 className="text-lg font-bold">{article.title}</h3>

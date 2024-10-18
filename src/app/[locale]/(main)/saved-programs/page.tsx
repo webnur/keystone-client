@@ -1,23 +1,21 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
+import Image from "next/image";
 import SubBanner from "@/components/common/SubBanner";
 
 const SavedPrograms = () => {
-  const [savedPrograms, setSavedPrograms] = useState<any[]>([]); // For storing programs from API or localStorage
+  const [savedPrograms, setSavedPrograms] = useState<any[]>([]); 
 
-  // Function to fetch saved programs from API or localStorage
   const fetchSavedPrograms = async () => {
     try {
       const apiAvailable = await checkApiAvailability();
 
       if (apiAvailable) {
-        // Fetch saved programs from API
         const response = await fetch("/api/savedPrograms");
         const data = await response.json();
         setSavedPrograms(data);
       } else {
-        // Fetch saved programs from localStorage
         const localSavedPrograms = JSON.parse(
           localStorage.getItem("savedPrograms") || "[]"
         );
@@ -28,7 +26,6 @@ const SavedPrograms = () => {
     }
   };
 
-  // Mock function to simulate API availability check
   const checkApiAvailability = async () => {
     try {
       const response = await fetch("/api/check");
@@ -39,20 +36,18 @@ const SavedPrograms = () => {
   };
 
   useEffect(() => {
-    fetchSavedPrograms(); // Fetch programs on component mount
+    fetchSavedPrograms(); 
   }, []);
 
   return (
     <div>
-      {/* Reusable Banner */}
       <SubBanner
-        icon={<AiOutlineHeart />} // Use the heart icon
+        icon={<AiOutlineHeart />} 
         title="Saved programs"
         slogan="Create a StudentHub account or sign in to save this program list."
         className="bg-gray-500"
       />
 
-      {/* Display saved programs or message if none */}
       <section className="py-16 text-center p-2">
         {savedPrograms.length === 0 ? (
           <div className="text-gray-700">
@@ -74,7 +69,13 @@ const SavedPrograms = () => {
                 <h3 className="text-xl font-bold">{program.title}</h3>
                 <p className="text-gray-600">{program.institution}</p>
                 <p className="text-gray-600">{program.location}, {program.country}</p>
-                <img src={program.image} alt={program.title} />
+                <Image
+                  src={program.image}
+                  alt={program.title}
+                  width={400}
+                  height={300}
+                  className="w-full h-full object-cover"
+                />
               </div>
             ))}
           </div>

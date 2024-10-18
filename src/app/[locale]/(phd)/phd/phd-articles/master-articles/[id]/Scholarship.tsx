@@ -1,5 +1,7 @@
 "use client"
 
+import Image from "next/image";
+
 export default function Scholarship() {
   return (
     <section className="bg-gray-50 py-12">
@@ -20,10 +22,12 @@ export default function Scholarship() {
           <a href="#" className="text-red-600 hover:underline">Student Tips</a>
         </p>
         <div className="mt-8">
-          <img 
-            src="/path-to-your-image.jpg" 
-            alt="Scholarship" 
+        <Image
+            src="/path-to-your-image.jpg"
+            alt="Scholarship"
             className="rounded-lg shadow-lg w-full h-64 object-cover"
+            width={800} // Width for Next.js Image component
+            height={256} // Height for Next.js Image component
           />
         </div>
       </div>

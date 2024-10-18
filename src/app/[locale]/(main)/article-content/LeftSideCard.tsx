@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image'; // Import Next.js Image component
 
 const ArticleCard = () => {
   return (
@@ -11,10 +12,12 @@ const ArticleCard = () => {
       </p>
       <p className="text-sm text-red-500 mb-4">Apr 10, 2024 • Student Tips • Education • Study Abroad</p>
       
-      <img
+      <Image
         className="w-full h-64 object-cover rounded-lg shadow-lg mb-4"
         src="https://via.placeholder.com/800x400.png?text=Boston+University" // Replace with your image URL
         alt="Boston University"
+        width={800} // You can adjust width
+        height={400} // You can adjust height
       />
       <div>
         <p className="text-lg leading-relaxed mb-4">
