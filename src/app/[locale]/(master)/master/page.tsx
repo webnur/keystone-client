@@ -1,13 +1,12 @@
 "use client";
 import EducationJourney from "@/components/home/EducationJourney";
-import DiscoverProgram from "@/components/home/DiscoverProgram";
 import BannerWithDropdown from "@/components/common/Banner";
 import MasterAddedProgram from "./components/MasterAddedProgram";
 import MasterWhereToStudy from "./components/MasterWhereToStudy";
 import MasterArticlesAndGuides from "./components/MasterArticleGuide";
+import MasterDiscoverProgram from "./components/MasterDiscoverProgram";
 
 export default function Home() {
-  // Study fields for dropdown
   const studyFields = [
     "Accessories Design",
     "Accountancy",
@@ -46,61 +45,6 @@ export default function Home() {
     "Automation",
   ];
 
-  // Programs data for DiscoverProgram
-  const programsData = [
-    {
-      name: "Legal Studies",
-      icon: "⚖️",
-      fields: ["International Law", "Corporate Law"],
-    },
-    {
-      name: "Business Law Studies",
-      icon: "⚖️",
-      fields: ["Corporate Law", "Contract Law"],
-    },
-    {
-      name: "International Law Studies",
-      icon: "⚖️",
-      fields: ["Human Rights Law", "Civil Law"],
-    },
-    {
-      name: "Administrative Law Studies",
-      icon: "⚖️",
-      fields: ["Administrative Law", "Civil Law"],
-    },
-    {
-      name: "Jurisprudence",
-      icon: "⚖️",
-      fields: ["Criminal Law", "Civil Law"],
-    },
-    {
-      name: "National Law Studies",
-      icon: "⚖️",
-      fields: ["Constitutional Law", "National Security Law"],
-    },
-    {
-      name: "Economic Law Studies",
-      icon: "⚖️",
-      fields: ["Tax Law", "Trade Law"],
-    },
-    {
-      name: "Human Rights Law Studies",
-      icon: "⚖️",
-      fields: ["Human Rights Law", "International Law"],
-    },
-    {
-      name: "Dispute Resolution Studies",
-      icon: "⚖️",
-      fields: ["Arbitration", "Mediation"],
-    },
-    {
-      name: "Civil Law Studies",
-      icon: "⚖️",
-      fields: ["Civil Procedure", "Family Law"],
-    },
-  ];
-
-  // Mock data for articles to be passed to MasterArticlesAndGuides (now with id)
   const mockArticles = [
     {
       id: "guide-master-degree",
@@ -134,7 +78,6 @@ export default function Home() {
     },
   ];
 
-  // Mock data for WhereToStudy locations (now with id)
   const mockLocations = [
     {
       id: "uk",
@@ -183,61 +126,177 @@ export default function Home() {
     },
   ];
 
-  // Mock data for MasterAddedProgram
   const mockPrograms = [
     {
-      id: "diploma-maritime-law", // Unique ID for routing
+      id: "diploma-maritime-law",
       title: "Diploma in Maritime Law",
       institution: "Lloyd's Maritime Academy",
       location: "Online",
       country: "United Kingdom",
-      image:
-        "https://i.ibb.co.com/Jk6mfCY/237569-SA-Ordbild-vid-samarbeten-RGB-eng.png",
+      image: "https://i.ibb.co.com/Jk6mfCY/237569-SA-Ordbild-vid-samarbeten-RGB-eng.png",
     },
     {
-      id: "llm-technology-ai", // Unique ID for routing
+      id: "llm-technology-ai",
       title: "LLM Technology and Artificial Intelligence",
       institution: "University of Bradford",
       location: "Bradford",
       country: "United Kingdom",
-      image:
-        "https://i.ibb.co.com/2Sc2VMH/197877-UHI-Formal-Marque-Keystone.png",
+      image: "https://i.ibb.co.com/2Sc2VMH/197877-UHI-Formal-Marque-Keystone.png",
     },
     {
-      id: "llm-international-commercial-law", // Unique ID for routing
+      id: "llm-international-commercial-law",
       title: "LLM International Commercial Law",
       institution: "University College Dublin",
       location: "Dublin",
       country: "Ireland",
-      image:
-        "https://i.ibb.co.com/285BZwF/240330-Screenshot2024-09-17170404.png",
+      image: "https://i.ibb.co.com/285BZwF/240330-Screenshot2024-09-17170404.png",
     },
     {
-      id: "llm-sustainability-law-natural-resources", // Unique ID for routing
+      id: "llm-sustainability-law-natural-resources",
       title: "LLM in Sustainability Law and Natural Resources",
       institution: "University of Lapland",
       location: "Rovaniemi",
       country: "Finland",
-      image:
-        "https://i.ibb.co.com/285BZwF/240330-Screenshot2024-09-17170404.png",
+      image: "https://i.ibb.co.com/285BZwF/240330-Screenshot2024-09-17170404.png",
     },
     {
-      id: "llm-human-rights-law", // Unique ID for routing
+      id: "llm-human-rights-law",
       title: "LLM in Human Rights Law",
       institution: "London School of Economics",
       location: "London",
       country: "United Kingdom",
-      image:
-        "https://i.ibb.co.com/2Sc2VMH/197877-UHI-Formal-Marque-Keystone.png",
+      image: "https://i.ibb.co.com/2Sc2VMH/197877-UHI-Formal-Marque-Keystone.png",
     },
     {
-      id: "llm-commercial-arbitration", // Unique ID for routing
+      id: "llm-commercial-arbitration",
       title: "LLM in Commercial Arbitration",
       institution: "Stockholm University",
       location: "Stockholm",
       country: "Sweden",
-      image:
-        "https://i.ibb.co.com/Jk6mfCY/237569-SA-Ordbild-vid-samarbeten-RGB-eng.png",
+      image: "https://i.ibb.co.com/Jk6mfCY/237569-SA-Ordbild-vid-samarbeten-RGB-eng.png",
+    },
+  ];
+
+  const programsData = [
+    {
+      id: "computer-science",
+      name: "Computer Science",
+      icon: "💻",
+      fields: ["AI", "Data Science", "Cybersecurity", "Web Development", "Machine Learning", "Software Engineering"],
+    },
+    {
+      id: "business-administration",
+      name: "Business Administration",
+      icon: "📊",
+      fields: ["Finance", "Marketing", "Operations", "HR", "Business Analytics", "Entrepreneurship"],
+    },
+    {
+      id: "design",
+      name: "Design",
+      icon: "🎨",
+      fields: ["Graphic Design", "UX/UI", "Animation", "Photography", "Interior Design", "Industrial Design"],
+    },
+    {
+      id: "law",
+      name: "Law",
+      icon: "⚖️",
+      fields: ["Corporate Law", "International Law", "Human Rights", "Environmental Law", "Criminal Law"],
+    },
+    {
+      id: "engineering",
+      name: "Engineering",
+      icon: "🔧",
+      fields: ["Mechanical Engineering", "Electrical Engineering", "Civil Engineering", "Aerospace Engineering"],
+    },
+    {
+      id: "medicine",
+      name: "Medicine",
+      icon: "🏥",
+      fields: ["General Medicine", "Surgery", "Dentistry", "Pharmacy", "Nursing", "Veterinary Medicine"],
+    },
+    {
+      id: "psychology",
+      name: "Psychology",
+      icon: "🧠",
+      fields: ["Clinical Psychology", "Counseling", "Forensic Psychology", "Educational Psychology"],
+    },
+    {
+      id: "education",
+      name: "Education",
+      icon: "📚",
+      fields: ["Primary Education", "Secondary Education", "Curriculum Development", "Educational Leadership"],
+    },
+    {
+      id: "environmental-studies",
+      name: "Environmental Studies",
+      icon: "🌍",
+      fields: ["Sustainability", "Ecology", "Conservation", "Renewable Energy"],
+    },
+    {
+      id: "social-sciences",
+      name: "Social Sciences",
+      icon: "🌐",
+      fields: ["Sociology", "Anthropology", "Political Science", "International Relations"],
+    },
+    {
+      id: "health-sciences",
+      name: "Health Sciences",
+      icon: "🏥",
+      fields: ["Public Health", "Nutrition", "Physiotherapy", "Occupational Therapy"],
+    },
+    {
+      id: "economics",
+      name: "Economics",
+      icon: "💰",
+      fields: ["Microeconomics", "Macroeconomics", "Econometrics", "Development Economics"],
+    },
+    {
+      id: "philosophy",
+      name: "Philosophy",
+      icon: "📜",
+      fields: ["Ethics", "Metaphysics", "Logic", "Political Philosophy"],
+    },
+    {
+      id: "media-studies",
+      name: "Media Studies",
+      icon: "🎥",
+      fields: ["Journalism", "Film Studies", "Advertising", "Public Relations"],
+    },
+    {
+      id: "art-history",
+      name: "Art History",
+      icon: "🖼️",
+      fields: ["Modern Art", "Renaissance Art", "Photography", "Art Criticism"],
+    },
+    {
+      id: "chemistry",
+      name: "Chemistry",
+      icon: "🧪",
+      fields: ["Organic Chemistry", "Analytical Chemistry", "Biochemistry", "Physical Chemistry"],
+    },
+    {
+      id: "physics",
+      name: "Physics",
+      icon: "⚛️",
+      fields: ["Quantum Physics", "Astrophysics", "Particle Physics", "Nuclear Physics"],
+    },
+    {
+      id: "mathematics",
+      name: "Mathematics",
+      icon: "📐",
+      fields: ["Algebra", "Calculus", "Statistics", "Applied Mathematics"],
+    },
+    {
+      id: "architecture",
+      name: "Architecture",
+      icon: "🏛️",
+      fields: ["Urban Planning", "Landscape Architecture", "Sustainable Architecture", "Interior Architecture"],
+    },
+    {
+      id: "biotechnology",
+      name: "Biotechnology",
+      icon: "🧬",
+      fields: ["Genetics", "Bioinformatics", "Molecular Biology", "Bioprocess Engineering"],
     },
   ];
 
@@ -251,7 +310,7 @@ export default function Home() {
         studyFields={studyFields}
       />
       <EducationJourney />
-      <DiscoverProgram programs={programsData} />
+      <MasterDiscoverProgram programs={programsData} />
       <MasterWhereToStudy title="Where to study" locations={mockLocations} />
       <MasterArticlesAndGuides articles={mockArticles} />
       <MasterAddedProgram programs={mockPrograms} />
