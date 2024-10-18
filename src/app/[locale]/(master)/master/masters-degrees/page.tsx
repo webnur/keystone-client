@@ -1,11 +1,11 @@
 import React from "react";
-import Banner from "@/components/common/Banner";
 import BaseText from "@/components/degree/BaseText";
 import PopularFields from "@/components/common/PopularFields";
 import NewsAndArticles from "@/components/common/NewsAndArticle";
 import { articlesData } from "@/app/[locale]/(main)/articles/article";
 import NewlyAddedPrograms from "@/components/home/NewlyAddedPrograms";
 import MScSection from "@/components/common/MScSection";
+import CommonBanner from "@/components/common/CommonBanner";
 
 const page = () => {
   const lawStudyFields = [
@@ -26,8 +26,10 @@ const page = () => {
   Start your search by looking at the most popular Master degrees listed below.
 `;
 
+  // Mock data for MasterAddedProgram
   const mockPrograms = [
     {
+      id: "diploma-maritime-law", // Unique ID for routing
       title: "Diploma in Maritime Law",
       institution: "Lloyd's Maritime Academy",
       location: "Online",
@@ -36,6 +38,7 @@ const page = () => {
         "https://i.ibb.co.com/Jk6mfCY/237569-SA-Ordbild-vid-samarbeten-RGB-eng.png",
     },
     {
+      id: "llm-technology-ai", // Unique ID for routing
       title: "LLM Technology and Artificial Intelligence",
       institution: "University of Bradford",
       location: "Bradford",
@@ -44,6 +47,7 @@ const page = () => {
         "https://i.ibb.co.com/2Sc2VMH/197877-UHI-Formal-Marque-Keystone.png",
     },
     {
+      id: "llm-international-commercial-law", // Unique ID for routing
       title: "LLM International Commercial Law",
       institution: "University College Dublin",
       location: "Dublin",
@@ -52,6 +56,7 @@ const page = () => {
         "https://i.ibb.co.com/285BZwF/240330-Screenshot2024-09-17170404.png",
     },
     {
+      id: "llm-sustainability-law-natural-resources", // Unique ID for routing
       title: "LLM in Sustainability Law and Natural Resources",
       institution: "University of Lapland",
       location: "Rovaniemi",
@@ -60,6 +65,7 @@ const page = () => {
         "https://i.ibb.co.com/285BZwF/240330-Screenshot2024-09-17170404.png",
     },
     {
+      id: "llm-human-rights-law", // Unique ID for routing
       title: "LLM in Human Rights Law",
       institution: "London School of Economics",
       location: "London",
@@ -68,6 +74,7 @@ const page = () => {
         "https://i.ibb.co.com/2Sc2VMH/197877-UHI-Formal-Marque-Keystone.png",
     },
     {
+      id: "llm-commercial-arbitration", // Unique ID for routing
       title: "LLM in Commercial Arbitration",
       institution: "Stockholm University",
       location: "Stockholm",
@@ -100,13 +107,20 @@ const page = () => {
 
   return (
     <div>
-      <Banner
+      {/* <Banner
         backgroundImage={
           "https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?auto=compress&cs=tinysrgb&w=800"
         }
         title="Find Your Masters Degree"
         studyFields={lawStudyFields}
-      />
+      /> */}
+      <CommonBanner
+        title="Master Degree common banner"
+        backgroundImage={
+          "https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?auto=compress&cs=tinysrgb&w=800"
+        }
+        studyFields={lawStudyFields}
+      ></CommonBanner>
       <BaseText content={masterDegreeContent} />
       <PopularFields />
       <div className="bg-white py-10">

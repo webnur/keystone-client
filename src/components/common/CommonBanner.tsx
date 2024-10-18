@@ -1,14 +1,14 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import React, { useState } from "react";
 
 interface BannerWithDropdownProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   backgroundImage: any;
   title: string;
   studyFields: string[];
 }
 
-const BannerWithDropdown: React.FC<BannerWithDropdownProps> = ({
+const CommonBanner: React.FC<BannerWithDropdownProps> = ({
   backgroundImage,
   title,
   studyFields,
@@ -21,18 +21,16 @@ const BannerWithDropdown: React.FC<BannerWithDropdownProps> = ({
 
   return (
     <div
-      className="relative bg-cover bg-center flex items-center justify-center py-[4rem] p-2"
+      className="relative bg-cover bg-center flex items-center justify-center py-[6rem] p-2"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div className="bg-foreground bg-opacity-70 w-full h-full absolute top-0 left-0"></div>
 
       <div className="relative z-10 w-full container mx-auto text-center">
-        <h1 className="text-white text-[2.5rem] font-bold mb-4 max-w-4xl mx-auto">
-          {title}
-        </h1>
+        <h1 className="text-white text-[2.5rem] font-bold mb-6">{title}</h1>
 
         <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-2">
-          <div className="relative w-full md:w-4/6 my-6">
+          <div className="relative w-full  my-6">
             <select
               value={selectedField}
               onChange={(e) => setSelectedField(e.target.value)}
@@ -98,18 +96,9 @@ const BannerWithDropdown: React.FC<BannerWithDropdownProps> = ({
             Search
           </button>
         </div>
-
-        <div className="py-5">
-          <p className="text-white">Or</p>
-        </div>
-        <div className="mt-4">
-          <button className="bg-transparent border-2 border-white text-white px-6 py-2 rounded-lg">
-            Browse Fields of Study
-          </button>
-        </div>
       </div>
     </div>
   );
 };
 
-export default BannerWithDropdown;
+export default CommonBanner;

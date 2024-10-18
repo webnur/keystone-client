@@ -4,21 +4,25 @@ import Link from "next/link";
 import React from "react";
 
 interface StudyLocation {
-  id: string;  
+  id: string;
   name: string;
   image: string;
 }
 
 interface WhereToStudyProps {
   locations: StudyLocation[];
+  title: string;
 }
 
-const MasterWhereToStudy: React.FC<WhereToStudyProps> = ({ locations }) => {
+const MasterWhereToStudy: React.FC<WhereToStudyProps> = ({
+  locations,
+  title,
+}) => {
   return (
     <section className="py-16 bg-white text-center container mx-auto">
       <div className="flex flex-col md:flex-row justify-between items-center mb-8 space-y-4 md:space-y-0 md:space-x-4">
         <h2 className="text-2xl md:text-3xl font-bold text-center md:text-left">
-          Where to study
+          {title}
         </h2>
         <button className="bg-red-100 text-red-500 px-4 py-2 rounded-lg hover:bg-red-200 transition duration-200 whitespace-nowrap">
           See all locations
