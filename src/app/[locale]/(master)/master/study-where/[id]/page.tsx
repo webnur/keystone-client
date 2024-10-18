@@ -33,10 +33,10 @@ const page = () => {
       countryName: "Germany",
       backgroundImage: "https://i.ibb.co/MkrJN0s/ezgif-1-8476095b38.jpg",
     },
-    "united-kingdom": {
+    uk: {
       title: "Study Master in United Kingdom 2024",
       countryName: "United Kingdom",
-      backgroundImage: "https://i.ibb.co.com/txH8qMm/ezgif-3-c99bcf9998.jpg",
+      backgroundImage: "https://i.ibb.co/txH8qMm/ezgif-3-c99bcf9998.jpg",
     },
     usa: {
       title: "Study Master in USA 2024",
@@ -47,6 +47,31 @@ const page = () => {
       title: "Study Master in Canada 2024",
       countryName: "Canada",
       backgroundImage: "https://i.ibb.co/n34cmjB/110845-shutterstock-255015211.jpg",
+    },
+    italy: {
+      title: "Study Master in Italy 2024",
+      countryName: "Italy",
+      backgroundImage: "https://i.ibb.co/MkrJN0s/ezgif-1-8476095b38.jpg",
+    },
+    france: {
+      title: "Study Master in France 2024",
+      countryName: "France",
+      backgroundImage: "https://i.ibb.co/T4J8cfx/61809-france.jpg",
+    },
+    spain: {
+      title: "Study Master in Spain 2024",
+      countryName: "Spain",
+      backgroundImage: "https://i.ibb.co/X8nsYJc/110855-shutterstock-377505535.jpg",
+    },
+    belgium: {
+      title: "Study Master in Belgium 2024",
+      countryName: "Belgium",
+      backgroundImage: "https://i.ibb.co/2tdMcTC/61795-belgium.jpg",
+    },
+    japan: {
+      title: "Study Master in Japan 2024",
+      countryName: "Japan",
+      backgroundImage: "https://i.ibb.co/G243xM9/62094-japan.jpg",
     },
     // Add more country data as needed
   };
