@@ -14,6 +14,15 @@ const config = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/en",
+        destination: "/en/master",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 module.exports = withNextIntl(config);

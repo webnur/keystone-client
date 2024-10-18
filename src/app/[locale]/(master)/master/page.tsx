@@ -252,7 +252,7 @@ export default function Home() {
       />
       <EducationJourney />
       <DiscoverProgram programs={programsData} />
-      <MasterWhereToStudy locations={mockLocations} />
+      <MasterWhereToStudy title="Where to study" locations={mockLocations} />
       <MasterArticlesAndGuides articles={mockArticles} />
       <MasterAddedProgram programs={mockPrograms} />
     </div>
