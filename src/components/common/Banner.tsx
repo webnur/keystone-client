@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 
 interface BannerWithDropdownProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   backgroundImage: any;
   title: string;
   studyFields: string[];
@@ -25,8 +26,10 @@ const BannerWithDropdown: React.FC<BannerWithDropdownProps> = ({
     >
       <div className="bg-foreground bg-opacity-70 w-full h-full absolute top-0 left-0"></div>
 
-      <div className="relative z-10 w-full max-w-4xl mx-auto text-center">
-        <h1 className="text-white text-[2.5rem] font-bold mb-4">{title}</h1>
+      <div className="relative z-10 w-full container mx-auto text-center">
+        <h1 className="text-white text-[2.5rem] font-bold mb-4 max-w-4xl mx-auto">
+          {title}
+        </h1>
 
         <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-2">
           <div className="relative w-full md:w-4/6 my-6">
