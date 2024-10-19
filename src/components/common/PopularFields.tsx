@@ -8,7 +8,7 @@ const PopularFields: React.FC = () => {
         Most Popular Fields
       </h2>
       <div className="flex flex-col gap-10 w-11/12 mx-auto">
-        {Object.entries(subjectsData).map(([key, subject], index) => (
+        {Object.entries(subjectsData).map(([, subject], index) => (
           <div key={index} className="mb-6">
             <h3 className="text-xl font-semibold mb-4 text-left">
               {subject.name}

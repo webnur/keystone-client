@@ -24,7 +24,7 @@ const LawAddedProgram: React.FC<NewlyAddedProgramsProps> = ({ programs }) => {
       institution: "Default Institution 1",
       location: "Default Location 1",
       country: "Country 1",
-      image: "https://via.placeholder.com/160",
+      image: "https://i.ibb.co.com/bRC2BGf/62089-germany.jpg",
       id: "default1",
     },
     {
@@ -32,7 +32,7 @@ const LawAddedProgram: React.FC<NewlyAddedProgramsProps> = ({ programs }) => {
       institution: "Default Institution 2",
       location: "Default Location 2",
       country: "Country 2",
-      image: "https://via.placeholder.com/160",
+      image: "https://i.ibb.co.com/bRC2BGf/62089-germany.jpg",
       id: "default2",
     },
     {
@@ -40,7 +40,7 @@ const LawAddedProgram: React.FC<NewlyAddedProgramsProps> = ({ programs }) => {
       institution: "Default Institution 3",
       location: "Default Location 3",
       country: "Country 3",
-      image: "https://via.placeholder.com/160",
+      image: "https://i.ibb.co.com/bRC2BGf/62089-germany.jpg",
       id: "default3",
     },
     {
@@ -48,7 +48,7 @@ const LawAddedProgram: React.FC<NewlyAddedProgramsProps> = ({ programs }) => {
       institution: "Default Institution 4",
       location: "Default Location 4",
       country: "Country 4",
-      image: "https://via.placeholder.com/160",
+      image: "https://i.ibb.co.com/bRC2BGf/62089-germany.jpg",
       id: "default4",
     },
   ];

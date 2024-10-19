@@ -1,5 +1,6 @@
-import React from 'react';
-import Link from 'next/link';
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
 
 interface Article {
   title: string;
@@ -27,12 +28,19 @@ const NewsAndArticles: React.FC<NewsAndArticlesProps> = ({ articles }) => {
         {/* Grid of Articles */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {articles.map((article, index) => (
-            <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-              <img
-                src={article.image}
-                alt={article.title}
-                className="w-full h-48 object-cover"
-              />
+            <div
+              key={index}
+              className="bg-white shadow-lg rounded-lg overflow-hidden"
+            >
+              <div className="relative w-full h-48">
+                <Image
+                  src={article.image}
+                  alt={article.title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-t-lg"
+                />
+              </div>
               <div className="p-4">
                 <h3 className="text-lg font-bold">{article.title}</h3>
                 <p className="text-gray-500 text-sm">{article.date}</p>

@@ -1,24 +1,27 @@
-import React from 'react';
+import React from "react";
 
 const CardComponent = () => {
   const cards = [
     {
       title: "Master's Scholarships in the United Kingdom",
-      description: "This is a list of scholarships you can apply for if you'd like to get a Master's in the UK as an international student.",
-      buttonText: 'See scholarships →',
-      imageUrl: 'https://via.placeholder.com/800x400.png?text=UK+Scholarships',
+      description:
+        "This is a list of scholarships you can apply for if you'd like to get a Master's in the UK as an international student.",
+      buttonText: "See scholarships →",
+      imageUrl: "https://i.ibb.co.com/bRC2BGf/62089-germany.jpg",
     },
     {
       title: "Master's Scholarships in the United States",
-      description: "This is a list of scholarships you can apply for if you'd like to get a Master's in the USA as an international student.",
-      buttonText: 'See scholarships →',
-      imageUrl: 'https://via.placeholder.com/800x400.png?text=USA+Scholarships',
+      description:
+        "This is a list of scholarships you can apply for if you'd like to get a Master's in the USA as an international student.",
+      buttonText: "See scholarships →",
+      imageUrl: "https://i.ibb.co.com/bRC2BGf/62089-germany.jpg",
     },
     {
       title: "Master's Scholarships in Germany",
-      description: "This is a list of scholarships you can apply for if you'd like to get a Master's in Germany as an international student.",
-      buttonText: 'See scholarships →',
-      imageUrl: 'https://via.placeholder.com/800x400.png?text=Germany+Scholarships',
+      description:
+        "This is a list of scholarships you can apply for if you'd like to get a Master's in Germany as an international student.",
+      buttonText: "See scholarships →",
+      imageUrl: "https://i.ibb.co.com/bRC2BGf/62089-germany.jpg",
     },
   ];
 
@@ -34,6 +37,7 @@ const CardComponent = () => {
             src={card.imageUrl}
             alt={card.title}
           />
+
           <div className="p-6">
             <h3 className="text-xl font-semibold mb-2">{card.title}</h3>
             <p className="text-gray-700 mb-4">{card.description}</p>
