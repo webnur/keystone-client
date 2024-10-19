@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -10,11 +10,11 @@ interface Program {
   location: string;
   country: string;
   image: string;
-  id: string; // Add id to link to dynamic page
+  id: string;
 }
 
 interface NewlyAddedProgramsProps {
-  programs?: Program[]; // Make programs optional
+  programs?: Program[];
 }
 
 const LawAddedProgram: React.FC<NewlyAddedProgramsProps> = ({ programs }) => {
@@ -53,7 +53,8 @@ const LawAddedProgram: React.FC<NewlyAddedProgramsProps> = ({ programs }) => {
     },
   ];
 
-  const programData = programs && programs.length > 0 ? programs : defaultPrograms; // Use API data if available, else use default data
+  const programData =
+    programs && programs.length > 0 ? programs : defaultPrograms;
   const [currentIndex, setCurrentIndex] = useState(0);
   const programsToShow = 4;
 
@@ -84,41 +85,48 @@ const LawAddedProgram: React.FC<NewlyAddedProgramsProps> = ({ programs }) => {
       </div>
 
       <div className="relative">
-        <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${Math.min(programsToShow, programData.length)} gap-4`}>
-          {programData.slice(currentIndex, currentIndex + programsToShow).map((program, index) => (
-            <div
-              key={index}
-              className="border rounded-lg shadow-md p-4 flex flex-col justify-between hover:shadow-lg transition-shadow duration-300"
-            >
-              <div className="flex justify-start w-full mb-4">
-                <Image
-                  src={program.image}
-                  alt={program.institution}
-                  className="object-contain w-32 h-32"
-                  width={160}
-                  height={100}
-                />
-              </div>
+        <div
+          className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${Math.min(
+            programsToShow,
+            programData.length
+          )} gap-4`}
+        >
+          {programData
+            .slice(currentIndex, currentIndex + programsToShow)
+            .map((program, index) => (
+              <div
+                key={index}
+                className="border rounded-lg shadow-md p-4 flex flex-col justify-between hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="flex justify-start w-full mb-4">
+                  <Image
+                    src={program.image}
+                    alt={program.institution}
+                    className="object-contain w-32 h-32"
+                    width={160}
+                    height={100}
+                  />
+                </div>
 
-              <h3 className="text-lg font-semibold text-black text-left">
-                {program.title}
-              </h3>
-              <p className="text-sm text-black text-left underline font-semibold">
-                {program.institution}
-              </p>
-              <p className="text-sm text-black flex items-center mt-3">
-                <LocationIcon width="16" height="16" />
-                {program.location}, {program.country}
-              </p>
-              <div className="flex justify-end">
-                <Link href={`/law/newly-added-program/${program.id}`}>
-                  <span className="text-red-500 font-semibold hover:text-red-600 flex items-center">
-                    More information <span className="ml-1">→</span>
-                  </span>
-                </Link>
+                <h3 className="text-lg font-semibold text-black text-left">
+                  {program.title}
+                </h3>
+                <p className="text-sm text-black text-left underline font-semibold">
+                  {program.institution}
+                </p>
+                <p className="text-sm text-black flex items-center mt-3">
+                  <LocationIcon width="16" height="16" />
+                  {program.location}, {program.country}
+                </p>
+                <div className="flex justify-end">
+                  <Link href={`/law/newly-added-program/${program.id}`}>
+                    <span className="text-red-500 font-semibold hover:text-red-600 flex items-center">
+                      More information <span className="ml-1">→</span>
+                    </span>
+                  </Link>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
 
         {programData.length > programsToShow && (

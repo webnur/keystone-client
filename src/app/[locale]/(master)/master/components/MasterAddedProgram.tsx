@@ -24,7 +24,7 @@ const MasterAddedProgram: React.FC<NewlyAddedProgramsProps> = ({ programs }) => 
       institution: "Default Institution 1",
       location: "Default Location 1",
       country: "Country 1",
-      image: "https://via.placeholder.com/160",
+      image: "https://i.ibb.co.com/CbgWHWY/126297-photo-1477238134895-98438ad85c30.jpg",
       id: "default1",
     },
     {
@@ -32,7 +32,7 @@ const MasterAddedProgram: React.FC<NewlyAddedProgramsProps> = ({ programs }) => 
       institution: "Default Institution 2",
       location: "Default Location 2",
       country: "Country 2",
-      image: "https://via.placeholder.com/160",
+      image: "https://i.ibb.co.com/CbgWHWY/126297-photo-1477238134895-98438ad85c30.jpg",
       id: "default2",
     },
     {
@@ -40,7 +40,7 @@ const MasterAddedProgram: React.FC<NewlyAddedProgramsProps> = ({ programs }) => 
       institution: "Default Institution 3",
       location: "Default Location 3",
       country: "Country 3",
-      image: "https://via.placeholder.com/160",
+      image: "https://i.ibb.co.com/CbgWHWY/126297-photo-1477238134895-98438ad85c30.jpg",
       id: "default3",
     },
     {
@@ -48,12 +48,12 @@ const MasterAddedProgram: React.FC<NewlyAddedProgramsProps> = ({ programs }) => 
       institution: "Default Institution 4",
       location: "Default Location 4",
       country: "Country 4",
-      image: "https://via.placeholder.com/160",
+      image: "https://i.ibb.co.com/CbgWHWY/126297-photo-1477238134895-98438ad85c30.jpg",
       id: "default4",
     },
   ];
 
-  const programData = programs && programs.length > 0 ? programs : defaultPrograms; // Use API data if available, else use default data
+  const programData = programs && programs.length > 0 ? programs : defaultPrograms; 
   const [currentIndex, setCurrentIndex] = useState(0);
   const programsToShow = 4;
 

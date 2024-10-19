@@ -2,8 +2,10 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import SubBanner from "@/components/common/SubBanner";
+import Image from "next/image";
 
 const SavedPrograms = () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [savedPrograms, setSavedPrograms] = useState<any[]>([]); // For storing programs from API or localStorage
 
   // Function to fetch saved programs from API or localStorage
@@ -73,8 +75,17 @@ const SavedPrograms = () => {
               <div key={index} className="border rounded-lg shadow-lg p-4">
                 <h3 className="text-xl font-bold">{program.title}</h3>
                 <p className="text-gray-600">{program.institution}</p>
-                <p className="text-gray-600">{program.location}, {program.country}</p>
-                <img src={program.image} alt={program.title} />
+                <p className="text-gray-600">
+                  {program.location}, {program.country}
+                </p>
+                <div className="relative w-full h-64">
+                  <Image
+                    src={program.image}
+                    alt={program.title}
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </div>
               </div>
             ))}
           </div>

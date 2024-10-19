@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 interface ProgramCardProps {
@@ -32,7 +33,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
         <p className="text-gray-500">🏫 {mode}</p>
         <p className="text-gray-500">🌐 {language}</p>
       </div>
-      <a href="#" className="text-red-500 mt-4 inline-block hover:underline">Read more</a>
+      <Link href="#" className="text-red-500 mt-4 inline-block hover:underline">Read more</Link>
     </div>
   );
 };

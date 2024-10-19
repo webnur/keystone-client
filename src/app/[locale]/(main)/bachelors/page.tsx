@@ -2,8 +2,8 @@ import BannerWithDropdown from "@/components/common/Banner";
 import ArticlesAndGuides from "@/components/home/ArticlesAndGuides";
 import DiscoverProgram from "@/components/home/DiscoverProgram";
 import EducationJourney from "@/components/home/EducationJourney";
-import NewlyAddedPrograms from "@/components/home/NewlyAddedPrograms";
-import SubHeaderNav from "@/components/home/SubHeaderNav";
+// import NewlyAddedPrograms from "@/components/home/NewlyAddedPrograms";
+// import SubHeaderNav from "@/components/home/SubHeaderNav";
 import WhereToStudy from "@/components/home/WhereToStudy";
 import React from "react";
 
@@ -137,60 +137,9 @@ const BachelorPage = () => {
       description: "An overview of the Bar Exam and its significance.",
     },
   ];
-  const mockPrograms = [
-    {
-      title: "Diploma in Maritime Law",
-      institution: "Lloyd's Maritime Academy",
-      location: "Online",
-      country: "United Kingdom",
-      image:
-        "https://i.ibb.co.com/Jk6mfCY/237569-SA-Ordbild-vid-samarbeten-RGB-eng.png",
-    },
-    {
-      title: "LLM Technology and Artificial Intelligence",
-      institution: "University of Bradford",
-      location: "Bradford",
-      country: "United Kingdom",
-      image:
-        "https://i.ibb.co.com/2Sc2VMH/197877-UHI-Formal-Marque-Keystone.png",
-    },
-    {
-      title: "LLM International Commercial Law",
-      institution: "University College Dublin",
-      location: "Dublin",
-      country: "Ireland",
-      image:
-        "https://i.ibb.co.com/285BZwF/240330-Screenshot2024-09-17170404.png",
-    },
-    {
-      title: "LLM in Sustainability Law and Natural Resources",
-      institution: "University of Lapland",
-      location: "Rovaniemi",
-      country: "Finland",
-      image:
-        "https://i.ibb.co.com/285BZwF/240330-Screenshot2024-09-17170404.png",
-    },
-    {
-      title: "LLM in Human Rights Law",
-      institution: "London School of Economics",
-      location: "London",
-      country: "United Kingdom",
-      image:
-        "https://i.ibb.co.com/2Sc2VMH/197877-UHI-Formal-Marque-Keystone.png",
-    },
-    {
-      title: "LLM in Commercial Arbitration",
-      institution: "Stockholm University",
-      location: "Stockholm",
-      country: "Sweden",
-      image:
-        "https://i.ibb.co.com/Jk6mfCY/237569-SA-Ordbild-vid-samarbeten-RGB-eng.png",
-    },
-  ];
 
   return (
     <div>
-      <SubHeaderNav />
       <BannerWithDropdown
         backgroundImage={
           "https://i.ibb.co.com/z5JrWcX/126282-photo-1533854775446-95c4609da544.jpg"
@@ -205,7 +154,7 @@ const BachelorPage = () => {
       <WhereToStudy locations={mockLocations} />
 
       <ArticlesAndGuides articles={mockArticles} />
-      <NewlyAddedPrograms programs={mockPrograms} />
+      {/* <NewlyAddedPrograms programs={mockPrograms} /> */}
     </div>
   );
 };

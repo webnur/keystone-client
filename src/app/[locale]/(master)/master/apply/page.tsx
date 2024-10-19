@@ -66,9 +66,9 @@ export default function Home() {
             </p>
             <p className="text-lg text-gray-800 font-semibold">
               Looking for more Master scholarships?{" "}
-              <a href="#" className="text-red-600 underline">
+              <Link href="#" className="text-red-600 underline">
                 Take a look at our Scholarship Directory.
-              </a>
+              </Link>
             </p>
           </div>
         </div>
@@ -315,9 +315,9 @@ export default function Home() {
             <h2 className="text-2xl font-bold text-gray-800 mb-4">
               Ready to submit your application?
             </h2>
-            <a href="#" className="text-red-600 underline">
+            <link href="#" className="text-red-600 underline">
               click here
-            </a>
+            </link>
           </div>
         </div>
 
@@ -581,17 +581,17 @@ export default function Home() {
                     <input className="mr-2" type="checkbox" id="agree" />
                     <span className="text-sm text-gray-600">
                       I agree to the{" "}
-                      <a href="#" className="text-blue-600 underline">
+                      <Link href="#" className="text-blue-600 underline">
                         Scholarship Terms and Conditions
-                      </a>{" "}
+                      </Link>{" "}
                       and the{" "}
-                      <a href="#" className="text-blue-600 underline">
+                      <Link href="#" className="text-blue-600 underline">
                         educations.com Terms and Conditions
-                      </a>{" "}
+                      </Link>{" "}
                       and{" "}
-                      <a href="#" className="text-blue-600 underline">
+                      <Link href="#" className="text-blue-600 underline">
                         Privacy Policy
-                      </a>
+                      </Link>
                       .
                     </span>
                   </label>

@@ -1,6 +1,7 @@
-"use client"
-import React, { useState } from 'react';
-import Link from 'next/link';
+"use client";
+import React, { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 
 interface Article {
   title: string;
@@ -35,12 +36,19 @@ const Articles: React.FC<ArticlesProps> = ({ articles = [] }) => {
         {/* Grid of Articles */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {currentArticles.map((article, index) => (
-            <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-              <img
-                src={article.image}
-                alt={article.title}
-                className="w-full h-48 object-cover"
-              />
+            <div
+              key={index}
+              className="bg-white shadow-lg rounded-lg overflow-hidden"
+            >
+              <div className="relative w-full h-64">
+                <Image
+                  src={article.image}
+                  alt={article.title}
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
+
               <div className="p-4">
                 <h3 className="text-lg font-bold">{article.title}</h3>
                 <p className="text-gray-500 text-sm">{article.date}</p>
@@ -61,8 +69,8 @@ const Articles: React.FC<ArticlesProps> = ({ articles = [] }) => {
               key={index}
               className={`px-3 py-1 rounded-full ${
                 currentPage === index + 1
-                  ? 'bg-red-600 text-white'
-                  : 'bg-gray-200 text-gray-700'
+                  ? "bg-red-600 text-white"
+                  : "bg-gray-200 text-gray-700"
               }`}
               onClick={() => handlePageChange(index + 1)}
             >
