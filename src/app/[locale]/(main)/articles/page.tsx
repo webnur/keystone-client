@@ -9,24 +9,13 @@ interface Article {
   image: string;
 }
 
-const defaultArticles: Article[] = [
-  {
-    title: "Article 1",
-    date: "October 19, 2024",
-    image: "/path-to-image-1.jpg",
-  },
-  {
-    title: "Article 2",
-    date: "October 18, 2024",
-    image: "/path-to-image-2.jpg",
-  },
-  // Add more articles as needed
-];
+interface ArticlesProps {
+  articles?: Article[]; // Optional in case it is undefined initially
+}
 
-const Articles: React.FC = () => {
+const Articles: React.FC<ArticlesProps> = ({ articles = [] }) => {
   const articlesPerPage = 6;
   const [currentPage, setCurrentPage] = useState(1);
-  const articles = defaultArticles; // Use the default data directly
 
   const totalPages = Math.ceil(articles.length / articlesPerPage);
 
@@ -64,9 +53,9 @@ const Articles: React.FC = () => {
                 <h3 className="text-lg font-bold">{article.title}</h3>
                 <p className="text-gray-500 text-sm">{article.date}</p>
                 <Link href="/article-details">
-                  <span className="text-red-500 hover:underline mt-2 block">
+                  <a className="text-red-500 hover:underline mt-2 block">
                     Read more →
-                  </span>
+                  </a>
                 </Link>
               </div>
             </div>
