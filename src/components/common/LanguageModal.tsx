@@ -2,18 +2,12 @@
 import React from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import LocaleSwitcherSelect from "../LocaleSwitcherSelect";
-import { routing } from "@/i18n/routing";
-import { useLocale, useTranslations } from "next-intl";
-
 
 interface LanguageModalProps {
   onClose: () => void;
 }
 
-
 const LanguageModal: React.FC<LanguageModalProps> = ({ onClose }) => {
-  const t = useTranslations("LocaleSwitcher");
-  const locale = useLocale();
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10">
       <div className="bg-white rounded-lg w-full max-w-2xl p-6 relative">
@@ -38,9 +32,7 @@ const LanguageModal: React.FC<LanguageModalProps> = ({ onClose }) => {
         <div className="mb-4 h-64 overflow-y-auto">
           <p className="font-bold mb-2">All languages</p>
           <div className="grid grid-cols-3 gap-2">
-            <LocaleSwitcherSelect>
-        
-            </LocaleSwitcherSelect>
+            <LocaleSwitcherSelect></LocaleSwitcherSelect>
           </div>
         </div>
 
