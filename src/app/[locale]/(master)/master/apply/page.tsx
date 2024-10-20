@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <>
+    <div>
       <Head>
         <title>Graduate Study in the USA Scholarship 2024</title>
       </Head>
@@ -48,7 +48,7 @@ export default function Home() {
               of you to do it.
             </p>
             <p className="text-lg text-gray-600 mb-4">
-              Graduate Study in the USA scholarship is{" "}
+              Graduate Study in the USA scholarship is
               <span className="font-bold">our first ever</span> Masters degree
               scholarship to help cover your tuition fees, and get you one step
               closer to your next great adventure, in the USA.
@@ -65,7 +65,7 @@ export default function Home() {
               2024 at 12:00 CEST.
             </p>
             <p className="text-lg text-gray-800 font-semibold">
-              Looking for more Master scholarships?{" "}
+              Looking for more Master scholarships?
               <Link href="#" className="text-red-600 underline">
                 Take a look at our Scholarship Directory.
               </Link>
@@ -252,22 +252,22 @@ export default function Home() {
                 are still listed as one of our finalists.
               </li>
               <li>
-                Make a post and tag us on{" "}
+                Make a post and tag us on
                 <Link href="#" className="text-red-600 underline">
                   Instagram
                 </Link>
-                ,{" "}
+                
                 <Link href="#" className="text-red-600 underline">
                   Facebook
                 </Link>
-                ,{" "}
+                
                 <Link href="#" className="text-red-600 underline">
                   LinkedIn
-                </Link>{" "}
-                and/or{" "}
+                </Link>
+                and/or
                 <Link href="#" className="text-red-600 underline">
                   TikTok
-                </Link>{" "}
+                </Link>
                 to tell others about yourself as the finalist.
               </li>
             </ul>
@@ -288,22 +288,22 @@ export default function Home() {
                 being told that you have won.
               </li>
               <li>
-                Make a post and tag us on{" "}
+                Make a post and tag us on
                 <Link href="#" className="text-red-600 underline">
                   Instagram
                 </Link>
-                ,{" "}
+                ,
                 <Link href="#" className="text-red-600 underline">
                   Facebook
                 </Link>
-                ,{" "}
+                ,
                 <Link href="#" className="text-red-600 underline">
                   LinkedIn
-                </Link>{" "}
-                and/or{" "}
+                </Link>
+                and/or
                 <Link href="#" className="text-red-600 underline">
                   TikTok
-                </Link>{" "}
+                </Link>
                 to tell others about yourself as the winner!
               </li>
             </ul>
@@ -315,9 +315,9 @@ export default function Home() {
             <h2 className="text-2xl font-bold text-gray-800 mb-4">
               Ready to submit your application?
             </h2>
-            <link href="#" className="text-red-600 underline">
+            <Link href="#" className="text-red-600 underline">
               click here
-            </link>
+            </Link>
           </div>
         </div>
 
@@ -580,15 +580,15 @@ export default function Home() {
                   <label className="flex items-center">
                     <input className="mr-2" type="checkbox" id="agree" />
                     <span className="text-sm text-gray-600">
-                      I agree to the{" "}
+                      I agree to the
                       <Link href="#" className="text-blue-600 underline">
                         Scholarship Terms and Conditions
-                      </Link>{" "}
-                      and the{" "}
+                      </Link>
+                      and the
                       <Link href="#" className="text-blue-600 underline">
                         educations.com Terms and Conditions
-                      </Link>{" "}
-                      and{" "}
+                      </Link>
+                      and
                       <Link href="#" className="text-blue-600 underline">
                         Privacy Policy
                       </Link>
@@ -631,6 +631,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

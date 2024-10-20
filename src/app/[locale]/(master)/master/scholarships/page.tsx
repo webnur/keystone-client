@@ -32,7 +32,7 @@ const scholarshipsData = [
     buttonLink: "/master/apply",
   },
 ];
-const ScholarShipPage = () => {
+const page = () => {
   return (
     <div>
       <SubBanner
@@ -46,4 +46,4 @@ const ScholarShipPage = () => {
   );
 };
 
-export default ScholarShipPage;
+export default page;
