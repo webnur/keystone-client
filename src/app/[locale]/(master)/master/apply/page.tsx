@@ -4,7 +4,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Home() {
+ const page = () => {
   return (
     <div>
       <Head>
@@ -634,3 +634,6 @@ export default function Home() {
     </div>
   );
 }
+
+
+export default page;
