@@ -1,5 +1,5 @@
-import React from "react";
-import Image from "next/image";
+import React from 'react';
+import Image from 'next/image';
 
 interface ProgramCardProps {
   title: string;
@@ -20,13 +20,15 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
     <div className="border p-4 mb-4 shadow-sm flex">
       {/* Replace with the image for the university */}
       <div className="mr-4">
-        <Image
-          src="https://i.ibb.co.com/bRC2BGf/62089-germany.jpg"
-          alt={institution}
-          width={96}
-          height={96}
-          className="object-cover"
-        />
+        <div className="relative w-24 h-24">
+          <Image
+            src="https://via.placeholder.com/100x100"
+            alt={institution}
+            layout="fill"
+            objectFit="cover"
+            className="rounded"
+          />
+        </div>
       </div>
 
       <div className="flex-grow">

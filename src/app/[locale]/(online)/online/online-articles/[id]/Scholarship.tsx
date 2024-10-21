@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import Image from "next/image";
 
@@ -33,14 +33,13 @@ export default function Scholarship() {
           </a>
         </p>
         <div className="mt-8">
-          <div className="relative w-full h-64">
-            <Image
-              src="https://i.ibb.co.com/CbgWHWY/126297-photo-1477238134895-98438ad85c30.jpg"
-              alt="image"
-              layout="fill"
-              objectFit="cover"
-            />
-          </div>
+        <Image
+            src="/path-to-your-image.jpg"
+            alt="Scholarship"
+            className="rounded-lg shadow-lg w-full h-64 object-cover"
+            width={800} // Width for Next.js Image component
+            height={256} // Height for Next.js Image component
+          />
         </div>
       </div>
     </section>

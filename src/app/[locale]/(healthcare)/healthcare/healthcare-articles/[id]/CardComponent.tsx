@@ -41,6 +41,13 @@ const CardComponent = () => {
               objectFit="cover"
             />
           </div>
+          <Image
+            className="w-full h-64 object-cover"
+            src={card.imageUrl}
+            alt={card.title}
+            width={800}
+            height={400}
+          />
           <div className="p-6">
             <h3 className="text-xl font-semibold mb-2">{card.title}</h3>
             <p className="text-gray-700 mb-4">{card.description}</p>

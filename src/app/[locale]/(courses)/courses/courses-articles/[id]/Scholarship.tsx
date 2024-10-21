@@ -1,6 +1,5 @@
 "use client";
-
-import Image from "next/image";
+import Image from 'next/image';
 
 export default function Scholarship() {
   return (
@@ -32,15 +31,14 @@ export default function Scholarship() {
             Student Tips
           </a>
         </p>
-        <div className="mt-8">
-          <div className="relative w-full h-64">
-            <Image
-              src="https://i.ibb.co.com/CbgWHWY/126297-photo-1477238134895-98438ad85c30.jpg"
-              alt="image"
-              layout="fill"
-              objectFit="cover"
-            />
-          </div>
+        <div className="mt-8 relative w-full h-64">
+          <Image 
+            src="/path-to-your-image.jpg" 
+            alt="Scholarship" 
+            layout="fill"
+            objectFit="cover"
+            className="rounded-lg shadow-lg"
+          />
         </div>
       </div>
     </section>

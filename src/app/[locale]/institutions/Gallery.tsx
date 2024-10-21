@@ -31,7 +31,6 @@ const Gallery = () => {
     <div className="py-8 px-4">
       <h2 className="text-2xl font-semibold mb-4">Gallery</h2>
       <div className="relative">
-        {/* Main Image Display */}
         <div className="relative w-full h-96 overflow-hidden">
           <Image
             src={images[currentIndex]}
@@ -42,7 +41,6 @@ const Gallery = () => {
           />
         </div>
 
-        {/* Next and Previous Buttons */}
         <button
           onClick={goToPreviousSlide}
           className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-300 rounded-full p-2 hover:bg-gray-500"
@@ -57,7 +55,6 @@ const Gallery = () => {
         </button>
       </div>
 
-      {/* Thumbnails */}
       <div className="mt-4 flex space-x-4">
         {images.map((img, idx) => (
           <button
@@ -67,6 +64,7 @@ const Gallery = () => {
               currentIndex === idx ? "border-red-500" : "border-gray-300"
             }`}
           >
+            <Image
             <Image
               src={img}
               alt={`Thumbnail ${idx + 1}`}
