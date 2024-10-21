@@ -65,7 +65,6 @@ const Gallery = () => {
             }`}
           >
             <Image
-            <Image
               src={img}
               alt={`Thumbnail ${idx + 1}`}
               width={64} // 16 * 4 = 64px
