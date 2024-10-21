@@ -5,24 +5,21 @@ const CardComponent = () => {
   const cards = [
     {
       title: "Master's Scholarships in the United Kingdom",
-      description:
-        "This is a list of scholarships you can apply for if you'd like to get a Master's in the UK as an international student.",
-      buttonText: "See scholarships →",
-      imageUrl: "https://i.ibb.co.com/bRC2BGf/62089-germany.jpg",
+      description: "This is a list of scholarships you can apply for if you'd like to get a Master's in the UK as an international student.",
+      buttonText: 'See scholarships →',
+      imageUrl: 'https://via.placeholder.com/800x400.png?text=UK+Scholarships',
     },
     {
       title: "Master's Scholarships in the United States",
-      description:
-        "This is a list of scholarships you can apply for if you'd like to get a Master's in the USA as an international student.",
-      buttonText: "See scholarships →",
-      imageUrl: "https://i.ibb.co.com/bRC2BGf/62089-germany.jpg",
+      description: "This is a list of scholarships you can apply for if you'd like to get a Master's in the USA as an international student.",
+      buttonText: 'See scholarships →',
+      imageUrl: 'https://via.placeholder.com/800x400.png?text=USA+Scholarships',
     },
     {
       title: "Master's Scholarships in Germany",
-      description:
-        "This is a list of scholarships you can apply for if you'd like to get a Master's in Germany as an international student.",
-      buttonText: "See scholarships →",
-      imageUrl: "https://i.ibb.co.com/bRC2BGf/62089-germany.jpg",
+      description: "This is a list of scholarships you can apply for if you'd like to get a Master's in Germany as an international student.",
+      buttonText: 'See scholarships →',
+      imageUrl: 'https://via.placeholder.com/800x400.png?text=Germany+Scholarships',
     },
   ];
 
