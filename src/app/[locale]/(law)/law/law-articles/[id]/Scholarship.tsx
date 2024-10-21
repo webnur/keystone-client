@@ -1,13 +1,19 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Scholarship() {
   return (
     <section className="bg-gray-50 py-12">
       <div className="max-w-6xl mx-auto px-4">
         <nav className="text-sm text-gray-500 mb-4">
-          <a href="#" className="hover:text-red-600">Articles</a> &gt;
-          <a href="#" className="hover:text-red-600">Master's Scholarships Directory For International Students</a>
+          <Link href="#" className="hover:text-red-600">
+            Articles
+          </Link>{" "}
+          &gt;
+          <Link href="#" className="hover:text-red-600">
+            Masters Scholarships Directory For International Students
+          </Link>
         </nav>
         <h1 className="text-3xl font-bold text-gray-800 mb-4">
           Masters Scholarships Directory for International Students
@@ -18,8 +24,13 @@ export default function Scholarship() {
         </p>
         <p className="text-sm text-gray-500">
           Aug 5, 2024 &nbsp; • &nbsp;
-          <a href="#" className="text-red-600 hover:underline">Study Abroad</a> &nbsp; • &nbsp;
-          <a href="#" className="text-red-600 hover:underline">Student Tips</a>
+          <Link href="#" className="text-red-600 hover:underline">
+            Study Abroad
+          </Link>{" "}
+          &nbsp; • &nbsp;
+          <Link href="#" className="text-red-600 hover:underline">
+            Student Tips
+          </Link>
         </p>
         <div className="mt-8">
           <Image

@@ -1,5 +1,6 @@
 "use client";
-import Image from 'next/image';
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Scholarship() {
   return (
@@ -32,9 +33,9 @@ export default function Scholarship() {
           </Link>
         </p>
         <div className="mt-8 relative w-full h-64">
-          <Image 
-            src="/path-to-your-image.jpg" 
-            alt="Scholarship" 
+          <Image
+            src="/path-to-your-image.jpg"
+            alt="Scholarship"
             layout="fill"
             objectFit="cover"
             className="rounded-lg shadow-lg"
