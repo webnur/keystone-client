@@ -67,20 +67,13 @@ const Gallery = () => {
               currentIndex === idx ? "border-red-500" : "border-gray-300"
             }`}
           >
-            {/* <img
+            <Image
               src={img}
               alt={`Thumbnail ${idx + 1}`}
-              className="w-16 h-16 object-cover"
-            /> */}
-
-            <div className="w-full">
-              <Image
-                src={img}
-                alt={`Thumbnail ${idx + 1}`}
-                layout="fill"
-                objectFit="cover"
-              />
-            </div>
+              width={64} // 16 * 4 = 64px
+              height={64} // 16 * 4 = 64px
+              className="object-cover"
+            />
           </button>
         ))}
       </div>
