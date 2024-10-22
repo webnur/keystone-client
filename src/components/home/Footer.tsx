@@ -6,8 +6,10 @@ import InstagramIcon from "../icons/InstagramIcon";
 import LinkedinIcon from "../icons/LinkedinIcon";
 import FacebookIcon from "../icons/FacebookIcon";
 import YoutubeIcon from "../icons/YoutubeIcon";
+import { useTranslations } from "next-intl";
 
 const Footer = () => {
+  const t = useTranslations("footer");
   return (
     <footer className="flex justify-center items-end bg-gray-800">
       <div className="flex w-full max-w-7xl flex-col text-white px-6 py-10 md:flex-row md:justify-between lg:px-0">
@@ -27,38 +29,30 @@ const Footer = () => {
              simple-block-content"
             >
               <p className="pb-3">
-                <strong>
-                  Browse thousands of graduate degrees from around the world.
-                </strong>
+                <strong>{t("title")}</strong>
               </p>
-              <p>
-                MASTERSTUDIES makes it easy for graduate students to find the
-                right degree. Use our website to find information about degrees
-                and career paths from around the world and speak directly with
-                admissions officers at the schools and universities that
-                interest you.
-              </p>
+              <p>{t("description")}</p>
             </div>
           </div>
           <div className="flex w-full flex-col items-start md:flex-row md:items-center">
             <div className="flex flex-col items-center md:flex-row md:gap-4">
               <ul className="flex flex-col items-start md:flex-row md:gap-4">
                 <li className="!text-sm underline decoration-gray-500 my-2 hover:text-secondary-light md:text-lg">
-                  <Link href="/privacy-policy">Privacy Policy</Link>
+                  <Link href="/privacy-policy">{t("privacy")}</Link>
                 </li>
                 <li className="!text-sm underline decoration-gray-500 my-2 hover:text-secondary-light md:text-lg">
-                  <Link href="/terms-and-conditions">Terms and Conditions</Link>
+                  <Link href="/terms-and-conditions">{t("terms")}</Link>
                 </li>
                 <li className="!text-sm underline decoration-gray-500 my-2 hover:text-secondary-light md:text-lg">
-                  <Link href="/about-us">About us</Link>
+                  <Link href="/about-us">{t("about")}</Link>
                 </li>
                 <li className="!text-sm underline decoration-gray-500 my-2 hover:text-secondary-light md:text-lg">
-                  <Link href="/promote-your-program">Promote your program</Link>
+                  <Link href="/promote-your-program">{t("promote")}</Link>
                 </li>
               </ul>
               <ul className="flex flex-col items-start md:flex-row md:gap-4">
                 <li className="text-sm text-white underline decoration-gray-500 my-4 first-of-type:ml-0 hover:text-secondary-light md:m-4">
-                  <Link href="/contact-us">Contact us</Link>
+                  <Link href="/contact-us">{t("contact")}</Link>
                 </li>
               </ul>
             </div>
