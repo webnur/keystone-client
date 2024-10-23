@@ -1,7 +1,8 @@
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import React from 'react';
 
 interface ProgramCardProps {
+  id: number;
   title: string;
   institution: string;
   location: string;
@@ -12,6 +13,7 @@ interface ProgramCardProps {
 }
 
 const ProgramCard: React.FC<ProgramCardProps> = ({
+  id,
   title,
   institution,
   location,
@@ -20,8 +22,31 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
   language,
   recommended = false,
 }) => {
+  const [isFavorited, setIsFavorited] = useState(false);
+
+  useEffect(() => {
+    const savedFavorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+    if (savedFavorites.includes(id)) {
+      setIsFavorited(true);
+    }
+  }, [id]);
+
+  const toggleFavorite = () => {
+    const savedFavorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+    let updatedFavorites;
+
+    if (isFavorited) {
+      updatedFavorites = savedFavorites.filter((favId: number) => favId !== id);
+    } else {
+      updatedFavorites = [...savedFavorites, id];
+    }
+
+    localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+    setIsFavorited(!isFavorited);
+  };
+
   return (
-    <div className="border rounded-lg p-4 bg-white shadow hover:shadow-md transition">
+    <div className="border rounded-lg p-4 bg-white shadow hover:shadow-md transition relative">
       {recommended && (
         <div className="text-red-500 text-sm font-semibold mb-2">Recommended</div>
       )}
@@ -34,6 +59,9 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
         <p className="text-gray-500">🌐 {language}</p>
       </div>
       <Link href="#" className="text-red-500 mt-4 inline-block hover:underline">Read more</Link>
+      <button onClick={toggleFavorite} className="absolute top-4 right-4">
+        {isFavorited ? '❤️' : '🤍'}
+      </button>
     </div>
   );
 };
