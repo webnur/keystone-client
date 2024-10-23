@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-// import React, { useEffect } from "react";
+import React from "react";
 
 type NavData = {
   name: string;
@@ -18,93 +18,11 @@ const SubHeaderNav: React.FC<SubHeaderNavProps> = ({
   activeCategory,
 }) => {
   const router = useRouter();
-  // const pathname = usePathname();
-
-  // useEffect(() => {
-  //   const path = pathname?.split("/")[1];
-  //   if (path && activeCategory !== path) {
-
-  //   }
-  // }, [pathname, activeCategory]);
-
-  // const handleCategoryClick = (category: string) => {
-  //   router.push(`/${category}`); // Navigate to the selected category's path
-  // };
 
   return (
     <div className="subheader-container">
       {/* Main navigation for categories */}
-      {/* <nav className="flex justify-left py-3 border-b border-gray-200 w-11/12 mx-auto">
-        <button
-          className={`px-4 py-2 ${
-            activeCategory === "master" ? "text-red-600 font-bold" : ""
-          }`}
-          onClick={() => handleCategoryClick("master")}
-        >
-          Master
-        </button>
-
-        <button
-          className={`px-4 py-2 ${
-            activeCategory === "phd" ? "text-red-600 font-bold" : ""
-          }`}
-          onClick={() => handleCategoryClick("phd")}
-        >
-          PhD
-        </button>
-
-        <button
-          className={`px-4 py-2 ${
-            activeCategory === "law" ? "text-red-600 font-bold" : ""
-          }`}
-          onClick={() => handleCategoryClick("law")}
-        >
-          Law
-        </button>
-
-        <button
-          className={`px-4 py-2 ${
-            activeCategory === "bachelor" ? "text-red-600 font-bold" : ""
-          }`}
-          onClick={() => handleCategoryClick("bachelor")}
-        >
-          Bachelor
-        </button>
-        <button
-          className={`px-4 py-2 ${
-            activeCategory === "mba" ? "text-red-600 font-bold" : ""
-          }`}
-          onClick={() => handleCategoryClick("mba")}
-        >
-          Mba
-        </button>
-        <button
-          className={`px-4 py-2 ${
-            activeCategory === "healthcare" ? "text-red-600 font-bold" : ""
-          }`}
-          onClick={() => handleCategoryClick("healthcare")}
-        >
-          Healthcare
-        </button>
-        <button
-          className={`px-4 py-2 ${
-            activeCategory === "courses" ? "text-red-600 font-bold" : ""
-          }`}
-          onClick={() => handleCategoryClick("courses")}
-        >
-          Courses
-        </button>
-        <button
-          className={`px-4 py-2 ${
-            activeCategory === "online" ? "text-red-600 font-bold" : ""
-          }`}
-          onClick={() => handleCategoryClick("online")}
-        >
-          Online
-        </button>
-      </nav> */}
-
-      <nav className="flex justify-left py-3 border-b border-gray-200 w-11/12 mx-auto">
+      <nav className="flex justify-left py-3 border-b border-gray-200 w-full overflow-x-auto whitespace-nowrap scroll-smooth" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
         <Link
           href="/master"
           className={`px-4 py-2 ${
@@ -180,7 +98,7 @@ const SubHeaderNav: React.FC<SubHeaderNavProps> = ({
 
       {/* Sub-navigation for the active category */}
       <div className="bg-foreground">
-        <div className="subnav w-11/12 mx-auto py-3 px-4">
+        <div className="subnav w-full mx-auto py-3 px-4 overflow-x-auto whitespace-nowrap scroll-smooth" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
           <div className="flex justify-left space-x-4">
             {navData.length > 0 ? (
               navData.map((subNavItem, index) => (
