@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 
 import { useParams } from "next/navigation";
@@ -21,12 +22,11 @@ interface LocationDataType {
 }
 
 const page = () => {
-  const params = useParams(); // Use Next.js 13 useParams to get dynamic route parameters
-  const { id } = params; // Extract the 'id' from params
+  const params = useParams();
+  const { id } = params;
 
   const [isLoading, setIsLoading] = useState(true);
 
-  // Mock data: In a real case, this data should be fetched from an API based on the "id"
   const locationData: Record<string, LocationDataType> = {
     germany: {
       title: "Study Master in Germany 2024",
@@ -41,12 +41,14 @@ const page = () => {
     usa: {
       title: "Study Master in USA 2024",
       countryName: "USA",
-      backgroundImage: "https://i.ibb.co/3FGPY8X/124334-shutterstock-244469683.jpg",
+      backgroundImage:
+        "https://i.ibb.co/3FGPY8X/124334-shutterstock-244469683.jpg",
     },
     canada: {
       title: "Study Master in Canada 2024",
       countryName: "Canada",
-      backgroundImage: "https://i.ibb.co/n34cmjB/110845-shutterstock-255015211.jpg",
+      backgroundImage:
+        "https://i.ibb.co/n34cmjB/110845-shutterstock-255015211.jpg",
     },
     italy: {
       title: "Study Master in Italy 2024",
@@ -61,7 +63,8 @@ const page = () => {
     spain: {
       title: "Study Master in Spain 2024",
       countryName: "Spain",
-      backgroundImage: "https://i.ibb.co/X8nsYJc/110855-shutterstock-377505535.jpg",
+      backgroundImage:
+        "https://i.ibb.co/X8nsYJc/110855-shutterstock-377505535.jpg",
     },
     belgium: {
       title: "Study Master in Belgium 2024",

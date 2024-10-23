@@ -1,9 +1,8 @@
 import Image from "next/image";
 import React from "react";
-import Link from "next/link"; // Importing Link for navigation
-
+import Link from "next/link";
 interface Article {
-  id: string;        // Add id for routing
+  id: string;
   title: string;
   date: string;
   image: string;
@@ -14,7 +13,9 @@ interface MasterArticlesAndGuidesProps {
   articles: Article[];
 }
 
-const LawArticlesAndGuides: React.FC<MasterArticlesAndGuidesProps> = ({ articles }) => {
+const LawArticlesAndGuides: React.FC<MasterArticlesAndGuidesProps> = ({
+  articles,
+}) => {
   return (
     <section className="bg-gray-100">
       <div className="py-16 text-center container mx-auto">
@@ -61,10 +62,11 @@ const LawArticlesAndGuides: React.FC<MasterArticlesAndGuidesProps> = ({ articles
 
               {/* Read More Button (Linking to the article details page) */}
               <div className="text-right">
-                <Link className="text-red-500 font-semibold" href={`/law/law-articles/${article.id}`}>
-                  
-                    Read more <span className="inline-block transform">→</span>
-                  
+                <Link
+                  className="text-red-500 font-semibold"
+                  href={`/law/law-articles/${article.id}`}
+                >
+                  Read more <span className="inline-block transform">→</span>
                 </Link>
               </div>
             </div>

@@ -1,14 +1,13 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 interface SidebarProps {
-  sections: string[]; // Array of section IDs or titles
+  sections: string[];
 }
 
 const NSidebar: React.FC<SidebarProps> = ({ sections }) => {
   const [activeSection, setActiveSection] = useState<string>("");
 
-  // Function to handle scrolling to section when clicking the menu item
   const handleScrollToSection = (sectionId: string) => {
     const sectionElement = document.getElementById(sectionId);
     if (sectionElement) {
@@ -16,7 +15,6 @@ const NSidebar: React.FC<SidebarProps> = ({ sections }) => {
     }
   };
 
-  // Function to determine the currently visible section
   const handleScroll = () => {
     let currentSection = "";
     sections.forEach((sectionId) => {

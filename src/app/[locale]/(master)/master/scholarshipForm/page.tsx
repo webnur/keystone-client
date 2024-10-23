@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 
 export default function ScholarshipForm() {
   return (
@@ -9,17 +10,17 @@ export default function ScholarshipForm() {
 
       <div className="max-w-4xl w-full bg-white p-10 rounded-lg shadow-lg">
         <h2 className="text-3xl font-semibold text-gray-800 mb-6">
-          <a href="https://www.educations.com">educations.com</a> Graduate Study
-          in the USA Scholarship 2025 - Application Form
+          <Link href="https://www.educations.com">educations.com</Link> Graduate
+          Study in the USA Scholarship 2025 - Application Form
         </h2>
         <p className="text-sm text-gray-600 mb-8">
           Please read the full terms and conditions here: <br />
-          <a
+          <Link
             href="https://www.educations.com/scholarships/graduate-study-in-the-usa-scholarship-terms-and-conditions"
             className="text-blue-600 hover:underline"
           >
             https://www.educations.com/scholarships/graduate-study-in-the-usa-scholarship-terms-and-conditions
-          </a>
+          </Link>
         </p>
 
         <form className="space-y-6">
@@ -231,39 +232,39 @@ export default function ScholarshipForm() {
               <ul className="list-disc list-inside">
                 <li>
                   Instagram:{" "}
-                  <a
+                  <Link
                     href="https://www.instagram.com/educationscom"
                     className="text-blue-600 hover:underline"
                   >
                     https://www.instagram.com/educationscom/
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   TikTok:{" "}
-                  <a
+                  <Link
                     href="https://www.tiktok.com/@educationscom"
                     className="text-blue-600 hover:underline"
                   >
                     https://www.tiktok.com/@educationscom/
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   LinkedIn:{" "}
-                  <a
+                  <Link
                     href="https://www.linkedin.com/company/educationscom"
                     className="text-blue-600 hover:underline"
                   >
                     https://www.linkedin.com/company/educationscom/
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   Facebook:{" "}
-                  <a
+                  <Link
                     href="https://www.facebook.com/educationscom"
                     className="text-blue-600 hover:underline"
                   >
                     https://www.facebook.com/educationscom/
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

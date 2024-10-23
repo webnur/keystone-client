@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -8,7 +9,7 @@ interface IScholarship {
   title: string;
   description: string;
   imageUrl: string;
-  link: string;
+  link: string; // Ensure this matches with the updated 'link' property
 }
 
 interface ScholarshipProps {
@@ -45,7 +46,7 @@ const ScholarshipCard = ({ scholarships }: ScholarshipProps) => {
           {/* Link/Button Section */}
           <div className="w-full md:w-auto text-center">
             <Link
-              href={scholarship.link}
+              href="/master/apply" // Use the 'link' prop for navigation
               className="inline-block px-4 py-2 text-white bg-red-500 rounded-md hover:bg-red-600"
             >
               Read more

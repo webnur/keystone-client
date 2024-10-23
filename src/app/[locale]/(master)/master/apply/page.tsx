@@ -44,7 +44,7 @@ import Link from "next/link";
             </h2>
             <p className="text-lg text-gray-600 mb-4">
               At Keystone, we believe that students who study abroad become the
-              next generation of globally-minded adventurers - so we want more
+              next generation of globally-minded adventurers – so we want more
               of you to do it.
             </p>
             <p className="text-lg text-gray-600 mb-4">
@@ -157,7 +157,7 @@ import Link from "next/link";
               </li>
               <li>
                 <span className="font-bold">Finalists notified:</span> 28
-                October - 1 November 2024
+                October – 1 November 2024
               </li>
               <li>
                 <span className="font-bold">Winner announced:</span> 18-22
@@ -175,7 +175,7 @@ import Link from "next/link";
             </h2>
             <p className="text-lg text-gray-600 mb-4">
               Wondering how to apply for one of our yearly scholarships to study
-              a masters degree in the USA?
+              a master’s degree in the USA?
             </p>
             <p className="text-lg text-gray-600">
               To be considered, youll need to submit your completed application
@@ -199,7 +199,7 @@ import Link from "next/link";
                   <li>Briefly present yourself</li>
                   <li>How would you define a global mindset?</li>
                   <li>
-                    Describe your plan after graduating from your Masters study
+                    Describe your plan after graduating from your Master’s study
                     in the chosen country
                   </li>
                 </ul>
@@ -243,7 +243,7 @@ import Link from "next/link";
             {/* Finalist Flight Voucher Info */}
             <p className="text-lg text-gray-600 mb-4">
               All finalists who are not chosen as the winner will still receive
-              a USD 150 flight voucher. Therefore, you will also need to:
+              a USD 150 flight voucher. Therefore, you’ll also need to:
             </p>
             <ul className="list-disc list-inside text-gray-700 space-y-2 mb-6">
               <li>
@@ -381,7 +381,7 @@ import Link from "next/link";
             <p className="text-lg text-gray-600 mb-4">
               No, your application cannot be edited once you submit it. Please
               make sure that you complete the application form in English and
-              with all the correct information before you click Submit. If you
+              with all the correct information before you click ‘Submit.’ If you
               have questions about an application you have submitted, you can
               email our scholarship team at scholarships@educations.com
             </p>
@@ -418,7 +418,7 @@ import Link from "next/link";
                 the Fall 2024 (and/or Spring 2025) semester?
               </h3>
               <p className="text-lg text-gray-600 mb-6">
-                Unfortunately, we are unable to reimburse tuition fees that you
+                Unfortunately, we’re unable to reimburse tuition fees that you
                 have already paid. The scholarship fund can only be used towards
                 upcoming tuition fees and is paid directly to your university.
               </p>
@@ -470,7 +470,7 @@ import Link from "next/link";
             {/* FAQ 8 */}
             <div>
               <h3 className="text-xl font-bold text-gray-800 mb-2">
-                Where can I find more scholarships for masters degree studies?
+                Where can I find more scholarships for master’s degree studies?
               </h3>
               <p className="text-lg text-gray-600 mb-6">
                 Whether you’re planning to study abroad in Europe, Asia, or
@@ -566,8 +566,8 @@ import Link from "next/link";
                     className="block text-gray-700 font-semibold mb-2"
                     htmlFor="degree"
                   >
-                    * What degree level are you looking for? (Bachelors,
-                    Masters, or PhD)
+                    * What degree level are you looking for? (Bachelor’s,
+                    Master’s, or PhD)
                   </label>
                   <input
                     className="border border-gray-300 p-3 rounded-lg w-full"

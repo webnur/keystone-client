@@ -3,9 +3,9 @@ import BaseText from "@/components/degree/BaseText";
 import PopularFields from "@/components/common/PopularFields";
 import NewsAndArticles from "@/components/common/NewsAndArticle";
 import { articlesData } from "@/app/[locale]/(main)/articles/article";
-import NewlyAddedPrograms from "@/components/home/NewlyAddedPrograms";
 import MScSection from "@/components/common/MScSection";
 import CommonBanner from "@/components/common/CommonBanner";
+import MasterAddedProgram from "../components/MasterAddedProgram";
 
 const page = () => {
   const lawStudyFields = [
@@ -107,13 +107,6 @@ const page = () => {
 
   return (
     <div>
-      {/* <Banner
-        backgroundImage={
-          "https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?auto=compress&cs=tinysrgb&w=800"
-        }
-        title="Find Your Masters Degree"
-        studyFields={lawStudyFields}
-      /> */}
       <CommonBanner
         title="Master Degree common banner"
         backgroundImage={
@@ -144,7 +137,7 @@ const page = () => {
           />
         </div>
       </div>
-      <NewlyAddedPrograms programs={mockPrograms} />
+      <MasterAddedProgram programs={mockPrograms} />
       <NewsAndArticles articles={articlesData.slice(0, 4)} />
     </div>
   );

@@ -46,10 +46,15 @@ const RightSidebar: React.FC<RightSidebarProps> = ({
         }
       } else {
         // Save to localStorage
-        const savedPrograms =
-          JSON.parse(localStorage.getItem("savedPrograms") || "[]");
+        const savedPrograms = JSON.parse(
+          localStorage.getItem("savedPrograms") || "[]"
+        );
 
-        if (!savedPrograms.some((program: ProgramData) => program.title === programData.title)) {
+        if (
+          !savedPrograms.some(
+            (program: ProgramData) => program.title === programData.title
+          )
+        ) {
           savedPrograms.push(programData);
           localStorage.setItem("savedPrograms", JSON.stringify(savedPrograms));
           setIsSaved(true);

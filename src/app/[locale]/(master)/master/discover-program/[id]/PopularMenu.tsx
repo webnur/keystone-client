@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const PopularMenu: React.FC = () => {
@@ -8,9 +9,9 @@ const PopularMenu: React.FC = () => {
         <div>
           <h4 className="font-bold mb-4">Popular Degree Type</h4>
           <ul className="space-y-2">
-            <li><a href="#" className="text-red-500 hover:underline">Masters of Arts</a></li>
-            <li><a href="#" className="text-red-500 hover:underline">Master Degrees</a></li>
-            <li><a href="#" className="text-red-500 hover:underline">Masters of Science</a></li>
+            <li><Link href="#" className="text-red-500 hover:underline">Masters of Arts</Link></li>
+            <li><Link href="#" className="text-red-500 hover:underline">Master Degrees</Link></li>
+            <li><Link href="#" className="text-red-500 hover:underline">Masters of Science</Link></li>
           </ul>
         </div>
 
@@ -18,9 +19,9 @@ const PopularMenu: React.FC = () => {
         <div>
           <h4 className="font-bold mb-4">Popular Study Format</h4>
           <ul className="space-y-2">
-            <li><a href="#" className="text-red-500 hover:underline">On-Campus</a></li>
-            <li><a href="#" className="text-red-500 hover:underline">Distance Learning</a></li>
-            <li><a href="#" className="text-red-500 hover:underline">Blended</a></li>
+            <li><Link href="#" className="text-red-500 hover:underline">On-Campus</Link></li>
+            <li><Link href="#" className="text-red-500 hover:underline">Distance Learning</Link></li>
+            <li><Link href="#" className="text-red-500 hover:underline">Blended</Link></li>
           </ul>
         </div>
 
@@ -28,9 +29,9 @@ const PopularMenu: React.FC = () => {
         <div>
           <h4 className="font-bold mb-4">Popular Locations</h4>
           <ul className="space-y-2">
-            <li><a href="#" className="text-red-500 hover:underline">USA</a></li>
-            <li><a href="#" className="text-red-500 hover:underline">United Kingdom</a></li>
-            <li><a href="#" className="text-red-500 hover:underline">Germany</a></li>
+            <li><Link href="#" className="text-red-500 hover:underline">USA</Link></li>
+            <li><Link href="#" className="text-red-500 hover:underline">United Kingdom</Link></li>
+            <li><Link href="#" className="text-red-500 hover:underline">Germany</Link></li>
             {/* Add more popular locations */}
           </ul>
         </div>

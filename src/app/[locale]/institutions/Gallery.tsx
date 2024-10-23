@@ -67,9 +67,9 @@ const Gallery = () => {
             <Image
               src={img}
               alt={`Thumbnail ${idx + 1}`}
+              width={64} // 16 * 4 = 64px
+              height={64} // 16 * 4 = 64px
               className="object-cover"
-              width={64} // 16 * 4 = 64 for equivalent of 16px
-              height={64}
             />
           </button>
         ))}

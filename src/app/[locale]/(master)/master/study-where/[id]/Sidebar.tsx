@@ -72,9 +72,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection }) => {
         </li>
         <li
           className={`${
-            activeSection === "About Country"
-              ? "border-l-2 border-red-600"
-              : ""
+            activeSection === "About Country" ? "border-l-2 border-red-600" : ""
           }`}
         >
           <a
@@ -90,9 +88,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection }) => {
         </li>
         <li
           className={`${
-            activeSection === "Institutions"
-              ? "border-l-2 border-red-600"
-              : ""
+            activeSection === "Institutions" ? "border-l-2 border-red-600" : ""
           }`}
         >
           <a
@@ -108,17 +104,13 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection }) => {
         </li>
         <li
           className={`${
-            activeSection === "Programs"
-              ? "border-l-2 border-red-600"
-              : ""
+            activeSection === "Programs" ? "border-l-2 border-red-600" : ""
           }`}
         >
           <a
             onClick={() => handleClick("Programs")}
             className={`block text-lg font-semibold cursor-pointer ${
-              activeSection === "Programs"
-                ? "text-red-500"
-                : "text-gray-800"
+              activeSection === "Programs" ? "text-red-500" : "text-gray-800"
             } transition pl-4`}
           >
             Programs

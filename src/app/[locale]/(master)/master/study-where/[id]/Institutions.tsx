@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Institutions: React.FC = () => {
@@ -20,12 +21,12 @@ const Institutions: React.FC = () => {
       <ul className="text-left">
         {institutions.map((institution, index) => (
           <li key={index} className="mb-4 text-md">
-            <a
+            <Link
               href="#"
               className="text-gray-800 hover:text-red-800 transition-colors underline"
             >
               {institution}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

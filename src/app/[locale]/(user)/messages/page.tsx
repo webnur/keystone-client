@@ -40,7 +40,7 @@ const MessagesPage: FC = () => {
 
         {/* No messages content */}
         <p className="text-gray-600 mb-4">
-          You don't have any messages yet. Click on the Browse Programs button
+          You dont have any messages yet. Click on the Browse Programs button
           below to contact your first school and get the conversation started!
         </p>
 

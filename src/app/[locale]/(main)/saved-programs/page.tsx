@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import React, { useEffect, useState } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
@@ -5,7 +7,7 @@ import Image from "next/image";
 import SubBanner from "@/components/common/SubBanner";
 
 const SavedPrograms = () => {
-  const [savedPrograms, setSavedPrograms] = useState<any[]>([]); 
+  const [savedPrograms, setSavedPrograms] = useState<any[]>([]);
 
   const fetchSavedPrograms = async () => {
     try {
@@ -36,13 +38,13 @@ const SavedPrograms = () => {
   };
 
   useEffect(() => {
-    fetchSavedPrograms(); 
+    fetchSavedPrograms();
   }, []);
 
   return (
     <div>
       <SubBanner
-        icon={<AiOutlineHeart />} 
+        icon={<AiOutlineHeart />}
         title="Saved programs"
         slogan="Create a StudentHub account or sign in to save this program list."
         className="bg-gray-500"
@@ -68,7 +70,9 @@ const SavedPrograms = () => {
               <div key={index} className="border rounded-lg shadow-lg p-4">
                 <h3 className="text-xl font-bold">{program.title}</h3>
                 <p className="text-gray-600">{program.institution}</p>
-                <p className="text-gray-600">{program.location}, {program.country}</p>
+                <p className="text-gray-600">
+                  {program.location}, {program.country}
+                </p>
                 <Image
                   src={program.image}
                   alt={program.title}
