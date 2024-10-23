@@ -1,5 +1,5 @@
-import Image from "next/image";
-import React from "react";
+import React from 'react';
+import Image from 'next/image';
 
 const CardComponent = () => {
   const cards = [
@@ -33,14 +33,6 @@ const CardComponent = () => {
           key={index}
           className="bg-gray-100 rounded-lg shadow-md overflow-hidden"
         >
-          <div className="relative w-full h-64">
-            <Image
-              src={card.imageUrl}
-              alt={card.title}
-              layout="fill"
-              objectFit="cover"
-            />
-          </div>
           <Image
             className="w-full h-64 object-cover"
             src={card.imageUrl}
