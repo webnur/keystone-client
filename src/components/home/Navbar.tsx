@@ -41,20 +41,19 @@ const Navbar = () => {
   return (
     <nav className="bg-white w-full md:w-[90%] mx-auto flex justify-between items-center py-4 relative">
       <div className="flex justify-between w-full">
-        <div>
+        {/* Logo with left margin and responsive size */}
+        <div className="ml-4 md:ml-0">
           <Link href="/">
             <Image
-              className="w-full h-auto"
+              className="w-32 h-auto md:w-[160px]" // Reduced logo size for mobile, regular size for larger screens
               src={logo}
-              width={160}
-              height={50}
               alt="logo"
             />
           </Link>
         </div>
 
-        {/* Hamburger Menu */}
-        <div className="md:hidden flex items-center">
+        {/* Hamburger Menu with right margin */}
+        <div className="md:hidden flex items-center mr-4">
           <button
             className="text-gray-700 hover:text-gray-900 focus:outline-none hamburger"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -135,7 +134,7 @@ const Navbar = () => {
       <div
         className={`${
           isMobileMenuOpen ? "block" : "hidden"
-        } md:hidden absolute top-full right-0 w-[70%] bg-white shadow-lg mobile-menu transition-transform p-4`}
+        } md:hidden absolute top-full right-0 w-[70%] bg-white shadow-lg mobile-menu transition-transform p-4 `}
       >
         <div className="flex flex-col gap-6">
           <Link href="/saved-programs" onClick={() => setIsMobileMenuOpen(false)}>
