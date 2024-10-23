@@ -1,7 +1,7 @@
 "use client";
-import React, { useState } from 'react';
-import { FaArrowDown } from 'react-icons/fa';
-import { IoClose } from 'react-icons/io5';
+import React, { useState } from "react";
+import { FaArrowDown } from "react-icons/fa";
+import { IoClose } from "react-icons/io5";
 
 const FilterComponent: React.FC = () => {
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
@@ -13,24 +13,37 @@ const FilterComponent: React.FC = () => {
   const [isLanguageOpen, setIsLanguageOpen] = useState(true);
   const [isFormatOpen, setIsFormatOpen] = useState(true);
   const [isDeadlineOpen, setIsDeadlineOpen] = useState(true);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [suggestions, setSuggestions] = useState<string[]>([]);
 
   // Predefined list of European countries, USA, and Canada
   const countryList = [
-<<<<<<< HEAD
-    'USA', 'Canada', 'Germany', 'France', 'Italy', 'Spain', 'Netherlands',
-    'Belgium', 'Switzerland', 'United Kingdom', 'Sweden', 'Norway',
-=======
-    'USA', 'Canada', 'Germany', 'France', 'Italy', 'Spain', 'Netherlands', 
-    'Belgium', 'Switzerland', 'United Kingdom', 'Sweden', 'Norway', 
->>>>>>> 3f77d2dfbddebe3a28c9654e843823ece87ab753
-    'Denmark', 'Finland', 'Poland', 'Portugal', 'Ireland', 'Austria', 'Greece'
+    "USA",
+    "Canada",
+    "Germany",
+    "France",
+    "Italy",
+    "Spain",
+    "Netherlands",
+    "Belgium",
+    "Switzerland",
+    "United Kingdom",
+    "Sweden",
+    "Norway",
+    "Denmark",
+    "Finland",
+    "Poland",
+    "Portugal",
+    "Ireland",
+    "Austria",
+    "Greece",
   ];
 
   const handleFilterToggle = (filter: string) => {
     setSelectedFilters((prev) =>
-      prev.includes(filter) ? prev.filter((item) => item !== filter) : [...prev, filter]
+      prev.includes(filter)
+        ? prev.filter((item) => item !== filter)
+        : [...prev, filter]
     );
   };
 
@@ -55,27 +68,26 @@ const FilterComponent: React.FC = () => {
 
   const handleSuggestionClick = (suggestion: string) => {
     handleFilterToggle(suggestion); // Add the country as a filter
-    setSearchQuery(''); // Clear the search input
+    setSearchQuery(""); // Clear the search input
     setSuggestions([]); // Clear the suggestions list
   };
 
-  const toggleAccordion = (setter: React.Dispatch<React.SetStateAction<boolean>>) => {
+  const toggleAccordion = (
+    setter: React.Dispatch<React.SetStateAction<boolean>>
+  ) => {
     setter((prevState) => !prevState);
   };
 
-<<<<<<< HEAD
   const isFilterSelected = (filter: string) => selectedFilters.includes(filter);
 
-=======
->>>>>>> 3f77d2dfbddebe3a28c9654e843823ece87ab753
   return (
     <aside className="w-1/4 p-4 bg-gray-100">
       {/* Breadcrumb or Route Path */}
       <nav className="mb-4 text-sm">
         <a href="#" className="text-gray-500 hover:underline">
           Master
-        </a>{' '}
-        &gt;{' '}
+        </a>{" "}
+        &gt;{" "}
         <a href="#" className="text-gray-500 hover:underline">
           Economic Studies
         </a>
@@ -98,7 +110,10 @@ const FilterComponent: React.FC = () => {
           <div className="mb-4">
             <h3 className="font-semibold mb-2">Selected Filters</h3>
             {selectedFilters.map((filter, index) => (
-              <span key={index} className="inline-block bg-red-100 text-red-500 px-2 py-1 rounded-full mr-2 mb-2">
+              <span
+                key={index}
+                className="inline-block bg-red-100 text-red-500 px-2 py-1 rounded-full mr-2 mb-2"
+              >
                 {filter}
                 <button
                   onClick={() => handleFilterToggle(filter)}
@@ -114,7 +129,10 @@ const FilterComponent: React.FC = () => {
 
       {/* Fields of Study */}
       <div className="mb-4">
-        <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleAccordion(setIsFieldsOpen)}>
+        <div
+          className="flex justify-between items-center cursor-pointer"
+          onClick={() => toggleAccordion(setIsFieldsOpen)}
+        >
           <h3 className="font-semibold mb-2">Fields of Study</h3>
           <span>{isFieldsOpen ? <IoClose /> : <FaArrowDown />}</span>
         </div>
@@ -122,31 +140,23 @@ const FilterComponent: React.FC = () => {
           <ul className="space-y-2">
             <li>
               <label>
-<<<<<<< HEAD
                 <input
                   type="checkbox"
-                  checked={isFilterSelected('Artificial Intelligence')}
-                  onChange={() => handleFilterToggle('Artificial Intelligence')}
+                  checked={isFilterSelected("Artificial Intelligence")}
+                  onChange={() => handleFilterToggle("Artificial Intelligence")}
                   className="mr-2"
                 />
-=======
-                <input type="checkbox" onChange={() => handleFilterToggle('Artificial Intelligence')} className="mr-2" />
->>>>>>> 3f77d2dfbddebe3a28c9654e843823ece87ab753
                 Artificial Intelligence (272)
               </label>
             </li>
             <li>
               <label>
-<<<<<<< HEAD
                 <input
                   type="checkbox"
-                  checked={isFilterSelected('Automation')}
-                  onChange={() => handleFilterToggle('Automation')}
+                  checked={isFilterSelected("Automation")}
+                  onChange={() => handleFilterToggle("Automation")}
                   className="mr-2"
                 />
-=======
-                <input type="checkbox" onChange={() => handleFilterToggle('Automation')} className="mr-2" />
->>>>>>> 3f77d2dfbddebe3a28c9654e843823ece87ab753
                 Automation (153)
               </label>
             </li>
@@ -156,14 +166,12 @@ const FilterComponent: React.FC = () => {
 
       {/* Location */}
       <div className="mb-4">
-        <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleAccordion(setIsLocationOpen)}>
+        <div
+          className="flex justify-between items-center cursor-pointer"
+          onClick={() => toggleAccordion(setIsLocationOpen)}
+        >
           <h3 className="font-semibold mb-2">Location</h3>
-<<<<<<< HEAD
           <span>{isLocationOpen ? <IoClose /> : <FaArrowDown />}</span>
-=======
-          <span>{isFieldsOpen ? <IoClose /> : <FaArrowDown />}</span>
-
->>>>>>> 3f77d2dfbddebe3a28c9654e843823ece87ab753
         </div>
         {isLocationOpen && (
           <>
@@ -190,31 +198,23 @@ const FilterComponent: React.FC = () => {
             <ul className="space-y-2">
               <li>
                 <label>
-<<<<<<< HEAD
                   <input
                     type="checkbox"
-                    checked={isFilterSelected('USA')}
-                    onChange={() => handleFilterToggle('USA')}
+                    checked={isFilterSelected("USA")}
+                    onChange={() => handleFilterToggle("USA")}
                     className="mr-2"
                   />
-=======
-                  <input type="checkbox" onChange={() => handleFilterToggle('USA')} className="mr-2" />
->>>>>>> 3f77d2dfbddebe3a28c9654e843823ece87ab753
                   USA (492)
                 </label>
               </li>
               <li>
                 <label>
-<<<<<<< HEAD
                   <input
                     type="checkbox"
-                    checked={isFilterSelected('Germany')}
-                    onChange={() => handleFilterToggle('Germany')}
+                    checked={isFilterSelected("Germany")}
+                    onChange={() => handleFilterToggle("Germany")}
                     className="mr-2"
                   />
-=======
-                  <input type="checkbox" onChange={() => handleFilterToggle('Germany')} className="mr-2" />
->>>>>>> 3f77d2dfbddebe3a28c9654e843823ece87ab753
                   Germany (329)
                 </label>
               </li>
@@ -225,44 +225,34 @@ const FilterComponent: React.FC = () => {
 
       {/* Degree Type */}
       <div className="mb-4">
-        <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleAccordion(setIsDegreeOpen)}>
+        <div
+          className="flex justify-between items-center cursor-pointer"
+          onClick={() => toggleAccordion(setIsDegreeOpen)}
+        >
           <h3 className="font-semibold mb-2">Degree Type</h3>
-<<<<<<< HEAD
           <span>{isDegreeOpen ? <IoClose /> : <FaArrowDown />}</span>
-=======
-          <span>{isFieldsOpen ? <IoClose /> : <FaArrowDown />}</span>
-
->>>>>>> 3f77d2dfbddebe3a28c9654e843823ece87ab753
         </div>
         {isDegreeOpen && (
           <ul className="space-y-2">
             <li>
               <label>
-<<<<<<< HEAD
                 <input
                   type="checkbox"
-                  checked={isFilterSelected('MSc')}
-                  onChange={() => handleFilterToggle('MSc')}
+                  checked={isFilterSelected("MSc")}
+                  onChange={() => handleFilterToggle("MSc")}
                   className="mr-2"
                 />
-=======
-                <input type="checkbox" onChange={() => handleFilterToggle('MSc')} className="mr-2" />
->>>>>>> 3f77d2dfbddebe3a28c9654e843823ece87ab753
                 MSc (86)
               </label>
             </li>
             <li>
               <label>
-<<<<<<< HEAD
                 <input
                   type="checkbox"
-                  checked={isFilterSelected('MA')}
-                  onChange={() => handleFilterToggle('MA')}
+                  checked={isFilterSelected("MA")}
+                  onChange={() => handleFilterToggle("MA")}
                   className="mr-2"
                 />
-=======
-                <input type="checkbox" onChange={() => handleFilterToggle('MA')} className="mr-2" />
->>>>>>> 3f77d2dfbddebe3a28c9654e843823ece87ab753
                 MA (852)
               </label>
             </li>
@@ -272,44 +262,34 @@ const FilterComponent: React.FC = () => {
 
       {/* Course Duration */}
       <div className="mb-4">
-        <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleAccordion(setIsDurationOpen)}>
+        <div
+          className="flex justify-between items-center cursor-pointer"
+          onClick={() => toggleAccordion(setIsDurationOpen)}
+        >
           <h3 className="font-semibold mb-2">Course Duration</h3>
-<<<<<<< HEAD
           <span>{isDurationOpen ? <IoClose /> : <FaArrowDown />}</span>
-=======
-          <span>{isFieldsOpen ? <IoClose /> : <FaArrowDown />}</span>
-
->>>>>>> 3f77d2dfbddebe3a28c9654e843823ece87ab753
         </div>
         {isDurationOpen && (
           <ul className="space-y-2">
             <li>
               <label>
-<<<<<<< HEAD
                 <input
                   type="checkbox"
-                  checked={isFilterSelected('1 year')}
-                  onChange={() => handleFilterToggle('1 year')}
+                  checked={isFilterSelected("1 year")}
+                  onChange={() => handleFilterToggle("1 year")}
                   className="mr-2"
                 />
-=======
-                <input type="checkbox" onChange={() => handleFilterToggle('1 year')} className="mr-2" />
->>>>>>> 3f77d2dfbddebe3a28c9654e843823ece87ab753
                 1 year (498)
               </label>
             </li>
             <li>
               <label>
-<<<<<<< HEAD
                 <input
                   type="checkbox"
-                  checked={isFilterSelected('2 years')}
-                  onChange={() => handleFilterToggle('2 years')}
+                  checked={isFilterSelected("2 years")}
+                  onChange={() => handleFilterToggle("2 years")}
                   className="mr-2"
                 />
-=======
-                <input type="checkbox" onChange={() => handleFilterToggle('2 years')} className="mr-2" />
->>>>>>> 3f77d2dfbddebe3a28c9654e843823ece87ab753
                 2 years (446)
               </label>
             </li>
@@ -319,44 +299,34 @@ const FilterComponent: React.FC = () => {
 
       {/* Study Pace */}
       <div className="mb-4">
-        <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleAccordion(setIsPaceOpen)}>
+        <div
+          className="flex justify-between items-center cursor-pointer"
+          onClick={() => toggleAccordion(setIsPaceOpen)}
+        >
           <h3 className="font-semibold mb-2">Study Pace</h3>
-<<<<<<< HEAD
           <span>{isPaceOpen ? <IoClose /> : <FaArrowDown />}</span>
-=======
-          <span>{isFieldsOpen ? <IoClose /> : <FaArrowDown />}</span>
-
->>>>>>> 3f77d2dfbddebe3a28c9654e843823ece87ab753
         </div>
         {isPaceOpen && (
           <ul className="space-y-2">
             <li>
               <label>
-<<<<<<< HEAD
                 <input
                   type="checkbox"
-                  checked={isFilterSelected('Full-time')}
-                  onChange={() => handleFilterToggle('Full-time')}
+                  checked={isFilterSelected("Full-time")}
+                  onChange={() => handleFilterToggle("Full-time")}
                   className="mr-2"
                 />
-=======
-                <input type="checkbox" onChange={() => handleFilterToggle('Full-time')} className="mr-2" />
->>>>>>> 3f77d2dfbddebe3a28c9654e843823ece87ab753
                 Full-time (1085)
               </label>
             </li>
             <li>
               <label>
-<<<<<<< HEAD
                 <input
                   type="checkbox"
-                  checked={isFilterSelected('Part-time')}
-                  onChange={() => handleFilterToggle('Part-time')}
+                  checked={isFilterSelected("Part-time")}
+                  onChange={() => handleFilterToggle("Part-time")}
                   className="mr-2"
                 />
-=======
-                <input type="checkbox" onChange={() => handleFilterToggle('Part-time')} className="mr-2" />
->>>>>>> 3f77d2dfbddebe3a28c9654e843823ece87ab753
                 Part-time (447)
               </label>
             </li>
@@ -366,44 +336,34 @@ const FilterComponent: React.FC = () => {
 
       {/* Language */}
       <div className="mb-4">
-        <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleAccordion(setIsLanguageOpen)}>
+        <div
+          className="flex justify-between items-center cursor-pointer"
+          onClick={() => toggleAccordion(setIsLanguageOpen)}
+        >
           <h3 className="font-semibold mb-2">Language</h3>
-<<<<<<< HEAD
           <span>{isLanguageOpen ? <IoClose /> : <FaArrowDown />}</span>
-=======
-          <span>{isFieldsOpen ? <IoClose /> : <FaArrowDown />}</span>
-
->>>>>>> 3f77d2dfbddebe3a28c9654e843823ece87ab753
         </div>
         {isLanguageOpen && (
           <ul className="space-y-2">
             <li>
               <label>
-<<<<<<< HEAD
                 <input
                   type="checkbox"
-                  checked={isFilterSelected('English')}
-                  onChange={() => handleFilterToggle('English')}
+                  checked={isFilterSelected("English")}
+                  onChange={() => handleFilterToggle("English")}
                   className="mr-2"
                 />
-=======
-                <input type="checkbox" onChange={() => handleFilterToggle('English')} className="mr-2" />
->>>>>>> 3f77d2dfbddebe3a28c9654e843823ece87ab753
                 English (1400)
               </label>
             </li>
             <li>
               <label>
-<<<<<<< HEAD
                 <input
                   type="checkbox"
-                  checked={isFilterSelected('Spanish')}
-                  onChange={() => handleFilterToggle('Spanish')}
+                  checked={isFilterSelected("Spanish")}
+                  onChange={() => handleFilterToggle("Spanish")}
                   className="mr-2"
                 />
-=======
-                <input type="checkbox" onChange={() => handleFilterToggle('Spanish')} className="mr-2" />
->>>>>>> 3f77d2dfbddebe3a28c9654e843823ece87ab753
                 Spanish (95)
               </label>
             </li>
@@ -413,44 +373,34 @@ const FilterComponent: React.FC = () => {
 
       {/* Study Format */}
       <div className="mb-4">
-        <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleAccordion(setIsFormatOpen)}>
+        <div
+          className="flex justify-between items-center cursor-pointer"
+          onClick={() => toggleAccordion(setIsFormatOpen)}
+        >
           <h3 className="font-semibold mb-2">Study Format</h3>
-<<<<<<< HEAD
           <span>{isFormatOpen ? <IoClose /> : <FaArrowDown />}</span>
-=======
-          <span>{isFieldsOpen ? <IoClose /> : <FaArrowDown />}</span>
-
->>>>>>> 3f77d2dfbddebe3a28c9654e843823ece87ab753
         </div>
         {isFormatOpen && (
           <ul className="space-y-2">
             <li>
               <label>
-<<<<<<< HEAD
                 <input
                   type="checkbox"
-                  checked={isFilterSelected('On-Campus')}
-                  onChange={() => handleFilterToggle('On-Campus')}
+                  checked={isFilterSelected("On-Campus")}
+                  onChange={() => handleFilterToggle("On-Campus")}
                   className="mr-2"
                 />
-=======
-                <input type="checkbox" onChange={() => handleFilterToggle('On-Campus')} className="mr-2" />
->>>>>>> 3f77d2dfbddebe3a28c9654e843823ece87ab753
                 On-Campus (1293)
               </label>
             </li>
             <li>
               <label>
-<<<<<<< HEAD
                 <input
                   type="checkbox"
-                  checked={isFilterSelected('Distance Learning')}
-                  onChange={() => handleFilterToggle('Distance Learning')}
+                  checked={isFilterSelected("Distance Learning")}
+                  onChange={() => handleFilterToggle("Distance Learning")}
                   className="mr-2"
                 />
-=======
-                <input type="checkbox" onChange={() => handleFilterToggle('Distance Learning')} className="mr-2" />
->>>>>>> 3f77d2dfbddebe3a28c9654e843823ece87ab753
                 Distance Learning (273)
               </label>
             </li>
@@ -460,26 +410,34 @@ const FilterComponent: React.FC = () => {
 
       {/* Application Deadline */}
       <div className="mb-4">
-        <div className="flex justify-between items-center cursor-pointer" onClick={() => toggleAccordion(setIsDeadlineOpen)}>
+        <div
+          className="flex justify-between items-center cursor-pointer"
+          onClick={() => toggleAccordion(setIsDeadlineOpen)}
+        >
           <h3 className="font-semibold mb-2">Application Deadline</h3>
-<<<<<<< HEAD
           <span>{isDeadlineOpen ? <IoClose /> : <FaArrowDown />}</span>
-=======
-          <span>{isFieldsOpen ? <IoClose /> : <FaArrowDown />}</span>
-
->>>>>>> 3f77d2dfbddebe3a28c9654e843823ece87ab753
         </div>
         {isDeadlineOpen && (
           <ul className="space-y-2">
             <li>
               <label>
-                <input type="radio" name="deadline" value="Anytime from now" className="mr-2" />
+                <input
+                  type="radio"
+                  name="deadline"
+                  value="Anytime from now"
+                  className="mr-2"
+                />
                 Anytime from now
               </label>
             </li>
             <li>
               <label>
-                <input type="radio" name="deadline" value="October 2024" className="mr-2" />
+                <input
+                  type="radio"
+                  name="deadline"
+                  value="October 2024"
+                  className="mr-2"
+                />
                 October 2024
               </label>
             </li>
