@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 
 import singUpLogo from "../../../../../public/images/logo/sign-in-logo.jpg";
@@ -101,7 +102,7 @@ export default function SignUpPage() {
           <p className="text-white text-sm">
             {t("alreadyHave")}{" "}
             <Link href="/login" className="text-pink-500 hover:underline">
-              {t("signIn")}
+              {t("singin")}
             </Link>
           </p>
         </div>

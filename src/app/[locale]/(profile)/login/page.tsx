@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import signInLogo from "../../../../../public/images/logo/sign-in-logo.jpg";
 import { useTranslations } from "next-intl";
