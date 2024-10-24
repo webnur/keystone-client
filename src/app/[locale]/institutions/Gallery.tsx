@@ -3,10 +3,10 @@ import React, { useState } from "react";
 
 const Gallery = () => {
   const images = [
-    "https://i.ibb.co.com/qrdZqM0/240869-St-Louis-Campus-MSMSremote-inperson.jpg",
-    "https://i.ibb.co.com/6wMKLJD/240870-Ponce-90-v1a-00-01-26-20-Still0181.jpg",
-    "https://i.ibb.co.com/hmXHfTf/240873-Ponce-90-v1a-00-00-56-12-Still0251.jpg",
-    "https://i.ibb.co.com/K2DDCkz/240874-Ponce-30-v2a-00-00-20-14-Still009.jpg",
+"https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800",
+"https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800",
+"https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800",
+"https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800"
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -66,9 +66,9 @@ const Gallery = () => {
           >
             <Image
               src={img}
-              alt={`Thumbnail ${idx + 1}`}
-              width={64} // 16 * 4 = 64px
-              height={64} // 16 * 4 = 64px
+              alt="gallery image"
+              width={64}
+              height={64}
               className="object-cover"
             />
           </button>

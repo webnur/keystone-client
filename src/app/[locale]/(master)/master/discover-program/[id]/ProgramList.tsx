@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import ProgramCard from './ProgramCard';
 import Pagination from './Pagination';
 import PopularMenu from './PopularMenu';
@@ -14,6 +14,8 @@ const mockPrograms = [
     mode: "Distance Learning",
     language: "English",
     recommended: true,
+    imageUrl: "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description: "The MSc Business Analytics programme will equip you with a broad range of analytical skills, from data visualisation to predictive modelling, ensuring you're prepared for the future of business.",
   },
   {
     id: 2,
@@ -23,6 +25,8 @@ const mockPrograms = [
     duration: "12 months",
     mode: "Blended, On-Campus",
     language: "English",
+    imageUrl: "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description: "IU's on-campus Master’s in IT Management programme will prepare you to become a highly sought-after IT expert with strong business acumen and people management skills.",
   },
   {
     id: 3,
@@ -33,55 +37,76 @@ const mockPrograms = [
     mode: "On-Campus",
     language: "English",
     recommended: true,
+    imageUrl: "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description: "The MBA programme at Harvard will provide you with an unparalleled education, equipping you to lead and excel in the fast-paced world of business.",
   },
-  // Add more mock programs as needed
 ];
 
 const mockRelatedFields = [
   "Business Administration", "Business Engineering", "Business Law Studies", 
-  "Business Management", "Accounting", "Marketing", "Human Resources"
+  "Business Management", "Accounting", "Marketing", "Human Resources", "Economics", "Finance", "Taxation"
 ];
 
 const ProgramList: React.FC = () => {
-  const [currentFieldIndex, setCurrentFieldIndex] = useState(0);
+  const sliderRef = useRef<HTMLDivElement>(null);
 
-  const handleNextField = () => {
-    setCurrentFieldIndex((prev) => (prev + 1) % mockRelatedFields.length);
+  // Function to slide left
+  const slideLeft = () => {
+    if (sliderRef.current) {
+      sliderRef.current.scrollBy({
+        left: -200, // Adjust the amount to scroll
+        behavior: 'smooth',
+      });
+    }
   };
 
-  const handlePrevField = () => {
-    setCurrentFieldIndex((prev) => (prev - 1 + mockRelatedFields.length) % mockRelatedFields.length);
+  // Function to slide right
+  const slideRight = () => {
+    if (sliderRef.current) {
+      sliderRef.current.scrollBy({
+        left: 200, // Adjust the amount to scroll
+        behavior: 'smooth',
+      });
+    }
   };
 
   return (
-    <div className="w-3/4 p-4">
+    <div className="w-full md:w-3/4 p-4 mx-auto">
       {/* Title with Available Program Count */}
-      <h2 className="font-bold text-2xl mb-4">
+      <h2 className="font-bold text-2xl mb-6">
         {mockPrograms.length} Master Programs in Economic Studies 2024/2025
       </h2>
 
       {/* Related Fields Section */}
-      <div className="relative flex items-center mb-4">
+      <div className="relative flex items-center mb-6">
+        {/* Left Arrow */}
         <button 
-          onClick={handlePrevField} 
-          className="absolute left-0 z-10 p-2 bg-gray-100 hover:bg-gray-200 rounded-full"
+          onClick={slideLeft} 
+          className="p-2 bg-gray-100 hover:bg-gray-200 rounded-full border border-gray-300"
         >
           {'<'}
         </button>
-        <div className="flex gap-2 overflow-x-auto no-scrollbar mx-8">
-          {mockRelatedFields.slice(currentFieldIndex, currentFieldIndex + 4).map((field) => (
+
+        {/* Related Fields (Slider) */}
+        <div 
+          ref={sliderRef} 
+          className="flex items-center gap-3 overflow-x-auto no-scrollbar mx-4 hide-scrollbar"
+        >
+          {mockRelatedFields.map((field) => (
             <a 
               key={field} 
               href="#" 
-              className="flex-shrink-0 text-gray-500 bg-gray-200 px-2 py-1 rounded-full hover:text-red-500"
+              className="flex-shrink-0 text-gray-700 bg-gray-100 px-3 py-1.5 rounded-full shadow-md hover:text-red-600 hover:bg-gray-200 transition border border-gray-300"
             >
               {field}
             </a>
           ))}
         </div>
+
+        {/* Right Arrow */}
         <button 
-          onClick={handleNextField} 
-          className="absolute right-0 z-10 p-2 bg-gray-100 hover:bg-gray-200 rounded-full"
+          onClick={slideRight} 
+          className="p-2 bg-gray-100 hover:bg-gray-200 rounded-full border border-gray-300"
         >
           {'>'}
         </button>
@@ -91,8 +116,8 @@ const ProgramList: React.FC = () => {
       <div className="space-y-4">
         {mockPrograms.map((program) => (
           <ProgramCard
-            id={program.id} // Pass id here
-            key={program.id} // Still keep key as a unique identifier for rendering
+            id={program.id}
+            key={program.id}
             title={program.title}
             institution={program.institution}
             location={program.location}
@@ -100,6 +125,8 @@ const ProgramList: React.FC = () => {
             mode={program.mode}
             language={program.language}
             recommended={program.recommended}
+            imageUrl={program.imageUrl}
+            description={program.description}
           />
         ))}
       </div>
