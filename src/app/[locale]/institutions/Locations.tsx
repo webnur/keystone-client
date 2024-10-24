@@ -36,7 +36,7 @@ const Locations: React.FC = () => {
         {/* Map Placeholder */}
         <div className="mb-8 relative">
           <Image
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/BlankMap-World6.svg/1200px-BlankMap-World6.svg.png"
+            src="https://images.pexels.com/photos/592753/pexels-photo-592753.jpeg?auto=compress&cs=tinysrgb&w=800"
             alt="World Map"
             width={1200}
             height={600}
