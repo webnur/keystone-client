@@ -31,7 +31,7 @@ const Header: React.FC = () => {
             <FaHome className="mr-2" /> Dashboard
           </Link>
           <Link
-            href="/browse-programs"
+            href="/browse-program"
             className="flex items-center hover:text-red-500 transition"
           >
             <FaBook className="mr-2" /> Browse Programs
