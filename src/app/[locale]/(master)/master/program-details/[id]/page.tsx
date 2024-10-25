@@ -1,15 +1,16 @@
 "use client";
 import React from 'react';
-import { useParams } from 'next/navigation';
+import { useParams, useSearchParams } from 'next/navigation';
 import LeftSideMenu from './LeftSideMenu';
 import MidContent from './MidContent';
 import RightSideMenu from './RightSideMenu';
 
 const Page = () => {
-  const { id } = useParams(); // Get the dynamic program ID from the URL
+  const { id } = useParams();
+  const searchParams = useSearchParams();
 
-  // Ensure that the id is treated as a string
-  const programId = Array.isArray(id) ? id[0] : id; // Handling array case
+  const programId = Array.isArray(id) ? id[0] : id;
+  const logo = searchParams.get('logo') || '/default-logo.png'; // Default logo fallback
 
   const sections = [
     'Introduction',
@@ -22,22 +23,19 @@ const Page = () => {
 
   return (
     <div className="mt-10 flex w-full">
-      {/* Left Sidebar */}
       <div className="w-1/4">
         <LeftSideMenu sections={sections} />
       </div>
 
-      {/* Middle content */}
       <div className="w-1/2 mx-auto">
         <MidContent programId={programId} />
       </div>
 
-      {/* Right Sidebar */}
       <div className="w-1/4">
         <RightSideMenu
-          logo="/path/to/logo.png"
+          logo={logo} // Pass dynamic logo
           institution="Mahidol University"
-          programId={programId} // Pass dynamic ID here
+          programId={programId}
         />
       </div>
     </div>
