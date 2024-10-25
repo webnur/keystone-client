@@ -1,10 +1,10 @@
 "use client";
 import EducationJourney from "@/components/home/EducationJourney";
-import DiscoverProgram from "@/components/home/DiscoverProgram";
 import BannerWithDropdown from "@/components/common/Banner";
 import LawAddedProgram from "./components/LawAddedProgram";
 import LawWhereToStudy from "./components/LawWhereToStudy";
 import LawArticlesAndGuides from "./components/LawArticleGuide";
+import LawDiscoverProgram from "./components/LawDiscoverProgram";
 
 export default function Home() {
   // Study fields for dropdown
@@ -49,54 +49,208 @@ export default function Home() {
   // Programs data for DiscoverProgram
   const programsData = [
     {
-      name: "Legal Studies",
-      icon: "⚖️",
-      fields: ["International Law", "Corporate Law"],
+      id: "computer-science",
+      name: "Computer Science",
+      icon: "💻",
+      fields: [
+        "AI",
+        "Data Science",
+        "Cybersecurity",
+        "Web Development",
+        "Machine Learning",
+        "Software Engineering",
+      ],
     },
     {
-      name: "Business Law Studies",
-      icon: "⚖️",
-      fields: ["Corporate Law", "Contract Law"],
+      id: "business-administration",
+      name: "Business Administration",
+      icon: "📊",
+      fields: [
+        "Finance",
+        "Marketing",
+        "Operations",
+        "HR",
+        "Business Analytics",
+        "Entrepreneurship",
+      ],
     },
     {
-      name: "International Law Studies",
-      icon: "⚖️",
-      fields: ["Human Rights Law", "Civil Law"],
+      id: "design",
+      name: "Design",
+      icon: "🎨",
+      fields: [
+        "Graphic Design",
+        "UX/UI",
+        "Animation",
+        "Photography",
+        "Interior Design",
+        "Industrial Design",
+      ],
     },
     {
-      name: "Administrative Law Studies",
+      id: "law",
+      name: "Law",
       icon: "⚖️",
-      fields: ["Administrative Law", "Civil Law"],
+      fields: [
+        "Corporate Law",
+        "International Law",
+        "Human Rights",
+        "Environmental Law",
+        "Criminal Law",
+      ],
     },
     {
-      name: "Jurisprudence",
-      icon: "⚖️",
-      fields: ["Criminal Law", "Civil Law"],
+      id: "engineering",
+      name: "Engineering",
+      icon: "🔧",
+      fields: [
+        "Mechanical Engineering",
+        "Electrical Engineering",
+        "Civil Engineering",
+        "Aerospace Engineering",
+      ],
     },
     {
-      name: "National Law Studies",
-      icon: "⚖️",
-      fields: ["Constitutional Law", "National Security Law"],
+      id: "medicine",
+      name: "Medicine",
+      icon: "🏥",
+      fields: [
+        "General Medicine",
+        "Surgery",
+        "Dentistry",
+        "Pharmacy",
+        "Nursing",
+        "Veterinary Medicine",
+      ],
     },
     {
-      name: "Economic Law Studies",
-      icon: "⚖️",
-      fields: ["Tax Law", "Trade Law"],
+      id: "psychology",
+      name: "Psychology",
+      icon: "🧠",
+      fields: [
+        "Clinical Psychology",
+        "Counseling",
+        "Forensic Psychology",
+        "Educational Psychology",
+      ],
     },
     {
-      name: "Human Rights Law Studies",
-      icon: "⚖️",
-      fields: ["Human Rights Law", "International Law"],
+      id: "education",
+      name: "Education",
+      icon: "📚",
+      fields: [
+        "Primary Education",
+        "Secondary Education",
+        "Curriculum Development",
+        "Educational Leadership",
+      ],
     },
     {
-      name: "Dispute Resolution Studies",
-      icon: "⚖️",
-      fields: ["Arbitration", "Mediation"],
+      id: "environmental-studies",
+      name: "Environmental Studies",
+      icon: "🌍",
+      fields: ["Sustainability", "Ecology", "Conservation", "Renewable Energy"],
     },
     {
-      name: "Civil Law Studies",
-      icon: "⚖️",
-      fields: ["Civil Procedure", "Family Law"],
+      id: "social-sciences",
+      name: "Social Sciences",
+      icon: "🌐",
+      fields: [
+        "Sociology",
+        "Anthropology",
+        "Political Science",
+        "International Relations",
+      ],
+    },
+    {
+      id: "health-sciences",
+      name: "Health Sciences",
+      icon: "🏥",
+      fields: [
+        "Public Health",
+        "Nutrition",
+        "Physiotherapy",
+        "Occupational Therapy",
+      ],
+    },
+    {
+      id: "economics",
+      name: "Economics",
+      icon: "💰",
+      fields: [
+        "Microeconomics",
+        "Macroeconomics",
+        "Econometrics",
+        "Development Economics",
+      ],
+    },
+    {
+      id: "philosophy",
+      name: "Philosophy",
+      icon: "📜",
+      fields: ["Ethics", "Metaphysics", "Logic", "Political Philosophy"],
+    },
+    {
+      id: "media-studies",
+      name: "Media Studies",
+      icon: "🎥",
+      fields: ["Journalism", "Film Studies", "Advertising", "Public Relations"],
+    },
+    {
+      id: "art-history",
+      name: "Art History",
+      icon: "🖼️",
+      fields: ["Modern Art", "Renaissance Art", "Photography", "Art Criticism"],
+    },
+    {
+      id: "chemistry",
+      name: "Chemistry",
+      icon: "🧪",
+      fields: [
+        "Organic Chemistry",
+        "Analytical Chemistry",
+        "Biochemistry",
+        "Physical Chemistry",
+      ],
+    },
+    {
+      id: "physics",
+      name: "Physics",
+      icon: "⚛️",
+      fields: [
+        "Quantum Physics",
+        "Astrophysics",
+        "Particle Physics",
+        "Nuclear Physics",
+      ],
+    },
+    {
+      id: "mathematics",
+      name: "Mathematics",
+      icon: "📐",
+      fields: ["Algebra", "Calculus", "Statistics", "Applied Mathematics"],
+    },
+    {
+      id: "architecture",
+      name: "Architecture",
+      icon: "🏛️",
+      fields: [
+        "Urban Planning",
+        "Landscape Architecture",
+        "Sustainable Architecture",
+        "Interior Architecture",
+      ],
+    },
+    {
+      id: "biotechnology",
+      name: "Biotechnology",
+      icon: "🧬",
+      fields: [
+        "Genetics",
+        "Bioinformatics",
+        "Molecular Biology",
+        "Bioprocess Engineering",
+      ],
     },
   ];
 
@@ -251,7 +405,7 @@ export default function Home() {
         studyFields={studyFields}
       />
       <EducationJourney />
-      <DiscoverProgram programs={programsData} />
+      <LawDiscoverProgram programs={programsData} />
       <LawWhereToStudy locations={mockLocations} />
       <LawArticlesAndGuides articles={mockArticles} />
       <LawAddedProgram programs={mockPrograms} />
