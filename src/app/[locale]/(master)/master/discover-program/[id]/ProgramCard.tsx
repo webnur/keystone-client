@@ -14,6 +14,7 @@ interface ProgramCardProps {
   recommended?: boolean;
   imageUrl: string;
   description: string;
+  logo: string; // Add logo here
 }
 
 const ProgramCard: React.FC<ProgramCardProps> = ({
@@ -27,6 +28,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
   recommended = false,
   imageUrl,
   description,
+  logo, // Add logo prop
 }) => {
   const [isFavorited, setIsFavorited] = useState(false);
 
@@ -53,7 +55,6 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
 
   return (
     <div className="border rounded-lg bg-white shadow hover:shadow-md transition relative flex items-start p-4">
-      {/* Image on the left */}
       <div className="w-1/4 h-auto mr-4">
         <Image src={imageUrl} alt={title} width={160} height={100} objectFit="cover" />
         {recommended && (
@@ -63,13 +64,11 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
         )}
       </div>
 
-      {/* Program Details */}
       <div className="w-3/4 relative">
         <h3 className="text-xl font-bold text-red-600 mb-1">{title}</h3>
         <p className="text-gray-700 mb-1">{institution}</p>
         <p className="text-gray-500 mb-2">{location}</p>
 
-        {/* Extra details like MSc, Part-time, Duration, etc */}
         <div className="flex flex-wrap space-x-4 text-sm text-gray-500 mb-4">
           <p>🎓 MSc</p>
           <p>🕒 {mode}</p>
@@ -77,15 +76,18 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
           <p>🌐 {language}</p>
         </div>
 
-        {/* Short description */}
         <p className="text-gray-600 text-sm mb-4 border-l-2 border-gray-200 pl-1">{description}</p>
 
-        {/* Read more link that navigates dynamically */}
-        <Link href={`/master/program-details/${id}`} className="text-red-500 text-sm font-semibold hover:underline absolute bottom-2 right-2">
+        <Link
+          href={{
+            pathname: `/master/program-details/${id}`,
+            query: { logo }, // Pass the logo through query parameters
+          }}
+          className="text-red-500 text-sm font-semibold hover:underline absolute bottom-2 right-2"
+        >
           Read more
         </Link>
 
-        {/* Heart/Favorite Button */}
         <button
           onClick={toggleFavorite}
           className="absolute top-4 right-4 text-lg text-gray-500 hover:text-red-500 focus:outline-none"
