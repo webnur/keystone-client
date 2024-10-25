@@ -69,7 +69,11 @@ const Navbar = () => {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+                d={
+                  isMobileMenuOpen
+                    ? "M6 18L18 6M6 6l12 12"
+                    : "M4 6h16M4 12h16M4 18h16"
+                }
               />
             </svg>
           </button>
@@ -137,7 +141,10 @@ const Navbar = () => {
         } md:hidden absolute top-full right-0 w-[70%] bg-white shadow-lg mobile-menu transition-transform p-4 `}
       >
         <div className="flex flex-col gap-6">
-          <Link href="/saved-programs" onClick={() => setIsMobileMenuOpen(false)}>
+          <Link
+            href="/saved-programs"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
             <div className="relative cursor-pointer flex items-center gap-2">
               <HeartIcon className="w-4 h-4" />
               <span>Saved Programs</span>
@@ -147,7 +154,10 @@ const Navbar = () => {
             </div>
           </Link>
 
-          <Link href="/compare-programes" onClick={() => setIsMobileMenuOpen(false)}>
+          <Link
+            href="/compare-programes"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
             <div className="relative cursor-pointer flex items-center gap-2">
               <CustomIcon className="w-4 h-4" />
               <span>Compare Programs</span>
