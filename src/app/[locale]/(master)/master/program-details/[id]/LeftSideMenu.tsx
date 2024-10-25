@@ -2,13 +2,12 @@
 import React, { useState, useEffect } from "react";
 
 interface SidebarProps {
-  sections: string[]; // Array of section IDs or titles
+  sections: string[];
 }
 
 const LeftSideMenu: React.FC<SidebarProps> = ({ sections }) => {
   const [activeSection, setActiveSection] = useState<string>("");
 
-  // Function to handle scrolling to section when clicking the menu item
   const handleScrollToSection = (sectionId: string) => {
     const sectionElement = document.getElementById(sectionId);
     if (sectionElement) {
@@ -16,7 +15,6 @@ const LeftSideMenu: React.FC<SidebarProps> = ({ sections }) => {
     }
   };
 
-  // Function to determine the currently visible section
   const handleScroll = () => {
     let currentSection = "";
     sections.forEach((sectionId) => {
@@ -31,7 +29,6 @@ const LeftSideMenu: React.FC<SidebarProps> = ({ sections }) => {
     setActiveSection(currentSection);
   };
 
-  // Attach scroll event listener to detect visible sections
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -45,9 +42,9 @@ const LeftSideMenu: React.FC<SidebarProps> = ({ sections }) => {
         {sections.map((section) => (
           <button
             key={section}
-            className={`block w-full p-2 text-left rounded-lg transition-colors duration-300 ${
-              activeSection === section ? "bg-gray-200 font-bold" : "bg-gray-50"
-            } hover:bg-gray-300`}
+            className={`block w-full p-2 text-left rounded-lg transition-colors duration-300 border-l-4 ${
+              activeSection === section ? "border-red-500 font-bold text-red-500" : "border-transparent"
+            } hover:text-red-500`}
             onClick={() => handleScrollToSection(section)}
           >
             {section}

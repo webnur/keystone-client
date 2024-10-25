@@ -15,7 +15,6 @@ const RightSideMenu: React.FC<RightSidebarProps> = ({
 }) => {
   const [isSaved, setIsSaved] = useState<boolean>(false);
 
-  // Save program to localStorage
   const handleSave = () => {
     const savedPrograms = JSON.parse(
       localStorage.getItem("savedPrograms") || "[]"
@@ -30,12 +29,10 @@ const RightSideMenu: React.FC<RightSidebarProps> = ({
   return (
     <div className="w-60 fixed right-4 top-34">
       <div className="bg-white border border-gray-300 shadow-lg rounded-lg p-4">
-        {/* University Logo */}
         <div className="flex justify-center mb-4">
           <Image src={logo} alt={institution} width={150} height={150} />
         </div>
 
-        {/* Save, Compare, and Contact Buttons */}
         <div className="flex flex-col space-y-4">
           <button
             onClick={handleSave}
