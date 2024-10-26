@@ -10,6 +10,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       name: "Healthcare Management",
       link: "/healthcare/healthcare-management",
     },
+    { name: "Universities", link: "/healthcare/universities" },
+    { name: "Scholarships", link: "/healthcare/scholarships" },
+    { name: "Student resources", link: "/healthcare/student-resources" },
   ];
   return (
     <div className="">

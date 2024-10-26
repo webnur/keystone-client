@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 
 interface StudyLocation {
-  id: string;  
+  id: string;
   name: string;
   image: string;
 }
@@ -13,7 +13,7 @@ interface WhereToStudyProps {
   locations: StudyLocation[];
 }
 
-const MasterWhereToStudy: React.FC<WhereToStudyProps> = ({ locations }) => {
+const CoursesWhereToStudy: React.FC<WhereToStudyProps> = ({ locations }) => {
   return (
     <section className="py-16 bg-white text-center container mx-auto">
       <div className="flex flex-col md:flex-row justify-between items-center mb-8 space-y-4 md:space-y-0 md:space-x-4">
@@ -71,4 +71,4 @@ const MasterWhereToStudy: React.FC<WhereToStudyProps> = ({ locations }) => {
   );
 };
 
-export default MasterWhereToStudy;
+export default CoursesWhereToStudy;

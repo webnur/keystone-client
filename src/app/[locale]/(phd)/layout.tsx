@@ -7,6 +7,9 @@ const PhdLayout = ({ children }: { children: React.ReactNode }) => {
     { name: "Research Opportunities", link: "/phd/masters-of-science" },
     { name: "Doctoral Studies", link: "/phd/doctoral-studies" },
     { name: "Postdoctoral Positions", link: "/phd/postdoctoral-positions" },
+    { name: "Universities", link: "/phd/universities" },
+    { name: "Scholarships", link: "/phd/scholarships" },
+    { name: "Student resources", link: "/phd/student-resources" },
   ];
   return (
     <div className="">
