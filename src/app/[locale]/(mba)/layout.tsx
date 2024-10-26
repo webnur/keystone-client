@@ -7,6 +7,9 @@ const MbaLayout = ({ children }: { children: React.ReactNode }) => {
     { name: "Executive MBA", link: "/mba/mba-executive" },
     { name: "Part-time MBA", link: "/mba/part-time-mba" },
     { name: "Online MBA", link: "/mba/mba-online" },
+    { name: "Universities", link: "/mba/universities" },
+    { name: "Scholarships", link: "/mba/scholarships" },
+    { name: "Student resources", link: "/mba/student-resources" },
   ];
   return (
     <div className="">

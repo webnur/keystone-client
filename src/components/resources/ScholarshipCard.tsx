@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -46,7 +45,7 @@ const ScholarshipCard = ({ scholarships }: ScholarshipProps) => {
           {/* Link/Button Section */}
           <div className="w-full md:w-auto text-center">
             <Link
-              href="/master/apply" // Use the 'link' prop for navigation
+              href={scholarship.link} // Use the 'link' prop for navigation
               className="inline-block px-4 py-2 text-white bg-red-500 rounded-md hover:bg-red-600"
             >
               Read more

@@ -7,6 +7,9 @@ const CoursesLayout = ({ children }: { children: React.ReactNode }) => {
     { name: "Certificates", link: "/courses/certificates" },
     { name: "Diplomas", link: "/courses/diplomas" },
     { name: "Workshops", link: "/courses/workshops" },
+    { name: "Universities", link: "/courses/universities" },
+    { name: "Scholarships", link: "/courses/scholarships" },
+    { name: "Student resources", link: "/courses/student-resources" },
   ];
   return (
     <div className="">

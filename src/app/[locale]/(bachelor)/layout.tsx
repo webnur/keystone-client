@@ -8,6 +8,7 @@ const BachelorLayout = ({ children }: { children: React.ReactNode }) => {
       name: "Undergraduate Programs",
       link: "/bachelor/undergraduate-programs",
     },
+    { name: "Universities", link: "/bachelor/universities" },
     { name: "Scholarships", link: "/bachelor/scholarships" },
     { name: "Student Resources", link: "/bachelor/student-resources" },
   ];

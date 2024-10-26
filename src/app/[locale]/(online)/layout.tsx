@@ -6,6 +6,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     { name: "Online Degrees", link: "/online/online-degrees" },
     { name: "Distance Learning", link: "/online/distance-learning" },
     { name: "Virtual Classrooms", link: "/online/virtual-classrooms" },
+    { name: "Universities", link: "/online/universities" },
+    { name: "Scholarships", link: "/online/scholarships" },
+    { name: "Student Resources", link: "/online/student-resources" },
   ];
   return (
     <div className="">
