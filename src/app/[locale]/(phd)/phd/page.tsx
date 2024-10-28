@@ -5,6 +5,7 @@ import PhdAddedProgram from "./components/PhdAddedProgram";
 import PhdWhereToStudy from "./components/PhdWhereToStudy";
 import PhdArticlesAndGuides from "./components/PhdArticleGuide";
 import PhdDiscoverProgram from "./components/PsdDiscoverProgram";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
   // Study fields for dropdown
@@ -394,14 +395,14 @@ export default function Home() {
         "https://i.ibb.co.com/Jk6mfCY/237569-SA-Ordbild-vid-samarbeten-RGB-eng.png",
     },
   ];
-
+  const t = useTranslations("phdPage");
   return (
     <div>
       <BannerWithDropdown
         backgroundImage={
           "https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?auto=compress&cs=tinysrgb&w=800"
         }
-        title="Browse thousands of graduate degrees from around the world."
+        title={t("bannerTitle")}
         studyFields={studyFields}
       />
       <EducationJourney />

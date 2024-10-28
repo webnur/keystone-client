@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import LocationIcon from "@/components/icons/Location";
+import { useTranslations } from "next-intl";
 
 interface Program {
   title: string;
@@ -20,6 +21,7 @@ interface NewlyAddedProgramsProps {
 const BachelorAddedProgram: React.FC<NewlyAddedProgramsProps> = ({
   programs,
 }) => {
+  const t = useTranslations("bachelorPage");
   const defaultPrograms: Program[] = [
     {
       title: "Default Program 1",
@@ -83,7 +85,7 @@ const BachelorAddedProgram: React.FC<NewlyAddedProgramsProps> = ({
   return (
     <section className="py-16 bg-white text-center w-11/12 mx-auto">
       <div className="flex justify-between items-center mb-8">
-        <h2 className="text-3xl font-bold">Newly Added Programs</h2>
+        <h2 className="text-3xl font-bold">{t("newAddedTitle")}</h2>
       </div>
 
       <div className="relative">
@@ -121,9 +123,9 @@ const BachelorAddedProgram: React.FC<NewlyAddedProgramsProps> = ({
                   {program.location}, {program.country}
                 </p>
                 <div className="flex justify-end">
-                  <Link href={`/bachelor/newly-added-program/${program.id}`}>
+                  <Link href={`/master/newly-added-program/${program.id}`}>
                     <span className="text-red-500 font-semibold hover:text-red-600 flex items-center">
-                      More information <span className="ml-1">→</span>
+                      {t("moreInfo")} <span className="ml-1">→</span>
                     </span>
                   </Link>
                 </div>
