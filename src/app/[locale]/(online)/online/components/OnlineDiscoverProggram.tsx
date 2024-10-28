@@ -17,7 +17,7 @@ interface DiscoverProgramProps {
 const OnlineDiscoverProgram: React.FC<DiscoverProgramProps> = ({
   programs,
 }) => {
-  const t = useTranslations("masterPage");
+  const t = useTranslations("onlinePage");
   return (
     <section className="py-16 bg-gray-100">
       <div className="container mx-auto px-4">
@@ -26,7 +26,7 @@ const OnlineDiscoverProgram: React.FC<DiscoverProgramProps> = ({
             {t("discoverTitle")}
           </h2>
           <button className="bg-red-100 text-red-500 px-4 py-2 rounded-lg hover:bg-red-200 transition duration-200 whitespace-nowrap">
-            View all disciplines
+            {t("discoverButton")}
           </button>
         </div>
 
@@ -51,17 +51,17 @@ const OnlineDiscoverProgram: React.FC<DiscoverProgramProps> = ({
                         </li>
                       ))
                     ) : (
-                      <li>Loading fields...</li>
+                      <li>{t("loadingFields")}</li>
                     )}
                   </ul>
                 </div>
 
                 <div className="flex justify-center items-center w-full mx-auto">
                   <Link
-                    href={`/online/discover-program/${program.id}`} // Dynamic routing with program ID
+                    href={`/master/discover-program/${program.id}`} // Dynamic routing with program ID
                     className="bg-white hover:bg-red-600 text-red-600 hover:text-white w-full rounded-2xl py-1 flex justify-evenly items-center font-bold"
                   >
-                    <span>See All Fields</span>
+                    <span>{t("seeAllButton")}</span>
                     <span>→</span>
                   </Link>
                 </div>
