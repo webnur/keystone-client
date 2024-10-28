@@ -10,7 +10,7 @@ const Page = () => {
   const searchParams = useSearchParams();
 
   const programId = Array.isArray(id) ? id[0] : id;
-  const logo = searchParams.get('logo') || '/default-logo.png'; // Default logo fallback
+  const logo = searchParams.get('logo') || '/default-logo.png'; 
 
   const sections = [
     'Introduction',
@@ -23,15 +23,18 @@ const Page = () => {
 
   return (
     <div className="mt-10 flex w-full">
-      <div className="w-1/4">
+      {/* Left Sidebar with 15% width */}
+      <div className="w-[15%]">
         <LeftSideMenu sections={sections} />
       </div>
 
-      <div className="w-1/2 mx-auto">
+      {/* Middle content with 70% width */}
+      <div className="w-[65%] mx-auto">
         <MidContent programId={programId} />
       </div>
 
-      <div className="w-1/4">
+      {/* Right Sidebar with 15% width */}
+      <div className="w-[15%]">
         <RightSideMenu
           logo={logo} // Pass dynamic logo
           institution="Mahidol University"
