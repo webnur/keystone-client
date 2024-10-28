@@ -5,8 +5,10 @@ import BachelorAddedProgram from "./components/BachelorAddedProgram";
 import BachelorWhereToStudy from "./components/BachelorWhereToStudy";
 import BachelorArticlesAndGuides from "./components/BachelorArticleGuide";
 import BachelorDiscoverProgram from "./components/BachelorDiscoverProgram";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
+  const t = useTranslations("bachelorPage");
   // Study fields for dropdown
   const studyFields = [
     "Accessories Design",
@@ -401,7 +403,7 @@ export default function Home() {
         backgroundImage={
           "https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?auto=compress&cs=tinysrgb&w=800"
         }
-        title="Browse thousands of graduate degrees from around the world."
+        title={t("bannerTitle")}
         studyFields={studyFields}
       />
       <EducationJourney />

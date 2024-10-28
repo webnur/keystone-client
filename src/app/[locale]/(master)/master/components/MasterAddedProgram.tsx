@@ -1,8 +1,9 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import LocationIcon from "@/components/icons/Location";
+import { useTranslations } from "next-intl";
 
 interface Program {
   title: string;
@@ -17,14 +18,18 @@ interface NewlyAddedProgramsProps {
   programs?: Program[]; // Make programs optional
 }
 
-const MasterAddedProgram: React.FC<NewlyAddedProgramsProps> = ({ programs }) => {
+const MasterAddedProgram: React.FC<NewlyAddedProgramsProps> = ({
+  programs,
+}) => {
+  const t = useTranslations("masterPage");
   const defaultPrograms: Program[] = [
     {
       title: "Default Program 1",
       institution: "Default Institution 1",
       location: "Default Location 1",
       country: "Country 1",
-      image: "https://i.ibb.co.com/CbgWHWY/126297-photo-1477238134895-98438ad85c30.jpg",
+      image:
+        "https://i.ibb.co.com/CbgWHWY/126297-photo-1477238134895-98438ad85c30.jpg",
       id: "default1",
     },
     {
@@ -32,7 +37,8 @@ const MasterAddedProgram: React.FC<NewlyAddedProgramsProps> = ({ programs }) => 
       institution: "Default Institution 2",
       location: "Default Location 2",
       country: "Country 2",
-      image: "https://i.ibb.co.com/CbgWHWY/126297-photo-1477238134895-98438ad85c30.jpg",
+      image:
+        "https://i.ibb.co.com/CbgWHWY/126297-photo-1477238134895-98438ad85c30.jpg",
       id: "default2",
     },
     {
@@ -40,7 +46,8 @@ const MasterAddedProgram: React.FC<NewlyAddedProgramsProps> = ({ programs }) => 
       institution: "Default Institution 3",
       location: "Default Location 3",
       country: "Country 3",
-      image: "https://i.ibb.co.com/CbgWHWY/126297-photo-1477238134895-98438ad85c30.jpg",
+      image:
+        "https://i.ibb.co.com/CbgWHWY/126297-photo-1477238134895-98438ad85c30.jpg",
       id: "default3",
     },
     {
@@ -48,12 +55,14 @@ const MasterAddedProgram: React.FC<NewlyAddedProgramsProps> = ({ programs }) => 
       institution: "Default Institution 4",
       location: "Default Location 4",
       country: "Country 4",
-      image: "https://i.ibb.co.com/CbgWHWY/126297-photo-1477238134895-98438ad85c30.jpg",
+      image:
+        "https://i.ibb.co.com/CbgWHWY/126297-photo-1477238134895-98438ad85c30.jpg",
       id: "default4",
     },
   ];
 
-  const programData = programs && programs.length > 0 ? programs : defaultPrograms; 
+  const programData =
+    programs && programs.length > 0 ? programs : defaultPrograms;
   const [currentIndex, setCurrentIndex] = useState(0);
   const programsToShow = 4;
 
@@ -80,45 +89,52 @@ const MasterAddedProgram: React.FC<NewlyAddedProgramsProps> = ({ programs }) => 
   return (
     <section className="py-16 bg-white text-center w-11/12 mx-auto">
       <div className="flex justify-between items-center mb-8">
-        <h2 className="text-3xl font-bold">Newly Added Programs</h2>
+        <h2 className="text-3xl font-bold">{t("newAddedTitle")}</h2>
       </div>
 
       <div className="relative">
-        <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${Math.min(programsToShow, programData.length)} gap-4`}>
-          {programData.slice(currentIndex, currentIndex + programsToShow).map((program, index) => (
-            <div
-              key={index}
-              className="border rounded-lg shadow-md p-4 flex flex-col justify-between hover:shadow-lg transition-shadow duration-300"
-            >
-              <div className="flex justify-start w-full mb-4">
-                <Image
-                  src={program.image}
-                  alt={program.institution}
-                  className="object-contain w-32 h-32"
-                  width={160}
-                  height={100}
-                />
-              </div>
+        <div
+          className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${Math.min(
+            programsToShow,
+            programData.length
+          )} gap-4`}
+        >
+          {programData
+            .slice(currentIndex, currentIndex + programsToShow)
+            .map((program, index) => (
+              <div
+                key={index}
+                className="border rounded-lg shadow-md p-4 flex flex-col justify-between hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="flex justify-start w-full mb-4">
+                  <Image
+                    src={program.image}
+                    alt={program.institution}
+                    className="object-contain w-32 h-32"
+                    width={160}
+                    height={100}
+                  />
+                </div>
 
-              <h3 className="text-lg font-semibold text-black text-left">
-                {program.title}
-              </h3>
-              <p className="text-sm text-black text-left underline font-semibold">
-                {program.institution}
-              </p>
-              <p className="text-sm text-black flex items-center mt-3">
-                <LocationIcon width="16" height="16" />
-                {program.location}, {program.country}
-              </p>
-              <div className="flex justify-end">
-                <Link href={`/master/newly-added-program/${program.id}`}>
-                  <span className="text-red-500 font-semibold hover:text-red-600 flex items-center">
-                    More information <span className="ml-1">→</span>
-                  </span>
-                </Link>
+                <h3 className="text-lg font-semibold text-black text-left">
+                  {program.title}
+                </h3>
+                <p className="text-sm text-black text-left underline font-semibold">
+                  {program.institution}
+                </p>
+                <p className="text-sm text-black flex items-center mt-3">
+                  <LocationIcon width="16" height="16" />
+                  {program.location}, {program.country}
+                </p>
+                <div className="flex justify-end">
+                  <Link href={`/master/newly-added-program/${program.id}`}>
+                    <span className="text-red-500 font-semibold hover:text-red-600 flex items-center">
+                      {t("moreInfo")} <span className="ml-1">→</span>
+                    </span>
+                  </Link>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
 
         {programData.length > programsToShow && (

@@ -1,12 +1,13 @@
+"use client";
 import React from "react";
 import Discover from "../icons/Discover";
+import { useTranslations } from "next-intl";
 
 const EducationJourney = () => {
+  const t = useTranslations("masterPage");
   return (
     <section className="py-16 bg-white text-center w-4/5 mx-auto">
-      <h2 className="text-3xl font-bold mb-8">
-        Start your education journey here
-      </h2>
+      <h2 className="text-3xl font-bold mb-8">{t("jurnyTitle")}</h2>
 
       <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8">
         {/* Discover */}
@@ -27,9 +28,9 @@ const EducationJourney = () => {
               />
             </svg>
           </div>
-          <h3 className="mt-4 text-xl font-semibold">Discover</h3>
+          <h3 className="mt-4 text-xl font-semibold">{t("discover")}</h3>
           <p className="text-gray-500 mt-2 w-3/5 mx-auto">
-            Browse thousands of degrees from around the world
+            {t("discoverDetails")}
           </p>
 
           {/* <div className='h-[1px] bg-red-400 w-[191px] absolute top-1/4 right-[-96px]'></div> */}
@@ -53,9 +54,9 @@ const EducationJourney = () => {
               />
             </svg>
           </div>
-          <h3 className="mt-4 text-xl font-semibold">Compare</h3>
+          <h3 className="mt-4 text-xl font-semibold">{t("compare")}</h3>
           <p className="text-gray-500 mt-2 w-3/5 mx-auto">
-            See programs side by side to find the right one for you
+            {t("compareDetails")}
           </p>
           {/* <div className='h-[1px] bg-red-400 w-[191px] absolute top-1/4 right-[-96px]'></div> */}
         </div>
@@ -65,9 +66,9 @@ const EducationJourney = () => {
           <div className="rounded-full p-6 border-2 border-gray-300 bg-white">
             <Discover width="40" height="40" />
           </div>
-          <h3 className="mt-4 text-xl font-semibold">Connect</h3>
+          <h3 className="mt-4 text-xl font-semibold">{t("connect")}</h3>
           <p className="text-gray-500 mt-2 w-3/5 mx-auto">
-            Contact the schools admissions offices directly
+            {t("contentDetails")}
           </p>
         </div>
       </div>

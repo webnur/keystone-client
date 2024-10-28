@@ -5,8 +5,10 @@ import HealthcareAddedProgram from "./components/HealthcareAddedProgram";
 import HealthcareWhereToStudy from "./components/HealthcareWhereToStudy";
 import HealthcareArticlesAndGuides from "./components/HealthcareArticleGuide";
 import HealthcareDiscoverProgram from "./components/HealthCareDiscoverProgram";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
+  const t = useTranslations("healthcarePage");
   // Study fields for dropdown
   const studyFields = [
     "Accessories Design",
@@ -401,7 +403,7 @@ export default function Home() {
         backgroundImage={
           "https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?auto=compress&cs=tinysrgb&w=800"
         }
-        title="Browse thousands of graduate degrees from around the world."
+        title={t("bannerTitle")}
         studyFields={studyFields}
       />
       <EducationJourney />

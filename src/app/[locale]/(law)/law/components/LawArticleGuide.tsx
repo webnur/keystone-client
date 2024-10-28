@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 interface Article {
   id: string;
   title: string;
@@ -16,21 +17,21 @@ interface MasterArticlesAndGuidesProps {
 const LawArticlesAndGuides: React.FC<MasterArticlesAndGuidesProps> = ({
   articles,
 }) => {
+  const t = useTranslations("lawPage");
   return (
     <section className="bg-gray-100">
       <div className="py-16 text-center container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8 space-y-4 md:space-y-0 md:space-x-4">
           <h2 className="text-2xl md:text-3xl font-bold text-center md:text-left">
-            Articles and guides
+            {t("articalTitle")}
           </h2>
           <button className="bg-red-100 text-red-500 px-4 py-2 rounded-lg hover:bg-red-200 transition duration-200 whitespace-nowrap">
-            View all
+            {t("articalButton")}
           </button>
         </div>
 
         <p className="text-gray-500 mb-4 text-center md:text-left">
-          Dive into our guides covering Law student experiences, career
-          information, and more.
+          {t("articleSubtitle")}
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -64,9 +65,10 @@ const LawArticlesAndGuides: React.FC<MasterArticlesAndGuidesProps> = ({
               <div className="text-right">
                 <Link
                   className="text-red-500 font-semibold"
-                  href={`/law/law-articles/${article.id}`}
+                  href={`/master/master-articles/${article.id}`}
                 >
-                  Read more <span className="inline-block transform">→</span>
+                  {t("readMore")}{" "}
+                  <span className="inline-block transform">→</span>
                 </Link>
               </div>
             </div>

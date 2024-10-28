@@ -1,10 +1,11 @@
 "use client";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 interface StudyLocation {
-  id: string;  
+  id: string;
   name: string;
   image: string;
 }
@@ -14,14 +15,15 @@ interface WhereToStudyProps {
 }
 
 const BachelorWhereToStudy: React.FC<WhereToStudyProps> = ({ locations }) => {
+  const t = useTranslations("bachelorPage");
   return (
     <section className="py-16 bg-white text-center container mx-auto">
       <div className="flex flex-col md:flex-row justify-between items-center mb-8 space-y-4 md:space-y-0 md:space-x-4">
         <h2 className="text-2xl md:text-3xl font-bold text-center md:text-left">
-          Where to study
+          {t("whereStudyTitle")}
         </h2>
         <button className="bg-red-100 text-red-500 px-4 py-2 rounded-lg hover:bg-red-200 transition duration-200 whitespace-nowrap">
-          See all locations
+          {t("whereStudyButton")}
         </button>
       </div>
 
@@ -57,9 +59,9 @@ const BachelorWhereToStudy: React.FC<WhereToStudyProps> = ({ locations }) => {
 
               {/* Read More Button (Centered Bottom) */}
               <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-                <Link href={`/bachelor/study-where/${location.id}`}>
+                <Link href={`/master/study-where/${location.id}`}>
                   <button className="bg-white bg-opacity-10 border-2 border-white text-white px-6 py-2 rounded-lg">
-                    Read more
+                    {t("readMore")}
                   </button>
                 </Link>
               </div>

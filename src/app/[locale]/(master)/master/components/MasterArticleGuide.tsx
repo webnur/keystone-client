@@ -1,9 +1,10 @@
 import Image from "next/image";
 import React from "react";
 import Link from "next/link"; // Importing Link for navigation
+import { useTranslations } from "next-intl";
 
 interface Article {
-  id: string;        // Add id for routing
+  id: string; // Add id for routing
   title: string;
   date: string;
   image: string;
@@ -14,22 +15,24 @@ interface MasterArticlesAndGuidesProps {
   articles: Article[];
 }
 
-const MasterArticlesAndGuides: React.FC<MasterArticlesAndGuidesProps> = ({ articles }) => {
+const MasterArticlesAndGuides: React.FC<MasterArticlesAndGuidesProps> = ({
+  articles,
+}) => {
+  const t = useTranslations("masterPage");
   return (
     <section className="bg-gray-100">
       <div className="py-16 text-center container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8 space-y-4 md:space-y-0 md:space-x-4">
           <h2 className="text-2xl md:text-3xl font-bold text-center md:text-left">
-            Articles and guides
+            {t("articalTitle")}
           </h2>
           <button className="bg-red-100 text-red-500 px-4 py-2 rounded-lg hover:bg-red-200 transition duration-200 whitespace-nowrap">
-            View all
+            {t("articalButton")}
           </button>
         </div>
 
         <p className="text-gray-500 mb-4 text-center md:text-left">
-          Dive into our guides covering Law student experiences, career
-          information, and more.
+          {t("articleSubtitle")}
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -61,10 +64,12 @@ const MasterArticlesAndGuides: React.FC<MasterArticlesAndGuidesProps> = ({ artic
 
               {/* Read More Button (Linking to the article details page) */}
               <div className="text-right">
-                <Link className="text-red-500 font-semibold" href={`/master/master-articles/${article.id}`}>
-                  
-                    Read more <span className="inline-block transform">→</span>
-                  
+                <Link
+                  className="text-red-500 font-semibold"
+                  href={`/master/master-articles/${article.id}`}
+                >
+                  {t("readMore")}{" "}
+                  <span className="inline-block transform">→</span>
                 </Link>
               </div>
             </div>
