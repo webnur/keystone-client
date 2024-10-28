@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import BaseText from "@/components/degree/BaseText";
 import PopularFields from "@/components/common/PopularFields";
