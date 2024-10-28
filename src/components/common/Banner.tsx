@@ -2,8 +2,7 @@
 import React, { useState } from "react";
 
 interface BannerWithDropdownProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  backgroundImage: any;
+  backgroundImage: string;
   title: string;
   studyFields: string[];
 }
@@ -15,8 +14,11 @@ const BannerWithDropdown: React.FC<BannerWithDropdownProps> = ({
 }) => {
   const [selectedField, setSelectedField] = useState("");
   const [location, setLocation] = useState("");
-  const clearSelection = () => {
-    setSelectedField("");
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const handleFieldSelect = (field: string) => {
+    setSelectedField(field);
+    setIsDropdownOpen(false); // Close dropdown after selection
   };
 
   return (
@@ -26,61 +28,46 @@ const BannerWithDropdown: React.FC<BannerWithDropdownProps> = ({
     >
       <div className="bg-foreground bg-opacity-70 w-full h-full absolute top-0 left-0"></div>
 
-      <div className="relative z-10 w-full container mx-auto text-center">
-        <h1 className="text-white text-[2.5rem] font-bold mb-4 max-w-4xl mx-auto">
+      <div className="relative z-10 w-full container mx-auto">
+        <h1 className="text-white text-[2.5rem] font-bold mb-4 max-w-4xl mx-auto text-center">
           {title}
         </h1>
 
         <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-2">
+          {/* Custom Dropdown for Field Selection */}
           <div className="relative w-full md:w-4/6 my-6">
-            <select
-              value={selectedField}
-              onChange={(e) => setSelectedField(e.target.value)}
-              className="appearance-none px-4 py-3 rounded-lg w-full outline-none bg-background border border-gray-300 pr-10"
+            <button
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              className="px-4 py-3 bg-white border border-gray-300 rounded-lg w-full text-left font-semibold text-gray-500"
             >
-              <option value="" disabled>
-                Select a field of study
-              </option>
-              {studyFields.map((field, index) => (
-                <option key={index} value={field}>
-                  {field}
-                </option>
-              ))}
-            </select>
-            <div className="absolute inset-y-0 right-0 flex items-center px-2 top-2 bottom-2 pointer-events-none border-l border-gray-300">
-              <svg
-                className="w-5 h-5 text-gray-500"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 12a1 1 0 01-.707-.293l-3-3a1 1 0 111.414-1.414L10 9.586l2.293-2.293a1 1 0 111.414 1.414l-3 3A1 1 0 0110 12z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </div>
-
-            {/* Clear button for selected field */}
-            {selectedField && (
-              <button
-                className="absolute inset-y-0 right-8 flex items-center px-5 py-3 text-gray-500"
-                onClick={clearSelection}
-              >
+              {selectedField || "What do you want to study?"}
+              <span className="float-right">
                 <svg
+                  className="w-5 h-5 text-gray-500 inline-block"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-5 h-5"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
                   <path
                     fillRule="evenodd"
-                    d="M6.293 6.293a1 1 0 011.414 0L10 8.586l2.293-2.293a1 1 0 111.414 1.414L11.414 10l2.293 2.293a1 1 0 01-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 01-1.414-1.414L8.586 10 6.293 7.707a1 1 0 010-1.414z"
+                    d="M10 12a1 1 0 01-.707-.293l-3-3a1 1 0 111.414-1.414L10 9.586l2.293-2.293a1 1 0 111.414 1.414l-3 3A1 1 0 0110 12z"
                     clipRule="evenodd"
                   />
                 </svg>
-              </button>
+              </span>
+            </button>
+            {isDropdownOpen && (
+              <div className="absolute z-10 w-full bg-white border border-gray-300 rounded-lg shadow-lg mt-2 max-h-48 overflow-y-auto">
+                {studyFields.map((field, index) => (
+                  <div
+                    key={index}
+                    onClick={() => handleFieldSelect(field)}
+                    className="px-4 py-2 text-gray-500 cursor-pointer hover:bg-gray-100"
+                  >
+                    {field}
+                  </div>
+                ))}
+              </div>
             )}
           </div>
 
@@ -100,10 +87,10 @@ const BannerWithDropdown: React.FC<BannerWithDropdownProps> = ({
         </div>
 
         <div className="py-5">
-          <p className="text-white">Or</p>
+          <p className="text-white text-center">Or</p>
         </div>
-        <div className="mt-4">
-          <button className="bg-transparent border-2 border-white text-white px-6 py-2 rounded-lg">
+        <div className="mt-4 text-center">
+          <button className="bg-transparent border-2 border-white text-white px-6 py-2 rounded-lg text-center">
             Browse Fields of Study
           </button>
         </div>

@@ -16,7 +16,7 @@ const mockPrograms = [
     recommended: true,
     imageUrl: "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800",
     description: "The MSc Business Analytics programme will equip you with a broad range of analytical skills, from data visualisation to predictive modelling, ensuring you're prepared for the future of business.",
-    logo: "https://example.com/logo1.png", // Added logo field here
+    logo: "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800", 
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const mockPrograms = [
     language: "English",
     imageUrl: "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800",
     description: "IU's on-campus Master’s in IT Management programme will prepare you to become a highly sought-after IT expert with strong business acumen and people management skills.",
-    logo: "https://example.com/logo2.png", // Added logo field here
+    logo: "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800", // Added logo field here
   },
   {
     id: 3,
@@ -41,7 +41,7 @@ const mockPrograms = [
     recommended: true,
     imageUrl: "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800",
     description: "The MBA programme at Harvard will provide you with an unparalleled education, equipping you to lead and excel in the fast-paced world of business.",
-    logo: "https://example.com/logo3.png", // Added logo field here
+    logo: "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800", // Added logo field here
   },
 ];
 
