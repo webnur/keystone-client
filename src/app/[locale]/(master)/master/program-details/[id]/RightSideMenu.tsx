@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 interface RightSidebarProps {
@@ -15,6 +15,13 @@ const RightSideMenu: React.FC<RightSidebarProps> = ({
 }) => {
   const [isSaved, setIsSaved] = useState<boolean>(false);
 
+  useEffect(() => {
+    const savedPrograms = JSON.parse(
+      localStorage.getItem("savedPrograms") || "[]"
+    );
+    setIsSaved(savedPrograms.includes(programId));
+  }, [programId]);
+
   const handleSave = () => {
     const savedPrograms = JSON.parse(
       localStorage.getItem("savedPrograms") || "[]"
@@ -27,28 +34,36 @@ const RightSideMenu: React.FC<RightSidebarProps> = ({
   };
 
   return (
-    <div className="w-60 fixed right-4 top-34">
-      <div className="bg-white border border-gray-300 shadow-lg rounded-lg p-4">
-        <div className="flex justify-center mb-4">
-          <Image src={logo} alt={institution} width={150} height={150} />
+    <div className="sticky top-20 w-60 max-w-full">
+      <div className="bg-white border border-gray-300 shadow-lg rounded-lg p-6 mb-8">
+        <div className="flex justify-center mb-6">
+          <Image
+            src={logo}
+            alt={institution}
+            width={100}
+            height={100}
+            className="rounded-full object-cover"
+          />
         </div>
 
         <div className="flex flex-col space-y-4">
           <button
             onClick={handleSave}
-            className={`p-2 border rounded-lg font-semibold hover:bg-gray-100 transition duration-300 ${
-              isSaved ? "bg-green-100 text-green-600" : "bg-white text-black"
+            className={`p-3 rounded-lg font-semibold transition-colors duration-300 ${
+              isSaved
+                ? "bg-green-100 text-green-600 border border-green-300"
+                : "bg-white text-black border border-gray-300 hover:bg-gray-100"
             }`}
           >
             {isSaved ? "Saved" : "Save"}
           </button>
 
-          <button className="p-2 border rounded-lg bg-white hover:bg-gray-100 font-semibold">
+          <button className="p-3 rounded-lg font-semibold border border-gray-300 bg-white hover:bg-gray-100 transition-colors duration-300">
             Compare
           </button>
 
-          <button className="p-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition duration-300">
-            Contact school
+          <button className="p-3 rounded-lg font-semibold text-white bg-red-500 hover:bg-red-600 transition-colors duration-300">
+            Contact School
           </button>
         </div>
       </div>
