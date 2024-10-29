@@ -2,13 +2,13 @@
 import React, { useState, useEffect } from "react";
 
 interface SidebarProps {
-  sections: string[]; // Array of section IDs or titles
+  sections: string[];
 }
 
 const LeftSideMenu: React.FC<SidebarProps> = ({ sections }) => {
   const [activeSection, setActiveSection] = useState<string>("");
+  const [isFixed, setIsFixed] = useState<boolean>(true);
 
-  // Function to handle scrolling to section when clicking the menu item
   const handleScrollToSection = (sectionId: string) => {
     const sectionElement = document.getElementById(sectionId);
     if (sectionElement) {
@@ -16,22 +16,24 @@ const LeftSideMenu: React.FC<SidebarProps> = ({ sections }) => {
     }
   };
 
-  // Function to determine the currently visible section
   const handleScroll = () => {
     let currentSection = "";
+    const pageBottom = document.documentElement.scrollHeight - window.innerHeight;
+
     sections.forEach((sectionId) => {
       const sectionElement = document.getElementById(sectionId);
       if (sectionElement) {
         const sectionTop = sectionElement.getBoundingClientRect().top;
-        if (sectionTop >= 0 && sectionTop <= window.innerHeight / 2) {
+        if (sectionTop >= 500 && sectionTop <= window.innerHeight / 20) {
           currentSection = sectionId;
         }
       }
     });
+
     setActiveSection(currentSection);
+    setIsFixed(window.scrollY < pageBottom - 30); // Adjust this threshold as needed
   };
 
-  // Attach scroll event listener to detect visible sections
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -40,14 +42,21 @@ const LeftSideMenu: React.FC<SidebarProps> = ({ sections }) => {
   }, []);
 
   return (
-    <div className="w-48 fixed top-34 left-4 bg-white border border-gray-300 shadow-lg rounded-lg p-4">
-      <div className="sticky top-24 space-y-4">
+    <div
+      className={`w-48 ${
+        isFixed ? "fixed top-34" : "absolute"
+      } left-4 bg-white border border-gray-300 shadow-lg rounded-lg p-4 transition-all duration-500 ease-in-out`}
+      style={{ transition: "top 0.5s ease, position 0.5s ease" }}
+    >
+      <div className="space-y-4">
         {sections.map((section) => (
           <button
             key={section}
-            className={`block w-full p-2 text-left rounded-lg transition-colors duration-300 ${
-              activeSection === section ? "bg-gray-200 font-bold" : "bg-gray-50"
-            } hover:bg-gray-300`}
+            className={`block w-full p-2 text-left rounded-lg transition-colors duration-300 border-l-4 ${
+              activeSection === section
+                ? "border-red-500 font-bold text-red-500"
+                : "border-transparent"
+            } hover:text-red-500`}
             onClick={() => handleScrollToSection(section)}
           >
             {section}
