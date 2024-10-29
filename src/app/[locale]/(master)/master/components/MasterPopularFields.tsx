@@ -1,10 +1,11 @@
 "use client";
 import React from "react";
-import { subjectsData } from "./MockData";
+
 import { setToLocalStorage } from "@/utils/local-storage";
 import Link from "next/link";
+import { subjectsData } from "@/components/common/MockData";
 
-const PopularFields: React.FC = () => {
+const MasterPopularFields: React.FC = () => {
   const handleFieldClick = (subjectName: string, fields: string | string[]) => {
     const data = JSON.stringify({ subject: subjectName, fields });
     setToLocalStorage("selectedField", data);
@@ -47,4 +48,4 @@ const PopularFields: React.FC = () => {
   );
 };
 
-export default PopularFields;
+export default MasterPopularFields;

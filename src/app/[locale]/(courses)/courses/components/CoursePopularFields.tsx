@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
-import { subjectsData } from "./MockData";
 import { setToLocalStorage } from "@/utils/local-storage";
 import Link from "next/link";
+import { subjectsData } from "@/components/common/MockData";
 
-const PopularFields: React.FC = () => {
+const CoursePopularFields: React.FC = () => {
   const handleFieldClick = (subjectName: string, fields: string | string[]) => {
     const data = JSON.stringify({ subject: subjectName, fields });
     setToLocalStorage("selectedField", data);
@@ -25,7 +25,7 @@ const PopularFields: React.FC = () => {
               {subject.fields.map((field, i) => (
                 <Link
                   key={i}
-                  href="/master/discover-program/computer-science"
+                  href="/courses/discover-program/computer-science"
                   onClick={() => handleFieldClick(subject.name, field)}
                   className="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-full transition-colors duration-300 inline-block"
                 >
@@ -33,7 +33,7 @@ const PopularFields: React.FC = () => {
                 </Link>
               ))}
               <Link
-                href="/master/discover-program/computer-science"
+                href="/courses/discover-program/computer-science"
                 onClick={() => handleFieldClick(subject.name, subject.fields)} // Pass all fields to handleFieldClick
                 className="text-red-600 hover:text-red-700 border border-red-600 hover:border-red-700 py-2 px-4 rounded-full transition-colors duration-300 inline-block"
               >
@@ -47,4 +47,4 @@ const PopularFields: React.FC = () => {
   );
 };
 
-export default PopularFields;
+export default CoursePopularFields;

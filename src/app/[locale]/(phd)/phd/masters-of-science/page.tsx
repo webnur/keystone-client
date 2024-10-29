@@ -1,11 +1,12 @@
+"use client";
 import React from "react";
 import BaseText from "@/components/degree/BaseText";
-import PopularFields from "@/components/common/PopularFields";
 import NewsAndArticles from "@/components/common/NewsAndArticle";
 import { articlesData } from "@/app/[locale]/(main)/articles/article";
 import MScSection from "@/components/common/MScSection";
 import CommonBanner from "@/components/common/CommonBanner";
 import PhdAddedProgram from "../components/PhdAddedProgram";
+import PhdPopularFields from "../components/PhdPopularFields";
 
 const page = () => {
   const lawStudyFields = [
@@ -115,7 +116,7 @@ const page = () => {
         studyFields={lawStudyFields}
       ></CommonBanner>
       <BaseText content={masterDegreeContent} />
-      <PopularFields />
+      <PhdPopularFields />
       <div className="bg-white py-10">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
           <MScSection
