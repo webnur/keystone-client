@@ -26,9 +26,11 @@ const MasterWhereToStudy: React.FC<WhereToStudyProps> = ({
         <h2 className="text-2xl md:text-3xl font-bold text-center md:text-left">
           {title}
         </h2>
-        <button className="bg-red-100 text-red-500 px-4 py-2 rounded-lg hover:bg-red-200 transition duration-200 whitespace-nowrap">
-          {t("whereStudyButton")}
-        </button>
+        <Link href="/master/universities">
+          <button className="bg-red-100 text-red-500 px-4 py-2 rounded-lg hover:bg-red-200 transition duration-200 whitespace-nowrap">
+            {t("whereStudyButton")}
+          </button>
+        </Link>
       </div>
 
       {/* Grid of Study Locations */}
