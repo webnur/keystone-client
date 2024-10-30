@@ -14,7 +14,7 @@ interface ProgramCardProps {
   recommended?: boolean;
   imageUrl: string;
   description: string;
-  logo: string; // Add logo here
+  logo: string;
 }
 
 const ProgramCard: React.FC<ProgramCardProps> = ({
@@ -28,7 +28,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
   recommended = false,
   imageUrl,
   description,
-  logo, // Add logo prop
+  logo,
 }) => {
   const [isFavorited, setIsFavorited] = useState(false);
 
@@ -54,34 +54,43 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
   };
 
   return (
-    <div className="border rounded-lg bg-white shadow hover:shadow-md transition relative flex items-start p-4">
-      <div className="w-1/4 h-auto mr-4">
-        <Image src={imageUrl} alt={title} width={160} height={100} objectFit="cover" />
+    <div className="border border-gray-200 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow duration-200 relative flex p-4 items-start">
+      <div className="w-1/4 relative mr-4">
+        <Image
+          className="rounded-lg"
+          src={imageUrl}
+          alt={title}
+          width={160}
+          height={100}
+          objectFit="cover"
+        />
         {recommended && (
-          <div className="bg-green-200 text-green-700 text-xs font-semibold px-2 py-1 rounded mt-2 flex items-center">
+          <div className="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded absolute top-2 left-2 flex items-center">
             <FaRegGem className="mr-1" /> Featured
           </div>
         )}
       </div>
 
       <div className="w-3/4 relative">
-        <h3 className="text-xl font-bold text-red-600 mb-1">{title}</h3>
-        <p className="text-gray-700 mb-1">{institution}</p>
-        <p className="text-gray-500 mb-2">{location}</p>
+        <h3 className="text-lg font-bold text-red-600 mb-1">{title}</h3>
+        <p className="text-gray-800 font-medium mb-1">{institution}</p>
+        <p className="text-gray-500 text-sm mb-3">{location}</p>
 
-        <div className="flex flex-wrap space-x-4 text-sm text-gray-500 mb-4">
-          <p>🎓 MSc</p>
-          <p>🕒 {mode}</p>
-          <p>⏳ {duration}</p>
-          <p>🌐 {language}</p>
+        <div className="flex flex-wrap space-x-2 text-xs text-gray-600 mb-4">
+          <p className="flex items-center">🎓 MA</p>
+          <p className="flex items-center">🕒 {mode}</p>
+          <p className="flex items-center">⏳ {duration}</p>
+          <p className="flex items-center">🌐 {language}</p>
         </div>
 
-        <p className="text-gray-600 text-sm mb-4 border-l-2 border-gray-200 pl-1">{description}</p>
+        <p className="text-gray-600 text-sm mb-4 line-clamp-3 border-l-2 border-gray-300 pl-3">
+          {description}
+        </p>
 
         <Link
           href={{
             pathname: `/master/program-details/${id}`,
-            query: { logo }, // Pass the logo through query parameters
+            query: { logo },
           }}
           className="text-red-500 text-sm font-semibold hover:underline absolute bottom-2 right-2"
         >
@@ -90,7 +99,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
 
         <button
           onClick={toggleFavorite}
-          className="absolute top-4 right-4 text-lg text-gray-500 hover:text-red-500 focus:outline-none"
+          className="absolute top-2 right-2 text-lg text-gray-400 hover:text-red-500 focus:outline-none"
         >
           {isFavorited ? '❤️' : '🤍'}
         </button>
