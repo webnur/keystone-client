@@ -1,5 +1,5 @@
 import React from "react";
-import NSidebar from "./NSidebar";
+import NSidebar from "./LeftSidebar";
 import MiddleContent from "./MiddleContent";
 import RightSidebar from "./RightSidebar";
 
