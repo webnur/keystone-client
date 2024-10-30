@@ -14,7 +14,7 @@ const Page = () => {
       ></div>
 
       {/* Main Container */}
-      <div className="relative container mx-auto flex gap-8 pt-6">
+      <div className="relative container mx-auto flex gap-8 pt-6 mb-8">
         {/* Main Content */}
         <div className="w-full lg:w-4/6 space-y-8">
           <GraduateSchoolInsights />
@@ -148,6 +148,7 @@ const Page = () => {
               "Remember that universities, especially graduate schools, expect their prospective students to actively engage and put in the effort to earn their spot. Many universities, including Boston University, have dedicated program admission boards - this means that your application will be seen by many different faculty members. Its important to use this opportunity to show why youre a good fit for the program, as well as what youd be contributing to the university once admitted.",
             ]}
           />
+
         </div>
 
         {/* Sidebar */}
