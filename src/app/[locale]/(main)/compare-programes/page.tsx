@@ -27,10 +27,6 @@ const ComparePrograms = ({ params: { locale } }: Props) => {
       />
 
       <div>
-        <div className="text-center">
-          Hello Bangladesh
-          <p>Hello {t("title")}</p>
-        </div>{" "}
         <div className="flex flex-col items-center justify-center h-[400px] text-center p-2">
           <p className="text-[1.5rem] text-gray-700 mb-4">
             You have not yet added any programs to your compared programs.
