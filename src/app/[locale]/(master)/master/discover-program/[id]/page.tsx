@@ -4,7 +4,7 @@ import ProgramList from './ProgramList'
 
 const page = () => {
   return (
-    <div className='flex'>
+    <div className='flex flex-col md:flex-row'>
       <FilterComponent />
       <ProgramList />
     </div>

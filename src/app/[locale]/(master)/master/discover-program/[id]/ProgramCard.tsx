@@ -1,16 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { FaRegGem } from 'react-icons/fa';
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { FaRegGem } from "react-icons/fa";
 
 interface ProgramCardProps {
   id: number;
   title: string;
   institution: string;
   location: string;
+  country: string;
+  degreeType: string;
+  subject: string;
   duration: string;
-  mode: string;
+  studyMode: string;
+  locationType: string;
   language: string;
+  applicationTime: string;
+  applicationDeadline: string;
   recommended?: boolean;
   imageUrl: string;
   description: string;
@@ -22,9 +28,15 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
   title,
   institution,
   location,
+  country,
+  degreeType,
+  subject,
   duration,
-  mode,
+  studyMode,
+  locationType,
   language,
+  applicationTime,
+  applicationDeadline,
   recommended = false,
   imageUrl,
   description,
@@ -33,14 +45,14 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
   const [isFavorited, setIsFavorited] = useState(false);
 
   useEffect(() => {
-    const savedFavorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+    const savedFavorites = JSON.parse(localStorage.getItem("favorites") || "[]");
     if (savedFavorites.includes(id)) {
       setIsFavorited(true);
     }
   }, [id]);
 
   const toggleFavorite = () => {
-    const savedFavorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+    const savedFavorites = JSON.parse(localStorage.getItem("favorites") || "[]");
     let updatedFavorites;
 
     if (isFavorited) {
@@ -49,13 +61,14 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
       updatedFavorites = [...savedFavorites, id];
     }
 
-    localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
     setIsFavorited(!isFavorited);
   };
 
   return (
-    <div className="border border-gray-200 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow duration-200 relative flex p-4 items-start">
-      <div className="w-1/4 relative mr-4">
+    <div className="border border-gray-200 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow duration-200 relative flex flex-col md:flex-row p-4 items-start">
+      {/* Image Section */}
+      <div className="w-full md:w-1/4 relative mb-4 md:mb-0 md:mr-4">
         <Image
           className="rounded-lg"
           src={imageUrl}
@@ -71,14 +84,15 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
         )}
       </div>
 
-      <div className="w-3/4 relative">
+      {/* Content Section */}
+      <div className="w-full md:w-3/4 relative flex flex-col">
         <h3 className="text-lg font-bold text-red-600 mb-1">{title}</h3>
         <p className="text-gray-800 font-medium mb-1">{institution}</p>
-        <p className="text-gray-500 text-sm mb-3">{location}</p>
+        <p className="text-gray-500 text-sm mb-3">{location}, {country}</p>
 
         <div className="flex flex-wrap space-x-2 text-xs text-gray-600 mb-4">
-          <p className="flex items-center">🎓 MA</p>
-          <p className="flex items-center">🕒 {mode}</p>
+          <p className="flex items-center">🎓 {degreeType} in {subject}</p>
+          <p className="flex items-center">🕒 {studyMode}</p>
           <p className="flex items-center">⏳ {duration}</p>
           <p className="flex items-center">🌐 {language}</p>
         </div>
@@ -87,12 +101,14 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
           {description}
         </p>
 
+        <p className="text-gray-500 text-xs mb-2">Application Period: {applicationTime} - {applicationDeadline}</p>
+
         <Link
           href={{
             pathname: `/master/program-details/${id}`,
             query: { logo },
           }}
-          className="text-red-500 text-sm font-semibold hover:underline absolute bottom-2 right-2"
+          className="text-red-500 text-sm font-semibold hover:underline mt-auto"
         >
           Read more
         </Link>
@@ -101,7 +117,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
           onClick={toggleFavorite}
           className="absolute top-2 right-2 text-lg text-gray-400 hover:text-red-500 focus:outline-none"
         >
-          {isFavorited ? '❤️' : '🤍'}
+          {isFavorited ? "❤️" : "🤍"}
         </button>
       </div>
     </div>
