@@ -1,7 +1,7 @@
 import React from "react";
-import NSidebar from "./NSidebar";
 import MiddleContent from "./MiddleContent";
 import RightSidebar from "./RightSidebar";
+import LeftSideBar from "./LeftSidebar";
 
 const Page = () => {
   const sections = [
@@ -16,23 +16,15 @@ const Page = () => {
   return (
     <div className="mt-10 flex w-full">
       {/* Left Sidebar */}
-      <div className="w-1/4">
-        <NSidebar sections={sections} />
+      <div className="w-1/6">
+        <LeftSideBar sections={sections} />
       </div>
 
       {/* Middle content */}
-      <div className="w-1/2 mx-auto">
+      <div className="w-4/6 mx-auto">
         <MiddleContent />
       </div>
-
-      {/* Right Sidebar */}
-      {/* <div className="w-1/4">
-        <RightSidebar
-          logo="/path/to/logo.png"
-          institution="Mahidol University"
-          programId="cyber-security"
-        />
-      </div> */}
+      <div className="w-1/6">
       <RightSidebar
         logo="https://i.ibb.co.com/jJRpsgM/4-ahhsql.png"
         institution="Keystone University"
@@ -45,6 +37,7 @@ const Page = () => {
           image: "https://i.ibb.co.com/jJRpsgM/4-ahhsql.png",
         }}
       />
+      </div>
     </div>
   );
 };

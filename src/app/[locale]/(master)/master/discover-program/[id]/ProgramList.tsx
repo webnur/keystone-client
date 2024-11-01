@@ -1,8 +1,11 @@
 "use client";
-import React, { useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import ProgramCard from './ProgramCard';
 import Pagination from './Pagination';
 import PopularMenu from './PopularMenu';
+import BestProgramsForYou from './BestPrograms';
+
+const ITEMS_PER_PAGE = 3;
 
 const mockPrograms = [
   {
@@ -15,8 +18,8 @@ const mockPrograms = [
     language: "English",
     recommended: true,
     imageUrl: "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "The MSc Business Analytics programme will equip you with a broad range of analytical skills, from data visualisation to predictive modelling, ensuring you're prepared for the future of business.",
-    logo: "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800", 
+    description: "The MSc Business Analytics programme will equip you with a broad range of analytical skills...",
+    logo: "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
     id: 2,
@@ -27,8 +30,8 @@ const mockPrograms = [
     mode: "Blended, On-Campus",
     language: "English",
     imageUrl: "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "IU's on-campus Master’s in IT Management programme will prepare you to become a highly sought-after IT expert with strong business acumen and people management skills.",
-    logo: "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800", // Added logo field here
+    description: "IU's on-campus Master’s in IT Management programme will prepare you...",
+    logo: "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
     id: 3,
@@ -40,9 +43,23 @@ const mockPrograms = [
     language: "English",
     recommended: true,
     imageUrl: "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "The MBA programme at Harvard will provide you with an unparalleled education, equipping you to lead and excel in the fast-paced world of business.",
-    logo: "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800", // Added logo field here
+    description: "The MBA programme at Harvard will provide you with an unparalleled education...",
+    logo: "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
+  {
+    id: 4,
+    title: "MA in Product Management",
+    institution: "IU International University of Applied Sciences",
+    location: "Online",
+    duration: "24 months",
+    mode: "Distance Learning",
+    language: "English",
+    description: "Enroll in IU's online master's program in product management...",
+    imageUrl: "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800",
+    logo: "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800",
+    recommended: true,
+  },
+  // Add more entries as needed for testing
 ];
 
 const mockRelatedFields = [
@@ -51,27 +68,24 @@ const mockRelatedFields = [
 ];
 
 const ProgramList: React.FC = () => {
+  const [currentPage, setCurrentPage] = useState(1);
   const sliderRef = useRef<HTMLDivElement>(null);
 
-  // Function to slide left
-  const slideLeft = () => {
-    if (sliderRef.current) {
-      sliderRef.current.scrollBy({
-        left: -200,
-        behavior: 'smooth',
-      });
-    }
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
   };
 
-  // Function to slide right
-  const slideRight = () => {
-    if (sliderRef.current) {
-      sliderRef.current.scrollBy({
-        left: 200,
-        behavior: 'smooth',
-      });
-    }
+  const slideLeft = () => {
+    sliderRef.current?.scrollBy({ left: -200, behavior: 'smooth' });
   };
+
+  const slideRight = () => {
+    sliderRef.current?.scrollBy({ left: 200, behavior: 'smooth' });
+  };
+
+  const indexOfLastItem = currentPage * ITEMS_PER_PAGE;
+  const indexOfFirstItem = indexOfLastItem - ITEMS_PER_PAGE;
+  const currentItems = mockPrograms.slice(indexOfFirstItem, indexOfLastItem);
 
   return (
     <div className="w-full md:w-3/4 p-4 mx-auto">
@@ -96,10 +110,10 @@ const ProgramList: React.FC = () => {
       </div>
 
       <div className="space-y-4">
-        {mockPrograms.map((program) => (
+        {currentItems.map((program) => (
           <ProgramCard
-            id={program.id}
             key={program.id}
+            id={program.id}
             title={program.title}
             institution={program.institution}
             location={program.location}
@@ -109,13 +123,40 @@ const ProgramList: React.FC = () => {
             recommended={program.recommended}
             imageUrl={program.imageUrl}
             description={program.description}
-            logo={program.logo} // Pass the logo prop here
+            logo={program.logo}
           />
         ))}
       </div>
 
-      <Pagination />
+      <BestProgramsForYou />
+
+
+     <div className="space-y-4">
+        {currentItems.map((program) => (
+          <ProgramCard
+            key={program.id}
+            id={program.id}
+            title={program.title}
+            institution={program.institution}
+            location={program.location}
+            duration={program.duration}
+            mode={program.mode}
+            language={program.language}
+            recommended={program.recommended}
+            imageUrl={program.imageUrl}
+            description={program.description}
+            logo={program.logo}
+          />
+        ))}
+      </div>
+      <Pagination
+        totalItems={mockPrograms.length}
+        itemsPerPage={ITEMS_PER_PAGE}
+        currentPage={currentPage}
+        onPageChange={handlePageChange}
+      />
       <PopularMenu />
+      
     </div>
   );
 };
