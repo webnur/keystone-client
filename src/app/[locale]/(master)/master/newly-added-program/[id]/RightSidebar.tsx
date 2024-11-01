@@ -76,7 +76,7 @@ const RightSidebar: React.FC<RightSidebarProps> = ({
   };
 
   return (
-    <div className="fixed top-46 w-54 mx-4 mb-12">
+    <div className="sticky top-20 w-54 mx-4 mb-12">
       <div className="bg-white border border-gray-300 shadow-lg rounded-lg p-4">
         {/* University Logo */}
         <div className="flex justify-center mb-4">
