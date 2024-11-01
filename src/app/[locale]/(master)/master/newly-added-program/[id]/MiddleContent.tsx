@@ -1,10 +1,9 @@
 "use client";
-import React from 'react';
-import Image from 'next/image';
-import CustomAccordion from './CustomAccordion';
-
+import React from "react";
+import Image from "next/image";
+import CustomAccordion, { AccordionItem } from "./CustomAccordion";
 const MiddleContent = () => {
-  const accordionItems = [
+  const accordionItems: AccordionItem[] = [
     {
       title: "Introduction",
       content: [
@@ -17,7 +16,8 @@ const MiddleContent = () => {
         },
         {
           type: "image",
-          value: "https://images.pexels.com/photos/247823/pexels-photo-247823.jpeg?auto=compress&cs=tinysrgb&w=800",
+          value:
+            "https://images.pexels.com/photos/247823/pexels-photo-247823.jpeg?auto=compress&cs=tinysrgb&w=800",
         },
         {
           type: "slider",
@@ -51,7 +51,8 @@ const MiddleContent = () => {
         },
         {
           type: "image",
-          value: "https://images.pexels.com/photos/247823/pexels-photo-247823.jpeg?auto=compress&cs=tinysrgb&w=800",
+          value:
+            "https://images.pexels.com/photos/247823/pexels-photo-247823.jpeg?auto=compress&cs=tinysrgb&w=800",
         },
         {
           type: "slider",
@@ -85,7 +86,8 @@ const MiddleContent = () => {
         },
         {
           type: "image",
-          value: "https://images.pexels.com/photos/247823/pexels-photo-247823.jpeg?auto=compress&cs=tinysrgb&w=800",
+          value:
+            "https://images.pexels.com/photos/247823/pexels-photo-247823.jpeg?auto=compress&cs=tinysrgb&w=800",
         },
         {
           type: "slider",
@@ -119,7 +121,8 @@ const MiddleContent = () => {
         },
         {
           type: "image",
-          value: "https://images.pexels.com/photos/247823/pexels-photo-247823.jpeg?auto=compress&cs=tinysrgb&w=800",
+          value:
+            "https://images.pexels.com/photos/247823/pexels-photo-247823.jpeg?auto=compress&cs=tinysrgb&w=800",
         },
         {
           type: "slider",
@@ -157,8 +160,12 @@ const MiddleContent = () => {
         </div>
 
         <div className="px-4 py-2 space-y-2">
-          <h2 className="text-sm font-semibold text-gray-500">University of Bordeaux</h2>
-          <h1 className="text-3xl font-bold text-gray-800">Master in Economic Affairs</h1>
+          <h2 className="text-sm font-semibold text-gray-500">
+            University of Bordeaux
+          </h2>
+          <h1 className="text-3xl font-bold text-gray-800">
+            Master in Economic Affairs
+          </h1>
           <p className="text-md text-gray-600">Bordeaux, France</p>
         </div>
 
@@ -188,7 +195,11 @@ const MiddleContent = () => {
             <span className="mr-2">📅</span>
             <div>
               <h3 className="text-sm font-semibold">Application Deadline</h3>
-              <p><a href="#" className="text-red-500 underline">Request application deadline</a></p>
+              <p>
+                <a href="#" className="text-red-500 underline">
+                  Request application deadline
+                </a>
+              </p>
             </div>
           </div>
           <div className="flex items-center">
@@ -202,7 +213,11 @@ const MiddleContent = () => {
             <span className="mr-2">💸</span>
             <div>
               <h3 className="text-sm font-semibold">Tuition Fees</h3>
-              <p><a href="#" className="text-red-500 underline">Request tuition fees</a></p>
+              <p>
+                <a href="#" className="text-red-500 underline">
+                  Request tuition fees
+                </a>
+              </p>
             </div>
           </div>
           <div className="flex items-center">

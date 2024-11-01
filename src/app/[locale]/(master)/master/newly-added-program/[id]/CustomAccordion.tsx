@@ -5,14 +5,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import Image from "next/image";
 
-// Define each possible content type
-type AccordionContentItem =
+// Define each possible content type with specific literal types
+export type AccordionContentItem =
   | { type: "paragraph"; value: string }
   | { type: "image"; value: string }
   | { type: "slider"; value: string[] }
   | { type: "button"; value: string };
 
-interface AccordionItem {
+export interface AccordionItem {
   title: string;
   content: AccordionContentItem[];
 }
@@ -54,19 +54,40 @@ const CustomAccordion: React.FC<AccordionProps> = ({ items }) => {
               {item.content.map((content, idx) => {
                 switch (content.type) {
                   case "paragraph":
-                    return <p key={idx} className="text-gray-700">{content.value}</p>;
+                    return (
+                      <p key={idx} className="text-gray-700">
+                        {content.value}
+                      </p>
+                    );
                   case "image":
                     return (
                       <div key={idx} className="flex justify-center">
-                        <Image src={content.value} alt="Content image" width={600} height={400} className="w-full h-auto rounded-lg" />
+                        <Image
+                          src={content.value}
+                          alt="Content image"
+                          width={600}
+                          height={400}
+                          className="w-full h-auto rounded-lg"
+                        />
                       </div>
                     );
                   case "slider":
                     return (
-                      <Swiper key={idx} spaceBetween={10} slidesPerView={1} className="rounded-lg overflow-hidden">
+                      <Swiper
+                        key={idx}
+                        spaceBetween={10}
+                        slidesPerView={1}
+                        className="rounded-lg overflow-hidden"
+                      >
                         {content.value.map((imgUrl, slideIdx) => (
                           <SwiperSlide key={slideIdx}>
-                            <Image src={imgUrl} alt={`Slide ${slideIdx + 1}`} width={600} height={400} className="w-full h-auto" />
+                            <Image
+                              src={imgUrl}
+                              alt={`Slide ${slideIdx + 1}`}
+                              width={600}
+                              height={400}
+                              className="w-full h-auto"
+                            />
                           </SwiperSlide>
                         ))}
                       </Swiper>

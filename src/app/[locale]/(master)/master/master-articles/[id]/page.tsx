@@ -1,5 +1,4 @@
 import React from "react";
-import Scholarship from "./Scholarship";
 import PageContent from "./PageContent";
 import GraduateSchoolInsights from "./Graduate";
 import FiveSecondSummary from "./Summary";
@@ -26,9 +25,9 @@ const Page = () => {
             className="bg-white p-6 text-gray-700 text-lg text-semibold"
           >
             <p>
-              Are you wondering how to stand out in college applications? If
-              you're one of many students that are trying to figure out how to
-              get into college, this article is for you!
+              Are you wondering how to stand out in college applications? If you
+              re one of many students that are trying to figure out how to get
+              into college, this article is for you!
             </p>
             <br />
             <p>
@@ -86,24 +85,26 @@ const Page = () => {
             </h2>
             <p>
               As a student, youre no longer just competing with a neighbor down
-              the street – you're competing with students from all over the
-              world.
+              the street youre competing with students from all over the world.
             </p>
             <br />
             <p>
-              What's more, as students have gotten savvier: they know what
+              Whats more, as students have gotten savvier: they know what
               answers schools are looking for in order to get those acceptance
-              letters, and they’re applying to way more schools (3-5 before, and
+              letters, and theyre applying to way more schools (3-5 before, and
               7-10 on average today) to increase their chances of getting
               accepted.
             </p>
             <br />
             <p>
-            This all means that as a student, it’s very important to differentiate yourself in some way.
-
-
+              This all means that as a student, it’s very important to
+              differentiate yourself in some way.
             </p>
-            <p>The next section will focus on what universities look for in candidates, and what red flags can cause your application to be disregarded.</p>
+            <p>
+              The next section will focus on what universities look for in
+              candidates, and what red flags can cause your application to be
+              disregarded.
+            </p>
           </section>
 
           {/* Section 3 */}
@@ -148,7 +149,6 @@ const Page = () => {
               "Remember that universities, especially graduate schools, expect their prospective students to actively engage and put in the effort to earn their spot. Many universities, including Boston University, have dedicated program admission boards - this means that your application will be seen by many different faculty members. Its important to use this opportunity to show why youre a good fit for the program, as well as what youd be contributing to the university once admitted.",
             ]}
           />
-
         </div>
 
         {/* Sidebar */}
