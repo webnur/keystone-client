@@ -17,7 +17,7 @@ const BestProgramsForYou: React.FC = () => {
             Best programs for you
           </h3>
           <p className="text-sm text-gray-600">
-            Answer a few questions and we'll match you with programs!
+            Answer a few questions and well match you with programs!
           </p>
         </div>
       </div>

@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import { getFromLocalStorage } from "@/utils/local-storage";
+import React, { useEffect, useState } from "react";
 import { FaArrowDown } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 
@@ -38,6 +39,17 @@ const FilterComponent: React.FC = () => {
     "Austria",
     "Greece",
   ];
+  useEffect(() => {
+    const storedData = getFromLocalStorage("selectedField");
+    if (storedData) {
+      try {
+        const parsedData = JSON.parse(storedData);
+        setSelectedFilters([parsedData.subject, parsedData.fields]);
+      } catch (error) {
+        console.error("Failed to parse local storage data", error);
+      }
+    }
+  }, []);
 
   const handleFilterToggle = (filter: string) => {
     setSelectedFilters((prev) =>

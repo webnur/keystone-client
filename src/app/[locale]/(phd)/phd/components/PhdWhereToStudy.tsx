@@ -39,8 +39,8 @@ const PhdWhereToStudy: React.FC<WhereToStudyProps> = ({ locations }) => {
               <Image
                 src={location.image}
                 alt={location.name}
-                width={415}
-                height={100}
+                layout="fill"
+                objectFit="cover"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
             </div>
