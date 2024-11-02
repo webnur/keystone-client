@@ -138,9 +138,21 @@ const Navbar = () => {
       <div
         className={`${
           isMobileMenuOpen ? "block" : "hidden"
-        } md:hidden absolute top-full right-0 w-[70%] bg-white shadow-lg mobile-menu transition-transform p-4 `}
+        } md:hidden absolute top-full right-0 w-[70%] bg-white shadow-lg mobile-menu transition-transform p-4`}
       >
         <div className="flex flex-col gap-6">
+          {/* Language Button */}
+          <button
+            className="flex items-center gap-2 text-gray-700 hover:text-red-500"
+            onClick={() => {
+              setShowLanguageModal(true);
+              setIsMobileMenuOpen(false);
+            }}
+          >
+            <GlobalIcon className="w-5 h-5" />
+            <span>Language</span>
+          </button>
+
           <Link
             href="/saved-programs"
             onClick={() => setIsMobileMenuOpen(false)}
