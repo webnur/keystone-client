@@ -82,9 +82,9 @@ const MasterAddedProgram: React.FC<NewlyAddedProgramsProps> = ({
   };
 
   return (
-    <section className="py-16 bg-white text-center w-11/12 mx-auto">
-      <div className="flex justify-between items-center mb-8">
-        <h2 className="text-3xl font-bold">{t("newAddedTitle")}</h2>
+    <section className="py-8 sm:py-16 bg-white text-center w-11/12 mx-auto">
+      <div className="flex justify-between items-center mb-6 sm:mb-8">
+        <h2 className="text-2xl sm:text-3xl font-bold">{t("newAddedTitle")}</h2>
       </div>
 
       <div className="relative">
@@ -101,25 +101,25 @@ const MasterAddedProgram: React.FC<NewlyAddedProgramsProps> = ({
                   <Image
                     src={program.image}
                     alt={program.institution}
-                    className="object-contain w-32 h-32"
+                    className="object-contain w-24 h-24 sm:w-32 sm:h-32"
                     width={160}
                     height={100}
                   />
                 </div>
 
-                <h3 className="text-lg font-semibold text-black text-left">
+                <h3 className="text-base sm:text-lg font-semibold text-black text-left">
                   {program.title}
                 </h3>
-                <p className="text-sm text-black text-left underline font-semibold">
+                <p className="text-xs sm:text-sm text-black text-left underline font-semibold">
                   {program.institution}
                 </p>
-                <p className="text-sm text-black flex items-center mt-3">
-                  <LocationIcon width="16" height="16" />
+                <p className="text-xs sm:text-sm text-black flex items-center mt-2 sm:mt-3">
+                  <LocationIcon width="14" height="14" className="mr-1" />
                   {program.location}, {program.country}
                 </p>
                 <div className="flex justify-end">
                   <Link href={`/master/newly-added-program/${program.id}`}>
-                    <span className="text-red-500 font-semibold hover:text-red-600 flex items-center">
+                    <span className="text-sm sm:text-base text-red-500 font-semibold hover:text-red-600 flex items-center">
                       {t("moreInfo")} <span className="ml-1">→</span>
                     </span>
                   </Link>
@@ -128,18 +128,18 @@ const MasterAddedProgram: React.FC<NewlyAddedProgramsProps> = ({
             ))}
         </div>
 
-        {/* Pagination Buttons for Desktop View */}
+        {/* Pagination Buttons for Mobile View */}
         {programData.length > programsToShow && (
-          <div className="flex justify-center mt-6 md:hidden">
+          <div className="flex justify-center mt-4 sm:mt-6 md:hidden">
             <button
               onClick={prev}
-              className="bg-white border border-black px-4 py-2 rounded-lg shadow hover:bg-gray-100 mx-2 text-black font-semibold"
+              className="bg-white border border-black px-3 py-2 sm:px-4 rounded-lg shadow hover:bg-gray-100 mx-2 text-black font-semibold"
             >
               &lt;
             </button>
             <button
               onClick={next}
-              className="bg-white border border-black px-4 py-2 rounded-lg shadow hover:bg-gray-100 mx-2 text-black font-semibold"
+              className="bg-white border border-black px-3 py-2 sm:px-4 rounded-lg shadow hover:bg-gray-100 mx-2 text-black font-semibold"
             >
               &gt;
             </button>

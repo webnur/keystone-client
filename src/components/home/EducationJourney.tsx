@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Discover from "../icons/Discover";
 import { useTranslations } from "next-intl";
@@ -18,16 +17,15 @@ const EducationJourney = () => {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-10 w-10 text-gray-600"
-              fill="none"
               viewBox="0 0 24 24"
+              fill="none"
               stroke="currentColor"
               strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M8 11a4 4 0 118 0 4 4 0 01-8 0zM8 11V8m4 11a7 7 0 100-14 7 7 0 000 14zm-5.2-7h.01M17.2 11h-.01M12 18h-.01M12 6h.01"
-              />
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
             </svg>
           </div>
           <h3 className="mt-3 text-lg md:text-xl font-semibold">
@@ -44,16 +42,19 @@ const EducationJourney = () => {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-10 w-10 text-gray-600"
-              fill="none"
               viewBox="0 0 24 24"
+              fill="none"
               stroke="currentColor"
               strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M3 7h18M3 12h18m-6 5h6"
-              />
+              <rect x="3" y="3" width="7" height="13" rx="1" />
+              <rect x="14" y="3" width="7" height="13" rx="1" />
+              <line x1="3" y1="18" x2="10" y2="18" />
+              <line x1="14" y1="18" x2="21" y2="18" />
+              <line x1="3" y1="21" x2="10" y2="21" />
+              <line x1="14" y1="21" x2="21" y2="21" />
             </svg>
           </div>
           <h3 className="mt-3 text-lg md:text-xl font-semibold">

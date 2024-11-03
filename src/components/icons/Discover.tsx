@@ -22,10 +22,14 @@ const Discover: React.FC<SvgIconProps> = ({
       height={height}
       className={className}
     >
+      {/* Circle for the head */}
+      <circle cx="12" cy="8" r="4" />
+
+      {/* Ellipse for the body */}
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
-        d="M16 12h.01M12 16h.01M8 12h.01M12 8h.01M21 12c0 5.523-4.477 10-10 10S1 17.523 1 12 5.477 2 11 2 21 6.477 21 12z"
+        d="M16 20c0-2.21-1.79-4-4-4s-4 1.79-4 4"
       />
     </svg>
   );

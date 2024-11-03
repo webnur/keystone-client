@@ -23,13 +23,14 @@ const BannerWithDropdown: React.FC<BannerWithDropdownProps> = ({
 
   return (
     <div
-      className="relative bg-cover bg-center flex items-center justify-center py-[4rem] p-2"
+      className="relative bg-cover bg-center flex items-center justify-center py-16 p-2"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div className="bg-foreground bg-opacity-70 w-full h-full absolute top-0 left-0"></div>
 
       <div className="relative z-10 w-full container mx-auto">
-        <h1 className="text-white text-[2.5rem] font-bold mb-4 max-w-4xl mx-auto text-center">
+        {/* Responsive Title */}
+        <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-[2.5rem] font-bold mb-4 max-w-4xl mx-auto text-center">
           {title}
         </h1>
 
@@ -38,7 +39,7 @@ const BannerWithDropdown: React.FC<BannerWithDropdownProps> = ({
           <div className="relative w-full md:w-4/6 my-6">
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="px-4 py-3 bg-white border border-gray-300 rounded-lg w-full text-left font-semibold text-gray-500"
+              className="px-4 py-3 bg-white border border-gray-300 rounded-lg w-full text-left font-semibold text-gray-500 text-sm sm:text-base"
             >
               {selectedField || "What do you want to study?"}
               <span className="float-right">
@@ -77,20 +78,20 @@ const BannerWithDropdown: React.FC<BannerWithDropdownProps> = ({
             placeholder="Where do you want to study?"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
-            className="px-4 py-3 rounded-lg w-full md:w-1/2 outline-none bg-white border border-gray-300"
+            className="px-4 py-3 rounded-lg w-full md:w-1/2 outline-none bg-white border border-gray-300 text-sm sm:text-base"
           />
 
           {/* Search Button */}
-          <button className="bg-red-600 text-white px-6 py-3 rounded-lg w-full md:w-auto">
+          <button className="bg-red-600 text-white px-4 sm:px-6 py-3 rounded-lg w-full md:w-auto text-sm sm:text-base">
             Search
           </button>
         </div>
 
         <div className="py-5">
-          <p className="text-white text-center">Or</p>
+          <p className="text-white text-center text-sm sm:text-base">Or</p>
         </div>
         <div className="mt-4 text-center">
-          <button className="bg-transparent border-2 border-white text-white px-6 py-2 rounded-lg text-center">
+          <button className="bg-transparent border-2 border-white text-white px-4 sm:px-6 py-2 rounded-lg text-sm sm:text-base">
             Browse Fields of Study
           </button>
         </div>
