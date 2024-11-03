@@ -11,11 +11,11 @@ interface Program {
   location: string;
   country: string;
   image: string;
-  id: string; // Add id to link to dynamic page
+  id: string;
 }
 
 interface NewlyAddedProgramsProps {
-  programs?: Program[]; // Make programs optional
+  programs?: Program[];
 }
 
 const MasterAddedProgram: React.FC<NewlyAddedProgramsProps> = ({
@@ -28,8 +28,7 @@ const MasterAddedProgram: React.FC<NewlyAddedProgramsProps> = ({
       institution: "Default Institution 1",
       location: "Default Location 1",
       country: "Country 1",
-      image:
-        "https://i.ibb.co.com/CbgWHWY/126297-photo-1477238134895-98438ad85c30.jpg",
+      image: "https://i.ibb.co/CbgWHWY/126297-photo-1477238134895-98438ad85c30.jpg",
       id: "default1",
     },
     {
@@ -37,8 +36,7 @@ const MasterAddedProgram: React.FC<NewlyAddedProgramsProps> = ({
       institution: "Default Institution 2",
       location: "Default Location 2",
       country: "Country 2",
-      image:
-        "https://i.ibb.co.com/CbgWHWY/126297-photo-1477238134895-98438ad85c30.jpg",
+      image: "https://i.ibb.co/CbgWHWY/126297-photo-1477238134895-98438ad85c30.jpg",
       id: "default2",
     },
     {
@@ -46,8 +44,7 @@ const MasterAddedProgram: React.FC<NewlyAddedProgramsProps> = ({
       institution: "Default Institution 3",
       location: "Default Location 3",
       country: "Country 3",
-      image:
-        "https://i.ibb.co.com/CbgWHWY/126297-photo-1477238134895-98438ad85c30.jpg",
+      image: "https://i.ibb.co/CbgWHWY/126297-photo-1477238134895-98438ad85c30.jpg",
       id: "default3",
     },
     {
@@ -55,14 +52,12 @@ const MasterAddedProgram: React.FC<NewlyAddedProgramsProps> = ({
       institution: "Default Institution 4",
       location: "Default Location 4",
       country: "Country 4",
-      image:
-        "https://i.ibb.co.com/CbgWHWY/126297-photo-1477238134895-98438ad85c30.jpg",
+      image: "https://i.ibb.co/CbgWHWY/126297-photo-1477238134895-98438ad85c30.jpg",
       id: "default4",
     },
   ];
 
-  const programData =
-    programs && programs.length > 0 ? programs : defaultPrograms;
+  const programData = programs && programs.length > 0 ? programs : defaultPrograms;
   const [currentIndex, setCurrentIndex] = useState(0);
   const programsToShow = 4;
 
@@ -93,18 +88,14 @@ const MasterAddedProgram: React.FC<NewlyAddedProgramsProps> = ({
       </div>
 
       <div className="relative">
-        <div
-          className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${Math.min(
-            programsToShow,
-            programData.length
-          )} gap-4`}
-        >
+        {/* Carousel for Mobile and Grid for Larger Screens */}
+        <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 overflow-x-auto no-scrollbar">
           {programData
             .slice(currentIndex, currentIndex + programsToShow)
             .map((program, index) => (
               <div
                 key={index}
-                className="border rounded-lg shadow-md p-4 flex flex-col justify-between hover:shadow-lg transition-shadow duration-300"
+                className="min-w-[250px] md:min-w-0 flex-shrink-0 md:flex-shrink basis-full border rounded-lg shadow-md p-4 flex flex-col justify-between hover:shadow-lg transition-shadow duration-300 mx-2 md:mx-0"
               >
                 <div className="flex justify-start w-full mb-4">
                   <Image
@@ -137,8 +128,9 @@ const MasterAddedProgram: React.FC<NewlyAddedProgramsProps> = ({
             ))}
         </div>
 
+        {/* Pagination Buttons for Desktop View */}
         {programData.length > programsToShow && (
-          <div className="flex justify-center mt-6">
+          <div className="flex justify-center mt-6 md:hidden">
             <button
               onClick={prev}
               className="bg-white border border-black px-4 py-2 rounded-lg shadow hover:bg-gray-100 mx-2 text-black font-semibold"
