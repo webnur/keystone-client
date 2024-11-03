@@ -41,16 +41,98 @@ const FilterComponent: React.FC = () => {
   ];
 
   useEffect(() => {
+    const newFilters: string[] = [];
     const storedData = getFromLocalStorage("selectedField");
     if (storedData) {
       try {
         const parsedData = JSON.parse(storedData);
-        setSelectedFilters([parsedData.subject, parsedData.fields]);
+
+        // if (parsedData.subject) {
+        //   newFilters.push(parsedData.subject);
+        // }
+
+        if (parsedData.fields) {
+          newFilters.push(parsedData.fields);
+        }
       } catch (error) {
-        console.error("Failed to parse local storage data", error);
+        console.error(
+          "Failed to parse 'selectedField' local storage data",
+          error
+        );
       }
     }
+    const filedData = localStorage.getItem("selectedOption");
+    if (filedData) {
+      try {
+        const parsedData = JSON.parse(filedData);
+        if (parsedData.field) {
+          newFilters.push(parsedData.field);
+        }
+      } catch (error) {
+        console.error(
+          "Failed to parse 'selectedOption' local storage data",
+          error
+        );
+      }
+    }
+
+    setSelectedFilters(newFilters);
   }, []);
+
+  // useEffect(() => {
+  //   const storedData = getFromLocalStorage("selectedField");
+  //   if (storedData) {
+  //     try {
+  //       const parsedData = JSON.parse(storedData);
+  //       setSelectedFilters([parsedData.subject, parsedData.fields]);
+  //     } catch (error) {
+  //       console.error("Failed to parse local storage data", error);
+  //     }
+  //   }
+
+  //   const fileddata = localStorage.getItem("selectedOption");
+  //   if (fileddata) {
+  //     try {
+  //       const parsedData = JSON.parse(fileddata);
+  //       setSelectedFilters([parsedData.field]);
+  //     } catch (error) {
+  //       console.error("Failed to parse local storage data", error);
+  //     }
+  //   }
+  // }, []);
+
+  // useEffect(() => {
+  //   const storedData = getFromLocalStorage("selectedOption");
+  //   if (storedData) {
+  //     try {
+  //       const parsedData = JSON.parse(storedData);
+  //       setSelectedFilters([parsedData.field]);
+  //     } catch (error) {
+  //       console.error("Failed to parse local storage data", error);
+  //     }
+  //   }
+  // }, []);
+
+  // useEffect(() => {
+  //   const storedData = getFromLocalStorage("selectedField");
+  //   if (storedData) {
+  //     try {
+  //       // Parse the JSON string into a JavaScript object
+  //       const parsedData = JSON.parse(storedData);
+
+  //       // Extract subject and fields from the parsed data
+  //       const { subject, fields } = parsedData;
+
+  //       // Convert the fields object into an array of field names
+  //       const fieldNames = Object.keys(fields);
+
+  //       // Set the selected filters with the subject and field names
+  //       setSelectedFilters([subject, ...fieldNames]);
+  //     } catch (error) {
+  //       console.error("Failed to parse local storage data", error);
+  //     }
+  //   }
+  // }, []);
 
   const handleFilterToggle = (filter: string) => {
     setSelectedFilters((prev) =>
