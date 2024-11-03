@@ -12,8 +12,6 @@ const FilterComponent: React.FC = () => {
   const [isDurationOpen, setIsDurationOpen] = useState(true);
   const [isPaceOpen, setIsPaceOpen] = useState(true);
   const [isLanguageOpen, setIsLanguageOpen] = useState(true);
-  const [isFormatOpen, setIsFormatOpen] = useState(true);
-  const [isDeadlineOpen, setIsDeadlineOpen] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
