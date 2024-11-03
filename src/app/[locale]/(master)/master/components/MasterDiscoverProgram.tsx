@@ -55,17 +55,13 @@ const MasterDiscoverProgram: React.FC<DiscoverProgramProps> = ({
               </h3>
 
               <div className="absolute inset-0 bg-black bg-opacity-80 text-white opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-4 overflow-hidden">
-                <div className="overflow-y-auto flex-grow">
+                <div className="overflow-y-scroll flex-grow hide-scrollbar"> {/* Updated to hide scrollbar */}
                   <ul className="space-y-1">
-                    {program.fields.length > 0 ? (
-                      program.fields.map((field, fieldIndex) => (
-                        <li key={fieldIndex} className="text-sm">
-                          {field}
-                        </li>
-                      ))
-                    ) : (
-                      <li>{t("loadingFields")}</li>
-                    )}
+                    {program.fields.slice(0, 5).map((field, fieldIndex) => ( /* Limit to 5 items */
+                      <li key={fieldIndex} className="text-sm">
+                        {field}
+                      </li>
+                    ))}
                   </ul>
                 </div>
 
