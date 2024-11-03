@@ -12,8 +12,6 @@ const FilterComponent: React.FC = () => {
   const [isDurationOpen, setIsDurationOpen] = useState(true);
   const [isPaceOpen, setIsPaceOpen] = useState(true);
   const [isLanguageOpen, setIsLanguageOpen] = useState(true);
-  const [isFormatOpen, setIsFormatOpen] = useState(true);
-  const [isDeadlineOpen, setIsDeadlineOpen] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
@@ -78,61 +76,6 @@ const FilterComponent: React.FC = () => {
 
     setSelectedFilters(newFilters);
   }, []);
-
-  // useEffect(() => {
-  //   const storedData = getFromLocalStorage("selectedField");
-  //   if (storedData) {
-  //     try {
-  //       const parsedData = JSON.parse(storedData);
-  //       setSelectedFilters([parsedData.subject, parsedData.fields]);
-  //     } catch (error) {
-  //       console.error("Failed to parse local storage data", error);
-  //     }
-  //   }
-
-  //   const fileddata = localStorage.getItem("selectedOption");
-  //   if (fileddata) {
-  //     try {
-  //       const parsedData = JSON.parse(fileddata);
-  //       setSelectedFilters([parsedData.field]);
-  //     } catch (error) {
-  //       console.error("Failed to parse local storage data", error);
-  //     }
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   const storedData = getFromLocalStorage("selectedOption");
-  //   if (storedData) {
-  //     try {
-  //       const parsedData = JSON.parse(storedData);
-  //       setSelectedFilters([parsedData.field]);
-  //     } catch (error) {
-  //       console.error("Failed to parse local storage data", error);
-  //     }
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   const storedData = getFromLocalStorage("selectedField");
-  //   if (storedData) {
-  //     try {
-  //       // Parse the JSON string into a JavaScript object
-  //       const parsedData = JSON.parse(storedData);
-
-  //       // Extract subject and fields from the parsed data
-  //       const { subject, fields } = parsedData;
-
-  //       // Convert the fields object into an array of field names
-  //       const fieldNames = Object.keys(fields);
-
-  //       // Set the selected filters with the subject and field names
-  //       setSelectedFilters([subject, ...fieldNames]);
-  //     } catch (error) {
-  //       console.error("Failed to parse local storage data", error);
-  //     }
-  //   }
-  // }, []);
 
   const handleFilterToggle = (filter: string) => {
     setSelectedFilters((prev) =>
@@ -492,81 +435,6 @@ const FilterComponent: React.FC = () => {
                   Spanish (95)
                 </label>
               </li>
-            </ul>
-          )}
-        </div>
-
-        {/* Study Format */}
-        <div className="mb-4">
-          <div
-            className="flex justify-between items-center cursor-pointer"
-            onClick={() => toggleAccordion(setIsFormatOpen)}
-          >
-            <h3 className="font-semibold mb-2">Study Format</h3>
-            <span>{isFormatOpen ? <IoClose /> : <FaArrowDown />}</span>
-          </div>
-          {isFormatOpen && (
-            <ul className="space-y-2">
-              <li>
-                <label>
-                  <input
-                    type="checkbox"
-                    checked={isFilterSelected("On-Campus")}
-                    onChange={() => handleFilterToggle("On-Campus")}
-                    className="mr-2"
-                  />
-                  On-Campus (1293)
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input
-                    type="checkbox"
-                    checked={isFilterSelected("Distance Learning")}
-                    onChange={() => handleFilterToggle("Distance Learning")}
-                    className="mr-2"
-                  />
-                  Distance Learning (273)
-                </label>
-              </li>
-            </ul>
-          )}
-        </div>
-
-        {/* Application Deadline */}
-        <div className="mb-4">
-          <div
-            className="flex justify-between items-center cursor-pointer"
-            onClick={() => toggleAccordion(setIsDeadlineOpen)}
-          >
-            <h3 className="font-semibold mb-2">Application Deadline</h3>
-            <span>{isDeadlineOpen ? <IoClose /> : <FaArrowDown />}</span>
-          </div>
-          {isDeadlineOpen && (
-            <ul className="space-y-2">
-              <li>
-                <label>
-                  <input
-                    type="radio"
-                    name="deadline"
-                    value="Anytime from now"
-                    className="mr-2"
-                  />
-                  Anytime from now
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input
-                    type="radio"
-                    name="deadline"
-                    value="October 2024"
-                    className="mr-2"
-                  />
-                  October 2024
-                </label>
-              </li>
-              {/* Add more deadline options */}
             </ul>
           )}
         </div>

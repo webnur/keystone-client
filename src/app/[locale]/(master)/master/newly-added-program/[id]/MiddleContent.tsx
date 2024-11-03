@@ -231,6 +231,7 @@ const MiddleContent = () => {
       </div>
       <div className="container mx-auto">
         <CustomAccordion items={accordionItems} />
+
       </div>
     </div>
   );
