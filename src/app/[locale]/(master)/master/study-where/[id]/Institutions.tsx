@@ -16,8 +16,8 @@ const Institutions: React.FC = () => {
   ];
 
   return (
-    <section className="py-10 sm:py-12 lg:py-16 bg-white container mx-auto lg:ml-12 px-6">
-      <h2 className="text-2xl sm:text-3xl font-semibold mb-6">Institutions</h2>
+    <section className="py-10 sm:py-12 lg:py-16 bg-white container mx-auto lg:ml-12 px-6 shadow-md rounded-sm">
+      <h2 className="md:text-3xl text-2xl font-semibold mb-6">Institutions</h2>
       <ul className="text-left">
         {institutions.map((institution, index) => (
           <li key={index} className="mb-3 text-sm sm:text-base">
