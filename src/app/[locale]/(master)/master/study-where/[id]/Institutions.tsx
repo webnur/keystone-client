@@ -16,22 +16,22 @@ const Institutions: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 bg-white container mx-auto">
-      <h2 className="text-3xl font-bold mb-8">Institutions</h2>
+    <section className="py-10 sm:py-12 lg:py-16 bg-white container mx-auto lg:ml-12 px-6">
+      <h2 className="text-2xl sm:text-3xl font-semibold mb-6">Institutions</h2>
       <ul className="text-left">
         {institutions.map((institution, index) => (
-          <li key={index} className="mb-4 text-md">
+          <li key={index} className="mb-3 text-sm sm:text-base">
             <Link
               href="#"
-              className="text-gray-800 hover:text-red-800 transition-colors underline"
+              className="text-gray-800 hover:text-red-600 transition-colors underline"
             >
               {institution}
             </Link>
           </li>
         ))}
       </ul>
-      <div className="text-center mt-8">
-        <button className="bg-red-500 text-white px-8 py-3 rounded-lg hover:bg-red-600">
+      <div className="text-center mt-10">
+        <button className="bg-red-500 text-white px-6 py-2 sm:px-8 sm:py-3 rounded-md font-medium hover:bg-red-600 transition-all">
           All Institutions in Germany
         </button>
       </div>

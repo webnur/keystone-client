@@ -13,13 +13,13 @@ const AboutCountry: React.FC<AboutCountryProps> = () => {
     const mockApiData = {
       countryName: "Germany",
       countryContent: `
-        <h2 class="text-2xl font-semibold mb-4">Higher Education in Germany</h2>
-        <p class="text-lg mb-6">Several of the top universities in the world are found in Germany, such as Heidelberg University...</p>
-        <p class="text-lg mb-6">Teaching is emphasized in Germany's universities over research, with research being the focus of independent institutes...</p>
-        <h2 class="text-2xl font-semibold mb-4">Attending a German University</h2>
-        <p class="text-lg mb-6">All students wanting to attend a university in Germany will need to provide a copy of their Abitur...</p>
-        <h2 class="text-2xl font-semibold mb-4">Why Study in Germany?</h2>
-        <p class="text-lg mb-6">Germany has been named by several international educational groups as one of the most supportive countries for students...</p>
+        <h2 class="text-xl font-semibold mb-4">Higher Education in Germany</h2>
+        <p class="text-base mb-4 leading-relaxed">Several of the top universities in the world are found in Germany, such as Heidelberg University...</p>
+        <p class="text-base mb-4 leading-relaxed">Teaching is emphasized in Germany's universities over research, with research being the focus of independent institutes...</p>
+        <h2 class="text-xl font-semibold mb-4">Attending a German University</h2>
+        <p class="text-base mb-4 leading-relaxed">All students wanting to attend a university in Germany will need to provide a copy of their Abitur...</p>
+        <h2 class="text-xl font-semibold mb-4">Why Study in Germany?</h2>
+        <p class="text-base mb-4 leading-relaxed">Germany has been named by several international educational groups as one of the most supportive countries for students...</p>
       `,
     };
 
@@ -32,9 +32,12 @@ const AboutCountry: React.FC<AboutCountryProps> = () => {
   }
 
   return (
-    <section className="container mx-auto px-8 py-16">
-      <h1 className="text-4xl font-bold mb-8">About {countryName}</h1>
-      <div dangerouslySetInnerHTML={{ __html: countryContent }} />
+    <section className="container mx-auto px-6 py-12 lg:ml-8">
+      <h1 className="text-3xl font-bold mb-6">About {countryName}</h1>
+      <div
+        className="text-gray-800 leading-relaxed"
+        dangerouslySetInnerHTML={{ __html: countryContent }}
+      />
     </section>
   );
 };
