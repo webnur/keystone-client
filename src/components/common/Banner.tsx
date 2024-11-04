@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useState } from "react";
 
 interface BannerWithDropdownProps {
@@ -19,6 +20,10 @@ const BannerWithDropdown: React.FC<BannerWithDropdownProps> = ({
   const handleFieldSelect = (field: string) => {
     setSelectedField(field);
     setIsDropdownOpen(false); // Close dropdown after selection
+  };
+  const handleSearch = () => {
+    const searchData = { field: selectedField, location };
+    localStorage.setItem("searchData", JSON.stringify(searchData));
   };
 
   return (
@@ -82,9 +87,11 @@ const BannerWithDropdown: React.FC<BannerWithDropdownProps> = ({
           />
 
           {/* Search Button */}
-          <button className="bg-red-600 text-white px-4 sm:px-6 py-3 rounded-lg w-full md:w-auto text-sm sm:text-base">
+          <Link href="/master/discover-program">
+          <button onClick={handleSearch} className="bg-red-600 text-white px-4 sm:px-6 py-3 rounded-lg w-full md:w-auto text-sm sm:text-base">
             Search
           </button>
+          </Link>
         </div>
 
         <div className="py-5">
