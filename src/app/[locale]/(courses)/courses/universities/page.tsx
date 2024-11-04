@@ -62,7 +62,7 @@ const page = () => {
         slogan="We have more than a thousand universities from around the world in our database."
         className="h-[300px]"
         titleClass="py-8"
-        slogalClass=""
+        sloganClass=""
       />
       <CoursesWhereToStudy locations={mockLocations} />
       <ContinentDropdown></ContinentDropdown>

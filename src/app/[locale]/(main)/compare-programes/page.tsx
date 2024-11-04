@@ -23,7 +23,7 @@ const ComparePrograms = ({ params: { locale } }: Props) => {
         slogan="Compare programs side by side to find the right one for you. Add up to"
         className="h-[400px]"
         titleClass="py-6"
-        slogalClass=""
+        sloganClass=""
       />
 
       <div>

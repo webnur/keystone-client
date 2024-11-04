@@ -39,7 +39,7 @@ const page = () => {
         title="Scholarships"
         slogan="Scholarships are financial awards offered by universities or other educational organizations to support students financially in their studies. Scholarships are awarded on financial need, academic ability, the public good, athletic or artistic ability, or a combination of the above."
         backgroundImage="https://i.ibb.co.com/LgTtqHb/146631-photo-1543269865-cbf427effbad.jpg"
-        slogalClass="pt-4 container mx-auto"
+        sloganClass="pt-4 container mx-auto"
       />
       <ScholarShipsCard scholarships={scholarshipsData} />
     </div>
