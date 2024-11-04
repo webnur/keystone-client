@@ -26,7 +26,7 @@ const MasterPopularFields: React.FC = () => {
               {subject.fields.map((field, i) => (
                 <Link
                   key={i}
-                  href="/master/discover-program/computer-science"
+                  href="/master/discover-program"
                   onClick={() => handleFieldClick(subject.name, field)}
                   className="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-full transition-colors duration-300 inline-block"
                 >
@@ -34,7 +34,7 @@ const MasterPopularFields: React.FC = () => {
                 </Link>
               ))}
               <Link
-                href="/master/discover-program/computer-science"
+                href="/master/discover-program"
                 onClick={() => handleFieldClick(subject.name, subject.fields)} // Pass all fields to handleFieldClick
                 className="text-red-600 hover:text-red-700 border border-red-600 hover:border-red-700 py-2 px-4 rounded-full transition-colors duration-300 inline-block"
               >
