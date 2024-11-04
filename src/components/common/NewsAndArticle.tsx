@@ -14,10 +14,10 @@ interface NewsAndArticlesProps {
 
 const NewsAndArticles: React.FC<NewsAndArticlesProps> = ({ articles }) => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-6 md:py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center mb-8">
-          <h2 className="text-3xl font-bold">News and Articles</h2>
+          <h2 className="md:text-3xl text-2xl font-bold">News and Articles</h2>
           <Link href="/articles">
             <button className="bg-red-100 text-red-500 px-4 py-2 rounded-lg hover:bg-red-200 transition duration-200 hidden md:block">
               View all
@@ -26,7 +26,7 @@ const NewsAndArticles: React.FC<NewsAndArticlesProps> = ({ articles }) => {
         </div>
 
         {/* Carousel for Mobile, Grid for Larger Screens */}
-        <div className="md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-6">
+        <div className="md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           <div className="md:hidden overflow-x-auto whitespace-nowrap scroll-smooth snap-x snap-mandatory hide-scrollbar" style={{ WebkitOverflowScrolling: 'touch' }}>
             <div className="flex gap-4">
               {articles.map((article, index) => (
@@ -40,8 +40,8 @@ const NewsAndArticles: React.FC<NewsAndArticlesProps> = ({ articles }) => {
                       className="rounded-t-lg"
                     />
                   </div>
-                  <div className="p-4">
-                    <h3 className="text-lg font-bold">{article.title}</h3>
+                  <div className="py-4 px-1">
+                    <h3 className="md:text-lg text-base font-semibold text-wrap">{article.title}</h3>
                     <p className="text-gray-500 text-sm">{article.date}</p>
                     <Link href="/articles">
                       <span className="text-red-500 hover:underline mt-2 block">

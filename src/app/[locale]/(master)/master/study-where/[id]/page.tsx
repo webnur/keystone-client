@@ -99,19 +99,19 @@ const page = () => {
           backgroundImage={country.backgroundImage}
         />
 
-        <div className="w-[95%] mx-auto flex flex-col lg:flex-row my-8">
+        <div className="w-[95%] mx-auto flex flex-col lg:flex-row md:my-8 my-4">
           <div className="w-full lg:w-1/6 hidden lg:block">
             <div className="sticky top-16">
               <Sidebar activeSection={country.title} />
             </div>
           </div>
 
-          <div className="w-full lg:w-5/6 md:ml-4">
-            <section id="Cost of Living">
+          <div className="w-full lg:w-5/6 md:ml-4 flex flex-col gap-4">
+            <section id="Cost of Living" className="w-full">
               <CostOfLiving />
             </section>
             <ChangeCurrency />
-            <section id="Visa Requirements">
+            <section id="Visa Requirements" className="w-full">
               <VisaRequirements />
             </section>
             <section id="About Country">

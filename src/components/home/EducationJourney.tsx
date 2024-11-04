@@ -6,7 +6,7 @@ const EducationJourney = () => {
   const t = useTranslations("masterPage");
   return (
     <section className="py-8 bg-white text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8">
+      <h2 className="text-2xl text-left md:text-center md:px-0 px-0 md:text-3xl font-bold mb-6 md:mb-8 text-neutral-600">
         {t("jurnyTitle")}
       </h2>
 
@@ -16,7 +16,7 @@ const EducationJourney = () => {
           <div className="rounded-full p-4 border border-gray-300 bg-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-10 w-10 text-gray-600"
+              className="md:h-10 md:w-10 h-8 w-8 text-gray-600"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -41,7 +41,7 @@ const EducationJourney = () => {
           <div className="rounded-full p-4 border border-gray-300 bg-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-10 w-10 text-gray-600"
+              className="md:h-10 md:w-10 h-8 w-8 text-gray-600"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -68,7 +68,7 @@ const EducationJourney = () => {
         {/* Connect */}
         <div className="flex flex-col items-center w-full">
           <div className="rounded-full p-4 border border-gray-300 bg-white">
-            <Discover width="32" height="32" />
+            <Discover className="md:h-10 md:w-10 h-8 w-8 text-gray-600" />
           </div>
           <h3 className="mt-3 text-lg md:text-xl font-semibold">
             {t("connect")}

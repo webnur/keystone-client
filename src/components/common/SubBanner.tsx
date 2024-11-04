@@ -27,7 +27,7 @@ const SubBanner: React.FC<BannerProps> = ({
 }) => {
   return (
     <div
-      className={`relative h-64 flex flex-col justify-center text-white ${className} p-4 sm:p-6 md:p-8`}
+      className={`relative md:h-64 h-40 flex flex-col justify-center text-white ${className} p-4 sm:p-6 md:p-8`}
       style={{
         backgroundColor: backgroundImage ? "transparent" : "#333",
         ...style,
@@ -50,9 +50,9 @@ const SubBanner: React.FC<BannerProps> = ({
 
       <div className="relative z-10 text-left max-w-screen-lg">
         {icon && <div className="text-3xl mb-4">{icon}</div>}
-        <h1 className={`text-2xl sm:text-3xl md:text-4xl font-semibold ${titleClass}`}>
+        <h1 className={`text-2xl md:text-3xl lg:text-4xl font-semibold ${titleClass}`}>
           {title}{" "}
-          <span className="font-serif text-xl sm:text-2xl md:text-3xl font-normal">{year}</span>
+          <span className="font-serif text-xl md:text-2xl lg:text-3xl font-normal">{year}</span>
         </h1>
         <p className={`text-sm sm:text-base md:text-lg mt-2 ${sloganClass}`}>{slogan}</p>
       </div>
