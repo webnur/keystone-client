@@ -23,14 +23,14 @@ const BannerWithDropdown: React.FC<BannerWithDropdownProps> = ({
 
   return (
     <div
-      className="relative bg-cover bg-center flex items-center justify-center py-16 p-2"
+      className="relative bg-cover bg-center flex items-center justify-center md:py-16 py-4 md:p-3 p-3"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div className="bg-foreground bg-opacity-70 w-full h-full absolute top-0 left-0"></div>
 
       <div className="relative z-10 w-full container mx-auto">
         {/* Responsive Title */}
-        <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-[2.5rem] font-bold mb-4 max-w-4xl mx-auto text-center">
+        <h1 className="text-white text-[1.5rem] sm:text-4xl md:text-5xl lg:text-[2.5rem] font-bold mb-4 max-w-4xl mx-auto md:text-center text-left">
           {title}
         </h1>
 

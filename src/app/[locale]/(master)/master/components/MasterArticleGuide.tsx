@@ -23,8 +23,8 @@ const MasterArticlesAndGuides: React.FC<MasterArticlesAndGuidesProps> = ({
   return (
     <section className="bg-gray-100">
       <div className="py-16 text-center container mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-8 space-y-2 md:space-y-0 md:space-x-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-center md:text-left">
+        <div className="flex flex-col md:flex-row justify-between items-center md:mb-8 mb-3 space-y-2 md:space-y-0 md:space-x-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-left md:text-left w-full md:px-0 px-4">
             {t("articalTitle")}
           </h2>
           <button className="hidden md:block bg-red-100 text-red-500 px-4 py-2 rounded-lg hover:bg-red-200 transition duration-200 whitespace-nowrap">
@@ -32,7 +32,7 @@ const MasterArticlesAndGuides: React.FC<MasterArticlesAndGuidesProps> = ({
           </button>
         </div>
 
-        <p className="text-gray-500 mb-4 text-center md:text-left">
+        <p className="text-gray-500 mb-4 text-left md:text-left w-full md:px-0 px-4">
           {t("articleSubtitle")}
         </p>
 
