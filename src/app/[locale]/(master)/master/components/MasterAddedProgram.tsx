@@ -84,7 +84,9 @@ const MasterAddedProgram: React.FC<NewlyAddedProgramsProps> = ({
   return (
     <section className="py-8 sm:py-16 bg-white text-center w-11/12 mx-auto">
       <div className="flex justify-between items-center mb-6 sm:mb-8">
-        <h2 className="text-2xl sm:text-3xl font-bold">{t("newAddedTitle")}</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-neutral-600">
+          {t("newAddedTitle")}
+        </h2>
       </div>
 
       <div className="relative">
@@ -95,7 +97,7 @@ const MasterAddedProgram: React.FC<NewlyAddedProgramsProps> = ({
             .map((program, index) => (
               <div
                 key={index}
-                className="min-w-[250px] md:min-w-0 flex-shrink-0 md:flex-shrink basis-full border rounded-lg shadow-md p-4 flex flex-col justify-between hover:shadow-lg transition-shadow duration-300 mx-2 md:mx-0"
+                className="min-w-[250px] md:min-w-0 flex-shrink-0 md:flex-shrink md:basis-full basis-[94%] border rounded-lg shadow-md p-4 flex flex-col justify-between hover:shadow-lg transition-shadow duration-300 mx-0 md:mx-0"
               >
                 <div className="flex justify-start w-full mb-4">
                   <Image

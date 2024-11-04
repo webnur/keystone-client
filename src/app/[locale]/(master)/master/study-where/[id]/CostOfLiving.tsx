@@ -2,12 +2,12 @@ import React from "react";
 
 const CostOfLiving: React.FC = () => {
   return (
-    <section className="container mx-auto px-4 lg:px-12">
-      <div className=" lg:space-x-8">
+    <section className="container mx-auto px-0 md:px-4 lg:px-12">
+      <div className=" lg:space-x-8 space-x-4">
         {/* Main Content */}
-        <article className="bg-white w-full lg:w-full shadow-md p-6">
-          <h2 className="text-3xl font-bold mb-6">Study in United Kingdom</h2>
-          <p className="text-gray-700 leading-relaxed mb-4">
+        <article className="bg-white w-full lg:w-full shadow-md p-3 md:p-6 text-sm md:text-base">
+          <h2 className="text-2xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-6">Study in United Kingdom</h2>
+          <p className="text-gray-700 leading-relaxed mb-4 ">
             The United Kingdom of Great Britain and Northern Ireland, commonly
             known as the United Kingdom (UK) and Britain, is a sovereign state
             located off the north-western coast of continental Europe. The
@@ -53,7 +53,7 @@ const CostOfLiving: React.FC = () => {
             and Oxford. In fact, UK has four universities ranked among the
             global top 10 in the QS World University Rankings.
           </p>
-          <h3 className="text-2xl font-semibold mt-8 mb-4">
+          <h3 className="md:text-2xl text-xl font-semibold md:mt-8 mt-4 md:mb-4 mb-2">
             Climate in the UK
           </h3>
           <p className="text-gray-700 leading-relaxed mb-4">
@@ -63,7 +63,9 @@ const CostOfLiving: React.FC = () => {
             temperatures almost year-round, and experiences an average amount of
             rainfall. Snow can happen, but is uncommon.
           </p>
-          <h3 className="text-2xl font-semibold mt-8 mb-4">Cost of Living</h3>
+          <h3 className="md:text-2xl text-xl font-semibold md:mt-8 mt-4 md:mb-4 mb-2">
+            Cost of Living
+          </h3>
           <p className="text-gray-700 leading-relaxed mb-4">
             Like the climate, the cost of living is going to vary depending on
             where you live in the UK. London, which is a cultural and

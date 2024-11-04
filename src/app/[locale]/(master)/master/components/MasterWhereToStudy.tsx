@@ -21,9 +21,9 @@ const MasterWhereToStudy: React.FC<WhereToStudyProps> = ({
 }) => {
   const t = useTranslations("masterPage");
   return (
-    <section className="py-16 bg-white text-center container mx-auto">
+    <section className="md:py-16 py-8 bg-white text-center container mx-auto px-2">
       <div className="flex flex-col md:flex-row justify-between items-center mb-8 space-y-4 md:space-y-0 md:space-x-4">
-        <h2 className="text-2xl md:text-3xl font-bold text-center md:text-left">
+        <h2 className="text-2xl md:text-3xl font-bold text-left md:text-left w-full md:px-0 px-2 text-neutral-600">
           {title}
         </h2>
         <Link className="hidden md:block" href="/master/universities">

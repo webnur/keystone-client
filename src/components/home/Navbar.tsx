@@ -39,10 +39,10 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="bg-white w-full md:w-[90%] mx-auto flex justify-between items-center py-4 relative">
+    <nav className="bg-white w-full md:w-[90%] mx-auto flex justify-between items-center md:py-4 py-2 relative">
       <div className="flex justify-between w-full">
         {/* Logo with left margin and responsive size */}
-        <div className="ml-4 md:ml-0">
+        <div className="ml-4 md:ml-0 mt-2">
           <Link href="/">
             <Image
               className="w-32 h-auto md:w-[160px]" // Reduced logo size for mobile, regular size for larger screens
