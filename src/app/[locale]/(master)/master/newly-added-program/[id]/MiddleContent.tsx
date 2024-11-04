@@ -155,47 +155,47 @@ const MiddleContent = () => {
             alt="University Building"
             width={800}
             height={300}
-            className="w-full object-cover h-64"
+            className="w-full object-cover h-48 sm:h-64"
           />
         </div>
 
-        <div className="px-4 py-2 space-y-2">
-          <h2 className="text-sm font-semibold text-gray-500">
+        <div className="px-4 py-2 space-y-1 sm:space-y-2">
+          <h2 className="text-xs sm:text-sm font-semibold text-gray-500">
             University of Bordeaux
           </h2>
-          <h1 className="text-3xl font-bold text-gray-800">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800">
             Master in Economic Affairs
           </h1>
-          <p className="text-md text-gray-600">Bordeaux, France</p>
+          <p className="text-sm sm:text-md text-gray-600">Bordeaux, France</p>
         </div>
 
-        <div className="grid grid-cols-3 gap-4 text-gray-700 border-t px-4 py-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-gray-700 border-t px-4 py-4">
           <div className="flex items-center">
             <span className="mr-2">📅</span>
             <div>
-              <h3 className="text-sm font-semibold">Duration</h3>
-              <p>1 Year</p>
+              <h3 className="text-xs sm:text-sm font-semibold">Duration</h3>
+              <p className="text-xs sm:text-sm">1 Year</p>
             </div>
           </div>
           <div className="flex items-center">
             <span className="mr-2">🌐</span>
             <div>
-              <h3 className="text-sm font-semibold">Languages</h3>
-              <p>French, English</p>
+              <h3 className="text-xs sm:text-sm font-semibold">Languages</h3>
+              <p className="text-xs sm:text-sm">French, English</p>
             </div>
           </div>
           <div className="flex items-center">
             <span className="mr-2">⚡</span>
             <div>
-              <h3 className="text-sm font-semibold">Pace</h3>
-              <p>Full time</p>
+              <h3 className="text-xs sm:text-sm font-semibold">Pace</h3>
+              <p className="text-xs sm:text-sm">Full time</p>
             </div>
           </div>
           <div className="flex items-center">
             <span className="mr-2">📅</span>
             <div>
-              <h3 className="text-sm font-semibold">Application Deadline</h3>
-              <p>
+              <h3 className="text-xs sm:text-sm font-semibold">Application Deadline</h3>
+              <p className="text-xs sm:text-sm">
                 <a href="#" className="text-red-500 underline">
                   Request application deadline
                 </a>
@@ -205,15 +205,15 @@ const MiddleContent = () => {
           <div className="flex items-center">
             <span className="mr-2">📅</span>
             <div>
-              <h3 className="text-sm font-semibold">Earliest Start Date</h3>
-              <p>Sep 2025</p>
+              <h3 className="text-xs sm:text-sm font-semibold">Earliest Start Date</h3>
+              <p className="text-xs sm:text-sm">Sep 2025</p>
             </div>
           </div>
           <div className="flex items-center">
             <span className="mr-2">💸</span>
             <div>
-              <h3 className="text-sm font-semibold">Tuition Fees</h3>
-              <p>
+              <h3 className="text-xs sm:text-sm font-semibold">Tuition Fees</h3>
+              <p className="text-xs sm:text-sm">
                 <a href="#" className="text-red-500 underline">
                   Request tuition fees
                 </a>
@@ -223,15 +223,14 @@ const MiddleContent = () => {
           <div className="flex items-center">
             <span className="mr-2">🏫</span>
             <div>
-              <h3 className="text-sm font-semibold">Study Format</h3>
-              <p>On-Campus</p>
+              <h3 className="text-xs sm:text-sm font-semibold">Study Format</h3>
+              <p className="text-xs sm:text-sm">On-Campus</p>
             </div>
           </div>
         </div>
       </div>
-      <div className="container mx-auto">
+      <div className="container mx-auto md:px-4">
         <CustomAccordion items={accordionItems} />
-
       </div>
     </div>
   );

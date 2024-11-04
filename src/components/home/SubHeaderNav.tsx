@@ -22,7 +22,7 @@ const SubHeaderNav: React.FC<SubHeaderNavProps> = ({
   return (
     <div className="subheader-container">
       {/* Main navigation for categories */}
-      <nav className="flex justify-left py-3 border-b border-gray-200 w-full overflow-x-auto whitespace-nowrap scroll-smooth" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+      <nav className="flex justify-left md:py-3 py-1 text-sm md:text-base border-b border-gray-200 w-full overflow-x-auto whitespace-nowrap scroll-smooth" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
         <Link
           href="/master"
           className={`px-4 py-2 ${
@@ -98,7 +98,7 @@ const SubHeaderNav: React.FC<SubHeaderNavProps> = ({
 
       {/* Sub-navigation for the active category */}
       <div className="bg-foreground">
-        <div className="subnav w-full mx-auto py-3 px-4 overflow-x-auto whitespace-nowrap scroll-smooth" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+        <div className="subnav w-full mx-auto py-2 text-sm md:text-base md:py-3 px-4 overflow-x-auto whitespace-nowrap scroll-smooth" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
           <div className="flex justify-left space-x-4">
             {navData.length > 0 ? (
               navData.map((subNavItem, index) => (
