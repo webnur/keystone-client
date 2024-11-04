@@ -2,7 +2,7 @@ import React from "react";
 
 const VisaRequirements: React.FC = () => {
   return (
-    <section className="py-16 bg-white container mx-auto">
+    <section className="py-16 bg-white container mx-auto lg:ml-12">
       <h2 className="text-3xl font-bold mb-8 text-left">Visa Requirements</h2>
 
       <div className="mb-8">

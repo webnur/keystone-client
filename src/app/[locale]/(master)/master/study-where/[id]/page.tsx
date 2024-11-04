@@ -1,6 +1,4 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
-
 import { useParams } from "next/navigation";
 import { useState, useEffect } from "react";
 import SubBanner from "@/components/common/SubBanner";
@@ -14,7 +12,6 @@ import AboutCountry from "./AboutCountry";
 import Institutions from "./Institutions";
 import Programs from "./Programs";
 
-// Define the structure of the location data
 interface LocationDataType {
   title: string;
   countryName: string;
@@ -22,58 +19,53 @@ interface LocationDataType {
 }
 
 const page = () => {
-  const params = useParams(); // Use Next.js 13 useParams to get dynamic route parameters
-  const { id } = params; // Extract the 'id' from params
-
+  const params = useParams();
+  const { id } = params;
   const [isLoading, setIsLoading] = useState(true);
 
-  // Mock data: In a real case, this data should be fetched from an API based on the "id"
   const locationData: Record<string, LocationDataType> = {
     germany: {
-      title: "Study Master in Germany 2024",
+      title: "Study Master in Germany",
       countryName: "Germany",
       backgroundImage: "https://i.ibb.co/MkrJN0s/ezgif-1-8476095b38.jpg",
     },
     uk: {
-      title: "Study Master in United Kingdom 2024",
+      title: "Study Master in United Kingdom",
       countryName: "United Kingdom",
       backgroundImage: "https://i.ibb.co/txH8qMm/ezgif-3-c99bcf9998.jpg",
     },
     usa: {
-      title: "Study Master in USA 2024",
+      title: "Study Master in USA",
       countryName: "USA",
-      backgroundImage:
-        "https://i.ibb.co/3FGPY8X/124334-shutterstock-244469683.jpg",
+      backgroundImage: "https://i.ibb.co/3FGPY8X/124334-shutterstock-244469683.jpg",
     },
     canada: {
-      title: "Study Master in Canada 2024",
+      title: "Study Master in Canada ",
       countryName: "Canada",
-      backgroundImage:
-        "https://i.ibb.co/n34cmjB/110845-shutterstock-255015211.jpg",
+      backgroundImage: "https://i.ibb.co/n34cmjB/110845-shutterstock-255015211.jpg",
     },
     italy: {
-      title: "Study Master in Italy 2024",
+      title: "Study Master in Italy ",
       countryName: "Italy",
       backgroundImage: "https://i.ibb.co/MkrJN0s/ezgif-1-8476095b38.jpg",
     },
     france: {
-      title: "Study Master in France 2024",
+      title: "Study Master in France ",
       countryName: "France",
       backgroundImage: "https://i.ibb.co/T4J8cfx/61809-france.jpg",
     },
     spain: {
-      title: "Study Master in Spain 2024",
+      title: "Study Master in Spain ",
       countryName: "Spain",
-      backgroundImage:
-        "https://i.ibb.co/X8nsYJc/110855-shutterstock-377505535.jpg",
+      backgroundImage: "https://i.ibb.co/X8nsYJc/110855-shutterstock-377505535.jpg",
     },
     belgium: {
-      title: "Study Master in Belgium 2024",
+      title: "Study Master in Belgium ",
       countryName: "Belgium",
       backgroundImage: "https://i.ibb.co/2tdMcTC/61795-belgium.jpg",
     },
     japan: {
-      title: "Study Master in Japan 2024",
+      title: "Study Master in Japan ",
       countryName: "Japan",
       backgroundImage: "https://i.ibb.co/G243xM9/62094-japan.jpg",
     },
@@ -103,14 +95,14 @@ const page = () => {
           backgroundImage={country.backgroundImage}
         />
 
-        <div className="w-[90%] mx-auto flex mt-8">
-          <div className="w-1/4">
+        <div className="w-[95%] mx-auto flex flex-col lg:flex-row my-8">
+          <div className="w-full lg:w-1/6 hidden lg:block">
             <div className="sticky top-16">
               <Sidebar activeSection={country.title} />
             </div>
           </div>
 
-          <div className="w-3/4 ml-8">
+          <div className="w-full lg:w-5/6 md:ml-4">
             <section id="Cost of Living">
               <CostOfLiving />
             </section>

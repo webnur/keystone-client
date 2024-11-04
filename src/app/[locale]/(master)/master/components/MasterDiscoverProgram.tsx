@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { setToLocalStorage } from "@/utils/local-storage";
 
 interface Program {
-  id: string; // Unique ID for routing
+  id: string;
   name: string;
   icon: string;
   fields: string[];
@@ -27,7 +27,6 @@ const MasterDiscoverProgram: React.FC<DiscoverProgramProps> = ({
     setToLocalStorage("selectedOption", data);
   };
 
-  // Limit to the first 10 programs
   const displayedPrograms = programs.slice(0, 10);
 
   return (
@@ -42,37 +41,35 @@ const MasterDiscoverProgram: React.FC<DiscoverProgramProps> = ({
           </button>
         </div>
 
-        {/* Display only 10 programs */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-0">
           {displayedPrograms.map((program, index) => (
             <div
               key={index}
-              className="relative flex flex-col justify-center items-center p-6 border border-gray-300 bg-white hover:bg-gray-900 transition-all duration-300 text-center"
+              className="relative flex flex-col justify-center items-center p-6 border border-black bg-white hover:bg-gray-50 transition-all duration-300 text-center"
+              style={{ minHeight: "200px" }}
             >
-              <div className="text-5xl text-blue-500 mb-4">{program.icon}</div>
-              <h3 className="text-lg font-semibold text-gray-700 hover:text-white">
+              <div className="text-5xl text-gray-600 mb-2">{program.icon}</div>
+              <h3 className="text-lg font-semibold text-gray-800">
                 {program.name}
               </h3>
 
-              <div className="absolute inset-0 bg-black bg-opacity-80 text-white opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-4 overflow-hidden">
-                <div className="overflow-y-scroll flex-grow hide-scrollbar"> {/* Updated to hide scrollbar */}
+              <div className="absolute inset-0 bg-black bg-opacity-90 text-white opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-3 overflow-hidden">
+                <div className="overflow-hidden flex-grow mt-4">
                   <ul className="space-y-1">
-                    {program.fields.slice(0, 5).map((field, fieldIndex) => ( /* Limit to 5 items */
-                      <li key={fieldIndex} className="text-sm">
+                    {program.fields.slice(0, 4).map((field, fieldIndex) => (
+                      <li key={fieldIndex} className="text-xs sm:text-sm">
                         {field}
                       </li>
                     ))}
                   </ul>
                 </div>
-
-                <div className="mt-4 flex justify-center items-center w-full">
+                <div className="mt-2 flex justify-center w-full">
                   <Link
                     href={`/master/discover-program/${program.id}`}
-                    className="bg-white hover:bg-red-600 text-red-600 hover:text-white w-full rounded-2xl py-1 flex justify-center items-center font-bold"
+                    className="bg-white hover:bg-red-500 text-red-500 hover:text-white w-full rounded-xl py-1 text-center font-semibold text-sm sm:text-base"
                     onClick={() => handleFieldClick(program)}
                   >
-                    <span>{t("seeAllButton")}</span>
-                    <span className="ml-2">→</span>
+                    {t("seeAllButton")} →
                   </Link>
                 </div>
               </div>
@@ -80,7 +77,6 @@ const MasterDiscoverProgram: React.FC<DiscoverProgramProps> = ({
           ))}
         </div>
 
-        {/* Discover All Programs button for mobile, visible only on smaller screens */}
         {programs.length > 10 && (
           <div className="flex justify-center mt-4 md:hidden">
             <button className="bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600 transition duration-200">

@@ -8,11 +8,11 @@ const Programs: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 bg-white mx-auto">
-      <h2 className="text-3xl font-bold mb-8">Programs</h2>
-      <ul>
+    <section className="py-10 sm:py-12 lg:py-16 bg-white container mx-auto px-6 lg:ml-12">
+      <h2 className="text-2xl sm:text-3xl font-semibold mb-6">Programs</h2>
+      <ul className="text-left">
         {programs.map((program, index) => (
-          <li key={index} className="mb-4 text-md underline ">
+          <li key={index} className="mb-3 text-sm sm:text-base text-gray-800 underline hover:text-red-600 transition-colors">
             {program.title}
           </li>
         ))}
