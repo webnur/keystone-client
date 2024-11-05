@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ProgramCard from "./ProgramCard";
 import Pagination from "./Pagination";
 import PopularMenu from "./PopularMenu";
@@ -94,22 +94,31 @@ const mockPrograms = [
   // Add more entries as needed for testing
 ];
 
-const mockRelatedFields = [
-  "Business Administration",
-  "Business Engineering",
-  "Business Law Studies",
-  "Business Management",
-  "Accounting",
-  "Marketing",
-  "Human Resources",
-  "Economics",
-  "Finance",
-  "Taxation",
-];
-
 const ProgramList: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [filteredPrograms, setFilteredPrograms] = useState(mockPrograms);
   const sliderRef = useRef<HTMLDivElement>(null);
+
+  // Load filters from localStorage on mount and filter programs
+  useEffect(() => {
+    const storedData = localStorage.getItem("searchData");
+    if (storedData) {
+      try {
+        const { field, location } = JSON.parse(storedData);
+
+        // Filter programs based on the field and location from localStorage
+        const filtered = mockPrograms.filter(
+          (program) =>
+            (field ? program.subject === field : true) &&
+            (location ? program.location === location : true)
+        );
+
+        setFilteredPrograms(filtered);
+      } catch (error) {
+        console.error("Failed to parse 'searchData' from localStorage", error);
+      }
+    }
+  }, []);
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
@@ -125,12 +134,12 @@ const ProgramList: React.FC = () => {
 
   const indexOfLastItem = currentPage * ITEMS_PER_PAGE;
   const indexOfFirstItem = indexOfLastItem - ITEMS_PER_PAGE;
-  const currentItems = mockPrograms.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = filteredPrograms.slice(indexOfFirstItem, indexOfLastItem);
 
   return (
     <div className="w-full md:w-3/4 p-4 mx-auto">
       <h2 className="font-bold text-2xl mb-6">
-        {mockPrograms.length} Master Programs in Economic Studies 2024/2025
+        {filteredPrograms.length} Master Programs Matching Your Criteria
       </h2>
 
       <div className="relative flex items-center mb-6">
@@ -144,13 +153,13 @@ const ProgramList: React.FC = () => {
           ref={sliderRef}
           className="flex items-center gap-3 overflow-x-auto no-scrollbar mx-4 hide-scrollbar"
         >
-          {mockRelatedFields.map((field) => (
+          {mockPrograms.map((field) => (
             <a
-              key={field}
+              key={field.subject}
               href="#"
               className="flex-shrink-0 text-gray-700 bg-gray-100 px-3 py-1.5 rounded-full shadow-md hover:text-red-600 hover:bg-gray-200 transition border border-gray-300"
             >
-              {field}
+              {field.subject}
             </a>
           ))}
         </div>
@@ -190,7 +199,7 @@ const ProgramList: React.FC = () => {
       <BestProgramsForYou />
 
       <Pagination
-        totalItems={mockPrograms.length}
+        totalItems={filteredPrograms.length}
         itemsPerPage={ITEMS_PER_PAGE}
         currentPage={currentPage}
         onPageChange={handlePageChange}

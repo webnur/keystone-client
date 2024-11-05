@@ -38,55 +38,37 @@ const FilterComponent: React.FC = () => {
     "Greece",
   ];
 
+  // Load filters from local storage on component mount
   useEffect(() => {
     const newFilters: string[] = [];
-    const storedData = getFromLocalStorage("selectedField");
+    const storedData = getFromLocalStorage("searchData"); // Updated to fetch data saved in localStorage
     if (storedData) {
       try {
         const parsedData = JSON.parse(storedData);
-
-        // if (parsedData.subject) {
-        //   newFilters.push(parsedData.subject);
-        // }
-
-        if (parsedData.fields) {
-          newFilters.push(parsedData.fields);
-        }
+        if (parsedData.field) newFilters.push(parsedData.field);
+        if (parsedData.location) newFilters.push(parsedData.location);
       } catch (error) {
-        console.error(
-          "Failed to parse 'selectedField' local storage data",
-          error
-        );
+        console.error("Failed to parse 'searchData' from localStorage", error);
       }
     }
-    const filedData = localStorage.getItem("selectedOption");
-    if (filedData) {
-      try {
-        const parsedData = JSON.parse(filedData);
-        if (parsedData.field) {
-          newFilters.push(parsedData.field);
-        }
-      } catch (error) {
-        console.error(
-          "Failed to parse 'selectedOption' local storage data",
-          error
-        );
-      }
-    }
-
     setSelectedFilters(newFilters);
   }, []);
 
+  // Toggle filters and handle local storage updates
   const handleFilterToggle = (filter: string) => {
-    setSelectedFilters((prev) =>
-      prev.includes(filter)
+    setSelectedFilters((prev) => {
+      const updatedFilters = prev.includes(filter)
         ? prev.filter((item) => item !== filter)
-        : [...prev, filter]
-    );
+        : [...prev, filter];
+
+      localStorage.setItem("searchData", JSON.stringify({ field: updatedFilters[0], location: updatedFilters[1] || "" }));
+      return updatedFilters;
+    });
   };
 
   const handleResetFilters = () => {
     setSelectedFilters([]);
+    localStorage.removeItem("searchData");
   };
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
