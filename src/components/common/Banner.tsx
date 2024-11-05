@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
 
 interface BannerWithDropdownProps {
   backgroundImage: string;
@@ -18,7 +19,12 @@ const BannerWithDropdown: React.FC<BannerWithDropdownProps> = ({
 
   const handleFieldSelect = (field: string) => {
     setSelectedField(field);
-    setIsDropdownOpen(false); // Close dropdown after selection
+    setIsDropdownOpen(false);
+  };
+
+  const handleSearch = () => {
+    const searchData = { field: selectedField, location };
+    localStorage.setItem("searchData", JSON.stringify(searchData));
   };
 
   return (
@@ -29,13 +35,11 @@ const BannerWithDropdown: React.FC<BannerWithDropdownProps> = ({
       <div className="bg-foreground bg-opacity-70 w-full h-full absolute top-0 left-0"></div>
 
       <div className="relative z-10 w-full container mx-auto">
-        {/* Responsive Title */}
         <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-[2.5rem] font-bold mb-4 max-w-4xl mx-auto text-center">
           {title}
         </h1>
 
         <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-2">
-          {/* Custom Dropdown for Field Selection */}
           <div className="relative w-full md:w-4/6 my-6">
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -72,7 +76,6 @@ const BannerWithDropdown: React.FC<BannerWithDropdownProps> = ({
             )}
           </div>
 
-          {/* Location Input */}
           <input
             type="text"
             placeholder="Where do you want to study?"
@@ -81,15 +84,21 @@ const BannerWithDropdown: React.FC<BannerWithDropdownProps> = ({
             className="px-4 py-3 rounded-lg w-full md:w-1/2 outline-none bg-white border border-gray-300 text-sm sm:text-base"
           />
 
-          {/* Search Button */}
-          <button className="bg-red-600 text-white px-4 sm:px-6 py-3 rounded-lg w-full md:w-auto text-sm sm:text-base">
-            Search
-          </button>
+          {/* Link Component for Navigation */}
+          <Link href="/master/discover-program">
+            <button
+              onClick={handleSearch} // Trigger the data storage before navigation
+              className="bg-red-600 text-white px-4 sm:px-6 py-3 rounded-lg w-full md:w-auto text-sm sm:text-base"
+            >
+              Search
+            </button>
+          </Link>
         </div>
 
         <div className="py-5">
           <p className="text-white text-center text-sm sm:text-base">Or</p>
         </div>
+
         <div className="mt-4 text-center">
           <button className="bg-transparent border-2 border-white text-white px-4 sm:px-6 py-2 rounded-lg text-sm sm:text-base">
             Browse Fields of Study

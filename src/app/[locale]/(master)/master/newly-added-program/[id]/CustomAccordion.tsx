@@ -1,8 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
 import Image from "next/image";
 
 // Define each possible content type with specific literal types
@@ -23,13 +21,18 @@ interface AccordionProps {
 
 const CustomAccordion: React.FC<AccordionProps> = ({ items }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [activeImageIndex, setActiveImageIndex] = useState<number>(0);
 
   const toggleAccordion = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const handleThumbnailClick = (index: number) => {
+    setActiveImageIndex(index);
+  };
+
   return (
-    <div className="">
+    <div>
       {items.map((item, index) => (
         <div
           key={index}
@@ -59,38 +62,42 @@ const CustomAccordion: React.FC<AccordionProps> = ({ items }) => {
                         {content.value}
                       </p>
                     );
-                  case "image":
-                    return (
-                      <div key={idx} className="flex justify-center">
-                        <Image
-                          src={content.value}
-                          alt="Content image"
-                          width={600}
-                          height={400}
-                          className="w-full h-auto rounded-lg"
-                        />
-                      </div>
-                    );
                   case "slider":
                     return (
-                      <Swiper
-                        key={idx}
-                        spaceBetween={10}
-                        slidesPerView={1}
-                        className="rounded-lg overflow-hidden"
-                      >
-                        {content.value.map((imgUrl, slideIdx) => (
-                          <SwiperSlide key={slideIdx}>
-                            <Image
-                              src={imgUrl}
-                              alt={`Slide ${slideIdx + 1}`}
-                              width={600}
-                              height={400}
-                              className="w-full h-auto"
-                            />
-                          </SwiperSlide>
-                        ))}
-                      </Swiper>
+                      <div key={idx} className="text-center">
+                        {/* Main Image */}
+                        <div className="flex justify-center mb-4">
+                          <Image
+                            src={content.value[activeImageIndex]}
+                            alt={`Slide ${activeImageIndex + 1}`}
+                            width={600}
+                            height={400}
+                            className="w-full h-auto rounded-lg"
+                          />
+                        </div>
+                        {/* Thumbnails */}
+                        <div className="flex gap-2 justify-center">
+                          {content.value.map((imgUrl, thumbIdx) => (
+                            <div
+                              key={thumbIdx}
+                              className={`cursor-pointer p-1 rounded-lg ${
+                                activeImageIndex === thumbIdx
+                                  ? "border-2 border-red-500"
+                                  : "border border-gray-300"
+                              }`}
+                              onClick={() => handleThumbnailClick(thumbIdx)}
+                            >
+                              <Image
+                                src={imgUrl}
+                                alt={`Thumbnail ${thumbIdx + 1}`}
+                                width={80}
+                                height={60}
+                                className="w-20 h-14 rounded-lg"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      </div>
                     );
                   case "button":
                     return (

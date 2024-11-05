@@ -2,6 +2,8 @@
 import React from "react";
 import Image from "next/image";
 import CustomAccordion, { AccordionItem } from "./CustomAccordion";
+import ApplyForm from "./ApplyForm";
+
 const MiddleContent = () => {
   const accordionItems: AccordionItem[] = [
     {
@@ -10,32 +12,28 @@ const MiddleContent = () => {
         {
           type: "paragraph",
           value: `
-            The Master 2 in Economic Affairs is one of the postgraduate master's programs offered by the College of Law, Political Science, Economics, and Management of the University of Bordeaux.
-            It is a full-time international degree taught in English, designed for recently graduated students and adult students of all ages with a professional background.
+            Embark on your Product Management Journey!
+            Enroll in IU's online master's program in product management to acquire the skills and knowledge essential for success in today's competitive business landscape. Through a comprehensive curriculum, you'll develop the expertise to create and manage successful products from inception to launch, leveraging market insights, strategic planning, and effective communication.
           `,
         },
+        // Additional paragraphs omitted for brevity
         {
-          type: "image",
-          value:
-            "https://images.pexels.com/photos/247823/pexels-photo-247823.jpeg?auto=compress&cs=tinysrgb&w=800",
+          type: "button",
+          value: "Read more on the institution's website",
         },
+      ],
+    },
+    {
+      title: "Gallery",
+      content: [
         {
           type: "slider",
           value: [
             "https://images.pexels.com/photos/247823/pexels-photo-247823.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.pexels.com/photos/247823/pexels-photo-247823.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.pexels.com/photos/247823/pexels-photo-247823.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/256455/pexels-photo-256455.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800",
+            "https://images.pexels.com/photos/3184299/pexels-photo-3184299.jpeg?auto=compress&cs=tinysrgb&w=800",
           ],
-        },
-        {
-          type: "paragraph",
-          value: `
-            The program allows students to develop a broad understanding of key economic issues in international affairs and an in-depth knowledge of practical European and international business skills.
-          `,
-        },
-        {
-          type: "button",
-          value: "Learn More",
         },
       ],
     },
@@ -45,102 +43,116 @@ const MiddleContent = () => {
         {
           type: "paragraph",
           value: `
-            The Master 2 in Economic Affairs is one of the postgraduate master's programs offered by the College of Law, Political Science, Economics, and Management of the University of Bordeaux.
-            It is a full-time international degree taught in English, designed for recently graduated students and adult students of all ages with a professional background.
+            **Academic Requirements**
+            - Completed degree from a public or officially recognized university/higher education institution in a relevant field.
+            - At least a “satisfactory” or Grade C equivalent earned in your previous degree.
+            - Your undergraduate degree should be worth 180 ECTS credits.
           `,
         },
-        {
-          type: "image",
-          value:
-            "https://images.pexels.com/photos/247823/pexels-photo-247823.jpeg?auto=compress&cs=tinysrgb&w=800",
-        },
-        {
-          type: "slider",
-          value: [
-            "https://images.pexels.com/photos/247823/pexels-photo-247823.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.pexels.com/photos/247823/pexels-photo-247823.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.pexels.com/photos/247823/pexels-photo-247823.jpeg?auto=compress&cs=tinysrgb&w=800",
-          ],
-        },
-        {
-          type: "paragraph",
-          value: `
-            The program allows students to develop a broad understanding of key economic issues in international affairs and an in-depth knowledge of practical European and international business skills.
-          `,
-        },
-        {
-          type: "button",
-          value: "Learn More",
-        },
+        // English requirements omitted for brevity
       ],
     },
     {
-      title: "Scholarship & Funds",
+      title: "Scholarships and Funding",
       content: [
         {
           type: "paragraph",
           value: `
-            The Master 2 in Economic Affairs is one of the postgraduate master's programs offered by the College of Law, Political Science, Economics, and Management of the University of Bordeaux.
-            It is a full-time international degree taught in English, designed for recently graduated students and adult students of all ages with a professional background.
+            **Secure Your Dream Career – Enjoy Up to 50% Savings!**
           `,
         },
-        {
-          type: "image",
-          value:
-            "https://images.pexels.com/photos/247823/pexels-photo-247823.jpeg?auto=compress&cs=tinysrgb&w=800",
-        },
-        {
-          type: "slider",
-          value: [
-            "https://images.pexels.com/photos/247823/pexels-photo-247823.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.pexels.com/photos/247823/pexels-photo-247823.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.pexels.com/photos/247823/pexels-photo-247823.jpeg?auto=compress&cs=tinysrgb&w=800",
-          ],
-        },
-        {
-          type: "paragraph",
-          value: `
-            The program allows students to develop a broad understanding of key economic issues in international affairs and an in-depth knowledge of practical European and international business skills.
-          `,
-        },
+        // Additional content omitted for brevity
         {
           type: "button",
-          value: "Learn More",
+          value: "View Scholarships",
         },
       ],
     },
     {
-      title: "Introduction",
+      title: "Free Upcoming IU Webinars and Q&A",
       content: [
         {
           type: "paragraph",
           value: `
-            The Master 2 in Economic Affairs is one of the postgraduate master's programs offered by the College of Law, Political Science, Economics, and Management of the University of Bordeaux.
-            It is a full-time international degree taught in English, designed for recently graduated students and adult students of all ages with a professional background.
+            **Secure Your Dream Career – Enjoy Up to 50% Savings!**
           `,
-        },
-        {
-          type: "image",
-          value:
-            "https://images.pexels.com/photos/247823/pexels-photo-247823.jpeg?auto=compress&cs=tinysrgb&w=800",
-        },
-        {
-          type: "slider",
-          value: [
-            "https://images.pexels.com/photos/247823/pexels-photo-247823.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.pexels.com/photos/247823/pexels-photo-247823.jpeg?auto=compress&cs=tinysrgb&w=800",
-            "https://images.pexels.com/photos/247823/pexels-photo-247823.jpeg?auto=compress&cs=tinysrgb&w=800",
-          ],
         },
         {
           type: "paragraph",
           value: `
-            The program allows students to develop a broad understanding of key economic issues in international affairs and an in-depth knowledge of practical European and international business skills.
+            Join IU's accredited online program and save up to 50% on your tuition fees. With IU's cutting-edge online campus and digital learning resources, you'll access affordable, high-quality education.
+          `,
+        },
+        {
+          type: "paragraph",
+          value: `
+            The best part? You decide when to begin!
+          `,
+        },
+        {
+          type: "paragraph",
+          value: `
+            *Note: This exceptional discount applies exclusively to the online study model. For insights on On-Campus study discounts, reach out to IU's Study Advisory Team.
           `,
         },
         {
           type: "button",
-          value: "Learn More",
+          value: "View Scholarships",
+        },
+      ],
+    },
+    {
+      title: "Curriculum",
+      content: [
+        {
+          type: "paragraph",
+          value: `
+            Your educational journey begins with a deep dive into the fundamentals of project management, encompassing industry best practices, essential project management requisites, strategic decision-making, and core leadership principles. Progressing through the program, attention shifts to mastering change management, embracing agile methodologies, innovating through creative work systems, and polishing soft skills crucial for effective interpersonal communication. Anchored by a commitment to practical application, you will bring your newly acquired expertise to life through a dynamic project simulation designed to provide an authentic, workplace-ready experience.
+          `,
+        },
+        // Additional semesters and electives content omitted for brevity
+      ],
+    },
+    {
+      title: "Rankings",
+      content: [
+        {
+          type: "paragraph",
+          value: `
+            **Accreditations, Rankings, and Memberships**
+          `,
+        },
+        {
+          type: "paragraph",
+          value: `
+            Accreditation: IU International University of Applied Sciences has received system accreditation from EQAR, FIBAA, the German Accreditation Council, the German Council of Science and Humanities, and WES Canada. This means their courses, faculty, and teaching material meet rigorous standards, allowing IU to accredit their own programs.
+          `,
+        },
+        // Additional global recognition and memberships content omitted for brevity
+      ],
+    },
+    {
+      title: "Program Tuition Fee",
+      content: [
+        {
+          type: "paragraph",
+          value: `
+            **Duration | Time Model | Monthly payments | Yearly payments | Total fees**
+          `,
+        },
+        {
+          type: "paragraph",
+          value: `
+            - **36 months** | Full-time | 295 € | 3536 € | 7072 €
+            - **48 months** | Part-time I | 220 € | 2635 € | 7906 €
+            - **72 months** | Part-time II | 214 € | 2568 € | 8296 €
+          `,
+        },
+        {
+          type: "paragraph",
+          value: `
+            *Note: Prices start from. Prices include the graduation fee of 799 €. Limited Offer: prices include up to 35% discount. Discounts and promotions are available on a seasonal basis; for a personalized offer, contact the University.
+          `,
         },
       ],
     },
@@ -231,6 +243,9 @@ const MiddleContent = () => {
       </div>
       <div className="container mx-auto md:px-4">
         <CustomAccordion items={accordionItems} />
+      </div>
+      <div className="container mx-auto md:px-4">
+        <ApplyForm />
       </div>
     </div>
   );
