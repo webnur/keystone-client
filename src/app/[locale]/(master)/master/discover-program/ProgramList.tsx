@@ -1,11 +1,11 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import ProgramCard from "./ProgramCard";
 import Pagination from "./Pagination";
 import PopularMenu from "./PopularMenu";
 import BestProgramsForYou from "./BestPrograms";
 
-const ITEMS_PER_PAGE = 3;
+const ITEMS_PER_PAGE = 10;
 
 const mockPrograms = [
   {
@@ -24,15 +24,15 @@ const mockPrograms = [
     applicationDeadline: "July 2024",
     recommended: true,
     imageUrl:
-      "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/3184328/pexels-photo-3184328.jpeg?auto=compress&cs=tinysrgb&w=800",
     description:
       "The MSc Business Analytics programme will equip you with a broad range of analytical skills...",
-    logo: "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800",
+    logo: "https://images.pexels.com/photos/3184328/pexels-photo-3184328.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
     id: 2,
-    title: "Master Management in IT Management",
-    institution: "IU International University of Applied Sciences",
+    title: "Master in IT Management",
+    institution: "IU International University",
     country: "Germany",
     degreeType: "MA",
     subject: "IT Management",
@@ -44,10 +44,9 @@ const mockPrograms = [
     applicationTime: "September 2023",
     applicationDeadline: "June 2024",
     imageUrl:
-      "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description:
-      "IU's on-campus Master’s in IT Management programme will prepare you...",
-    logo: "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/3184328/pexels-photo-3184328.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description: "A master's degree to advance your IT management skills...",
+    logo: "https://images.pexels.com/photos/3184328/pexels-photo-3184328.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
     id: 3,
@@ -65,15 +64,15 @@ const mockPrograms = [
     applicationDeadline: "September 2024",
     recommended: true,
     imageUrl:
-      "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/372746/pexels-photo-372746.jpeg?auto=compress&cs=tinysrgb&w=800",
     description:
-      "The MBA programme at Harvard will provide you with an unparalleled education...",
-    logo: "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "The MBA programme at Harvard will provide you with unparalleled education...",
+    logo: "https://images.pexels.com/photos/372746/pexels-photo-372746.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
   {
     id: 4,
     title: "MA in Product Management",
-    institution: "IU International University of Applied Sciences",
+    institution: "IU International University",
     country: "Germany",
     degreeType: "MA",
     subject: "Product Management",
@@ -84,14 +83,135 @@ const mockPrograms = [
     language: "English",
     applicationTime: "August 2023",
     applicationDeadline: "May 2024",
-    description:
-      "Enroll in IU's online master's program in product management...",
+    description: "Enroll in IU's online program in product management...",
     imageUrl:
-      "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800",
-    logo: "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/3184328/pexels-photo-3184328.jpeg?auto=compress&cs=tinysrgb&w=800",
+    logo: "https://images.pexels.com/photos/3184328/pexels-photo-3184328.jpeg?auto=compress&cs=tinysrgb&w=800",
     recommended: true,
   },
-  // Add more entries as needed for testing
+  {
+    id: 5,
+    title: "Graduate Diploma in Cyber Security",
+    institution: "University of Toronto",
+    country: "Canada",
+    degreeType: "Diploma",
+    subject: "Cyber Security",
+    location: "Toronto, Canada",
+    duration: "1 year",
+    studyMode: "Full-time",
+    locationType: "On-Campus",
+    language: "English",
+    applicationTime: "January 2024",
+    applicationDeadline: "October 2023",
+    recommended: true,
+    imageUrl:
+      "https://images.pexels.com/photos/3194514/pexels-photo-3194514.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description: "Gain skills to protect digital information assets...",
+    logo: "https://images.pexels.com/photos/3194514/pexels-photo-3194514.jpeg?auto=compress&cs=tinysrgb&w=800",
+  },
+  {
+    id: 6,
+    title: "PhD in Data Science",
+    institution: "Stanford University",
+    country: "USA",
+    degreeType: "PhD",
+    subject: "Data Science",
+    location: "Palo Alto, USA",
+    duration: "4 years",
+    studyMode: "Full-time",
+    locationType: "On-Campus",
+    language: "English",
+    applicationTime: "March 2024",
+    applicationDeadline: "December 2023",
+    recommended: false,
+    imageUrl:
+      "https://images.pexels.com/photos/4145195/pexels-photo-4145195.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description: "Prepare for advanced research with this PhD program...",
+    logo: "https://images.pexels.com/photos/4145195/pexels-photo-4145195.jpeg?auto=compress&cs=tinysrgb&w=800",
+  },
+  {
+    id: 7,
+    title: "Online Certificate in Digital Marketing",
+    institution: "Columbia University",
+    country: "USA",
+    degreeType: "Certificate",
+    subject: "Digital Marketing",
+    location: "Online",
+    duration: "6 months",
+    studyMode: "Part-time",
+    locationType: "Distance Learning",
+    language: "English",
+    applicationTime: "April 2024",
+    applicationDeadline: "March 2024",
+    recommended: true,
+    imageUrl:
+      "https://images.pexels.com/photos/3183180/pexels-photo-3183180.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description: "Learn cutting-edge strategies for digital marketing...",
+    logo: "https://images.pexels.com/photos/3183180/pexels-photo-3183180.jpeg?auto=compress&cs=tinysrgb&w=800",
+  },
+  {
+    id: 8,
+    title: "MBA in Finance",
+    institution: "INSEAD",
+    country: "France",
+    degreeType: "MBA",
+    subject: "Finance",
+    location: "Paris, France",
+    duration: "18 months",
+    studyMode: "Full-time",
+    locationType: "On-Campus",
+    language: "English",
+    applicationTime: "September 2023",
+    applicationDeadline: "May 2024",
+    recommended: false,
+    imageUrl:
+      "https://images.pexels.com/photos/3183192/pexels-photo-3183192.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description:
+      "Prepare for leadership in the finance sector with this MBA...",
+    logo: "https://images.pexels.com/photos/3183192/pexels-photo-3183192.jpeg?auto=compress&cs=tinysrgb&w=800",
+  },
+  {
+    id: 9,
+    title: "LLM in International Law",
+    institution: "University of Oxford",
+    country: "United Kingdom",
+    degreeType: "LLM",
+    subject: "International Law",
+    location: "Oxford, UK",
+    duration: "1 year",
+    studyMode: "Full-time",
+    locationType: "On-Campus",
+    language: "English",
+    applicationTime: "October 2023",
+    applicationDeadline: "June 2024",
+    recommended: true,
+    imageUrl:
+      "https://images.pexels.com/photos/3183194/pexels-photo-3183194.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description:
+      "Advance your legal career with an LLM in International Law...",
+    logo: "https://images.pexels.com/photos/3183194/pexels-photo-3183194.jpeg?auto=compress&cs=tinysrgb&w=800",
+  },
+  {
+    id: 10,
+    title: "Graduate Certificate in Project Management",
+    institution: "University of Sydney",
+    country: "Australia",
+    degreeType: "Certificate",
+    subject: "Project Management",
+    location: "Sydney, Australia",
+    duration: "6 months",
+    studyMode: "Full-time",
+    locationType: "On-Campus",
+    language: "English",
+    applicationTime: "June 2024",
+    applicationDeadline: "April 2024",
+    recommended: true,
+    imageUrl:
+      "https://images.pexels.com/photos/4145196/pexels-photo-4145196.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description: "Learn essential skills for project management...",
+    logo: "https://images.pexels.com/photos/4145196/pexels-photo-4145196.jpeg?auto=compress&cs=tinysrgb&w=800",
+  },
+  // ... more entries up to 30
 ];
 
 const mockRelatedFields = [
@@ -109,7 +229,27 @@ const mockRelatedFields = [
 
 const ProgramList: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [filteredPrograms, setFilteredPrograms] = useState(mockPrograms);
   const sliderRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const storedFilters = localStorage.getItem("selectedFilters");
+    if (storedFilters) {
+      const filters = JSON.parse(storedFilters);
+      const filtered = mockPrograms.filter((program) => {
+        return filters.every((filter: string) =>
+          Object.values(program).some((value) =>
+            typeof value === "string"
+              ? value.toLowerCase().includes(filter.toLowerCase())
+              : false
+          )
+        );
+      });
+      setFilteredPrograms(filtered.length ? filtered : []);
+    } else {
+      setFilteredPrograms(mockPrograms);
+    }
+  }, []);
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
@@ -125,12 +265,15 @@ const ProgramList: React.FC = () => {
 
   const indexOfLastItem = currentPage * ITEMS_PER_PAGE;
   const indexOfFirstItem = indexOfLastItem - ITEMS_PER_PAGE;
-  const currentItems = mockPrograms.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = filteredPrograms.slice(
+    indexOfFirstItem,
+    indexOfLastItem
+  );
 
   return (
     <div className="w-full md:w-3/4 p-4 mx-auto">
       <h2 className="font-bold text-2xl mb-6">
-        {mockPrograms.length} Master Programs in Economic Studies 2024/2025
+        {filteredPrograms.length} Master Programs in Economic Studies 2024/2025
       </h2>
 
       <div className="relative flex items-center mb-6">
@@ -163,34 +306,38 @@ const ProgramList: React.FC = () => {
       </div>
 
       <div className="space-y-4">
-        {currentItems.map((program) => (
-          <ProgramCard
-            key={program.id}
-            id={program.id}
-            title={program.title}
-            institution={program.institution}
-            location={program.location}
-            country={program.country}
-            degreeType={program.degreeType}
-            subject={program.subject}
-            duration={program.duration}
-            studyMode={program.studyMode}
-            locationType={program.locationType}
-            language={program.language}
-            applicationTime={program.applicationTime}
-            applicationDeadline={program.applicationDeadline}
-            recommended={program.recommended}
-            imageUrl={program.imageUrl}
-            description={program.description}
-            logo={program.logo}
-          />
-        ))}
+        {currentItems.length > 0 ? (
+          currentItems.map((program) => (
+            <ProgramCard
+              key={program.id}
+              id={program.id}
+              title={program.title}
+              institution={program.institution}
+              location={program.location}
+              country={program.country}
+              degreeType={program.degreeType}
+              subject={program.subject}
+              duration={program.duration}
+              studyMode={program.studyMode}
+              locationType={program.locationType}
+              language={program.language}
+              applicationTime={program.applicationTime}
+              applicationDeadline={program.applicationDeadline}
+              recommended={program.recommended}
+              imageUrl={program.imageUrl}
+              description={program.description}
+              logo={program.logo}
+            />
+          ))
+        ) : (
+          <div className="text-center text-gray-500">No data was found.</div>
+        )}
       </div>
 
       <BestProgramsForYou />
 
       <Pagination
-        totalItems={mockPrograms.length}
+        totalItems={filteredPrograms.length}
         itemsPerPage={ITEMS_PER_PAGE}
         currentPage={currentPage}
         onPageChange={handlePageChange}
