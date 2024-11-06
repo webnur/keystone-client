@@ -79,6 +79,7 @@ export default function Home() {
       image: "https://i.ibb.co.com/Z6mdF2K/Hero-images-4-gpy7jt.jpg",
       description: "An overview of the Bar Exam and its significance.",
     },
+    
   ];
 
   const mockLocations = [
