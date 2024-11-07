@@ -6,6 +6,16 @@
     "title": "Home Page",
     "description": "This is the hope page content"
   },
+  "subHeaderNav": {
+    "master": "Master",
+    "phd": "Phd",
+    "law": "Law",
+    "bachelor": "Bachelor",
+    "mba": "MBA",
+    "healthcare": "Healthcare",
+    "courses": "Courses",
+    "online": "Online"
+  },
   "LocaleSwitcher": {
     "label": "Change language",
     "locale": "{locale, select, de {🇩🇪 Deutsch} en {🇺🇸 English} other {Unknown}}"
