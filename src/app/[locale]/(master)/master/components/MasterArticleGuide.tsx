@@ -20,72 +20,80 @@ const MasterArticlesAndGuides: React.FC<MasterArticlesAndGuidesProps> = ({
 }) => {
   const t = useTranslations("masterPage");
 
+  // Limit articles to only the first 3 for display
+  const displayedArticles = articles.slice(0, 3);
+
   return (
     <section className="bg-gray-100">
-      <div className="py-16 text-center container mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center md:mb-8 mb-3 space-y-2 md:space-y-0 md:space-x-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-left md:text-left w-full md:px-0 px-4 text-neutral-600">
-            {t("articalTitle")}
-          </h2>
-          <button className="hidden md:block bg-red-100 text-red-500 px-4 py-2 rounded-lg hover:bg-red-200 transition duration-200 whitespace-nowrap">
-            {t("articalButton")}
-          </button>
+      <div className="py-16 container mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-4 px-4 md:px-0">
+          <div className="text-left">
+            <h2 className="text-2xl md:text-3xl font-bold text-neutral-700">
+              {t("articalTitle")}
+            </h2>
+            <p className="text-gray-500 text-lg mt-2">{t("articleSubtitle")}</p>
+          </div>
+          <Link href="/master/master-articles" className="hidden md:block">
+            <button className="bg-red-100 text-red-500 px-4 py-2 rounded-lg hover:bg-red-200 transition duration-200 whitespace-nowrap">
+              {t("articalButton")}
+            </button>
+          </Link>
         </div>
 
-        <p className="text-gray-500 mb-4 text-left md:text-left w-full md:px-0 px-4">
-          {t("articleSubtitle")}
-        </p>
-
-        {/* Carousel for Mobile (Horizontal Scroll) and Grid for Larger Screens */}
-        <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 overflow-x-auto md:overflow-visible no-scrollbar pr-8 pl-4">
-          {articles.map((article, index) => (
+        {/* Carousel for Mobile and Grid for Larger Screens */}
+        <div className="flex md:grid md:grid-cols-3 gap-4 overflow-x-auto md:overflow-visible no-scrollbar pr-4 pl-4 md:pr-0 md:pl-0">
+          {displayedArticles.map((article, index) => (
             <div
               key={index}
-              className="min-w-[250px] md:min-w-0 flex-shrink-0 md:flex-shrink md:basis-full basis-[95%] border rounded-lg bg-white shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col justify-between p-4 ml-0 md:ml-0 md:mr-0"
+              className="min-w-[250px] md:min-w-0 flex-shrink-0 border rounded-lg bg-white shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden flex flex-col"
             >
               {/* Article Image */}
-              <div className="md:max-w-550 md:h-[250px] h-[180px]">
+              <div className="relative h-[180px] md:h-[250px] w-full">
                 <Image
                   src={article.image}
                   alt={article.title}
-                  width={550}
-                  height={250}
-                  className="w-full md:h-[250px] h-[180px] object-cover"
+                  layout="fill"
+                  className="object-cover"
                 />
               </div>
 
               {/* Article Content */}
-              <div className="flex-grow text-left">
-                <h3 className="md:text-[1.125rem] text-[1rem] font-bold leading-[183%] text-gray-800 md:mt-5 mt-2">
-                  {article.title}
-                </h3>
-                <p className="text-gray-500 text-sm mt-6 font-semibold italic my-4 mx-0">
-                  {article.date}
-                </p>
-              </div>
+              <div className="p-4 flex-grow flex flex-col justify-between">
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-800">
+                    {article.title}
+                  </h3>
+                  <p className="text-gray-500 text-sm font-semibold italic mt-2">
+                    {article.date}
+                  </p>
+                  <p className="text-gray-600 text-sm mt-4">
+                    {article.description}
+                  </p>
+                </div>
 
-              {/* Read More Button */}
-              <div className="text-right">
-                <Link
-                  className="text-red-500 font-semibold"
-                  href={`/master/master-articles/${article.id}`}
-                >
-                  {t("readMore")}{" "}
-                  <span className="inline-block transform">→</span>
-                </Link>
+                {/* Read More Button */}
+                <div className="text-right mt-4">
+                  <Link
+                    href={`/master/master-articles/${article.id}`}
+                    className="text-red-500 font-semibold hover:underline"
+                  >
+                    Read More →
+                  </Link>
+                </div>
               </div>
             </div>
           ))}
         </div>
-              {/* Mobile "View All" Button with Reduced Margin */}
-      <div className="flex justify-center md:hidden mt-4 w-full mx-auto">
-        <button className="bg-red-100 text-red-500 px-8 py-2 rounded-lg hover:bg-red-200 transition duration-200 whitespace-nowrap">
-          {t("articalButton")}
-        </button>
-      </div>
-      </div>
 
-
+        {/* View All Button for Mobile */}
+        <div className="flex justify-center mt-8 md:hidden">
+          <Link href="/master/master-articles">
+            <button className="bg-red-100 text-red-500 px-8 py-2 rounded-lg hover:bg-red-200 transition duration-200">
+              View All
+            </button>
+          </Link>
+        </div>
+      </div>
     </section>
   );
 };
