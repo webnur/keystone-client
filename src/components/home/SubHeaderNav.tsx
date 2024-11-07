@@ -9,8 +9,8 @@ type NavData = {
 };
 
 type SubHeaderNavProps = {
-  navData?: NavData[]; // Mark as optional to prevent runtime errors
-  activeCategory: string; // The active category, e.g., 'phd' or 'bachelor'
+  navData?: NavData[];
+  activeCategory: string;
 };
 
 const SubHeaderNav: React.FC<SubHeaderNavProps> = ({
@@ -21,11 +21,13 @@ const SubHeaderNav: React.FC<SubHeaderNavProps> = ({
 
   return (
     <div className="subheader-container">
-      {/* Main navigation for categories */}
-      <nav className="flex justify-left md:py-3 py-1 text-sm md:text-base border-b border-gray-200 w-full overflow-x-auto whitespace-nowrap scroll-smooth" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+      <nav
+        className="flex justify-left md:py-3 py-1 text-sm md:text-base border-b border-gray-200 container mx-auto overflow-x-auto whitespace-nowrap scroll-smooth"
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+      >
         <Link
           href="/master"
-          className={`px-4 py-2 ${
+          className={` py-2 ${
             activeCategory === "master" ? "text-red-600 font-bold" : ""
           }`}
         >
@@ -96,19 +98,21 @@ const SubHeaderNav: React.FC<SubHeaderNavProps> = ({
         </Link>
       </nav>
 
-      {/* Sub-navigation for the active category */}
       <div className="bg-foreground">
-        <div className="subnav w-full mx-auto py-2 text-sm md:text-base md:py-3 px-4 overflow-x-auto whitespace-nowrap scroll-smooth" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+        <div
+          className="container mx-auto subnav w-full py-2 text-sm md:text-base md:py-3 overflow-x-auto whitespace-nowrap scroll-smooth"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        >
           <div className="flex justify-left space-x-4">
             {navData.length > 0 ? (
               navData.map((subNavItem, index) => (
                 <Link
                   key={index}
-                  href={subNavItem.link} // Use the correct link for each sub-item
+                  href={subNavItem.link}
                   className="text-white hover:underline"
                   onClick={(e) => {
-                    e.preventDefault(); // Prevent default behavior
-                    router.push(subNavItem.link); // Navigate to the sub-item link
+                    e.preventDefault();
+                    router.push(subNavItem.link);
                   }}
                 >
                   {subNavItem.name}

@@ -24,18 +24,18 @@
     "connect": "Connect",
     "contentDetails": " Contact the schools admissions offices directly",
     "discoverTitle": "Discover technology programs by discipline",
+    "viewMoreDisciplines": "View more discipline",
     "discoverButton": "View all disciplines",
     "seeAllButton": "See All Fields",
     "loadingFields": "Loading fields...",
     "whereStudyTitle": "Where to study",
     "whereStudyButton": "see all locations",
-    "articalTitle": "Articles and guides",
-    "articleSubtitle": "Dive into our guides covering Law student experiences, careerinformation, and more.",
+    "articalTitle": " Expert Articles",
+    "articleSubtitle": "Discover study insights based on student and expert interviews.",
     "articalButton": "View all",
     "readMore": "Read more",
     "newAddedTitle": "Newly Added Programs",
-    "moreInfo": "More information",
-    "viewMoreDisciplines": "View more discipline"
+    "moreInfo": "More information"
   },
   "phdPage": {
     "bannerTitle": "Browse thousands of graduate degrees from around the world!",

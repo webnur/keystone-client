@@ -29,15 +29,13 @@ const MasterArticlesAndGuides: React.FC<MasterArticlesAndGuidesProps> = ({
         <div className="flex flex-col md:flex-row justify-between items-center mb-4 px-4 md:px-0">
           <div className="text-left">
             <h2 className="text-2xl md:text-3xl font-bold text-neutral-700">
-              Expert Articles
+              {t("articalTitle")}
             </h2>
-            <p className="text-gray-500 text-lg mt-2">
-              Discover study insights based on student and expert interviews.
-            </p>
+            <p className="text-gray-500 text-lg mt-2">{t("articleSubtitle")}</p>
           </div>
           <Link href="/master/master-articles" className="hidden md:block">
             <button className="bg-red-100 text-red-500 px-4 py-2 rounded-lg hover:bg-red-200 transition duration-200 whitespace-nowrap">
-              View All
+              {t("articalButton")}
             </button>
           </Link>
         </div>
@@ -72,10 +70,13 @@ const MasterArticlesAndGuides: React.FC<MasterArticlesAndGuidesProps> = ({
                     {article.description}
                   </p>
                 </div>
-                
+
                 {/* Read More Button */}
                 <div className="text-right mt-4">
-                  <Link href={`/master/master-articles/${article.id}`} className="text-red-500 font-semibold hover:underline">
+                  <Link
+                    href={`/master/master-articles/${article.id}`}
+                    className="text-red-500 font-semibold hover:underline"
+                  >
                     Read More →
                   </Link>
                 </div>
