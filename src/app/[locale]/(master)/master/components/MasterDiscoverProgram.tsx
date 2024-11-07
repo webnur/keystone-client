@@ -52,9 +52,11 @@ const MasterDiscoverProgram: React.FC<DiscoverProgramProps> = ({
               </button>
             )}
             {showDiscoverButton && (
-              <button className="bg-red-100 text-red-500 px-4 py-2 rounded-lg hover:bg-red-200 transition duration-200 whitespace-nowrap">
-                {t("discoverButton")}
-              </button>
+              <Link href="/master/discover-program">
+                <button className="bg-red-100 text-red-500 px-4 py-2 rounded-lg hover:bg-red-200 transition duration-200 whitespace-nowrap">
+                  {t("discoverButton")}
+                </button>
+              </Link>
             )}
           </div>
         </div>
@@ -64,13 +66,18 @@ const MasterDiscoverProgram: React.FC<DiscoverProgramProps> = ({
             <div
               key={index}
               className={`relative flex flex-col justify-center items-center md:p-6 p-3 border border-gray-300 bg-white hover:bg-gray-900 transition-all duration-300 text-center
-                ${!showAll && `
-                  ${index >= 6 ? 'hidden md:hidden lg:block' : ''} 
-                  ${index >= 10 ? 'lg:hidden' : ''}
-                `}`}
+                ${
+                  !showAll &&
+                  `
+                  ${index >= 6 ? "hidden md:hidden lg:block" : ""} 
+                  ${index >= 10 ? "lg:hidden" : ""}
+                `
+                }`}
               style={{ minHeight: "200px" }}
             >
-              <div className="md:text-5xl text-3xl text-blue-500 mb-4">{program.icon}</div>
+              <div className="md:text-5xl text-3xl text-blue-500 mb-4">
+                {program.icon}
+              </div>
               <h3 className="md:text-lg text-sm font-semibold text-gray-700 hover:text-white">
                 {program.name}
               </h3>
