@@ -101,9 +101,11 @@ const BannerWithDropdown: React.FC<BannerWithDropdownProps> = ({
         </div>
 
         <div className="mt-4 text-center">
-          <button className="bg-transparent border-2 border-white text-white px-4 sm:px-6 py-2 rounded-lg text-sm sm:text-base">
+<Link href="/master/discover-program">
+<button className="bg-transparent border-2 border-white text-white sm:px-6 px-20 py-2 rounded-lg text-sm sm:text-base">
             Browse Fields of Study
           </button>
+</Link>
         </div>
       </div>
     </div>

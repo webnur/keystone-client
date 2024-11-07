@@ -3,6 +3,8 @@ import { getFromLocalStorage } from "@/utils/local-storage";
 import React, { useEffect, useState } from "react";
 import { FaArrowDown, FaFilter } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
+import { GoTriangleDown } from "react-icons/go";
+import { GoTriangleUp } from "react-icons/go";
 
 const FilterComponent: React.FC = () => {
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
@@ -133,7 +135,8 @@ const FilterComponent: React.FC = () => {
   const isFilterSelected = (filter: string) => selectedFilters.includes(filter);
 
   return (
-    <aside className="lg:w-1/4 md:w-2/4 p-4 bg-gray-100 relative">
+<div className="lg:w-1/4 md:w-2/4 p-4 bg-gray-100 relative">
+<aside className=" w-4/5 mx-auto">
       {/* Mobile Filter Button */}
       <div className="lg:hidden md:hidden">
         <button
@@ -217,7 +220,7 @@ const FilterComponent: React.FC = () => {
             onClick={() => toggleAccordion(setIsFieldsOpen)}
           >
             <h3 className="font-semibold mb-2">Fields of Study</h3>
-            <span>{isFieldsOpen ? <IoClose /> : <FaArrowDown />}</span>
+            <span>{isFieldsOpen ? <GoTriangleDown /> : <GoTriangleUp />}</span>
           </div>
           {isFieldsOpen && (
             <ul className="space-y-2">
@@ -256,7 +259,7 @@ const FilterComponent: React.FC = () => {
             onClick={() => toggleAccordion(setIsLocationOpen)}
           >
             <h3 className="font-semibold mb-2">Location</h3>
-            <span>{isLocationOpen ? <IoClose /> : <FaArrowDown />}</span>
+            <span>{isLocationOpen ? <GoTriangleDown /> : <GoTriangleUp />}</span>
           </div>
           {isLocationOpen && (
             <>
@@ -315,7 +318,7 @@ const FilterComponent: React.FC = () => {
             onClick={() => toggleAccordion(setIsDegreeOpen)}
           >
             <h3 className="font-semibold mb-2">Degree Type</h3>
-            <span>{isDegreeOpen ? <IoClose /> : <FaArrowDown />}</span>
+            <span>{isDegreeOpen ? <GoTriangleDown /> : <GoTriangleUp />}</span>
           </div>
           {isDegreeOpen && (
             <ul className="space-y-2">
@@ -352,7 +355,7 @@ const FilterComponent: React.FC = () => {
             onClick={() => toggleAccordion(setIsDurationOpen)}
           >
             <h3 className="font-semibold mb-2">Course Duration</h3>
-            <span>{isDurationOpen ? <IoClose /> : <FaArrowDown />}</span>
+            <span>{isDurationOpen ? <GoTriangleDown /> : <GoTriangleUp />}</span>
           </div>
           {isDurationOpen && (
             <ul className="space-y-2">
@@ -389,7 +392,7 @@ const FilterComponent: React.FC = () => {
             onClick={() => toggleAccordion(setIsPaceOpen)}
           >
             <h3 className="font-semibold mb-2">Study Pace</h3>
-            <span>{isPaceOpen ? <IoClose /> : <FaArrowDown />}</span>
+            <span>{isPaceOpen ? <GoTriangleDown /> : <GoTriangleUp />}</span>
           </div>
           {isPaceOpen && (
             <ul className="space-y-2">
@@ -426,7 +429,7 @@ const FilterComponent: React.FC = () => {
             onClick={() => toggleAccordion(setIsLanguageOpen)}
           >
             <h3 className="font-semibold mb-2">Language</h3>
-            <span>{isLanguageOpen ? <IoClose /> : <FaArrowDown />}</span>
+            <span>{isLanguageOpen ? <GoTriangleDown /> : <GoTriangleUp />}</span>
           </div>
           {isLanguageOpen && (
             <ul className="space-y-2">
@@ -467,6 +470,7 @@ const FilterComponent: React.FC = () => {
         </div>
       </div>
     </aside>
+</div>
   );
 };
 

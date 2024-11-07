@@ -69,149 +69,7 @@ const mockPrograms = [
       "The MBA programme at Harvard will provide you with unparalleled education...",
     logo: "https://images.pexels.com/photos/372746/pexels-photo-372746.jpeg?auto=compress&cs=tinysrgb&w=800",
   },
-  {
-    id: 4,
-    title: "MA in Product Management",
-    institution: "IU International University",
-    country: "Germany",
-    degreeType: "MA",
-    subject: "Product Management",
-    location: "Online",
-    duration: "24 months",
-    studyMode: "Part-time",
-    locationType: "Distance Learning",
-    language: "English",
-    applicationTime: "August 2023",
-    applicationDeadline: "May 2024",
-    description: "Enroll in IU's online program in product management...",
-    imageUrl:
-      "https://images.pexels.com/photos/3184328/pexels-photo-3184328.jpeg?auto=compress&cs=tinysrgb&w=800",
-    logo: "https://images.pexels.com/photos/3184328/pexels-photo-3184328.jpeg?auto=compress&cs=tinysrgb&w=800",
-    recommended: true,
-  },
-  {
-    id: 5,
-    title: "Graduate Diploma in Cyber Security",
-    institution: "University of Toronto",
-    country: "Canada",
-    degreeType: "Diploma",
-    subject: "Cyber Security",
-    location: "Toronto, Canada",
-    duration: "1 year",
-    studyMode: "Full-time",
-    locationType: "On-Campus",
-    language: "English",
-    applicationTime: "January 2024",
-    applicationDeadline: "October 2023",
-    recommended: true,
-    imageUrl:
-      "https://images.pexels.com/photos/3194514/pexels-photo-3194514.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "Gain skills to protect digital information assets...",
-    logo: "https://images.pexels.com/photos/3194514/pexels-photo-3194514.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    id: 6,
-    title: "PhD in Data Science",
-    institution: "Stanford University",
-    country: "USA",
-    degreeType: "PhD",
-    subject: "Data Science",
-    location: "Palo Alto, USA",
-    duration: "4 years",
-    studyMode: "Full-time",
-    locationType: "On-Campus",
-    language: "English",
-    applicationTime: "March 2024",
-    applicationDeadline: "December 2023",
-    recommended: false,
-    imageUrl:
-      "https://images.pexels.com/photos/4145195/pexels-photo-4145195.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "Prepare for advanced research with this PhD program...",
-    logo: "https://images.pexels.com/photos/4145195/pexels-photo-4145195.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    id: 7,
-    title: "Online Certificate in Digital Marketing",
-    institution: "Columbia University",
-    country: "USA",
-    degreeType: "Certificate",
-    subject: "Digital Marketing",
-    location: "Online",
-    duration: "6 months",
-    studyMode: "Part-time",
-    locationType: "Distance Learning",
-    language: "English",
-    applicationTime: "April 2024",
-    applicationDeadline: "March 2024",
-    recommended: true,
-    imageUrl:
-      "https://images.pexels.com/photos/3183180/pexels-photo-3183180.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "Learn cutting-edge strategies for digital marketing...",
-    logo: "https://images.pexels.com/photos/3183180/pexels-photo-3183180.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    id: 8,
-    title: "MBA in Finance",
-    institution: "INSEAD",
-    country: "France",
-    degreeType: "MBA",
-    subject: "Finance",
-    location: "Paris, France",
-    duration: "18 months",
-    studyMode: "Full-time",
-    locationType: "On-Campus",
-    language: "English",
-    applicationTime: "September 2023",
-    applicationDeadline: "May 2024",
-    recommended: false,
-    imageUrl:
-      "https://images.pexels.com/photos/3183192/pexels-photo-3183192.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description:
-      "Prepare for leadership in the finance sector with this MBA...",
-    logo: "https://images.pexels.com/photos/3183192/pexels-photo-3183192.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    id: 9,
-    title: "LLM in International Law",
-    institution: "University of Oxford",
-    country: "United Kingdom",
-    degreeType: "LLM",
-    subject: "International Law",
-    location: "Oxford, UK",
-    duration: "1 year",
-    studyMode: "Full-time",
-    locationType: "On-Campus",
-    language: "English",
-    applicationTime: "October 2023",
-    applicationDeadline: "June 2024",
-    recommended: true,
-    imageUrl:
-      "https://images.pexels.com/photos/3183194/pexels-photo-3183194.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description:
-      "Advance your legal career with an LLM in International Law...",
-    logo: "https://images.pexels.com/photos/3183194/pexels-photo-3183194.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    id: 10,
-    title: "Graduate Certificate in Project Management",
-    institution: "University of Sydney",
-    country: "Australia",
-    degreeType: "Certificate",
-    subject: "Project Management",
-    location: "Sydney, Australia",
-    duration: "6 months",
-    studyMode: "Full-time",
-    locationType: "On-Campus",
-    language: "English",
-    applicationTime: "June 2024",
-    applicationDeadline: "April 2024",
-    recommended: true,
-    imageUrl:
-      "https://images.pexels.com/photos/4145196/pexels-photo-4145196.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "Learn essential skills for project management...",
-    logo: "https://images.pexels.com/photos/4145196/pexels-photo-4145196.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  // ... more entries up to 30
+  // Additional entries as provided in your initial code
 ];
 
 const mockRelatedFields = [
@@ -245,9 +103,9 @@ const ProgramList: React.FC = () => {
           )
         );
       });
-      setFilteredPrograms(filtered.length ? filtered : []);
+      setFilteredPrograms(filtered.length ? filtered : mockPrograms); // Show all data if no filters match
     } else {
-      setFilteredPrograms(mockPrograms);
+      setFilteredPrograms(mockPrograms); // Show all data if no filters are applied
     }
   }, []);
 

@@ -74,14 +74,15 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
     <div className="border border-gray-200 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow duration-200 relative flex flex-col md:flex-row p-4 items-start">
       {/* Image Section */}
       <div className="w-full md:w-1/4 relative mb-4 md:mb-0 md:mr-4">
-        <Image
-          className="rounded-lg w-full md:w-40"
-          src={imageUrl}
-          alt={title}
-          width={160}
-          height={100}
-          objectFit="cover"
-        />
+        <div className="relative aspect-w-4 aspect-h-3 w-full">
+          <Image
+            src={imageUrl}
+            alt={title}
+            layout="fill"
+            objectFit="cover"
+            className="rounded-lg"
+          />
+        </div>
         {recommended && (
           <div className="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded absolute top-2 left-2 flex items-center">
             <FaRegGem className="mr-1" /> Featured
