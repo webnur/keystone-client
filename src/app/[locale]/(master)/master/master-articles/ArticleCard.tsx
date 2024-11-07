@@ -146,7 +146,7 @@ const ArticleCardGrid = () => {
                   <span key={idx}>{category}</span>
                 ))}
               </div>
-              <Link href={`/articles/${article.id}`} className="text-blue-500 text-sm mt-4 block">
+              <Link href={`/master/master-articles/${article.id}`} className="text-blue-500 text-sm mt-4 block">
                 Read more →
               </Link>
             </div>
