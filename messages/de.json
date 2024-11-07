@@ -10,6 +10,16 @@
     "label": "Change language",
     "locale": "{locale, select, de {🇩🇪 Deutsch} en {🇺🇸 English} other {Unknown}}"
   },
+  "subHeaderNav": {
+    "master": "Master",
+    "phd": "Doktor (PhD)",
+    "law": "Recht",
+    "bachelor": "Bachelor",
+    "mba": "MBA",
+    "healthcare": "Gesundheitswesen",
+    "courses": "Kurse",
+    "online": "Online"
+  },
   "masterPage": {
     "bannerTitle": "Durchstöbern Sie tausende von Graduiertenabschlüssen aus der ganzen Welt!",
     "buttonText": "Studienrichtungen durchsuchen",

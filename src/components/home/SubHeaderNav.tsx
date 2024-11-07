@@ -1,4 +1,5 @@
 "use client";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
@@ -18,6 +19,7 @@ const SubHeaderNav: React.FC<SubHeaderNavProps> = ({
   activeCategory,
 }) => {
   const router = useRouter();
+  const t = useTranslations("subHeaderNav");
 
   return (
     <div className="subheader-container">
@@ -31,7 +33,7 @@ const SubHeaderNav: React.FC<SubHeaderNavProps> = ({
             activeCategory === "master" ? "text-red-600 font-bold" : ""
           }`}
         >
-          Master
+          {t("master")}
         </Link>
 
         <Link
@@ -40,7 +42,7 @@ const SubHeaderNav: React.FC<SubHeaderNavProps> = ({
             activeCategory === "phd" ? "text-red-600 font-bold" : ""
           }`}
         >
-          PhD
+          {t("phd")}
         </Link>
 
         <Link
@@ -49,7 +51,7 @@ const SubHeaderNav: React.FC<SubHeaderNavProps> = ({
             activeCategory === "law" ? "text-red-600 font-bold" : ""
           }`}
         >
-          Law
+          {t("law")}
         </Link>
 
         <Link
@@ -58,7 +60,7 @@ const SubHeaderNav: React.FC<SubHeaderNavProps> = ({
             activeCategory === "bachelor" ? "text-red-600 font-bold" : ""
           }`}
         >
-          Bachelor
+          {t("bachelor")}
         </Link>
 
         <Link
@@ -67,7 +69,7 @@ const SubHeaderNav: React.FC<SubHeaderNavProps> = ({
             activeCategory === "mba" ? "text-red-600 font-bold" : ""
           }`}
         >
-          MBA
+          {t("mba")}
         </Link>
 
         <Link
@@ -76,7 +78,7 @@ const SubHeaderNav: React.FC<SubHeaderNavProps> = ({
             activeCategory === "healthcare" ? "text-red-600 font-bold" : ""
           }`}
         >
-          Healthcare
+          {t("healthcare")}
         </Link>
 
         <Link
@@ -85,7 +87,7 @@ const SubHeaderNav: React.FC<SubHeaderNavProps> = ({
             activeCategory === "courses" ? "text-red-600 font-bold" : ""
           }`}
         >
-          Courses
+          {t("courses")}
         </Link>
 
         <Link
@@ -94,7 +96,7 @@ const SubHeaderNav: React.FC<SubHeaderNavProps> = ({
             activeCategory === "online" ? "text-red-600 font-bold" : ""
           }`}
         >
-          Online
+          {t("online")}
         </Link>
       </nav>
 
