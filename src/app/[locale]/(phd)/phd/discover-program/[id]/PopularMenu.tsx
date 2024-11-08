@@ -4,7 +4,7 @@ import React from 'react';
 const PopularMenu: React.FC = () => {
   return (
     <div className="mt-8 bg-gray-50 p-4 rounded-lg shadow">
-      <div className="grid grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* Popular Degree Type */}
         <div>
           <h4 className="font-bold mb-4">Popular Degree Type</h4>
@@ -32,7 +32,6 @@ const PopularMenu: React.FC = () => {
             <li><Link href="#" className="text-red-500 hover:underline">USA</Link></li>
             <li><Link href="#" className="text-red-500 hover:underline">United Kingdom</Link></li>
             <li><Link href="#" className="text-red-500 hover:underline">Germany</Link></li>
-            {/* Add more popular locations */}
           </ul>
         </div>
       </div>

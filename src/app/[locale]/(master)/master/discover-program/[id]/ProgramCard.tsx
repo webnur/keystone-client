@@ -71,65 +71,96 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
   };
 
   return (
-    <div className="border border-gray-200 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow duration-200 relative flex flex-col md:flex-row p-4 items-start">
-      {/* Image Section */}
-      <div className="w-full md:w-1/4 relative mb-4 md:mb-0 md:mr-4">
-        <Image
-          className="rounded-lg w-full md:w-40"
-          src={imageUrl}
-          alt={title}
-          width={160}
-          height={100}
-          objectFit="cover"
-        />
-        {recommended && (
-          <div className="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded absolute top-2 left-2 flex items-center">
-            <FaRegGem className="mr-1" /> Featured
+    <div className="relative border border-gray-300 rounded-xl bg-white shadow-md hover:shadow-lg transition-all duration-300 p-4 my-6 w-full">
+      {/* Favorite Button */}
+      <button
+        onClick={toggleFavorite}
+        className="absolute top-2 right-2 text-lg text-gray-400 hover:text-red-500 focus:outline-none z-10"
+      >
+        {isFavorited ? "❤️" : "🤍"}
+      </button>
+
+      <div className="flex flex-col md:flex-row">
+        {/* Image Section */}
+        <div className="w-full md:w-1/3 relative mb-4 md:mb-0 flex-shrink-0">
+          <div className="relative h-40 md:h-52 bg-cover bg-center rounded-lg overflow-hidden">
+            <Image
+              className="object-cover w-full h-full rounded-lg"
+              src={imageUrl}
+              alt={title}
+              width={200}
+              height={160}
+            />
+            {recommended && (
+              <div className="absolute bottom-2 left-2 bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-lg flex items-center">
+                <FaRegGem className="mr-1" /> Featured
+              </div>
+            )}
+            {/* Logo Section - Updated */}
+            <div className="absolute inline-flex min-w-[140px] max-w-[140px] justify-center bg-white top-2 left-2 rounded-lg p-1 h-14">
+              <div className="relative w-full h-full p-3">
+                <Image
+                  src={logo}
+                  alt={`${institution} logo`}
+                  fill
+                  className="object-cover rounded-lg"
+                />
+              </div>
+            </div>
           </div>
-        )}
-      </div>
-
-      {/* Content Section */}
-      <div className="w-full md:w-3/4 relative flex flex-col">
-        <h3 className="text-lg font-bold text-red-600 mb-1">{title}</h3>
-        <p className="text-gray-800 font-medium mb-1">{institution}</p>
-        <p className="text-gray-500 text-sm mb-3">
-          {location}, {country}
-        </p>
-
-        <div className="flex flex-wrap space-x-2 text-xs text-gray-600 mb-4">
-          <p className="flex items-center">
-            🎓 {degreeType} in {subject}
-          </p>
-          <p className="flex items-center">🕒 {studyMode}</p>
-          <p className="flex items-center">⏳ {duration}</p>
-          <p className="flex items-center">🌐 {language}</p>
         </div>
 
-        <p className="text-gray-600 text-sm mb-4 line-clamp-3 border-l-2 border-gray-300 pl-3">
-          {description}
-        </p>
+        {/* Content Section */}
+        <div className="w-full md:w-2/3 flex flex-col space-y-2 md:pl-4">
+          <p className="text-gray-700 font-semibold text-sm">{institution}</p>
+          <h3 className="text-lg md:text-xl font-bold text-red-700">{title}</h3>
+          <p className="text-gray-500 text-sm">
+            {location}, {country}
+          </p>
 
-        <p className="text-gray-500 text-xs mb-2">
-          Application Period: {applicationTime} - {applicationDeadline}
-        </p>
+          <div className="flex flex-wrap items-center space-x-2 text-sm text-gray-600 font-semibold mt-2 mb-4">
+            <p className="flex items-center space-x-1">
+              <span aria-label="Degree type">🎓</span>
+              <span>{degreeType}</span>
+            </p>
+            <span>•</span>
+            <p className="flex items-center space-x-1">
+              <span aria-label="Study pace">🕒</span>
+              <span>{studyMode}</span>
+            </p>
+            <span>•</span>
+            <p className="flex items-center space-x-1">
+              <span aria-label="Duration">⏳</span>
+              <span>{duration}</span>
+            </p>
+            <span>•</span>
+            <p className="flex items-center space-x-1">
+              <span aria-label="Language">🌐</span>
+              <span>{language}</span>
+            </p>
+          </div>
 
-        <Link
-          href={{
-            pathname: `/master/program-details/${id}`,
-            query: { logo },
-          }}
-          className="text-red-500 text-sm font-semibold hover:underline mt-auto"
-        >
-          Read more
-        </Link>
+          <p className="text-gray-700 text-sm line-clamp-2 border-l-2 border-gray-300 pl-3">
+            {description}
+          </p>
 
-        <button
-          onClick={toggleFavorite}
-          className="absolute top-2 right-2 text-lg text-gray-400 hover:text-red-500 focus:outline-none"
-        >
-          {isFavorited ? "❤️" : "🤍"}
-        </button>
+          <div className="flex items-center justify-between mt-4">
+            <p className="text-gray-500 text-xs">
+              Application Period: {applicationTime} - {applicationDeadline}
+            </p>
+          </div>
+          <div className="md:text-right">
+            <Link
+              href={{
+                pathname: `/master/program-details/${id}`,
+                query: { logo },
+              }}
+              className="text-red-700 text-sm underline font-semibold"
+            >
+              Read more
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -58,7 +58,7 @@ const HealthcareDiscoverProgram: React.FC<DiscoverProgramProps> = ({
 
                 <div className="flex justify-center items-center w-full mx-auto">
                   <Link
-                    href={`/master/discover-program/${program.id}`} // Dynamic routing with program ID
+                    href={`/healthcare/discover-program/${program.id}`} // Dynamic routing with program ID
                     className="bg-white hover:bg-red-600 text-red-600 hover:text-white w-full rounded-2xl py-1 flex justify-evenly items-center font-bold"
                   >
                     <span>{t("seeAllButton")}</span>
