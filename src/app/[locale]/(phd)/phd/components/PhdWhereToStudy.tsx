@@ -59,7 +59,7 @@ const PhdWhereToStudy: React.FC<WhereToStudyProps> = ({ locations }) => {
 
               {/* Read More Button (Centered Bottom) */}
               <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-                <Link href={`/master/study-where/${location.id}`}>
+                <Link href={`/phd/study-where/${location.id}`}>
                   <button className="bg-white bg-opacity-10 border-2 border-white text-white px-6 py-2 rounded-lg">
                     {t("readMore")}
                   </button>

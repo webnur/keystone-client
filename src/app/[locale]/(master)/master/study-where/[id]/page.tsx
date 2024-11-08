@@ -3,8 +3,6 @@
 import { useParams } from "next/navigation";
 import { useState, useEffect } from "react";
 import SubBanner from "@/components/common/SubBanner";
-import NewsAndArticles from "@/components/common/NewsAndArticle";
-import { articlesData } from "@/app/[locale]/(main)/articles/article";
 import Sidebar from "./Sidebar";
 import CostOfLiving from "./CostOfLiving";
 import ChangeCurrency from "./ChangeCurrency";
@@ -12,6 +10,7 @@ import VisaRequirements from "./VisaRequirements";
 import AboutCountry from "./AboutCountry";
 import Institutions from "./Institutions";
 import Programs from "./Programs";
+import MasterArticlesAndGuides from "../../components/MasterArticleGuide";
 
 interface LocationDataType {
   title: string;
@@ -23,6 +22,39 @@ const page = () => {
   const params = useParams();
   const { id } = params;
   const [isLoading, setIsLoading] = useState(true);
+
+  const mockArticles = [
+    {
+      id: "guide-master-degree",
+      title: "The Ultimate Master's Degree Guide for International Students",
+      date: "Dec 8, 2023",
+      image: "https://i.ibb.co.com/MVNcjND/Master-s-Degree-Guide-rqljxp.jpg",
+      description: "A guide for international students pursuing law degrees.",
+    },
+    {
+      id: "scholarships-directory",
+      title: "Master's Scholarships Directory for International Students",
+      date: "Dec 8, 2023",
+      image:
+        "https://i.ibb.co.com/XZT42GW/Master-s-in-the-UK-Hero-image-1-naabh7.jpg",
+      description: "Essential legal terms every law student should know.",
+    },
+    {
+      id: "guide-master-uk",
+      title: "The Ultimate Guide to Getting a Master's Degree in the UK (2024)",
+      date: "Oct 20, 2023",
+      image:
+        "https://i.ibb.co.com/F3N6yv4/The-Cheapest-Countries-to-Study-a-Master-s-In-Europe-vimenh.jpg",
+      description: "Understanding the value of a Master of Laws degree.",
+    },
+    {
+      id: "bar-exam-overview",
+      title: "What is the Bar Exam?",
+      date: "Oct 13, 2023",
+      image: "https://i.ibb.co.com/Z6mdF2K/Hero-images-4-gpy7jt.jpg",
+      description: "An overview of the Bar Exam and its significance.",
+    },
+  ];
 
   const locationData: Record<string, LocationDataType> = {
     germany: {
@@ -126,7 +158,11 @@ const page = () => {
           </div>
         </div>
       </div>
-      <NewsAndArticles articles={articlesData.slice(0, 4)} />
+      <div>
+        <MasterArticlesAndGuides
+          articles={mockArticles}
+        ></MasterArticlesAndGuides>
+      </div>
     </div>
   );
 };
