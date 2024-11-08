@@ -46,10 +46,15 @@ const RightSidebar: React.FC<RightSidebarProps> = ({
         }
       } else {
         // Save to localStorage
-        const savedPrograms =
-          JSON.parse(localStorage.getItem("savedPrograms") || "[]");
+        const savedPrograms = JSON.parse(
+          localStorage.getItem("savedPrograms") || "[]"
+        );
 
-        if (!savedPrograms.some((program: ProgramData) => program.title === programData.title)) {
+        if (
+          !savedPrograms.some(
+            (program: ProgramData) => program.title === programData.title
+          )
+        ) {
           savedPrograms.push(programData);
           localStorage.setItem("savedPrograms", JSON.stringify(savedPrograms));
           setIsSaved(true);
@@ -71,7 +76,7 @@ const RightSidebar: React.FC<RightSidebarProps> = ({
   };
 
   return (
-    <div className="w-60 fixed right-4 top-34">
+    <div className="sticky top-20 w-54 mx-4 mb-12">
       <div className="bg-white border border-gray-300 shadow-lg rounded-lg p-4">
         {/* University Logo */}
         <div className="flex justify-center mb-4">

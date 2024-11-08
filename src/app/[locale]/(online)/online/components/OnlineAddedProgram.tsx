@@ -123,7 +123,7 @@ const OnlineAddedProgram: React.FC<NewlyAddedProgramsProps> = ({
                   {program.location}, {program.country}
                 </p>
                 <div className="flex justify-end">
-                  <Link href={`/master/newly-added-program/${program.id}`}>
+                  <Link href={`/online/newly-added-program/${program.id}`}>
                     <span className="text-red-500 font-semibold hover:text-red-600 flex items-center">
                       {t("moreInfo")} <span className="ml-1">→</span>
                     </span>
