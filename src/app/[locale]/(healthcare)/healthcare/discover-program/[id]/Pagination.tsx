@@ -1,14 +1,33 @@
 import React from 'react';
 
-const Pagination: React.FC = () => {
+interface PaginationProps {
+  totalItems: number;
+  itemsPerPage: number;
+  currentPage: number;
+  onPageChange: (page: number) => void;
+}
+
+const Pagination: React.FC<PaginationProps> = ({
+  totalItems,
+  itemsPerPage,
+  currentPage,
+  onPageChange,
+}) => {
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+
   return (
     <div className="mt-8 flex justify-center space-x-2">
-      <button className="px-3 py-2 bg-gray-100 rounded hover:bg-gray-200">1</button>
-      <button className="px-3 py-2 bg-gray-100 rounded hover:bg-gray-200">2</button>
-      <button className="px-3 py-2 bg-gray-100 rounded hover:bg-gray-200">3</button>
-      <button className="px-3 py-2 bg-gray-100 rounded hover:bg-gray-200">4</button>
-      <span className="px-3 py-2">...</span>
-      <button className="px-3 py-2 bg-gray-100 rounded hover:bg-gray-200">111</button>
+      {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+        <button
+          key={page}
+          onClick={() => onPageChange(page)}
+          className={`px-3 py-2 rounded ${
+            currentPage === page ? 'bg-red-500 text-white' : 'bg-gray-100 hover:bg-gray-200'
+          }`}
+        >
+          {page}
+        </button>
+      ))}
     </div>
   );
 };

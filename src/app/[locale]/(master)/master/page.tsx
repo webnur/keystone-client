@@ -1,11 +1,11 @@
 "use client";
 import EducationJourney from "@/components/home/EducationJourney";
-import BannerWithDropdown from "@/components/common/Banner";
 import MasterAddedProgram from "./components/MasterAddedProgram";
 import MasterWhereToStudy from "./components/MasterWhereToStudy";
 import MasterArticlesAndGuides from "./components/MasterArticleGuide";
 import MasterDiscoverProgram from "./components/MasterDiscoverProgram";
 import { useTranslations } from "next-intl";
+import MasterBanner from "./components/MasterBanner";
 
 export default function Home() {
   const t = useTranslations("masterPage");
@@ -79,7 +79,6 @@ export default function Home() {
       image: "https://i.ibb.co.com/Z6mdF2K/Hero-images-4-gpy7jt.jpg",
       description: "An overview of the Bar Exam and its significance.",
     },
-    
   ];
 
   const mockLocations = [
@@ -306,7 +305,7 @@ export default function Home() {
 
   return (
     <div>
-      <BannerWithDropdown
+      <MasterBanner
         backgroundImage={
           "https://images.pexels.com/photos/2041540/pexels-photo-2041540.jpeg?auto=compress&cs=tinysrgb&w=800"
         }

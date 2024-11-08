@@ -44,11 +44,6 @@ const FilterComponent: React.FC = () => {
     if (storedData) {
       try {
         const parsedData = JSON.parse(storedData);
-
-        // if (parsedData.subject) {
-        //   newFilters.push(parsedData.subject);
-        // }
-
         if (parsedData.fields) {
           newFilters.push(parsedData.fields);
         }
@@ -73,7 +68,6 @@ const FilterComponent: React.FC = () => {
         );
       }
     }
-
     const searchData = localStorage.getItem("searchData");
     if (searchData) {
       try {
@@ -85,13 +79,9 @@ const FilterComponent: React.FC = () => {
           newFilters.push(parsedData.location);
         }
       } catch (error) {
-        console.error(
-          "Failed to parse 'selectedOption' local storage data",
-          error
-        );
+        console.error("Failed to parse 'searchData' local storage data", error);
       }
     }
-
     setSelectedFilters(newFilters);
   }, []);
 
@@ -105,6 +95,7 @@ const FilterComponent: React.FC = () => {
 
   const handleResetFilters = () => {
     setSelectedFilters([]);
+    localStorage.removeItem("selectedFilters");
   };
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -125,6 +116,12 @@ const FilterComponent: React.FC = () => {
     handleFilterToggle(suggestion);
     setSearchQuery("");
     setSuggestions([]);
+  };
+
+  const applyFilters = () => {
+    localStorage.setItem("selectedFilters", JSON.stringify(selectedFilters));
+    setIsMobileFilterOpen(false);
+    window.location.reload(); // Reload the page to apply filters
   };
 
   const toggleAccordion = (
@@ -384,6 +381,7 @@ const FilterComponent: React.FC = () => {
             </ul>
           )}
         </div>
+
         {/* Study Pace */}
         <div className="mb-4">
           <div
@@ -420,6 +418,7 @@ const FilterComponent: React.FC = () => {
             </ul>
           )}
         </div>
+
         {/* Language */}
         <div className="mb-4">
           <div
@@ -460,7 +459,7 @@ const FilterComponent: React.FC = () => {
         {/* Apply Button */}
         <div className="mb-4">
           <button
-            onClick={() => setIsMobileFilterOpen(false)}
+            onClick={applyFilters}
             className="w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition"
           >
             Apply Filters
